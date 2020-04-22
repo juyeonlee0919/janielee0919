@@ -1,5 +1,5 @@
 /*
-    날짜: 2020-04-14
+    날짜: 2020.04.20
     작성자: 이주연
     CGV 포토티켓
 */
@@ -8,29 +8,38 @@
 .photo_ticket .primary { color: #ff2f35;}
 .photo_ticket.container article::before {height: 7px;}
 .photo_ticket .btn_grey {position: relative; width: 115px; height: 34px; margin: 0 auto;display: block;border-radius: 18px;color: #999999;background-color: #ffffff;font-size: 14px;text-align: center;line-height: 32px;border: 1px solid #eeeeee;padding: 0;}
+.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+
+/*
+    [S]날짜: 2020.04.20
+    작성자: 이주연
+    내용 : instOrder.css 적용
+*/
+body.scroll_popup{overflow:hidden}
+body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
+.popup{position:fixed;left:0;/* bottom:0;*/width:100%;padding-bottom:100px;height:calc(100% - 100px);background:#fff;z-index:9999;}
+.popup_dim{display:none;position:fixed;overflow:hidden;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:9000;opacity:0}
+.popup_dim:focus{outline:none}
+.full_popup .popup{height:100%;padding-bottom:0}
+.slide_popup .popup{height:auto}
+.popup_header{position:relative;height:44px;line-height:44px;background:#fff}
+.popup_header .btn_close{display:inline-block;position:absolute;left:12px;top:12px}
+.popup_header h1{padding-left:48px;font-size:17px;line-height:45px;color:#030303;font-weight:bold;}
+.popup_container{overflow:hidden;padding-bottom:45px;}
+/* [E] instOrder.css 적용 */
 
 /*  sprite 이미지 */
 @media only screen and (-webkit-min-device-pixel-ratio:1){
 	.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
-	.sprite.sprite-pt.sprite-icLikeGray {display: block; width: 10px;height: 9px; background-image: url(../images/phototicket/common/icLikeGray.png); background-size: 100% }
-	/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,*/
-	/*.cgvMovieChartWrap .btnFirstMove:after { background-image: url('../images/phototicket/common/sprite@1x.png'); background-size: 200px;}*/
 }
 @media only screen and (-webkit-min-device-pixel-ratio:2){
 	.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@2x.png');}
-	/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,*/
-	/*.cgvMovieChartWrap .btnFirstMove:after { background-image: url('../images/phototicket/common/sprite@2x.png');}*/
-	.sprite.sprite-pt.sprite-icLikeGray {width: 10px;height: 9px; background-image: url(../images/phototicket/common/icLikeGray@2x.png);}
 }
 @media only screen and (-webkit-min-device-pixel-ratio:3){
 	.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@3x.png'); }
-	/* egg 이미지 변경 필요 */
-	/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,*/
-	/*.cgvMovieChartWrap .btnFirstMove:after { background-image: url('../images/phototicket/common/sprite@3x.png');}*/
-	.sprite.sprite-pt.sprite-icLikeGray {width: 10px;height: 9px; background-image: url(../images/phototicket/common/icLikeGray@3x.png);}
 }
 .sprite.sprite-pt.sprite-cardNum {width: 27px;height: 20px;background-position: 0 -64px;}
-.sprite.sprite-pt.sprite-icBack {width: 30px;height: 30px;background-position: 0 0;}
+.sprite.sprite-pt.sprite-icBack {width: 30px;height: 30px;background-position: -10px 1px;}
 .sprite.sprite-pt.sprite-icBoastNor {width: 20px;height: 20px;background-position: -74px -63px;}
 .sprite.sprite-pt.sprite-icBoastSel {width: 20px;height: 20px;background-position: -98px -63px;}
 .sprite.sprite-pt.sprite-icBtnLikeSel {width: 20px;height: 20px;background-position: -123px -63px;}
@@ -38,18 +47,18 @@
 .sprite.sprite-pt.sprite-icCalCh {width: 17px;height: 18px;background-position: -79px -160px;}
 .sprite.sprite-pt.sprite-icCardRotation {width: 32px;height: 32px;background-position: -36px -59px;}
 .sprite.sprite-pt.sprite-icClose {width: 30px;height: 30px;background-position: -161px 0;}
-.sprite.sprite-pt.sprite-icDownMore {width: 13px;height: 10px;background-position: -29px -43px;}
-.sprite.sprite-pt.sprite-icFilterDateSel {width: 19px;height: 19px;background-position: -8px -159px;}
-.sprite.sprite-pt.sprite-icFilterDate {width: 19px;height: 19px;background-position: -32px -159px;}
-.sprite.sprite-pt.sprite-icInfo {width: 31px;height: 30px;background-position: -40px 0;}
-.sprite.sprite-pt.sprite-icLikeNor {width: 42px;height: 52px;background-position: -49px -95px;}
-.sprite.sprite-pt.sprite-icLikeSel {width: 42px;height: 52px;background-position: 1px -95px;}
+.sprite.sprite-pt.sprite-icDownMore {width: 13px;height: 10px;background-position: -38px -40px;}
+.sprite.sprite-pt.sprite-icFilterDateSel {width: 19px;height: 19px;background-position: -17px -151px;}
+.sprite.sprite-pt.sprite-icFilterDate {width: 19px;height: 19px;background-position: -41px -151px;}
+.sprite.sprite-pt.sprite-icInfo {width: 30px;height: 30px;background-position: -48px 1px;}
+.sprite.sprite-pt.sprite-icLikeNor {width: 42px;height: 52px;background-position: -56px -89px;}
+.sprite.sprite-pt.sprite-icLikeSel {width: 42px;height: 52px;background-position: -8px -89px;}
 .sprite.sprite-pt.sprite-icShare {width: 30px;height: 30px;background-position: -120px 0;}
-.sprite.sprite-pt.sprite-icSideMenu {width: 31px;height: 30px;background-position: -80px 0;}
-.sprite.sprite-pt.sprite-icTMore {width: 9px;height: 13px;background-position: -14px -42px;}
+.sprite.sprite-pt.sprite-icSideMenu {width: 31px;height: 30px;background-position: -85px 2px;}
+.sprite.sprite-pt.sprite-icTMore {width: 9px;height: 13px;background-position: -23px -39px;}
 .sprite.sprite-pt.sprite-icTMoreLarge {width: 9px;height: 13px;background-position: 1px -42px;}
 .sprite.sprite-pt.sprite-kakao {width: 26px;height: 26px;background-position: -69px -29px;}
-
+.sprite.sprite-pt.sprite-icLikeGray {width: 10px;height: 10px; background-position:-58px -38px;}
 
 /* 포토티켓 header */
 #header_box {background-color: #ffffff; border: 0; z-index: 1111;}
@@ -63,7 +72,6 @@
 #header_box.pt_header .allview_wrap .allview_box_wrap .allview_header:before {right: 20px; left: auto}
 
 #header_box.pt_header nav.type_pt {padding: 0 20px;}
-/*#header_box.pt_header nav.type_pt::before {content: ''; position: absolute; width: 100%; height: 1px; border-bottom: 7px solid #f2f2f2; bottom: -48px; left: 0; z-index: 5;}*/
 #header_box.pt_header nav.type_pt::after {bottom: 2px;}
 #header_box.pt_header nav.type_pt .inner a {color: #666666; font-size: 14px; margin-right: 20px; white-space: nowrap; font-weight: normal}
 #header_box.pt_header nav.type_pt .inner a:last-child {margin-right: 0}
@@ -109,7 +117,6 @@
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle {position: absolute; display: block; width: 80px; height: 80px; border-radius: 40px; color: #ffffff; background: linear-gradient(124deg, #fb4357 14%, #ef642f 86%); background: -webkit-linear-gradient(124deg, #fb4357 14%, #ef642f 86%);  box-shadow: 0 4px 10px 0 rgba(251, 67, 87, 0.4); bottom: -11px; right: -18px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .txt {font-size: 16px; font-weight: bold; padding-top: 27px; margin-bottom: 5px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .count {font-size: 12px;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-active {animation-name: upHeight; animation-duration: 3s; animation-direction: alternate; animation-iteration-count: infinite;}
 /* 포토티켓 메인 - web */
 .content_wrap.photo_ticket .slider_wrap.web .swiper-container { width: 100%; overflow: auto; padding: 0 30px; }
 .content_wrap.photo_ticket .slider_wrap.web .swiper-container .swiper-slide { width: 260px; margin-right: 40px;}
@@ -157,11 +164,12 @@
 .photo_ticket .card_wrap .card .img img { width: 100%; height: 100%; }
 .photo_ticket .card_wrap .card .img .badge_top {position: absolute; width: 27px; height: 20px; border-radius: 0 10px 0 10px; background-color: rgba(0, 0, 0, 0.3); color: #ffffff; top: 1px; right: 1px; font-size: 12px; line-height: 20px; text-align: center}
 .photo_ticket .card_wrap .movie_info { position: relative; padding: 25px 86px 0 104px;}
-.photo_ticket .card_wrap .movie_info > .title {display: block; font-weight: bold; margin-bottom: 29px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.photo_ticket .card_wrap .movie_info > .title {display: block; font-weight: bold; margin-bottom: 23px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;line-height: 19px}
 .photo_ticket .card_wrap .movie_info > .tip { position: absolute; display: block; font-weight: 500; color: #ff2f35; font-size: 12px; top: 42px;}
-.photo_ticket .card_wrap .movie_info .info {display: block; font-size: 12px; font-weight: 500; margin-bottom: 7px;}
+.photo_ticket .card_wrap .movie_info .info {display: block; font-size: 12px; font-weight: 500; margin-bottom: 3px; line-height: 15px;}
+.photo_ticket .card_wrap .movie_info .info:last-child {margin-bottom: 0}
 .photo_ticket .card_wrap .movie_info .info .title { position: relative; display: inline-block; color: #999999; padding-right: 8px;}
-.photo_ticket .card_wrap .movie_info .info .title::after { position: absolute;content: '';right: 3px;top: 0px;width: 1px;height: 9px;border-right: 1px solid rgba(153,153,153,0.5);}
+.photo_ticket .card_wrap .movie_info .info .title::after { position: absolute;content: '';right: 3px;top: 0;width: 1px;height: 9px;border-right: 1px solid rgba(153,153,153,0.5);}
 .photo_ticket .card_wrap .movie_info .info .date {display: inline-block;}
 .photo_ticket .card_wrap .badge { position: absolute; width: 68px; height: 68px; border-radius: 50%; text-align: center; color: #ffffff; right: 11px; bottom: 26px;}
 .photo_ticket .card_wrap .badge.badge_red { background-color: #ff2f35;}
@@ -176,8 +184,8 @@
    - 뱃지가 없을 경우
    - 상단 nav에 border가 있을 경우
 */
-.photo_ticket .card_wrap.single { margin-top: 19px; }
-.photo_ticket .card_wrap.single .movie_info { padding: 25px 15px 0 108px;}
+.photo_ticket .card_wrap.single {; }
+.photo_ticket .card_wrap.single .movie_info { ;}
 
 /*   포토티켓 자랑하기  - 이미지 컴포넌트    */
 .photo_ticket .imgcard_wrap { padding: 0 15px; }
@@ -192,9 +200,8 @@
 .photo_ticket .imgcard_wrap .card .info { display: block; font-size: 13px; font-weight: 500;}
 .photo_ticket .imgcard_wrap .card .info .user { display: block; font-size: 13px; font-weight: 500; padding-top: 8px; margin-bottom: 5px; color: rgb(136,136,136)}
 .photo_ticket .imgcard_wrap .card .info .count_like { display: block; color: var(--watermelon); font-size: 12px; }
-.photo_ticket .imgcard_wrap .card .info .count_like i { display: inline-block; margin-right: 4px; vertical-align: middle;}
-.photo_ticket .imgcard_wrap .card .btn_like { position: absolute; bottom: -15px; right: 2px;}
-.photo_ticket .imgcard_wrap .card .btn_like a { display: block }
+.photo_ticket .imgcard_wrap .card .info .count_like i { display: inline-block; margin-right: 4px;}
+.photo_ticket .imgcard_wrap .card .btn_like { display:inline-block; position: absolute; bottom: -15px; right: 2px;}
 
 /*   포토티켓 자랑하기  */
 .photo_ticket .ptboast_wrap { position: relative; }
@@ -309,5 +316,13 @@
 	}
 	to {
 		height: 360px;
+	}
+}
+@-moz-keyframes downHeight {
+	from {
+		height: 360px;
+	}
+	to {
+		height: 331px;
 	}
 }

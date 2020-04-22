@@ -7,10 +7,7 @@ window.fnPreCart = fnPreCart;
 //구매하기버튼 클릭시 레이어팝업
 function fnPreCart(_btn) {
 	comPopupLayer(true, _btn, '0.8');
-
-
 }
-
 
 //팝업 공통
 function comPopupLayer(_state, _targetClassName, _bgOpacity){
@@ -33,7 +30,7 @@ function comPopupLayer(_state, _targetClassName, _bgOpacity){
 		/* [E] 핫딜에서는 이부분이 안탐. 퍼블수정필요 2019.11.23 by jangmangil */
 		jQuery('.dropDown').removeClass('active').end().find('.dTarget').hide();
 		jQuery('.btn_apply').removeClass('active');
-		
+
 		/* [S] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
 		gfnSetSwipeRefreshOnOff('Y'); // 'Y':새로고침사용, 'N':미사용
 		console.log("닫기버튼 이외에 스크롤 on 작동");
@@ -381,14 +378,14 @@ jQuery(function(){
 			par.find('.popup').animate({
 				top: "100%"
 			}, 300 );
-			
+
 			jQuery("body").removeClass("scrlOff");
-    
+
 		});
 
 
 		jQuery('.popup_dim').on('click', function(e){
-			
+
 			/* [S] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
 			if( jQuery(this).hasClass("full_popup") ) {
 				// 2019.12.11 극장상세팝업은 이벤트 제외.
@@ -399,7 +396,7 @@ jQuery(function(){
 				}
 			}
 			/* [E] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
-			
+
 			if(!jQuery(e.target).closest('.popup').length){
                 if( jQuery('.popup_dim').hasClass("active") ){
                     jQuery('.popup_dim').removeClass("active");
@@ -763,12 +760,12 @@ jQuery(document).ready(function() {
 		trapTabKey(jQuery(this), event);
 	})
 	jQuery('.popup_dim').keydown(function(event) {
-		
+
 		/* [S] 스크롤 ON 추가 2019.11.15 Add by jangmangil ***********/
 		//gfnSetSwipeRefreshOnOff('Y');
 		//console.log("닫기버튼 이외에 스크롤 on 작동");
 		/* [E] 스크롤 ON 추가 2019.11.15 Add by jangmangil ***********/
-		
+
 		trapTabKey(jQuery(this), event);
 	})
 
@@ -824,7 +821,7 @@ var dropDown = function (){
 		var dropdown = jQuery(this).closest('.dropDown');
 		var applyBtn = jQuery('.btn_apply');
 		//var setTop = jQuery('.orderDetail').position().top;
-		
+
 		if(!dropdown.is('.active')){
 			dropdown.addClass('active');
 			dropdown.find('>.dTarget').slideDown(150);
@@ -838,7 +835,7 @@ var dropDown = function (){
 				}else{
 					applyBtn.removeClass('active');
 				}
-				
+
 			}
 		}else{
 			dropdown.removeClass('active');
@@ -923,7 +920,7 @@ var dropDownClose = function(e){
 		// 	dropdownPar.find('.dTarget').slideDown(150).attr('tabindex',0).focus();
 		// }
 	*/
-	
+
 	/*
 	jQuery(document).on('click', '.dropDown .dTarget .closeDropDown', function (){
 		dropdownPar = jQuery(this).closest('.dropDown')
@@ -985,7 +982,7 @@ var popOpenFunc = function (popupTarget){
                 _top = "100px";
                 _height = "calc(100% - 100px)";
                 break;
-            
+
         }
 		jQuery('#' + popupTarget).find('.popup').animate({
             height: _height,
@@ -999,14 +996,14 @@ var popOpenTheaterFunc = function (popupTarget){
 	jQuery('#' + popupTarget).show().animate({
 		opacity: '1'
 	}, 300 );
-	
+
   jQuery('#' + popupTarget).find('.popup').animate({
     height: 'calc(100% - 100px)',
     top: '100px'
   }, 300 );
-	
+
 	jQuery('#' + popupTarget).attr('tabindex',0).focus();
-	
+
 	jQuery("body").addClass("scrlOff");
 }
 
@@ -1019,6 +1016,6 @@ var popCloseFunc = function (popupTarget){
 	jQuery('#' + popupTarget).find('.popup').animate({
 		top: "100%"
 	}, 300 );
-	
+
 	jQuery("body").removeClass("scrlOff");
 }

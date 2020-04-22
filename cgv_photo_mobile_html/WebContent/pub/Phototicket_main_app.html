@@ -16,15 +16,6 @@
     <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
     <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
     <link rel="canonical" href="http://www.cgv.co.kr/">
-    <!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [S] 2020.04.20	-->
     <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
     <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
     <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
@@ -33,15 +24,9 @@
     <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
     <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
     <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
-<!--    <script type="text/javascript" src="../js/morder.common.js"></script>-->
-<!--    <script type="text/javascript" src="../js/morder.appInterface.js"></script>-->
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
     <script type="text/javascript" src="../js/clipboard.min.js"></script>
     <script type="text/javascript" src="../js/date.js"></script>
-    <!--  [S] 2020.04.20 추가	-->
-    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src="../js/phototicket.js"></script>
-    <!--  [E] 2020.04.20 추가	-->
     <script type="text/javascript">
         //Global Variable
         var IsWebView_Master = false;
@@ -75,6 +60,19 @@
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
+
+    <!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <!--  [E] 2020.04.20	-->
 </head>
 <body class="bg_white">
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
@@ -83,11 +81,8 @@
     <!-- [S] Header -->
     <div id="header_box" class="pt_header">
         <header id="headerTitle">
-            <a href="javascript:void(0);">
-                <div class="title_area">
-                    <i class="sprite sprite-pt sprite-icBack"></i>
-                    <!--						<img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id="headerLeftBtn" src="" style="display: none;"/>-->
-                </div>
+            <a class="title_area" href="javascript:void(0);">
+                <i class="sprite sprite-pt sprite-icBack"></i>
             </a>
             <div class="title" id="headerTitleArea">포토티켓</div>
             <div class="btn_wrap">
@@ -285,9 +280,9 @@
                     }
                 },
                 on: {
-                    init: function () { 
+                    init: function () {
                         var nWindowWidth = $(window).width();
-                        var nPadding = (nWindowWidth-260)/2
+                        var nPadding = (nWindowWidth - 260) / 2
                         setTimeout(function () {
                             $('.slider_wrap .swiper-container')
                                 .css({
@@ -299,6 +294,7 @@
                     },
                 }
             });
+            photoTicketSlider.translateTo(0, 500, true, true);
             $(window).resize(function () {
                 location.reload();
             });
@@ -358,7 +354,8 @@
             <div class="title_wrap">
                 <div class="title">내 포토티켓</div>
                 <div class="all">
-                    <a class="btn-all" href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
+                    <a class="btn-all" href="javascript:void(0);">전체보기 <i
+                            class="sprite sprite-pt sprite-icTMore"></i></a>
                 </div>
             </div>
             <div class="card_wrap">
@@ -419,7 +416,8 @@
                         </div>
                     </div>
                     <div class="badge badge-red">
-                        <p class="dday">D-10</p><p class="txt">출력가능일</p>
+                        <p class="dday">D-10</p>
+                        <p class="txt">출력가능일</p>
                     </div>
                 </a>
                 <a class="card" href="javascript:void(0);">
@@ -459,7 +457,8 @@
                         <p class="txt">출력가능일</p>
                     </div>
                 </a>
-                <a  class="btn_grey" href="javascript:void(0);">더보기 <i class="sprite sprite-pt sprite-icDownMore"></i></a>
+                <a class="btn_grey" href="javascript:void(0);">더보기 <i
+                        class="sprite sprite-pt sprite-icDownMore"></i></a>
             </div>
         </article>
         <!--  [E] 내 포토티켓     -->
@@ -471,7 +470,8 @@
                     포토티켓 자랑하기<a class="badge" href="javascript:void(0);">내 포토티켓 자랑</a>
                 </div>
                 <div class="all">
-                    <a class="btn-all" href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
+                    <a class="btn-all" href="javascript:void(0);">전체보기 <i
+                            class="sprite sprite-pt sprite-icTMore"></i></a>
                 </div>
             </div>
             <div class="imgcard_wrap">
@@ -485,9 +485,7 @@
                                 <span class="user">good_photo</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>999</span>
                             </div>
-                            <div class="btn_like">
-                                <a><i class="sprite sprite-pt sprite-icLikeSel"></i></a>
-                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
                     <div class="col ">
@@ -499,9 +497,8 @@
                                 <span class="user">good_photo</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
                             </div>
-                            <div class="btn_like">
-                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
-                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+
                         </div>
                     </div>
                 </div>
@@ -515,9 +512,7 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>10</span>
                             </div>
-                            <div class="btn_like">
-                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
-                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
                     <div class="col ">
@@ -529,9 +524,7 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
                             </div>
-                            <div class="btn_like">
-                                <a><i class="sprite sprite-pt sprite-icLikeSel"></i></a>
-                            </div>
+                            <a class="btn_like" href="javascript:void(0);" ><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
                 </div>
@@ -545,9 +538,7 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
                             </div>
-                            <div class="btn_like">
-                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
-                            </div>
+                            <a class="btn_like" href="javascript:void(0);" ><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
                     <div class="col ">
@@ -559,9 +550,7 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
                             </div>
-                            <div class="btn_like">
-                                <a><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
-                            </div>
+                            <a class="btn_like" href="javascript:void(0);" ><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
                 </div>

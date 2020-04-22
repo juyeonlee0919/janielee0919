@@ -1,90 +1,6 @@
-//팝업 공통
-function comPopupLayer(_state, _targetClassName, _bgOpacity){
-    /* 인자값 정의 :
-        _state  :
-            - true : open
-            - false : close
-        _targetClassName : 팝업레이어 className
-        _bgOpacity : Dim opacity (0 ~ 1)
-    */
-    function hide_com_pop(){
-        jQuery('.btnTop').show();
-        fnScrollFixed(false);
-        /* [S] 핫딜에서는 이부분이 안탐. 퍼블수정필요 2019.11.23 by jangmangil */
-        jQuery('.' + _targetClassName).show().stop().animate({'bottom':'0'}, 200, function(e){
-//			e.preventDefault();
-//			e.stopPropagation();
-            jQuery('.' + _targetClassName).hide();
-        });
-        /* [E] 핫딜에서는 이부분이 안탐. 퍼블수정필요 2019.11.23 by jangmangil */
-        jQuery('.dropDown').removeClass('active').end().find('.dTarget').hide();
-        jQuery('.btn_apply').removeClass('active');
 
-        /* [S] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
-        gfnSetSwipeRefreshOnOff('Y'); // 'Y':새로고침사용, 'N':미사용
-        console.log("닫기버튼 이외에 스크롤 on 작동");
-        /* [E] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
-        jQuery('.com_pop_fog').css({'opacity': '0', 'top':'150%', 'display': 'none'});
-        jQuery('.com_pop_btn_close, .com_pop_fog').off('click  touchstart');
-    };
-    if(_state){
-        fnScrollFixed(true);
-        jQuery('.com_pop_fog').first().css({'opacity':_bgOpacity, 'top':'0', 'display': 'block'});
-        jQuery('.btnTop').hide();
-        jQuery('.com_pop_btn_close, .com_pop_fog').on('click touchstart', function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            hide_com_pop();
-        });
-        setTimeout(function(){
-            jQuery('.com_pop_header').find('a:first').focus();
-        }, 0);
-        jQuery('.' + _targetClassName).show().stop().animate({'bottom':'100%'}, 200, function(e){
-            //e.preventDefault();
-            //e.stopPropagation();
-        });
-
-    }else{
-        hide_com_pop();
-    }
-    return this;
-
-}
-
-function fnFixedScroll(_is) {
-    if (_is) {
-        jQuery('body').addClass('scrlOff');
-        //            jQuery(window).bind('scroll').scroll(function(e){jQuery(this).scrollTop(top).scrollLeft(left);e.preventDefault();e.stopPropagation();});
-    } else {
-        jQuery('body').removeClass('scrlOff');
-        //            jQuery(window).unbind('scroll');
-    }
-}
-
-function fnScrollFixed(_is){
-    currentScroll = jQuery(this).scrollTop();
-    if(_is){
-        jQuery('body').addClass('scrlOff');
-        jQuery('body').css({'top':(-1 * currentScroll) + 'px'});
-        jQuery(win).bind('scroll').scroll(function(e){
-            jQuery(this).scrollTop(0).scrollLeft(0);
-            e.preventDefault();
-            e.stopPropagation();
-        });
-    }else{
-        jQuery('body').removeClass('scrlOff');
-        jQuery(win).unbind('scroll');
-        jQuery(this).scrollTop(currentScroll);
-        jQuery('body').css({'top':'auto'});
-
-        jQuery(this).on({
-            scroll:function(){
-                var _scrollTop = jQuery(this).scrollTop();
-                (_scrollTop > 0)?jQuery('.btnTop').show():jQuery('.btnTop').hide();
-            }
-        });
-    }
-}
+var win = this;
+var focusReturn = 0;
 
 //사이트맵
 window.siteMapFn = siteMapFn;
@@ -112,80 +28,86 @@ function dimed(){
     }
 }
 
-//팝업공통(운영소스)
-function popLayerShowHide(_btn, _popLayer, _fogBg) {
-    var jQuerybtn = jQuery('.' + _btn);
-    var jQuerypopLayer = jQuery('.' + _popLayer);
-    var jQueryfogBg = jQuery('.' + _fogBg);
-    var _isFogBg = jQueryfogBg.is(':visible');
-    jQuerypopLayer.siblings("div:not('.popFogBg')").hide();
-    jQuerybtn.off('click');
-    jQuerybtn.on({
-        click: function () {
-            jQueryfogBg.css({ 'opacity': '.5', 'top': '0' });
-            popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
-        }
-    });
-}
-function popLayerBgShowHide(_target, _contentTarget, _is){    // pop dim
-    if(!_is){
-        fnFixedScroll(true);
-        _contentTarget.show().stop().animate({'bottom':'0'},200);
-        setTimeout(function(){
-            jQuery('.popLayerHeader').find('a:first').focus();
-        }, 0);
-        _target.show().on({
-            click:function(){
-                _contentTarget.stop().animate({'bottom':'-100%'}, 200, function(){
-                    fnFixedScroll(false);
-                    _target.hide();
-                    _contentTarget.hide();
-                });
+//팝업
+jQuery(function(){
+    //layerpopup
+    function couponPop (){
+        //popup open
+        jQuery('[data-popup]').on('click', function (){
+            var popupTarget = jQuery(this).data('popup');
+            jQuery('#' + popupTarget).show().animate({
+                opacity: '1'
+            }, 300 );
+            if (jQuery('#' + popupTarget).hasClass('full_popup')){
+                jQuery('#' + popupTarget).find('.popup').animate({
+                    top: "0"
+                }, 300 );
+
+            } else {
+                jQuery('#' + popupTarget).find('.popup').animate({
+                    top: "100px"
+                }, 300 );
             }
-        }, function(){
-            _target.off('click');
+            jQuery('#' + popupTarget).attr('tabindex',0).focus();
         });
 
-        jQuery('.btnPopClose').on({
-            click:function(){
-                _contentTarget.find('.popLayerFooter').off('focusout');
-                jQuery('.btnPopClose').off('focusout');
-                _target.trigger('click');
-                setTimeout(function(){
-                    jQuery('.btnLayerPop').focus();
-                }, 0);
-            },
-            focusout:function(){
-                setTimeout(function() {
-                    if(!(jQuery(':focus').parents().hasClass('popLayer'))){
-                        jQuery('.btnPopConfirm').focus();
-                    }
-                }, 0);
-            }
+        // popup close
+        jQuery('.popup_dim').find('.btn_close, .btnPopClose').on('click',function(e){
+            e.preventDefault();
+            var par = jQuery(this).closest('.popup_dim');
+            par.animate({
+                opacity: "0"
+            }, 300 , function(){
+                par.hide();
+            });
+            par.find('.popup').animate({
+                top: "100%"
+            }, 300 );
+
+            jQuery("body").removeClass("scrlOff");
+
         });
 
-        _contentTarget.find('.popLayerFooter').on({
-            focusout:function(){
-                setTimeout(function() {
-                    if(!(jQuery(':focus').parents().hasClass('popLayer'))){
-                        jQuery('.btnPopClose').focus();
-                    }
-                }, 0);
+        jQuery('.popup_dim').on('click', function(e){
+
+            /* [S] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
+            if( jQuery(this).hasClass("full_popup") ) {
+                // 2019.12.11 극장상세팝업은 이벤트 제외.
+                if( jQuery(this).attr("id") != "popupTheatherLocation" ) {
+                    gfnSetSwipeRefreshOnOff('Y'); // 'Y':새로고침사용, 'N':미사용
+                    console.log(".popup_dim .full_popup 닫기버튼 이외에 스크롤 on 작동");
+                    jQuery("body").removeClass("scrlOff");
+                }
+            }
+            /* [E] 닫기버튼 이외에 스크롤 on 작동로직 추가 2019.11.15 add by jangmangil ********/
+
+            if(!jQuery(e.target).closest('.popup').length){
+                if( jQuery('.popup_dim').hasClass("active") ){
+                    jQuery('.popup_dim').removeClass("active");
+                }
+                else {
+                    jQuery(this).animate({
+                        opacity: '0'
+                    }, 300 , function(){
+                        jQuery(this).hide();
+                    });
+                    jQuery(this).find('.popup').animate({
+                        top: "100%"
+                    }, 300 );
+                }
             }
         });
-    }else{
-        _contentTarget.stop().animate({'bottom':'-100%'}, 200, function(){
-            fnFixedScroll(false);
-            _target.hide();
-            _contentTarget.hide();
-        });
-        jQuery('.btnPopClose').off('click');
     }
-}
-function fnFixedScroll(_is) {
-    if (_is) {
-        jQuery('body').addClass('scrlOff');
-    } else {
-        jQuery('body').removeClass('scrlOff');
+    couponPop();
+
+    //layerpopup - alert
+    function alertPopupClose() {
+        jQuery('.layer_pop_re .btn_x').on('click',function(){
+            if(jQuery(this).closest(".layer_pop_re").hasClass('isActive')) {
+                jQuery(this).closest(".layer_pop_re").removeClass('isActive');
+            }
+        })
     }
-}
+    alertPopupClose();
+
+});
