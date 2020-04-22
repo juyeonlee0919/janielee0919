@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>CGV</title>
+	<!-- [S] 운영소스 상속용 -->
+	<link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+	<link rel="canonical" href="http://www.cgv.co.kr/">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+	<!--<script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+	<script type="text/javascript" src="../js/morder.common.js"></script>
+	<script type="text/javascript" src="../js/morder.appInterface.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript">
+		//Global Variable
+		var IsWebView_Master = false;
+		var IsWebViewIPhone_Master = false;
+		var IsNewVersion_Master = false;
+		var AppVersion_Master = 0;
+		var IsIphone_Master = false;
+		var IOSVersion_Master = 0;
+
+		jQuery(document).ready(function () {
+			//아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+			var strIphonenavi = "";
+			if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+				var tmp_url = location.href;
+				history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+				var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+				location.href = tmp_url_rep;
+			}
+		});
+	</script>
+	<meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+	<meta property="og:title" content="CGV 패키지">
+	<meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+	<meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+	<meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:ios:app_store_id" content="370441190">
+	<meta property="al:ios:app_name" content="CGV">
+	<meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:android:package" content="com.cgv.android.movieapp">
+	<meta property="al:android:app_name" content="CGV">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+	<!-- [E] 운영소스 상속용 -->
+</head>
+<body>
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+<div class="wrap">
+
+	<!-- [S] Header -->
+	<div id="header_box">
+		<header id="headerTitle" class="cls_headertitle_box">
+			<a href="javascript:siteMapFn();">
+				<div class="ico_lt">
+					<img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id="headerLeftBtn" src="" style="display: none;"/>
+				</div>
+			</a>
+			<div class="title" id="headerTitleArea">내 기프트콘</div>
+			<div class="txt_rt"><a href="#">뒤로</a></div>
+		</header>
+
+	</div>
+	<!-- [E] Header -->
+
+
+	<!-- [S] Content -->
+	<section class="content_wrap container mOrder_giftCon" id="ContainerView">
+		<article class="giftCon_detail">
+
+			<!-- 라벨 case 별
+			<span class="label_useComplete">사용완료</span>
+			<span class="label_usecancel">기간만료</span>
+			<span class="label_usecancel">결제환불</span>
+			<span class="label_usecancel">결제취소</span>
+			-->
+
+			<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="라지콤보"></div>
+			<span class="giftCon_textwrap">
+				<span class="textwrap_title">라지콤보</span>
+				<span class="textwrap_from">From : 이수지님의 선물</span>
+			</span>
+			<div class="img_barcode">
+				<img src="../images/dummy/img_barcode.gif" alt="라지콤보 바코드">
+			</div>
+            <div class="btn_flexBox">
+                <a href="#" class="com_btn_full_action">바로 사용하기</a>
+            </div>
+		</article>
+
+		<article class="giftCon_info">
+			<div class="store_detail_product">
+				<dl class="store_deatail_add_info">
+					<dt>상품구성</dt>
+					<dd>
+                        팝콘(L)1+음료(M)2+스낵(오징어,핫도그)
+                        <!--추가 상품 없을 시 : 팝콘(L)1+음료(M)2 / 추가구매상품 없음-->
+                    </dd>
+					<dt>유효기간</dt>
+					<dd><span class="point_color">~2020.02.09</span></dd>
+					<dt>상품교환</dt>
+					<dd><a href="#" class="btn_available_viewcgv" data-popup="popAvailableCgv">사용가능 CGV 보기</a></dd>
+					<dt>선물수신일 </dt>
+					<dd>2019.07.10</dd>
+					<!--<dt>원산지</dt>
+					<dd>팝콘: 옥수수(미국산)</dd>-->
+					<dt>기프트콘 상태</dt>
+					<dd>사용가능</dd>
+					<dt>고객센터</dt>
+					<dd>1544-1122</dd>
+				</dl>
+			</div>
+
+            <article class="store_detail_product">
+                <dl class="com_txtboxdesign">
+                    <dt>이용안내</dt>
+                    <dd>
+                        <ul>
+                            <li>해당 기프트콘은 오프라인 매점에서 실제 상품으로 교환할 수 있는 온라인 상품권입니다.</li>
+                            <li>구매 후 전송받으신 기프트콘은,<br>
+                                사용가능한 CGV의 매점에서 지정된 해당 상품으로만 교환이 가능합니다.<br>
+                                (사용가능 CGV는 "상품교환"에서 확인 가능합니다)<br>
+                                해당 상품 내에서 팝콘 혹은 음료, 스낵 변경 시 추가 비용이 발생합니다.<br>
+                                교환 완료한 상품의 환불 및 반품은 불가합니다.</li>
+                            <li>유효기간 연장을 신청하는 경우, 유효기간은 발급일로부터 5년 이내 횟수 제한 없이 기간 연장 가능하며, 1회 연장 시 3개월(92일) 단위로 유효기간이 연장됩니다.<br>
+                                단, 이벤트 경품 및 프로모션 상품의 경우 유효기간 연장이 불가할 수 있습니다.<br>
+                                유효기간 만료 이후에는 결제금액의 90% 환불이 가능합니다.</li>
+                            <li>매점상품 기프트콘은 극장 매점에서 상품 교환 후 수령한 영수증으로 CJ ONE 적립이 가능합니다.<br>
+                                (모바일App,웹 &gt; MY &gt; 매점적립 or 홈페이지&gt; My CGV &gt; 매점이용 포인트 적립)</li>
+                            <li>상기 이미지는 실제와 다를 수 있습니다.</li>
+                        </ul>
+                    </dd>
+                    <dt>취소/환불</dt>
+                    <dd>
+                        <ul>
+                            <li>구매자는 최초 유효기간 이내에 결제금액의 100%에 대해 결제취소/환불이 가능하며, 최초 유효기간 만료 후에는 수신자가 결제금액의 90%에 대해 환불 요청 가능합니다.
+                                <br>단, 이미 사용된 기프트콘에 대해서는 결제취소/환불 신청이 불가합니다.</li>
+                            <li>결제취소/환불 방법<br>
+                                결제취소는 모바일App,웹 &gt; MY &gt; 결제내역조회 &gt; 스토어 or 홈페이지 &gt; My CGV &gt; 스토어 &gt; 결제내역의 해당 주문 상세내역에서 가능합니다.<br>
+                                (기프트콘은 구매일로부터 60일 이내 결제취소 가능하며, 카드 결제취소 가능 기간이 경과하였을 경우, 고객센터로 연락주시면 됩니다)<br>
+                                환불은 모바일App,웹 &gt; MY &gt; 기프트콘 or 홈페이지 &gt; My CGV &gt; 스토어 &gt; 내 기프트콘에서 환불을 원하는 기프트콘 등록 후 진행 가능하며, 비회원의 경우 고객센터로 신청 가능합니다.<br>
+                                단 이 때, 본인 확인 및 계좌 확인 절차가 진행됩니다.<br></li>
+                            <li>수신자는 선물받은 기프트콘의 수신거절을 요청할 수 있으며, 이 경우 구매자에게 취소 및 환불에 대한 안내가 이루어집니다.</li>
+                            <li>결제취소 가능 기간이 경과한 후 수신자가 수신거절을 요청할 경우 구매자에게 기프트콘이 재발송됩니다. <br>CGV고객센터 1544-1122</li>
+                        </ul>
+                    </dd>
+                </dl>
+            </article>
+		</article>
+
+        <!-- [S] 팝업 -->
+        <div class="com_pop_wrap">
+            <div class="com_pop_fog"></div>
+
+            <!-- [S] 사용가능한 CGV 팝업 -->
+            <div class="popup_dim" id="popAvailableCgv">
+                <div class="popup pop_available_cgv">
+                    <div class="com_pop_header">
+                        <span>사용가능한 CGV</span>
+                        <a href="#" class="btn_close _closePopup"><i class="sprite com_pop_btn_close"><span class="sr-only">팝업 닫기</span></i></a>
+                    </div>
+                    <div class="com_pop_container" id="divAvailableCgv">
+                        <div class="pop_available_title">
+                            <ul id="theaterRegion">
+                                <li class="active" id="liTheater01" data-theater="01">
+                                    <a href="#">서울</a><span>26</span>
+                                </li>
+                                <li class="" id="liTheater02" data-theater="02">
+                                    <a href="#">경기</a><span>30</span>
+                                </li>
+                                <li class="" id="liTheater202" data-theater="202">
+                                    <a href="#">인천</a><span>8</span>
+                                </li>
+                                <li class="" id="liTheater12" data-theater="12">
+                                    <a href="#">강원</a><span>4</span>
+                                </li>
+                                <li class="" id="liTheater03" data-theater="03">
+                                    <a href="#">대전/충청</a><span>15</span>
+                                </li>
+                                <li class="" id="liTheater11" data-theater="11">
+                                    <a href="#">대구</a><span>9</span>
+                                </li>
+                                <li class="" id="liTheater207" data-theater="207">
+                                    <a href="#">부산/울산</a><span>11</span>
+                                </li>
+                                <li class="" id="liTheater204" data-theater="204">
+                                    <a href="#">경상</a><span>10</span>
+                                </li>
+                                <li class="" id="liTheater206" data-theater="206">
+                                    <a href="#">광주/전라/제주</a><span>17</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation01">
+                            <ul>
+                                <li><a href="#">CGV강남</a></li>
+                                <li><a href="#">CGV강변</a></li>
+                                <li><a href="#">CGV건대입구</a></li>
+                                <li><a href="#">CGV구로</a></li>
+                                <li><a href="#">CGV대학로</a></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation02">
+                            <ul>
+                                <li><a href="#">CGV경기광주</a></li>
+                                <li><a href="#">CGV광교상현</a></li>
+                                <li><a href="#">CGV구리</a></li>
+                                <li><a href="#">CGV김포운양</a></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation202">
+                            <ul>
+                                <li><a href="#">CGV계양</a></li>
+                                <li><a href="#">CGV연수역</a></li>
+                                <li><a href="#">CGV인천</a></li>
+                                <li><a href="#">CGV인천공항</a></li>
+                                <li><a href="#">CGV인천논현</a></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation12">
+                            <ul>
+                                <li><a href="#">CGV강릉</a></li>
+                                <li><a href="#">CGV원주</a></li>
+                                <li><a href="#">CGV춘천</a></li>
+                                <li><a href="#">CGV춘천명동</a></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation03">
+                            <ul>
+                                <li><a href="#">CGV대전</a></li>
+                                <li><a href="#">CGV대전가오</a></li>
+                                <li><a href="#">CGV대전탄방</a></li>
+                                <li><a href="#">CGV대전터미널</a></li>
+                                <li><a href="#">CGV유성온천</a></li>
+                                <li><a href="#">CGV보령</a></li>
+                                <li><a href="#">CGV서산</a></li>
+                                <li><a href="#">CGV세종</a></li>
+                                <li><a href="#">CGV천안</a></li>
+                                <li><a href="#">CGV천안펜타포트</a></li>
+                                <li><a href="#">CGV청주(서문)</a></li>
+                                <li><a href="#">CGV청주율량</a></li>
+                                <li><a href="#">CGV청주지웰시티</a></li>
+                                <li><a href="#">CGV청주터미널</a></li>
+                                <li><a href="#">CGV홍성</a></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation11">
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation207">
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation204">
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="pop_available_content" id="divLocation206">
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [E] 사용가능한 CGV 팝업 -->
+        </div>
+        <!-- [E] 팝업 -->
+
+        <!-- 지역별  CGV 상세 -->
+        <div id="popupTheatherLocation" class="popup_dim full_popup" style="z-index:10000">
+
+            <div class="popup popup_theather_all" style="top:100%;">
+                <div class="popup_header">
+                    <a href="#" class="btn_close _closePopup"><i class="sprite sprite_common icon_popup_close_red"></i></a>
+                    <h1>극장선택</h1>
+                </div>
+                <div class="popup_container">
+
+                    <div class="cgv_choice area">
+                        <ul>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0056">
+                                    <div class="lst_line">
+                                        <strong>CGV강남</strong>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0001">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV강변</strong><span class="txt">CGV강변은 강변역 테크노마트에 있습니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0229">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV건대입구</strong><span class="txt">※주차공간이 매우 협소하므로 대중교통 이용 부탁드립니다※</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0010">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV구로</strong><span class="txt">주차정산은 6F, 8F 무인정산기 이용 부탁드립니다.(지류 티켓 바코드 또는, 모바일 티켓 QR코드 이용)</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0063">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV대학로</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0252">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV동대문</strong><span class="txt">※ 주차공간이 협소함으로 대중교통 이용 부탁드립니다.※</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0230">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV등촌</strong><span class="sticker">신규오픈</span><span class="txt">입점 건물 주차장 만차 시에 홈플러스 강서점 주차장 이용 부탁드립니다.(티켓 지참 시에 3시간 무료)</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0009">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV명동</strong><span class="txt">(눈스퀘어 8층) 주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0105">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV명동역 씨네라이브러리</strong><span class="txt">CGV명동역 씨네라이브러리는 4호선 명동역에 있습니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0011">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV목동</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0057">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV미아</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0030">
+                                    <div class="lst_line">
+                                        <strong>CGV불광</strong>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0046">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV상봉</strong><span class="txt">※주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0083">
+                                    <div class="lst_line">
+                                        <strong>CGV성신여대입구</strong>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0088">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV송파</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0276">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV수유</strong><span class="txt">주차 공간이 매우 협소하므로 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0150">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV신촌아트레온</strong><span class="txt">주차 공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=P001">
+                                    <div class="lst_line">
+                                        <strong>CGV씨네드쉐프 압구정</strong>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=P013">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV씨네드쉐프 용산</strong><span class="sticker">신규오픈</span><span class="txt">차량 이용시 달주차장 4-5F 이용부탁드립니다. 주차공간이 매우 혼잡하오니 여유시간을 두고 방문 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0040">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV압구정</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0112">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV여의도</strong><span class="txt">주차공간이 협소하므로 여유시간을 두고 방문해주세요.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0059">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV영등포</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0074">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV왕십리</strong><span class="txt">주차장이 매우 혼잡하오니 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0013">
+                                    <div class="lst_line">
+                                        <strong>CGV용산아이파크몰</strong>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0131">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV중계</strong><span class="txt">CGV중계는 홈플러스 중계점 8층에 있습니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0199">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV천호</strong><span class="txt">CGV천호는 굽은다리역 홈플러스 4층에 있습니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0107">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV청담씨네시티</strong><span class="txt">호림주차장은 CGV에서 정산하셔야 합니다. (이용시간확인必)</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0223">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV피카디리1958</strong><span class="txt">1/3/5호선 종로3가역 2-1번출구와 연결되어 있습니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0164">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV하계</strong><span class="txt">주차공간이 협소하므로 가급적 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="TheaterDetail.aspx?tc=0191">
+                                    <div class="lst_line intxt">
+                                        <strong>CGV홍대</strong><span class="txt">건물 내 주차장이 없으니 대중교통 이용을 부탁드립니다.</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 지역별  CGV 상세 -->
+
+	</section>
+
+	<!-- [E] Content -->
+</div>
+
+<!-- [S] Footer -->
+<footer id="div_footer">
+	<p class="footerLink">
+		<a href="/WebAPP/Support/noti.aspx"><span>공지사항</span></a>
+		<a href="/WebApp/Support/faq.aspx"><span>고객센터</span></a>
+		<a href="#" title="로그아웃"><span>로그아웃</span></a>
+		<a href="#" id="footer_pc" title="PC버전"><span>PC버전</span></a>
+	</p>
+	<section class="footerContents">
+		<h1><a href="http://corp.cgv.co.kr/" target="_blank" class="spriteFooter footerLogo">CGV</a></h1>
+		<ul class="footerContentsLink">
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=10"  title="이용약관" >이용약관</a></li>
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=11"  title="개인정보 처리방기" >개인정보 처리방침</a></li>
+			<li><a href="/Agreement/Agreement_disclaimer.aspx" title="법적고지" >법적고지</a></li>
+		</ul>
+		<dl class="companyInfo">
+			<dt>대표이사</dt>
+			<dd>최병환</dd>
+			<dt>사업자등록번호</dt>
+			<dd>104-81-45690</dd>
+			<dt>통신판매업신고번호</dt>
+			<dd>2017-서울용산-0662</dd>
+			<dt>개인정보보호 책임자</dt>
+			<dd>정종민</dd>
+			<dt>주소</dt>
+			<dd><address>(04377)서울특별시 용산구 한강대로<br>23길 55, 아이파크몰 6층(한강로동)</address></dd>
+		</dl>
+	</section>
+	<p class="footerReserved">© CJ CGV. All Rights Reserved</p>
+</footer>
+<!-- [E] Footer -->
+
+
+<!-- [S] 운영소스 상속용 -->
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script> -->
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script> -->
+<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/ui.page.css" />
+<!-- [E] 운영소스 상속용 -->
+
+<!-- [S] 바로오더 신규 -->
+<script type="text/javascript" src="../js/instOrder.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/instOrder.css" />
+<!-- [E] 바로오더 신규 -->
+
+</body>
+</html>

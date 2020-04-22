@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 dummy -->
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="https://nsso.cjone.com/findCookieSecured.jsp?cjssoq=AhgXdHfDlGExuGYCE3llXbRsRN%2blnsAnhr5ijZw%2bIPd6XwAQjcF%2fNch7a4FsMRiR62cefBzioCHYqvTZBXqLDUZDTjFNQmIvTWg2YlhFYmZTOXRjbUVGbUtUTmdIM2xiYU9jM2svQXBlREJNRHo3S1YvZ0NZTmsyaWtubVl6NjI%3d"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+		var IsWebViewIPhone_Master = false;
+		var IsNewVersion_Master = false;
+		var AppVersion_Master = 0;
+		var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+	        //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+	    });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">   
+    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE"> 
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+    <!-- [E] 운영소스 상속용 dummy -->    
+</head>
+<body>
+    <div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+    <div class="wrap">
+	     <!-- [S] Header -->
+	    <div id="header_box">
+	        <header id="headerTitle" class="cls_headertitle_box">
+	            <a href="javascript:siteMap();">
+	                <div class="ico_lt">
+	                    <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id='headerLeftBtn' src='' style='display: none;'/>
+	                </div>
+	            </a>
+	            <div class='title' id='headerTitleArea'>스마트영수증</div>
+	        </header>
+	        
+	        <!-- [S] siteMap -->
+	        <section class="allview_wrap" id="siteMap">
+                <div id="fogbg" onclick="javascript:close_sitemap()"></div>
+                <article class="allview_box_wrap">
+                    <div class="allview_box_in">
+                        <h2 class="hidden">전체메뉴</h2>
+
+                        <div class="allview_header">
+                            <a href="/" class="cgv_logo">CGV 홈</a>
+                        </div>
+                        <div class="area">
+                            <ul class="group_wrap">
+                                <li><a href="#" title="My CGV" ><b>My CGV</b></a><span class="countnum">1</span></li>
+                                <li><a href="#"><b>빠른예매</b></a></li>
+                                <li><a href="#"><b>상영시간표</b></a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="CGV안내">CGV안내</a></li>
+                                <li><a href="#" title="스토어">스토어</a></li>
+                                <li><a href="#" title="아트하우스">아트하우스</a></li>
+                                <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>
+                                <li><a href="#" title="이벤트">이벤트</a></li>
+                                <li><a href="#" title="매거진">매거진</a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="IMAX">IMAX</a></li>
+                                <li><a href="#" title="4DX">4DX</a></li>
+                                <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>
+                                <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>
+                                <li><a href="#" title="STARIUM">STARIUM</a></li>
+                                <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                                <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>
+
+                                <li><a href="#" title="Screen X">Screen X</a></li>
+                                <li><a href="#" title="Sound X">Sound X</a></li>
+                                <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                                <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>
+                                <li><a href="#" title="SphereX">Sphere X</a></li>
+                                <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>
+                                <li><a href="#" title="SKYBOX">SKYBOX</a></li>
+                                <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="고객센터">고객센터</a></li>
+                                <li><a href="#" title="Club서비스">Club서비스</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_close" onclick="javascript:close_sitemap();">창 닫기</button>
+                    </div>
+                </article>
+            </section>
+            <!--// [E] siteMap -->
+            
+	    </div>
+	    <!-- [E] Header -->
+
+        <!-- [s] content_wrap -->
+        <section class="content_wrap smart-receipt-area">
+            <div class="smart-receipt-bg">
+            </div>
+
+            <div class="receipt-wrap">
+                <section class="smart-receipt">
+                    
+                    
+
+                    <section class="order movie">
+                        <div class="order-table">
+
+                            <section class="qr-header">
+                                <div class="qr-area" id="qr-area"></div>
+                                <div class="movie-info order-info">
+                                    <h3 class="title order">주문번호 <strong>6층 매점 - 3번</strong></h3>
+                                </div>
+                            </section>
+
+                            <table>
+                                <colgroup>
+                                    <col style="width: 25px">
+                                    <col>
+                                    <col style="width: 20%">
+                                    <col style="width: 28px">
+                                    <col style="width: 20%">
+                                </colgroup>
+                                <thead>
+                                    <th scope="col">No</th>
+                                    <th scope="col">상품명</th>
+                                    <th scope="col" class="right-data">단가</th>
+                                    <th scope="col">수량</th>
+                                    <th scope="col" class="right-data">금액</th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="number">1</td>
+                                        <td class="item" colspan="3">곤지암(ScreenX 숏버전) + 링(폭염특가-동시상영)</td>
+                                        <td class="bd_txt">40,000</td>
+                                    </tr>
+
+                                    <tr class="summary">
+                                        <td colspan="5">
+                                            <div class="summary-group">
+                                                <dl>
+                                                    <dt class="number"></dt>
+                                                    <dt class="item">청소년</dt>
+                                                    <dd class="u-price">9,000</dd>
+                                                    <dd class="count">2</dd>
+                                                    <dd class="price">18,000</dd>
+                                                </dl>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="summary">
+                                        <td colspan="5">
+                                            <div class="summary-group">
+                                                <dl>
+                                                    <dt class="number"></dt>
+                                                    <dt class="item">일반</dt>
+                                                    <dd class="u-price">11,000</dd>
+                                                    <dd class="count">1</dd>
+                                                    <dd class="price">11,000</dd>
+                                                </dl>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr class="total">
+                                        <td colspan="5">
+                                            <dl>
+                                                <dt>TOTAL</dt>
+                                                <dd>29,000</dd>
+                                            </dl>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+
+                            <div class="table-summary">
+                                <div class="summary-group">
+                                    <dl>
+                                        <dt>공급가액</dt>
+                                        <dd>25,573</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>부가세</dt>
+                                        <dd>2,557<br>(영화발전기금 3% 포함)
+                                        </dd>                   
+                                    </dl>
+                                </div>
+                                <div class="summary-group detail-payment-history">
+                                    <dl class="title card">
+                                        <dt>신용카드</dt>
+                                        <dd>29,000원</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>승인금액</dt>
+                                        <dd>29,000</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>카드번호</dt>
+                                        <dd>1234-56**-****</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>카드사명</dt>
+                                        <dd>롯데카드사</dd>                   
+                                    </dl>
+                                    <dl>
+                                        <dt>승인번호</dt>
+                                        <dd>22440011 일시불</dd>
+                                    </dl>
+                                </div>
+                                <div class="summary-group">
+                                    <dl>
+                                        <dt>CJ ONE 가용포인트</dt>
+                                        <dd>15,100</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>CJ ONE 접립포인트</dt>
+                                        <dd>1,950</dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                            <div class="caution">
+                                <ul>
+                                    <li>적립포인트는 익일 가용포인트로 전환</li>
+                                    <li>1천포인트 이상 시 사용 가능</li>
+                                </ul>
+                            </div>
+                            <div class="barcode-area">
+                                <svg class="barcode128"
+                                    jsbarcode-format="code128"
+                                    jsbarcode-value="2019072526949855"
+                                    jsbarcode-text="2019-0725-2694-9855"
+                                    jsbarcode-width="2"
+                                    jsbarcode-height="50"
+                                    jsbarcode-background="rgba(255,255,255,0)"
+                                    jsbarcode-margin="5"
+                                    jsbarcode-fontsize="14"
+                                    jsbarcode-textmargin="3"
+                                    jsbarcode-fontoptions="bold" preserveAspectRatio="none">
+                                </svg>
+                            </div>
+                            
+                            <div class="caution point-acc">
+                                <p class="acc-tit">CJ ONE 포인트 꼭 적립하세요!</p>
+                                <dl>
+                                    <dt>적립번호</dt>
+                                    <dd>9999-9999-9999-9999</dd>
+                                </dl>
+                                <dl>
+                                    <dt>인증번호</dt>
+                                    <dd>098</dd>
+                                </dl>
+                                <dl>
+                                    <dt>적립시 지급포인트</dt>
+                                    <dd>999점</dd>
+                                </dl>
+                                <div class="info notice">
+                                    <ul>
+                                        <li>1일 최대 3회 적립 / 48시간 이내 적립</li>
+                                        <li>적립방법<span class="course-txt">CGV홈페이지 > MY CGV > CJONE포인트 > 매점이용 포인트 적립클릭</span><span class="course-txt">CGV APP > MY > 매점적립 클릭</span></li>
+                                    </ul>
+                                </div>
+                                <ul>
+                                    <li>영수증 미지참시 교환, 환불 불가</li>
+                                    <li>결제수단 변경 및 교환, 환불은 구매한 매장에서 구매 당일 내 가능</li>
+                                </ul>
+                            </div>
+                            <div class="barcode-area">
+                                <svg class="barcode128"
+                                    jsbarcode-format="code128"
+                                    jsbarcode-value="2019072526949855"
+                                    jsbarcode-text="2019-0725-2694-9855"
+                                    jsbarcode-width="2"
+                                    jsbarcode-height="50"
+                                    jsbarcode-background="rgba(255,255,255,0)"
+                                    jsbarcode-margin="5"
+                                    jsbarcode-fontsize="14"
+                                    jsbarcode-textmargin="3"
+                                    jsbarcode-fontoptions="bold" preserveAspectRatio="none">
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- <div class="theater-msg">
+                        <p>방탄소년단 정국의 23번째 생일을 축하합니다.<br>9월 1일 축복이 태어난 날<br>정국아 언제나 행복하기를</p>
+                        <p>MADE IN1997 FOR BTS<br>JUNGKOOK</p>
+                    </div> -->
+                    <div class="store-info">
+                        <h2 class="title">
+                            CGV 용산아이파크몰 <span class="tell">1544-1122</span>
+                        </h2>
+                        한강대로23길 55, 아이파크몰 6층<br>
+                        104-81-45690<br>
+                        대표 : 최병환
+                        <span class="info">
+                            KIOSK0005<br>
+                            2019-06-21 19:02
+                        </span>
+                    </div>
+                    <div class="info notice">
+                        <h3 class="title info">알려드립니다</h3>
+                        <ul>
+                            <li>영수증 미지참시 교환, 환불 불가</li>
+                            <li>결제수단 변경 및 교환, 환불은 구매한 매장에서 구매 당일 내 가능</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="dummy-space"></div>
+            
+            <div class="receipt-wrap">
+                <section class="smart-receipt coupon">
+                    <h2 class="title ticket">티켓메세지</h2>
+                    <div class="coupon-txt">
+                        <strong>4DX 1만원 관람쿠폰</strong>
+
+                        <span class="validity"><strong>유효기간</strong> 2019/07/12 - 2019/07/12</span>
+                        cgv콤보를 구매하는 모든 고객들에게
+                        알라딘 4DX 1만원 관람쿠폰을 증정합니다.
+                        <div class="barcode-area">
+                            <svg class="barcode128"
+                                jsbarcode-format="code128"
+                                jsbarcode-value="2019072526949855"
+                                jsbarcode-text="2019-0725-2694-9855"
+                                jsbarcode-width="2"
+                                jsbarcode-height="50"
+                                jsbarcode-background="rgba(255,255,255,0)"
+                                jsbarcode-margin="5"
+                                jsbarcode-fontsize="14"
+                                jsbarcode-textmargin="3"
+                                jsbarcode-fontoptions="bold" preserveAspectRatio="none">
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="info notice">
+                        <ul>
+                            <li>CGV콤보를 구매한 고객님들에게 다양한 혜택이 주어집니다.</li>
+                            <li>포인트, 할인쿠폰 등으로 구매시마다 다양한 혜택을 받으세요.</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+            <section class="button-box">
+                <button type="button" class="receipt-del-btn">영수증삭제</button>
+            </section>
+
+            <div id="receipt-del" class="layer_pop_re">
+                <div class="fogbg"></div>
+                <div class="inner">
+                    
+                    <div class="guide_info">
+                        <p>영수증을 삭제하시겠습니까?</p>
+                    </div>
+                    
+                    <div class="btnbox_wrap">
+                        <div class="btnbox for-select">
+                            <button type="button" class="btn_def del_cancel"><span>취소</span></button>
+                            <button type="button" class="btn_def del_ok"><span>확인</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- [e] content_wrap -->
+    </div>
+
+
+
+	<!-- [S] Footer -->
+	<footer id="div_footer">
+	    <p class="footerLink">
+	        <a href="/WebAPP/Support/noti.aspx"><span>공지사항</span></a>
+	        <a href="/WebApp/Support/faq.aspx"><span>고객센터</span></a>
+	
+	        <a href="#" title="로그아웃" href="#"><span>로그아웃</span></a>
+	        <a href="#" id="footer_pc" title="PC버전"><span>PC버전</span></a>
+	    </p>
+	    <section class="footerContents">
+	        <h1><a href="http://corp.cgv.co.kr/" target="_blank" class="spriteFooter footerLogo">CGV</a></h1>
+	        <ul class="footerContentsLink">
+	            <li><a href="/Agreement/Agreement_Provision.aspx?type=10"  title="이용약관" >이용약관</a></li>
+	            <li><a href="/Agreement/Agreement_Provision.aspx?type=11"  title="개인정보 처리방기" >개인정보 처리방침</a></li>
+	            <li><a href="/Agreement/Agreement_disclaimer.aspx" title="법적고지" >법적고지</a></li>
+	        </ul>
+	        <dl class="companyInfo">
+	            <dt>대표이사</dt>
+	            <dd>최병환</dd>
+	            <dt>사업자등록번호</dt>
+	            <dd>104-81-45690</dd>
+	            <dt>통신판매업신고번호</dt>
+	            <dd>2017-서울용산-0662</dd>
+	            <dt>개인정보보호 책임자</dt>
+	            <dd>정종민</dd>
+	            <dt>주소</dt>
+	            <dd><address>(04377)서울특별시 용산구 한강대로<br>23길 55, 아이파크몰 6층(한강로동)</address></dd>
+	        </dl>
+	    </section>
+	    <p class="footerReserved">© CJ CGV. All Rights Reserved</p>
+	</footer>
+	<!-- [E] Footer -->
+
+    <!-- <script type="text/javascript">
+        try {
+            (function (i, s, o, g, r, a, m) { i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o), m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m) })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga_cgv');
+            ga_cgv('create', 'UA-47951671-4', 'auto'); //운영
+            ga_cgv('create', 'UA-47951671-7', { 'name': 'rollup' }); //롤업속성
+            ga_cgv('create', 'UA-47951671-9', { 'name': 'popcorn' }); // 팝콘스토어속성
+        } catch (e) { }
+
+        ga_cgv('rollup.set', 'title', GA_TITLE);
+        ga_cgv('popcorn.set', 'title', GA_TITLE);
+
+        var dimension1 = '845af7f02d30b23883c36108df44e47b'; // User_ID
+        var dimension2 = 'M'; // User_gender
+        var dimension3= '34'; // User_age
+        var dimension4 = '일반'; // User_rating
+        var dimension6 = navigator.userAgent;  // parma_agt
+        dimension6 += " / " + fnMobileDeviceLangChk();
+        var dimension7 = 'Member'; // 로그인여부
+        var dimension8 = fnMobileDeviceChk(); // param_dvc
+        dimension8 += " / " + fnMobileDeviceLangChk();
+
+        //rollup 속성의 dimenstion 설정
+        if (dimension1 != null && dimension1 != undefined) {
+            ga_cgv('rollup.set', 'userId', dimension1);
+            ga_cgv('rollup.set', 'dimension1', dimension1);
+        }
+        if (dimension2 != null && dimension2 != undefined) {
+            ga_cgv('rollup.set', 'dimension2', dimension2);
+        }
+        if (dimension3 != null && dimension3 != undefined) {
+            ga_cgv('rollup.set', 'dimension3', dimension3);
+        }
+        if (dimension4 != null && dimension4 != undefined) {
+            ga_cgv('rollup.set', 'dimension4', dimension4);
+        }
+        if (dimension6 != null && dimension6 != undefined) {
+            ga_cgv('rollup.set', 'dimension6', dimension6);
+        }
+        if (dimension7 != null && dimension7 != undefined) {
+            ga_cgv('rollup.set', 'dimension7', dimension7);
+        }
+        if (dimension8 != null && dimension8 != undefined) {
+            ga_cgv('rollup.set', 'dimension8', dimension8);
+        }
+
+        //popcorn 속성의 dimension 설정
+        if (dimension1 != null && dimension1 != undefined) {
+            ga_cgv('popcorn.set', 'userId', dimension1);
+            ga_cgv('popcorn.set', 'dimension1', dimension1);
+        }
+        if (dimension2 != null && dimension2 != undefined) {
+            ga_cgv('popcorn.set', 'dimension2', dimension2);
+        }
+        if (dimension3 != null && dimension3 != undefined) {
+            ga_cgv('popcorn.set', 'dimension3', dimension3);
+        }
+        if (dimension4 != null && dimension4 != undefined) {
+            ga_cgv('popcorn.set', 'dimension4', dimension4);
+        }
+        if (dimension6 != null && dimension6 != undefined) {
+            ga_cgv('popcorn.set', 'dimension6', dimension6);
+        }
+        if (dimension7 != null && dimension7 != undefined) {
+            ga_cgv('popcorn.set', 'dimension7', dimension7);
+        }
+        if (dimension8 != null && dimension8 != undefined) {
+            ga_cgv('popcorn.set', 'dimension8', dimension8);
+        }
+    </script> -->
+
+    <!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-5CJXRN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script type="text/javascript">
+        //Google Tag Manager dataLayer for global header
+        var parma_agt = navigator.userAgent;
+        parma_agt = parma_agt + " / " + fnMobileDeviceLangChk();
+        var param_dvc = fnMobileDeviceChk();
+        param_dvc += " / " + fnMobileDeviceLangChk();
+        try {
+            var dataLayer = [{
+                'cgv_cd1': '845af7f02d30b23883c36108df44e47b',
+                'cgv_cd2': 'M',
+                'cgv_cd3': '34',
+                'cgv_cd4': '일반',
+                'cgv_cd6': parma_agt,
+                'cgv_cd7': 'Member',
+                'cgv_cd8': param_dvc,
+                'uid': '845af7f02d30b23883c36108df44e47b'
+            }];
+        } catch (e) { }
+
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5CJXRN');
+    </script>
+
+
+
+    <!-- [S] 운영소스 상속용 dummy -->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/spin.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/moment.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>   
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <!-- [E] 운영소스 상속용 dummy -->
+
+    <!-- [s] 스마트영수증 신규 -->
+    <script src="../js/sreceipt/JsBarcode.code128.min.js"></script>
+    <script src="../js/sreceipt/qrcode.min.js"></script>
+    <script>
+        var qrcode = new QRCode("qr-area", {
+            text: "http://m.cgv.co.kr",
+            width: 62,
+            height: 62,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        
+        
+
+        JsBarcode('.barcode128').init();
+        $(".barcode128").attr("height","100%"); //바코드 높이 고정해제
+
+        //삭제버튼동작
+        $(".receipt-del-btn").on("click",function (e) { 
+            e.preventDefault();
+            $("#receipt-del").css("display","block");
+            $("body").css("overflow","hidden");
+            $("#receipt-del .del_cancel").on("click",function(){
+                $("#receipt-del").css("display","none");
+                $("body").css("overflow","auto");
+            });
+
+        });
+    </script>
+    <link rel="stylesheet" href="../css/sreceipt/smart-receipt.css">
+    <!-- [e] 스마트영수증 신규 -->
+
+</body>
+</html>

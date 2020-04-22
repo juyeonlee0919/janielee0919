@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>CGV</title>
+	<!-- [S] 운영소스 상속용 -->
+	<link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+	<link rel="canonical" href="http://www.cgv.co.kr/">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+	<!--<script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+	<script type="text/javascript" src="../js/morder.common.js"></script>
+	<script type="text/javascript" src="../js/morder.appInterface.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript">
+		//Global Variable
+		var IsWebView_Master = false;
+		var IsWebViewIPhone_Master = false;
+		var IsNewVersion_Master = false;
+		var AppVersion_Master = 0;
+		var IsIphone_Master = false;
+		var IOSVersion_Master = 0;
+
+		jQuery(document).ready(function () {
+			//아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+			var strIphonenavi = "";
+			if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+				var tmp_url = location.href;
+				history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+				var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+				location.href = tmp_url_rep;
+			}
+		});
+	</script>
+	<meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+	<meta property="og:title" content="CGV 패키지">
+	<meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+	<meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+	<meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:ios:app_store_id" content="370441190">
+	<meta property="al:ios:app_name" content="CGV">
+	<meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:android:package" content="com.cgv.android.movieapp">
+	<meta property="al:android:app_name" content="CGV">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+	<!-- [E] 운영소스 상속용 -->
+	<style>
+
+
+	</style>
+</head>
+<body>
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+<div class="wrap">
+
+	<!-- [S] Header -->
+	<div id="header_box">
+
+		<div class="banner_suggest" id="downBanner" style="display: block;">
+			<a href="javascript:void(0);" onclick="AppDownload();">
+				<div class="txtbox">
+					<strong class="txt">CGV앱에서 더 편리하게 이용하세요.</strong>
+				</div>
+				<div class="btnbox">
+					<span>다운받기</span>
+				</div>
+			</a>
+			<button type="button" class="btn_x" onclick="downDisplay()">닫기</button>
+		</div>
+
+
+		<header id="headerTitle" class="cls_headertitle_box">
+			<a href="javascript:siteMapFn();">
+				<div class="ico_lt">
+					<img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id="headerLeftBtn" src="" style="display: none;"/>
+				</div>
+			</a>
+			<div class="title" id="headerTitleArea"><a class="sprite headerLogo" onclick="javascript:clicklogo();">CGV</a></div>
+		</header>
+
+		<section class="allview_wrap" id="siteMap">
+			<div id="fogbg" onclick="javascript:close_sitemapFn();"></div>
+			<article class="allview_box_wrap">
+				<div class="allview_box_in">
+					<h2 class="hidden">전체메뉴</h2>
+					<div class="allview_header">
+						<a href="http://m.cgv.co.kr/" class="cgv_logo">CGV 홈</a>
+					</div>
+					<div class="area">
+
+					</div>
+					<button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>
+				</div>
+			</article>
+		</section>
+
+		<nav id="" class="type5">
+			<div class="inner">
+				<a href="#">홈</a>
+				<a href="#">이벤트</a>
+				<a href="#" class="active">바로오더</a>
+				<a href="#">플레이존</a>
+				<a href="#">MY</a>
+			</div>
+		</nav>
+
+
+	</div>
+	<!-- [E] Header -->
+
+
+	<!-- [S] Content -->
+	<section class="content_wrap container mOrder_main" id="ContainerView">
+		<div class="container_inner">
+			<h1 class="hidden">바로오더 메인</h1>
+			<!-- [S] 이벤트-->
+			<article class="event_wrap">
+				<h2 class="hidden">이벤트 배너</h2>
+				<div class="eventBannerList swiper-container" id="autoSlider">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="../images/dummy/img_cdc.png" alt="">
+							</a>
+						</div>
+						<div class="swiper-slide">
+							<a href="#">
+								<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8741/15645582508710.jpg" alt="메이플스토리 콤보런칭">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="eventBannerControlWrap active">
+					<div class="btnBannerMoreWrap">
+						<a href="#" class="btnBannerMore" data-popup="event_all">
+							<span class="bannerCurrentNum"></span>
+							더보기
+						</a>
+					</div>
+					<a href="#" class="spriteBefore btnEventBannerControl pause" title="재생 및 정지버튼">재생 및 정지버튼</a>
+				</div>
+			</article>
+			<!-- [E] 이벤트-->
+
+			<article class="position_wrap">
+				<a href="#" data-popup="popChangeArea"> <!--[D] 지역변경 팝업 : 웹, 앱 분기 작업 필요 -->
+					<strong class="spot">CINE de CHEF 압구정</strong>
+					<span class="distance">5km</span>
+					<span class="change_store">변경</span>
+				</a>
+			</article>
+
+			<article class="short_menu">
+				<a href="#" class="short_item icon_allMenu">전체메뉴</a>
+				<a href="#" class="short_item icon_myMenu">나만의 메뉴</a>
+				<a href="#" class="short_item icon_giftCon">기프트콘 <span class="count">3</span></a>
+			</article>
+
+			<article class="order_progress">
+				<a href="#" class="order_item icon_orderIng" data-target="orderIng">진행중 주문 <span class="count">3</span></a>
+				<a href="#" class="order_item icon_ordeHistory" data-target="ordeHistory">미전송 내역 <span class="count">13</span></a>
+			</article>
+
+
+			<!-- [S] 주문 진행 상황-->
+			<!--주문중인 상품이 있을 경우 해당 영역 isActive-->
+			<div class="progress_layer orderIng isActive" id="orderIng">	<!--활성화 : class : isActive -->
+			<!-- S [U 20200318] CDC 주문 진행 상황 수정 -->
+				<div class="order_state_cdc">
+					<button type="button" class="btn_refresh darkgray"><span class="hidden">새로고침</span></button>
+					<a href="OC_detail.html">
+						<strong><span class="pick_label redbg">주문번호</span>용산 시네드쉐프 - 224</strong>
+						<div class="order_info_box">
+							<strong>고객님의 <span>예약정보</span>에요!</strong>
+							<p>
+								<strong>날짜</strong><span>2020.03.13 (금)</span>
+							</p>
+							<p>
+								<strong>시간</strong><span>오후 05:30</span>
+								<strong>인원</strong><span>2명</span>
+							</p>
+						</div>
+					</a>
+				</div>
+				<!-- S 기존 코드 디자인 변경으로 주석처리함 
+					<div class="order_state">
+					<a href="OC_detail.html">
+						<button type="button" class="btn_refresh darkgray"><span class="hidden">새로고침</span></button>!-- 버블업 방지 메서드 event.stopPropagation() --
+						<div class="order_pick_position">
+							<span class="pick_label">주문번호</span> <storng class="pick_position">6층 매점 1096</storng>
+						</div>
+						<div class="progress_state">
+							<span class="step">주문전송</span>
+							<span class="step">주문접수</span>
+							<span class="step ready isActive">준비완료</span>	!-- 활성화 : isActive 클래스 add --
+							<span class="step">픽업완료</span>
+						</div>
+					</a>
+				</div>
+				<div class="order_state">
+					<a href="OC_detail.html">
+						<button type="button" class="btn_refresh darkgray"><span class="hidden">새로고침</span></button>!-- 버블업 방지 메서드 event.stopPropagation() --
+						<div class="order_pick_position">
+							<span class="pick_label">주문번호</span> <storng class="pick_position">6층 매점 1096</storng>
+						</div>
+						<div class="progress_state">
+							<span class="step isActive">주문전송</span>
+							<span class="step">주문접수</span>
+							<span class="step ready">준비완료</span>
+							<span class="step">픽업완료</span>
+						</div>
+					</a>
+				</div>
+				!-- E 기존 코드 디자인 변경으로 주석처리함 -->
+			<!-- E [U 20200318] CDC 주문 진행 상황 수정 --> 
+			</div>
+			<!-- [E] 주문 진행 상황-->
+			<!-- [S] 주문 내역 상황 -->
+			<!--주문중인 상품이 없고 && 바로 오더 가능한 주문 내역이 있을 시 isActive -->
+			<div class="progress_layer ordeHistory isActive" id="ordeHistory">	<!--활성화 : class : isActive -->
+			<!-- S [U 20200319] CDC 주문 내역 상황 수정 -->
+				<a href="#none" class="order_state_cdc hasBalloon">
+					<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="상품이름"></div>
+					<div class="orderHistory_txt_wrap">
+						<strong>아이스티</strong>
+						<p class="orderHistory_txt_cinema">CGV 용산아이파크몰 <span>영화상영일 (03/14)</span></p>
+						<p class="orderHistory_txt_balloon"><span>영화 상영 15분 전 <strong>주문접수</strong> 될 예정이에요!</span></p>
+					</div>
+				</a>
+				<a href="#none" class="order_state_cdc">
+					<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="상품이름"></div>
+					<div class="orderHistory_txt_wrap">
+						<strong>아이스티</strong>
+						<p class="orderHistory_txt_cinema">CGV 용산아이파크몰</p>
+						<p class="orderHistory_txt_time"><strong>예약정보</strong><span>03.13 (금) 오후 05:30, 2명</span></p>
+					</div>
+				</a>
+			<!-- S 기존 코드 디자인 변경으로 주석처리함 --
+				<a href="#" class="order_state unsent">
+					<div class="PayProduct">
+						<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="상품 이름"></div>
+						<div class="product_textwrap">
+							<div class="textwrap_title">라지콤보 외 1건</div>
+							<div class="textwrap_name">CGV 용산아이파크몰 <span class="day">D-5</span></div>
+							<div class="btn_get">지금 픽업할래요</div>
+						</div>
+					</div>
+				</a>
+				<a href="#" class="order_state unsent">
+					<div class="PayProduct">
+						<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="상품 이름"></div>
+						<div class="product_textwrap">
+							<div class="textwrap_title">라지콤보 외 1건</div>
+							<div class="textwrap_name">CGV 용산아이파크몰 <span class="day">D-5</span></div>
+							<div class="btn_get">지금 픽업할래요</div>
+						</div>
+					</div>
+				</a>
+			!-- E 기존 코드 디자인 변경으로 주석처리함 -->
+			<!-- E [U 20200319] CDC 주문 내역 상황 수정 -->
+			</div>
+			<!-- [E] 주문 내역 상황 -->
+
+			<!-- [S] 영화짝꿍 팝콘 추천 -->
+			<article class="recommend_wrap mOrderMain_area">
+				<h3 class="recommend_title"><span>이수지님,</span> <em>시네 드 쉐프 추천드려요</em></h3>
+				<div class="recommend_info">
+					<span class="name">크루아상 샌드위치 세트</span>
+					<span class="construct">샌드위치1+커피1</span>
+					<span class="price">13,000원</span>
+					<span class="sale_price">13,500원</span>
+					<img src="../images/dummy/75x75.jpg" alt="" class="recom_img">
+				</div>
+			</article>
+			<!-- [E] 영화짝꿍 팝콘 추천 -->
+
+
+			<!-- [S] 절대 놓치기 아까운 CGV 핫딜 -->
+			<article class="hotdeal_wrap hotdeal_content mOrderMain_area">
+				<h3 class="hotdeal_title">절대 놓치기 아까운<br> <em>CGV 핫딜</em></h3>
+
+				<div class="together_view_contents swiper-container" id="together_view_contents">
+                    <ul class="together_list swiper-wrapper">
+                        <li class="swiper-slide hotdeal_item comingsoon">
+                            <a href="#">
+                                <p class="hotdeal_day"><span>핫딜예정</span>2019.11.13</p>
+                                <span class="img_wrap">
+                                    <img src="../images/dummy/product_01.jpg" alt="즉석구이오징어(몸통)">
+                                </span>
+                                <strong>[시네드쉐프용산]알랭뒤카스:위대한여정X오세득</strong>
+                                <span class="com_sale_price_type1_wrap">
+                                    <p class="hotdeal_price_txt">핫딜가</p>
+                                    <span class="store_deatail_sale_price">99,000원</span>
+                                    <span class="store_deatail_source_price">99,000원</span>
+                                </span>
+                                <span class="deal_remain">242개 남음</span>
+                            </a>
+                        </li>
+                        <li class="swiper-slide hotdeal_item">
+                            <a href="#">
+                                <p class="hotdeal_day"><span>D-3</span>09:00:10</p>
+                                <span class="img_wrap">
+                                    <img src="../images/common/bg_comingsoon.png" alt="comming soon">
+                                </span>
+                                <strong>[시네드쉐프용산]알랭뒤카스:위대한여정X오세득</strong>
+                                <span class="com_sale_price_type1_wrap">
+                                    <p class="hotdeal_price_txt">핫딜가</p>
+                                    <span class="store_deatail_sale_price">진행예정</span>
+                                </span>
+
+                                <!-- 갯수미출력 시에도 공간을 위해 &nbsp;로 노출해주세요 -->
+                                <span class="deal_remain">&nbsp;</span>
+                            </a>
+                        </li>
+                    </ul>
+			    </div>
+			</article>
+			<!-- [E] 절대 놓치기 아까운 CGV 핫딜 -->
+
+			<!-- [S] 지금 이 시간 타임메뉴 -->
+			<article class="timeMenu_wrap mOrderMain_area">
+				<h3 class="mOrderMain_title"><span>지금 이 시간</span> <em>CGV Cine de Chef 타임메뉴</em></h3>
+				<span class="this_time">06.28 15:10 기준 <a href="#" class="btn_refresh"><span class="hidden">새로고침</span></a></span>
+
+				<div class="this_time_product">
+					<ol>
+						<li class="this_time_product_item">
+							<a href="#">
+								<img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/Detail/15463247741350.jpg" alt="GOURMET콤보" class="product_img">
+								<strong class="product_name"><em class="round_num">1</em> 마카롱 1EA</strong>
+								<span class="com_sale_price_type1_wrap">
+									<span class="store_deatail_sale_price">4,500원</span>
+									<span class="store_deatail_source_price">5,500원</span>
+								</span>
+								<p class="em_text ico_up">지금 7,000명의 사람이 관심을 보이고 있어요!</p>
+							</a>
+						</li>
+						<li class="this_time_product_item">
+							<a href="#">
+								<img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/Detail/15463247741350.jpg" alt="GOURMET콤보" class="product_img">
+								<strong class="product_name"><em class="round_num">2</em> 애프터눈 티세트</strong>
+								<span class="com_sale_price_type1_wrap">
+									<span class="store_deatail_sale_price">9,500원</span>
+									<span class="store_deatail_source_price">34,900원</span>
+								</span>
+								<p class="def_text ico_down">3,520번 조회</p>
+							</a>
+						</li>
+						<li class="this_time_product_item">
+							<a href="#">
+								<img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/Detail/15463247741350.jpg" alt="GOURMET콤보" class="product_img">
+								<strong class="product_name"><em class="round_num">3</em> 마우나로아세트</strong>
+								<span class="com_sale_price_type1_wrap">
+									<span class="store_deatail_sale_price">11,500원</span>
+									<span class="store_deatail_source_price">34,900원</span>
+								</span>
+								<p class="def_text ico_down">3,520번 조회</p>
+							</a>
+						</li>
+					</ol>
+				</div>
+			</article>
+			<!-- [E] 지금 이 시간 타임메뉴 -->
+
+			<!-- [S] 영화관에서 먹기 딱 좋은 메뉴-->
+			<article class="recom_menu_wrap mOrderMain_area">
+				<h3 class="mOrderMain_title"><span>오늘의</span> <em>딜리버리 추천메뉴</em></h3>
+
+				<div class="recom_menu_product">
+					<ul class="com_list_style">
+						<li>
+							<a href="#">
+								<div class="product_info_img">
+									<img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/Detail/15459090912060.jpg" alt="즉석구이오징어(몸통)">
+								</div>
+								<ul>
+									<li class="product_info_name">샐러드 샌드 위치 세트</li>
+									<li class="product_info_price">3,500원<span>5,000원</span></li>
+								</ul>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="product_info_img">
+									<img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/Detail/15464124741950.jpg" alt="죠스튀김범벅">
+								</div>
+								<ul>
+									<li class="product_info_name">하우스주스 (오렌지)</li>
+									<li class="product_info_price">3,000원<span>4,500원</span></li>
+								</ul>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="product_info_img">
+									<img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/Detail/15459092406330.jpg" alt="칠리치즈나쵸">
+								</div>
+								<ul>
+									<li class="product_info_name">앙금버터 크루아상</li>
+									<li class="product_info_price">3,000원<span>4,500원</span></li>
+								</ul>
+							</a>
+						</li>
+					</ul>
+					<a href="#" class="btn_more_view">상품 더 보기 1/5</a>
+					<!-- [D] 상품 더 보기 클릭시 상품 새로고침-->
+				</div>
+			</article>
+			<!-- [E] 영화관에서 먹기 딱 좋은 메뉴-->
+
+			<!-- [S] 팝콘 말고 다른걸 찾고 계신다면 -->
+			<article class="recom_menu_wrap mOrderMain_area">
+				<h3 class="mOrderMain_title"><span>로맨스 영화와</span> <em>어울리는 디저트</em></h3>
+				<div class="recom_menu_product other_menu">
+					<ul class="com_list_style">
+						<li>
+							<a href="#">
+								<div class="product_info_img">
+									<img src="../images/dummy/img_product_drink02.png" alt="바닐라 라떼">
+								</div>
+								<ul>
+									<li class="product_info_name">바닐라 라떼</li>
+								</ul>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="product_info_img">
+									<img src="../images/dummy/img_product_drink03.png" alt="미니 시나몬 데니쉬">
+								</div>
+								<ul>
+									<li class="product_info_name">미니 시나몬 데니쉬</li>
+								</ul>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<div class="product_info_img">
+									<img src="../images/dummy/img_product_drink.png" alt="하겐다즈 아이스크림">
+								</div>
+								<ul>
+									<li class="product_info_name">하겐다즈 아이스크림</li>
+								</ul>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</article>
+			<!-- [E] 팝콘 말고 다른걸 찾고 계신다면 -->
+		</div>
+
+		<!-- [S] 팝업 -->
+		<div class="com_pop_wrap">
+			<div class="com_pop_fog"></div>
+
+			<!-- [S] 지역변경팝업 -->
+			<div class="popup_dim" id="popChangeArea">
+				<div class="popup pop_available_cgv">
+					<div class="com_pop_header">
+						<span>사용가능한 CGV</span>
+						<a href="#" class="btn_close _closePopup"><i class="sprite com_pop_btn_close"><span class="sr-only">팝업 닫기</span></i></a>
+					</div>
+					<div class="com_pop_container" id="divAvailableCgv">
+						<div class="pop_available_title">
+							<ul id="theaterRegion">
+								<li class="active" id="liTheater01" data-theater="01">
+									<a href="#">서울</a><span>26</span>
+								</li>
+								<li class="" id="liTheater02" data-theater="02">
+									<a href="#">경기</a><span>30</span>
+								</li>
+								<li class="" id="liTheater202" data-theater="202">
+									<a href="#">인천</a><span>8</span>
+								</li>
+								<li class="" id="liTheater12" data-theater="12">
+									<a href="#">강원</a><span>4</span>
+								</li>
+								<li class="" id="liTheater03" data-theater="03">
+									<a href="#">대전/충청</a><span>15</span>
+								</li>
+								<li class="" id="liTheater11" data-theater="11">
+									<a href="#">대구</a><span>9</span>
+								</li>
+								<li class="" id="liTheater207" data-theater="207">
+									<a href="#">부산/울산</a><span>11</span>
+								</li>
+								<li class="" id="liTheater204" data-theater="204">
+									<a href="#">경상</a><span>10</span>
+								</li>
+								<li class="" id="liTheater206" data-theater="206">
+									<a href="#">광주/전라/제주</a><span>17</span>
+								</li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation01">
+							<ul>
+								<li><a href="#">CGV강남</a></li>
+								<li><a href="#">CGV강변</a></li>
+								<li><a href="#">CGV건대입구</a></li>
+								<li><a href="#">CGV구로</a></li>
+								<li><a href="#">CGV대학로</a></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation02">
+							<ul>
+								<li><a href="#">CGV경기광주</a></li>
+								<li><a href="#">CGV광교상현</a></li>
+								<li><a href="#">CGV구리</a></li>
+								<li><a href="#">CGV김포운양</a></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation202">
+							<ul>
+								<li><a href="#">CGV계양</a></li>
+								<li><a href="#">CGV연수역</a></li>
+								<li><a href="#">CGV인천</a></li>
+								<li><a href="#">CGV인천공항</a></li>
+								<li><a href="#">CGV인천논현</a></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation12">
+							<ul>
+								<li><a href="#">CGV강릉</a></li>
+								<li><a href="#">CGV원주</a></li>
+								<li><a href="#">CGV춘천</a></li>
+								<li><a href="#">CGV춘천명동</a></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation03">
+							<ul>
+								<li><a href="#">CGV대전</a></li>
+								<li><a href="#">CGV대전가오</a></li>
+								<li><a href="#">CGV대전탄방</a></li>
+								<li><a href="#">CGV대전터미널</a></li>
+								<li><a href="#">CGV유성온천</a></li>
+								<li><a href="#">CGV보령</a></li>
+								<li><a href="#">CGV서산</a></li>
+								<li><a href="#">CGV세종</a></li>
+								<li><a href="#">CGV천안</a></li>
+								<li><a href="#">CGV천안펜타포트</a></li>
+								<li><a href="#">CGV청주(서문)</a></li>
+								<li><a href="#">CGV청주율량</a></li>
+								<li><a href="#">CGV청주지웰시티</a></li>
+								<li><a href="#">CGV청주터미널</a></li>
+								<li><a href="#">CGV홍성</a></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation11">
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation207">
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation204">
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+						<div class="pop_available_content" id="divLocation206">
+							<ul>
+								<li></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- [E] 지역변경 팝업 -->
+		</div>
+		<!-- [E] 팝업 -->
+
+		<!-- [S] 이벤트배너 더보기 리스트 팝업 -->
+		<div id="event_all" class="popup_dim full_popup">
+			<div class="popup popEventBannerListWrap">
+				<div class="popLayerHeader">
+					전체보기 <a href="#" class="sprite btnPopClose btnPopCloseW">닫기</i></a>
+				</div>
+				<ul class="popLayerContainer">
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8690/15635266202730.jpg" alt="폭염주의보!! C원한 CGV가 답이다!">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8762/15647299713600.jpg" alt="[분노의 질주: 홉스&amp;쇼] 다 함께 볼래요!">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8775/15650550598530.jpg" alt="CGV 유튜브 10만 구독자 유치 푸로젝트">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8741/15645582508710.jpg" alt="파코니가 준비한 아이스크림 출시 이벤트">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8722/15646480439490.jpg" alt="[공포체험 기획전] 곤지암 ScreenX 숏버전 &amp; 링">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8756/15647100538520.jpg" alt="[브링 더 소울: 더 무비] 포토티켓 증정 이벤트">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8690/15635266202730.jpg" alt="폭염주의보!! C원한 CGV가 답이다!">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8762/15647299713600.jpg" alt="[분노의 질주: 홉스&amp;쇼] 다 함께 볼래요!">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8775/15650550598530.jpg" alt="CGV 유튜브 10만 구독자 유치 푸로젝트">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8741/15645582508710.jpg" alt="파코니가 준비한 아이스크림 출시 이벤트">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8722/15646480439490.jpg" alt="[공포체험 기획전] 곤지암 ScreenX 숏버전 &amp; 링">
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="http://img.cgv.co.kr/WebApp/contents/eventV4/8756/15647100538520.jpg" alt="[브링 더 소울: 더 무비] 포토티켓 증정 이벤트">
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- [E] 이벤트배너 더보기 리스트 팝업 -->
+
+	</section>
+
+
+
+		<!-- [E] Content -->
+</div>
+
+<!-- [S] Footer -->
+<footer id="div_footer">
+	<p class="footerLink">
+		<a href="/WebAPP/Support/noti.aspx"><span>공지사항</span></a>
+		<a href="/WebApp/Support/faq.aspx"><span>고객센터</span></a>
+		<a href="#" title="로그아웃"><span>로그아웃</span></a>
+		<a href="#" id="footer_pc" title="PC버전"><span>PC버전</span></a>
+	</p>
+	<section class="footerContents">
+		<h1><a href="http://corp.cgv.co.kr/" target="_blank" class="spriteFooter footerLogo">CGV</a></h1>
+		<ul class="footerContentsLink">
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=10"  title="이용약관" >이용약관</a></li>
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=11"  title="개인정보 처리방기" >개인정보 처리방침</a></li>
+			<li><a href="/Agreement/Agreement_disclaimer.aspx" title="법적고지" >법적고지</a></li>
+		</ul>
+		<dl class="companyInfo">
+			<dt>대표이사</dt>
+			<dd>최병환</dd>
+			<dt>사업자등록번호</dt>
+			<dd>104-81-45690</dd>
+			<dt>통신판매업신고번호</dt>
+			<dd>2017-서울용산-0662</dd>
+			<dt>개인정보보호 책임자</dt>
+			<dd>정종민</dd>
+			<dt>주소</dt>
+			<dd><address>(04377)서울특별시 용산구 한강대로<br>23길 55, 아이파크몰 6층(한강로동)</address></dd>
+		</dl>
+	</section>
+	<p class="footerReserved">© CJ CGV. All Rights Reserved</p>
+</footer>
+<!-- [E] Footer -->
+
+
+
+
+<!-- [S] 운영소스 상속용 -->
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+<!-- [E] 운영소스 상속용 -->
+
+<!-- [S] 바로오더 신규 -->
+<script type="text/javascript" src="../js/instOrder.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/instOrder.css" />
+<!-- [E] 바로오더 신규 -->
+</body>
+</html>

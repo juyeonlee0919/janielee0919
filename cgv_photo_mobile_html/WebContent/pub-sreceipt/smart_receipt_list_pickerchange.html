@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 dummy -->
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" src="https://nsso.cjone.com/findCookieSecured.jsp?cjssoq=AhgXdHfDlGExuGYCE3llXbRsRN%2blnsAnhr5ijZw%2bIPd6XwAQjcF%2fNch7a4FsMRiR62cefBzioCHYqvTZBXqLDUZDTjFNQmIvTWg2YlhFYmZTOXRjbUVGbUtUTmdIM2xiYU9jM2svQXBlREJNRHo3S1YvZ0NZTmsyaWtubVl6NjI%3d"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+		var IsWebViewIPhone_Master = false;
+		var IsNewVersion_Master = false;
+		var AppVersion_Master = 0;
+		var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+	        //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+	    });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">   
+    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE"> 
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+    <!-- [E] 운영소스 상속용 dummy -->    
+</head>
+<body>
+    <div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+    <div class="wrap">
+	     <!-- [S] Header -->
+	    <div id="header_box">
+	        <header id="headerTitle" class="cls_headertitle_box">
+	            <a href="javascript:siteMap();">
+	                <div class="ico_lt">
+	                    <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id='headerLeftBtn' src='' style='display: none;'/>
+	                </div>
+	            </a>
+	            <div class='title' id='headerTitleArea'>스마트영수증</div>
+	        </header>
+	        
+	        <!-- [S] siteMap -->
+	        <section class="allview_wrap" id="siteMap">
+                <div id="fogbg" onclick="javascript:close_sitemap()"></div>
+                <article class="allview_box_wrap">
+                    <div class="allview_box_in">
+                        <h2 class="hidden">전체메뉴</h2>
+
+                        <div class="allview_header">
+                            <a href="/" class="cgv_logo">CGV 홈</a>
+                        </div>
+                        <div class="area">
+                            <ul class="group_wrap">
+                                <li><a href="#" title="My CGV" ><b>My CGV</b></a><span class="countnum">1</span></li>
+                                <li><a href="#"><b>빠른예매</b></a></li>
+                                <li><a href="#"><b>상영시간표</b></a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="CGV안내">CGV안내</a></li>
+                                <li><a href="#" title="스토어">스토어</a></li>
+                                <li><a href="#" title="아트하우스">아트하우스</a></li>
+                                <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>
+                                <li><a href="#" title="이벤트">이벤트</a></li>
+                                <li><a href="#" title="매거진">매거진</a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="IMAX">IMAX</a></li>
+                                <li><a href="#" title="4DX">4DX</a></li>
+                                <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>
+                                <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>
+                                <li><a href="#" title="STARIUM">STARIUM</a></li>
+                                <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                                <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>
+
+                                <li><a href="#" title="Screen X">Screen X</a></li>
+                                <li><a href="#" title="Sound X">Sound X</a></li>
+                                <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                                <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>
+                                <li><a href="#" title="SphereX">Sphere X</a></li>
+                                <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>
+                                <li><a href="#" title="SKYBOX">SKYBOX</a></li>
+                                <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="고객센터">고객센터</a></li>
+                                <li><a href="#" title="Club서비스">Club서비스</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_close" onclick="javascript:close_sitemap();">창 닫기</button>
+                    </div>
+                </article>
+            </section>
+            <!--// [E] siteMap -->
+            
+	    </div>
+	    <!-- [E] Header -->
+
+        <!-- [s] content_wrap -->
+        <section class="content_wrap smart-receipt-list">
+            
+            <div class="lists">
+                <h1 class="lists-nav">
+					<p class="comCGVList1TotalCntWrap">총<span class="comCGVList1TotalCnt">4</span>건</p>
+					<a href="javascript:void(0);" class="btnLayerPop">
+                        <span>전체구분</span>
+						<span>상태전체</span>
+						<span>1개월</span>
+					</a>
+				</h1>
+
+                <ul class="listline">
+                    <li class="list-head">
+                        <span class="receipt-date">19.07.05</span>
+                        <span class="receipt-place">CGV용산아이파크몰</span>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-movie">영화</span>
+                            <span class="list-category cat-store">매점</span>
+                            <span class="list-category cat-cineshop">씨네샵</span>
+                            <span class="list-price">24,000원</span>
+                            <span class="list-title">스파이더맨 - 파 프롬 홈</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-store">매점</span>
+                            <span class="list-price">-18,000원</span>
+                            <span class="list-title">CGV콤보 외 2건</span>
+                            <span class="list-state state-canc">결제취소</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-phototicket">포토티켓</span>
+                            <span class="list-price">24,000원</span>
+                            <span class="list-title">포키 워킹 피규어</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-cineshop">씨네샵</span>
+                            <span class="list-price">2,000원</span>
+                            <span class="list-title">30분 이용</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-playzone">플레이존</span>
+                            <span class="list-price">10,000원</span>
+                            <span class="list-title">VR복싱-크리드</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-cdc">CINE DE CHEF</span>
+                            <span class="list-price">175,000원</span>
+                            <span class="list-title">Lunch Course4.5 외 2건</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-giftcard">상품권</span>
+                            <span class="list-price">35,000원</span>
+                            <span class="list-title">CGV영화관람권</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+
+                    <li class="list-head">
+                        <span class="receipt-date">19.07.05</span>
+                        <span class="receipt-place">CGV용산아이파크몰</span>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-movie">영화</span>
+                            <span class="list-price">24,000원</span>
+                            <span class="list-title">타이틀이 두줄이상일 경우에는 이렇게 나옵니다</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+
+                    <li class="list-head">
+                        <span class="receipt-date">19.07.05</span>
+                        <span class="receipt-place">CGV용산아이파크몰</span>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-movie">영화</span>
+                            <span class="list-price">24,000원</span>
+                            <span class="list-title">스파이더맨 - 파 프롬 홈</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li class="list-head">
+                        <span class="receipt-date">19.07.05</span>
+                        <span class="receipt-place">CGV용산아이파크몰</span>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-movie">영화</span>
+                            <span class="list-price">24,000원</span>
+                            <span class="list-title">스파이더맨 - 파 프롬 홈</span>
+                            <span class="list-state state-comp">결제완료</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="list-detail">
+                            <span class="list-category cat-movie">영화</span>
+                            <span class="list-price">24,000원</span>
+                            <span class="list-title partpay">스파이더맨 - 파 프롬 홈</span>
+                            <span class="list-state state-comp">결제완료(부분취소)</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="popLayer">
+				<div class="popFogBg"></div>
+				<div class="popCoupon">
+					<div class="popLayerHeader">선택<a href="javascript:void(0);" class="sprite btnPopClose">닫기</a></div>
+					<div class="popLayerContainer popLayerContainerPopcorn">
+                        <dl id="dl_use_type" class="popContentType3">
+							<dt>이용구분</dt>
+							<dd data-type="" class="active"><a href="javascript:void(0);">전체</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">영화</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">매점</a></dd>
+                            <dd data-type=""><a href="javascript:void(0);">씨네샵</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">롤롤</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">VR</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">CINE DE CHEF</a></dd>
+						</dl>
+
+						<dl id="dl_state_type" class="popContentType3">
+							<dt>상태</dt>
+							<dd data-type="" class="active"><a href="javascript:void(0);">전체</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">정상</a></dd>
+							<dd data-type=""><a href="javascript:void(0);">취소</a></dd>
+						</dl>
+						<dl class="popContentType3 ctlDatepickerLayer">
+							<dt>조회기간</dt>
+							<dd class="active"><a id="btn_one_month" href="javascript:void(0);">1개월</a></dd>
+							<dd><a href="javascript:void(0);">3개월</a></dd>
+							<dd><a href="javascript:void(0);" class="ctlDatepicker">직접입력</a></dd>
+							<dd class="inputDatepicker">
+								<span class="inputDatepickerStart">
+									<input type="date" disabled="">
+								</span>
+								<span class="inputDatepickerEnd">
+									<input type="text" class="date_input">
+								</span>
+							</dd>
+						</dl>
+					</div>
+					<div class="popLayerFooter"><a href="javascript:void(0);" id="btn_popcorn_inquiry" class="btnPopConfirm">확인</a></div>
+				</div>
+			</div>
+
+
+        </section>
+        <!-- [e] content_wrap -->
+    </div>
+
+
+
+	<!-- [S] Footer -->
+	<footer id="div_footer">
+	    <p class="footerLink">
+	        <a href="/WebAPP/Support/noti.aspx"><span>공지사항</span></a>
+	        <a href="/WebApp/Support/faq.aspx"><span>고객센터</span></a>
+	
+	        <a href="#" title="로그아웃" href="#"><span>로그아웃</span></a>
+	        <a href="#" id="footer_pc" title="PC버전"><span>PC버전</span></a>
+	    </p>
+	    <section class="footerContents">
+	        <h1><a href="http://corp.cgv.co.kr/" target="_blank" class="spriteFooter footerLogo">CGV</a></h1>
+	        <ul class="footerContentsLink">
+	            <li><a href="/Agreement/Agreement_Provision.aspx?type=10"  title="이용약관" >이용약관</a></li>
+	            <li><a href="/Agreement/Agreement_Provision.aspx?type=11"  title="개인정보 처리방기" >개인정보 처리방침</a></li>
+	            <li><a href="/Agreement/Agreement_disclaimer.aspx" title="법적고지" >법적고지</a></li>
+	        </ul>
+	        <dl class="companyInfo">
+	            <dt>대표이사</dt>
+	            <dd>최병환</dd>
+	            <dt>사업자등록번호</dt>
+	            <dd>104-81-45690</dd>
+	            <dt>통신판매업신고번호</dt>
+	            <dd>2017-서울용산-0662</dd>
+	            <dt>개인정보보호 책임자</dt>
+	            <dd>정종민</dd>
+	            <dt>주소</dt>
+	            <dd><address>(04377)서울특별시 용산구 한강대로<br>23길 55, 아이파크몰 6층(한강로동)</address></dd>
+	        </dl>
+	    </section>
+	    <p class="footerReserved">© CJ CGV. All Rights Reserved</p>
+	</footer>
+	<!-- [E] Footer -->
+
+    
+    <script type="text/javascript">
+        var screenId = 'STORE201';
+    </script>
+
+    <!-- [S] 운영소스 상속용 dummy -->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/spin.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/moment.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>   
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <!-- [E] 운영소스 상속용 dummy -->
+
+    <!-- 
+        dp 추가
+    -->
+    <script type="text/javascript" src="../js/sreceipt/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/sreceipt/datepciker-ko.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- [s] 스마트영수증 신규 -->
+    <link rel="stylesheet" href="../css/sreceipt/smart-receipt.css">
+    <!-- [e] 스마트영수증 신규 -->
+
+    <script>
+        var checker = false;
+        var save_dat;
+        $(function(){
+
+            // 데이트피커
+            $(".date_input").datepicker();
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>CGV APP 리뉴얼 매점오더</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<style type="text/css">
+		html, body, p {margin:0; padding:0}
+		body, td {font-size:1em; font-family:"NotoSans","맑은 고딕","malgun gothic", dotum, "돋움", Sans-Serif; font-weight:normal; color:#000}
+		h1,h2,h3,h4,h5,h6,th,td,a {font-weight:normal}
+		table {border-collapse: collapse; border-spacing:0}
+		#g_header {padding:23px 20px; height:120px; background:#fef8dc url(http://img.cgv.co.kr/R2014/images/common/bg/bg_header.gif) repeat-x 0 -30px; box-sizing:border-box}
+		#g_header h1 {max-width:1240px; margin:0 auto; font-size:1.5em; font-weight:600; line-height:1em; color:#000;background:#fef8dc;border-radius:15px}
+		#g_header h1 img {width:70px;border:1px solid #ddd;border-radius:10px;vertical-align:middle}
+		#g_body {position:relative; max-width:1240px; margin:0 auto; padding:0 20px}
+		#g_footer {padding:24px 20px; background:#f6f6f6; box-sizing:border-box}
+		#g_footer span {display:block; max-width:1240px; margin:0 auto; font-size:10px}
+		.contents h2 {margin:50px 0 5px; padding:8px 0; border-top:2px dotted #ccc; border-bottom:2px dotted #ccc; font-size:0.9em; font-weight:bold}
+		.note_box {max-width:1240px; margin:0 auto 15px; padding:15px; background:#c2f4ff; line-height:1.4em}
+		.guide_table {width:100%; margin-bottom:80px; border-bottom:2px solid #c5c5c5}
+		.guide_table thead th {text-align:left; padding:6px 2px; border-bottom:2px solid #666; border-right:1px solid #292929; border-left:1px solid #292929; background:#292929; font-weight:500; color:#fff; font-size:0.8em}
+		.guide_table tbody tr:hover {background:#efefef}
+		.guide_table tbody td {text-align:left; padding:5px 2px; font-size:.8em; border-bottom:1px solid #ccc}
+		.guide_table .no {padding-right:5px; text-align:center}
+		.count_bar {float:right; margin-top:8px; font-size:.8em; font-weight:normal; color:#666}
+		.btn_area {max-width:1240px; margin:0 auto; padding:0 0 30px; text-align:right; margin-top:-50px}
+		.btn_top {display:inline-block; box-sizing:border-box; width:40px; height:40px; line-height:40px; text-align:center; background:#292929; color:#fff; text-decoration:none; font-size:0.7em}
+		@media screen and (max-width:767px) {
+			body, td, .guide_table thead th {font-size:.9em}
+			#g_header {padding:20px 15px}
+			#g_header h1 {font-size:1.6em; line-height:1.3em}
+			#g_header {height:auto}
+			#g_body {padding:0 5px}
+			.contents {margin:0}
+			.contents h2 {font-size:1.3em; margin-top:20px; padding:4px 0; border-top:2px dotted #666; border-bottom:2px dotted #666}
+			.guide_table {margin-bottom:40px}
+			.note_box {padding:10px}
+			.btn_area {margin-top:-10px}
+			.hidden-phone {display: none !important}
+			.t_center {text-align:center !important}
+		}
+	</style>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script type="text/javascript">
+		//<![CDATA[
+		$(document).ready(function() {
+			var guideTable = $(".guide_table"),
+				len = 0,
+				idx = 0;
+			guideTable.each(function(i){
+				len = $(this).find("td.no").length;
+				$(this).prev().find(".page_total").text(len);
+				$(this).find("td.no").each(function(n){
+					$(this).text(n + 1);
+				});
+			});
+			guideTable.find("tbody tr").each(function(){
+				var idx = $(this).parents(".guide_table").find("thead th.condition").index(),
+					$this = $(this).find("td").eq(idx),
+					condition = $this.text();
+				switch(condition){
+					case "작업중":
+						$this.css("color","green");
+						break;
+					case "완료":
+						$this.css("font-weight", "bold");
+					default:
+						break;
+				}
+			});
+
+			var $pageTotal =($("table.guide_table tbody tr").length)-1;
+			var $count_total =(($("table.guide_table tbody tr").find("td:eq('4')").children("a")).length)+1;
+			var $pagePercent =(($count_total/$pageTotal)*100).toFixed(2)+"%";
+		});
+		//]]>
+	</script>
+</head>
+<body>
+
+<div id="g_header">
+	<h1><img src="http://img.cgv.co.kr/WebApp/images/main/@2x/ico_app.png" alt="cgv"> APP 리뉴얼 매점오더</h1>
+</div>
+
+<div id="g_body">
+	<div class="contents">
+		 <h2>◈ 레이아웃/ 공통<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>레이아웃 </td>
+					<td>서브</td>
+					<td class="filelink"><a href="./layout.html" title="새창열림" target="_blank">./layout.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>레이어팝업 </td>
+					<td></td>
+					<td class="filelink"><a href="./pub_layerpopup.html" title="새창열림" target="_blank">./pub_layerpopup.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>아코디언 </td>
+					<td></td>
+					<td class="filelink"><a href="./pub_accodian.html" title="새창열림" target="_blank">./pub_accodian.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>로딩중 </td>
+					<td></td>
+					<td class="filelink"><a href="./pub_loading.html" title="새창열림" target="_blank">./pub_loading.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>극장선택 레이어팝업 </td>
+					<td>(disabled 스타일 추가)</td>
+					<td class="filelink"><a href="./theather_layerpopup.html" title="새창열림" target="_blank">./theather_layerpopup.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>권한 레이어팝업 </td>
+					<td></td>
+					<td class="filelink"><a href="./pop_auth.html" title="새창열림" target="_blank">./pop_auth.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>알림서비스 레이어팝업 </td>
+					<td></td>
+					<td class="filelink"><a href="./pop_notice.html" title="새창열림" target="_blank">./pop_notice.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>위치서비스 레이어팝업 </td>
+					<td></td>
+					<td class="filelink"><a href="./pop_location.html" title="새창열림" target="_blank">./pop_location.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+                <tr>
+                    <td class="no hidden-phone"><!-- 번호 --></td>
+                    <td>기본 alert </td>
+                    <td></td>
+                    <td class="filelink"><a href="./pop_alert.html" title="새창열림" target="_blank">./pop_alert.html</a></td>
+                    <td class="hidden-phone"></td>
+                    <td class="hidden-phone"></td>
+                </tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>더블라인 alert</td>
+					<td></td>
+					<td class="filelink"><a href="./pop_alert_twoLine.html" title="새창열림" target="_blank">./pop_alert_twoLine.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<h2>◈ 메인<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td>메인</td>
+				<td>메인</td>
+				<td class="filelink"><a href="./MA_main.html" title="새창열림" target="_blank">./MA_main.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/08</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td>메인</td>
+				<td>CDC</td>
+				<td class="filelink"><a href="./MA_cdcMain.html" title="새창열림" target="_blank">./MA_cdcMain.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+			</tbody>
+		</table>
+
+
+		<h2>◈ 바로오더<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 전체메뉴</td>
+					<td>리스트(다중옵션 선택)</td>
+					<td class="filelink"><a href="./ME_list.html" title="새창열림" target="_blank">./ME_list.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/06</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>리스트(단일메뉴 수량선택)</td>
+					<td class="filelink"><a href="./ME_list_02.html" title="새창열림" target="_blank">./ME_list_02.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/06</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>리스트(다중옵션 + 수량선택 조합)</td>
+					<td class="filelink"><a href="./ME_list_03.html" title="새창열림" target="_blank">./ME_list_03.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/06</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>상세 - 선택 옵션 없는 경우</td>
+					<td class="filelink"><a href="./ME_detail01.html" title="새창열림" target="_blank">./ME_detail01.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">품절표시<br>조리시간 노티<br>08/07</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>상세 - 선택 옵션 있는 경우</td>
+					<td class="filelink"><a href="ME_detail02.html" title="새창열림" target="_blank">./ME_detail02.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/07</td>
+				</tr>
+                <tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>상세 - 1뎁스 체크박스 화면</td>
+					<td class="filelink"><a href="ME_detail03_.html" title="새창열림" target="_blank">./ME_detail03_.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone"></td>
+				</tr>
+                <tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>상세 - 핫딜</td>
+					<td class="filelink"><a href="ME_detail04_hotdeal.html" title="새창열림" target="_blank">./ME_detail04_hotdeal.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 픽업 방법 선택</td>
+					<td>레이어 팝업</td>
+					<td class="filelink"><a href="PA_select_pickup.html" title="새창열림" target="_blank">./PA_select_pickup.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/05</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기</td>
+					<td>(disabled 스타일 추가)</td>
+					<td class="filelink"><a href="PA_list.html" title="새창열림" target="_blank">./PA_list.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/06</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > BC카드 선택시</td>
+					<td>레이어팝업</td>
+					<td class="filelink"><a href="PA_list_bcCardAlert.html" title="새창열림" target="_blank">./PA_list_bcCardAlert.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/09</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 할인/포인트 선택</td>
+					<td>CGV 할인쿠폰 </td>
+					<td class="filelink"><a href="PA_coupon_cgv.html" title="새창열림" target="_blank">./PA_coupon_cgv.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>CJ ONE 할인쿠폰</td>
+					<td class="filelink"><a href="./PA_coupon_cjOne.html" title="새창열림" target="_blank">./PA_coupon_cjOne.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>VIP 할인쿠폰</td>
+					<td class="filelink"><a href="./PA_coupon_vip.html" title="새창열림" target="_blank">./PA_coupon_vip.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 기프트콘 선택</td>
+					<td>CGV기프트콘</td>
+					<td class="filelink"><a href="./PA_giftcon_cgv.html" title="새창열림" target="_blank">./PA_giftcon_cgv.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 포인트 선택</td>
+					<td>CJ ONE 포인트</td>
+					<td class="filelink"><a href="./PA_point_cjOne.html" title="새창열림" target="_blank">./PA_point_cjOne.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 포인트/기프트카드 선택</td>
+					<td>CJ 기프트카드 </td>
+					<td class="filelink"><a href="./PA_giftcard_cj.html" title="새창열림" target="_blank">./PA_giftcard_cj.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>CGV 기프트카드</td>
+					<td class="filelink"><a href="./PA_giftCard_cgv.html" title="새창열림" target="_blank">./PA_giftCard_cgv.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>CGV 기프트카드 등록</td>
+					<td class="filelink"><a href="./PA_giftcard_cj_reg.html" title="새창열림" target="_blank">./PA_giftcard_cj_reg.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>자주쓰는 신용카드 등록</td>
+					<td class="filelink"><a href="./PA_reg_favorite_credit.html" title="새창열림" target="_blank">./PA_reg_favorite_credit.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 결제완료</td>
+					<td></td>
+					<td class="filelink"><a href="./PA_complete.html" title="새창열림" target="_blank">./PA_complete.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/02</td>
+				</tr>
+                <tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 결제하기 > 결제실패</td>
+					<td></td>
+					<td class="filelink"><a href="./PA_fail.html" title="새창열림" target="_blank">./PA_fail.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone"></td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<h2>◈ 나만의메뉴<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td>CGV메인 > 바로오더 > 나만의메뉴</td>
+				<td>floating 아이콘 (퀵오더)</td>
+				<td class="filelink"><a href="./QM_list.html" title="새창열림" target="_blank">./QM_list.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/13</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>상세 (나만의메뉴)탭 활성화</td>
+				<td class="filelink"><a href="QM_detail.html" title="새창열림" target="_blank">./QM_detail.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/30</td>
+			</tr>
+            <tr>
+                <td class="no hidden-phone"><!-- 번호 --></td>
+                <td></td>
+                <td>상세 (최근 주문한 메뉴)탭 활성화</td>
+                <td class="filelink"><a href="QM_detail_02.html" title="새창열림" target="_blank">./QM_detail_02.html</a></td>
+                <td class="hidden-phone">완료</td>
+                <td class="hidden-phone">08/30</td>
+            </tr>
+            <tr>
+                <td class="no hidden-phone"><!-- 번호 --></td>
+                <td>(스피드오더)디자인 변경전 백업</td>
+                <td>상세</td>
+                <td class="filelink"><a href="QM_detail_backup.html" title="새창열림" target="_blank">./QM_detail_backup.html</a></td>
+                <td class="hidden-phone">사용안함</td>
+                <td class="hidden-phone">08/30</td>
+            </tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>주문확인</td>
+				<td class="filelink"><a href="./QM_order.html" title="새창열림" target="_blank">./QM_order.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/14</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>리스트</td>
+				<td class="filelink"><a href="./MY_menu.html" title="새창열림" target="_blank">./MY_menu.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>나만의메뉴 없을 경우</td>
+				<td class="filelink"><a href="./MY_menu_nodata.html" title="새창열림" target="_blank">./MY_menu_nodata.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>메뉴리스트</td>
+				<td class="filelink"><a href="./MY_list.html" title="새창열림" target="_blank">./MY_list.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>메뉴리스트 > 메뉴선택</td>
+				<td class="filelink"><a href="./MY_detail.html" title="새창열림" target="_blank">./MY_detail.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>메뉴리스트 > 메뉴선택 > 메뉴선택완료 & 등록(팝업)</td>
+				<td class="filelink"><a href="./MY_detail_regist.html" title="새창열림" target="_blank">./MY_detail_regist.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>메뉴리스트 > 메뉴선택 > 등록(팝업)</td>
+				<td class="filelink"><a href="./MY_detail_regist_layerpopup.html" title="새창열림" target="_blank">./MY_detail_regist_layerpopup.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>메뉴리스트 > 메뉴선택 > 등록(페이지)</td>
+				<td class="filelink"><a href="./MY_detail_regist_complete.html" title="새창열림" target="_blank">./MY_detail_regist_complete.html</a></td>
+				<td class="hidden-phone">완료</td>
+				<td class="hidden-phone">08/09</td>
+			</tr>
+			</tbody>
+		</table>
+
+
+		<h2>◈ 이벤트<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td>이벤트 메인</td>
+				<td>메인</td>
+				<td class="filelink"><a href="./EV_main.html" title="새창열림" target="_blank">./EV_main.html</a></td>
+				<td class="hidden-phone">사용안함</td>
+				<td class="hidden-phone"></td>
+			</tr>
+			<tr>
+				<td class="no hidden-phone"><!-- 번호 --></td>
+				<td></td>
+				<td>상세</td>
+				<td class="filelink"><a href="./EV_detail.html" title="새창열림" target="_blank">./EV_detail.html</a></td>
+				<td class="hidden-phone">사용안함</td>
+				<td class="hidden-phone"></td>
+			</tr>
+			</tbody>
+		</table>
+
+		<h2>◈ 선물하기<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 바로오더 > 메뉴> 제품상세 > 선물하기</td>
+					<td>선물메시지입력  </td>
+					<td class="filelink"><a href="./GI_detail.html" title="새창열림" target="_blank">./GI_detail.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">07/26</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>결제하기</td>
+					<td class="filelink"><a href="./GI_payment.html" title="새창열림" target="_blank">./GI_payment.html</a></td>
+					<td class="hidden-phone">사용안함</td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>결제완료</td>
+					<td class="filelink"><a href="./GI_complete.html" title="새창열림" target="_blank">./GI_complete.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/27</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>◈ My 바로 오더 결제 내역<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > My CGV >예약/결제 내역조회 > 바로 오더 </td>
+					<td>리스트</td>
+					<td class="filelink"><a href="./PH_list.html" title="새창열림" target="_blank">./PH_list.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">07/19</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>상세</td>
+					<td class="filelink"><a href="./PH_detail.html" title="새창열림" target="_blank">./PH_detail.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">07/19</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>◈ 장바구니<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 제품선택 > 장바구니 </td>
+					<td>바로오더</td>
+					<td class="filelink"><a href="./BA_order.html" title="새창열림" target="_blank">./BA_order.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/06</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>바로오더 (장바구니 모두 삭제 시 메시지)</td>
+					<td class="filelink"><a href="./BA_order_noData.html" title="새창열림" target="_blank">./BA_order_noData.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">07/25</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>스토어</td>
+					<td class="filelink"><a href="./BA_store.html" title="새창열림" target="_blank">./BA_store.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">07/25</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>주문자 정보 확인</td>
+					<td class="filelink"><a href="./" title="새창열림" target="_blank"></a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<h2>◈ 내 기프트콘<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 내 기프트콘 </td>
+					<td>No data</td>
+					<td class="filelink"><a href="./GI_giftConNoData.html" title="새창열림" target="_blank">./GI_giftConNoData.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/14</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>리스트</td>
+					<td class="filelink"><a href="GI_giftConList.html" title="새창열림" target="_blank">./GI_giftConList.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/14</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>상세</td>
+					<td class="filelink"><a href="GI_giftConDetail.html" title="새창열림" target="_blank">./GI_giftConDetail.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/19</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+		<h2>◈ 주문내역<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td>CGV메인 > 주문내역 </td>
+					<td></td>
+					<td class="filelink"><a href="./OC_order_list.html" title="새창열림" target="_blank">./OC_order_list.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/27</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>CGV메인 > 주문내역 > 결제내역</td>
+					<td class="filelink"><a href="./OC_payed_list.html" title="새창열림" target="_blank">./OC_payed_list.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/21</td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>진행중 주문 상세</td>
+					<td class="filelink"><a href="./OC_detail.html" title="새창열림" target="_blank">./OC_detail.html</a></td>
+					<td class="hidden-phone">완료</td>
+					<td class="hidden-phone">08/21</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<!--E-스탬프-->
+		<h2>◈E-스탬프<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+		<table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+			<colgroup>
+				<col style="width:5%">
+				<col style="width:30%">
+				<col style="width:20%">
+				<col>
+				<col style="width:15%">
+				<col style="width:7%">
+			</colgroup>
+			<thead>
+			<tr>
+				<th scope="col" class="no hidden-phone">NO</th>
+				<th scope="col">1depth</th>
+				<th scope="col">2depth</th>
+				<th scope="col" class="t_center">퍼블리싱</th>
+				<th scope="col" class="hidden-phone condition">상태</th>
+				<th scope="col" class="hidden-phone">비고</th>
+			</tr>
+			</thead>
+			<tbody>			
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>E-스탬프 적립내역</td>
+					<td class="filelink"><a href="./ST_list.html" title="새창열림" target="_blank">./ST_list.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+				<tr>
+					<td class="no hidden-phone"><!-- 번호 --></td>
+					<td></td>
+					<td>E-스탬프</td>
+					<td class="filelink"><a href="./ST_list_popup.html" title="새창열림" target="_blank">./ST_list_popup.html</a></td>
+					<td class="hidden-phone"></td>
+					<td class="hidden-phone"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="btn_area">
+			<a href="#top" class="btn_top" title="상단으로 이동">TOP</a>
+		</div>
+	</div>
+</body>
+</html>

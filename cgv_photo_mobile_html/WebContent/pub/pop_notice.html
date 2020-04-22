@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>CGV</title>
+	<!-- [S] 운영소스 상속용 -->
+	<link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+	<link rel="canonical" href="http://www.cgv.co.kr/">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+	<!--<script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+	<script type="text/javascript" src="../js/morder.common.js"></script>
+	<script type="text/javascript" src="../js/morder.appInterface.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+	</script>
+	<meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+	<meta property="og:title" content="CGV 패키지">
+	<meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+	<meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+	<meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:ios:app_store_id" content="370441190">
+	<meta property="al:ios:app_name" content="CGV">
+	<meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:android:package" content="com.cgv.android.movieapp">
+	<meta property="al:android:app_name" content="CGV">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+	<!-- [E] 운영소스 상속용 -->
+</head>
+<body>
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+<div class="wrap">
+
+
+	<div id="authorizationPop_alim" class="popup_dim popAuth" style="display: none; opacity: 0;"> <!-- 활성화 시 active 클래스 추가 -->
+		<div class="popup" style="top:100%;">
+			<div class="popup_container">
+				<strong class="authTit"><i><span class="blind">CGV</span></i><span>바로오더 서비스 사용을 위해 다음 접근 권한을 허용해주세요.</span></strong>
+				<div class="authReqList">
+					<strong class="authReqtit">필수적 접근 권한</strong>
+					<dl class="authList">
+						<dt class="ico ico_arm">알림수신 허용</dt>
+						<dd>매장 픽업 현황 알림</dd>
+					</dl>
+					<p class="authDescription">CGV 에서 알림을 보내고자 합니다.<br> 경고,사운드 및 아이콘 배지가 알림에 포함될 수 있습니다.<br> 설정에서 이를 구성할 수 있습니다.</p>
+					<dl class="authList2">
+						<dt>접근권한 변경 방법</dt>
+						<dd>알림박스 &gt; 설정 &gt; 알림 수신 설정</dd>
+					</dl>
+				</div>
+				<div class="authBtnWrap">
+					<button type="button" class="pop_btn_gray">허용 안함</button>
+					<button type="button" class="pop_btn_gray">허용</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+
+<!-- [S] 운영소스 상속용 -->
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script> -->
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script> -->
+<!-- [E] 운영소스 상속용 -->
+
+<!-- [S] 바로오더 신규 -->
+<script type="text/javascript" src="../js/instOrder.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/instOrder.css" />
+<!-- [E] 바로오더 신규 -->
+
+<script>
+
+	jQuery(document).ready(function (){
+		popOpenFunc('authorizationPop_alim')
+	})
+
+	jQuery('.pop_btn_gray').click(function (){
+		popCloseFunc('authorizationPop_alim')
+	})
+</script>
+</body>
+</html>

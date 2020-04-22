@@ -1,0 +1,2032 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>결제 | CGV</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="../../../CDN/css/v5/ui.style.css"> -->
+
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/ui.page.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+    
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+
+    <!-- [s] css 추가 js 20190830 -->
+    <link rel="stylesheet" href="../css/ipayment/ipayment.css">
+   
+    <!-- [e] css 추가 js 20190830 -->
+
+</head>
+
+<body>
+
+    <div class="wrap ticket-n-store-main">
+        <!--<div class="header">
+        <h1 class="title">결제</h1>
+        <div class="area_left">
+            <a href="#" class="btn_menu">전체메뉴</a>
+        </div>
+        <div class="area_right">
+            <a href="#"><i class="sprite sprite_common icon_question"></i></a>
+            <a href="#" class="btn_fav"><i class="sprite sprite_common icon_favorite_star_big"></i></a>
+        </div>
+    </div>-->
+        <div id="header_box">
+    
+            <header id="headerTitle" class="cls_headertitle_box">
+                    <img id="headerLeftBtn" src="" style="display:none;"><div class="title" id="headerTitleArea">결제</div>
+            </header>
+    
+
+        </div>
+
+        <div class="container">
+            
+
+            
+            <div class="section_contents ticket-n-store-order">
+                <div class="recommand-order" id="rec01">
+                    <!-- 
+                        Description js 20190829
+                        추천상품의 경우 같은 정보를 두개 사용합니다.
+                        선택되지 않은 화면(디폴트) / 선택되었을때 변경된 화면
+                        스크립트로 __selected 클래스를 <div class="recommand-order"> 에 추가하여
+                        선택되었을때 화면으로 전환합니다.
+                     -->
+                    <a href="#rec01" class="order-item">
+                        <!-- 2019-12-03 수정-->
+                        <div class="order-tit">
+                                <span class="user-name-wrap">
+                                        <i class="user-name">수지님,</i>
+                                        <span>지금 구매하시면</span>
+                                    </span>
+                                    <span class="bg-msg"><em><span>₩</span>1,000</em> 할인받아요!</span>
+                                </div>
+                        <!-- //2019-12-03 수정-->
+                        <div class="recommand-info">
+                            <p class="order-title">스파이더맨 파프롬홈 스파이더맨 팩</p>
+                            <p class="order-option">팝콘(M)1 + 음료(M)1 + 상품</p>
+                            <p class="order-price">999,999원</p>
+                            <p class="order-discount">111,999원</p>
+                            <img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463252011350.jpg" alt="추천상품 이미지 출력">
+                        </div>
+                    </a>
+                    <ul class="common-order-list">
+                        <li>
+                            <a href="#rec01" class="order-item">
+                                <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463252011350.jpg" alt="상품 이미지 출력">
+                                    
+                                <div class="order-info">
+                                <dl class="order-info-detail">
+                                    <dt class="order-title">스파이더맨 파프롬홈 스파이더맨 팩</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,999원</span>
+                                            <span class="order-discount">111,999원</span>
+                                        </p>
+                                        <span class="order-option">팝콘(M)1 + 음료(M)1 + 상품</span>
+                                    </dd>
+                                </dl> 
+                                </div>
+                            </a>
+                            <div class="order-option-wrap">
+                                <div class="option-inner">
+                                    <ul class="option-list">
+                                        <li class="option-detail">
+                                            <div class="inner-wrap">
+                                                <a href="#" class="option-open-btn spriteBefore">
+                                                    <span class="opt-txt">고소(M)</span>
+                                                    <span class="added-price"></span>
+                                                </a>
+                                            </div>
+                                            <div class="option-item">
+                                                <ul>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">
+                                                                    고소<span></span>
+                                                                </button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_m1"><label for="popc_m1">M +0</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_l1"><label for="popc_l1">L +1,500</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <!-- 트윈(L)<span> +1,000</span>
+                                                                <span class="part-info">2가지맛 선택</span> -->
+
+                                                                <button type="button" class="opt-detail-btn">
+                                                                    트윈(L)<span> +1,000</span>
+                                                                    <span class="part-info">2가지맛 선택</span>
+                                                                </button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">맛</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_ta"><label for="popc_ta">고소</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_sw" checked><label for="popc_sw">달콤</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_on" checked><label for="popc_on">바질어니언</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_cz"><label for="popc_cz">더블치즈</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">달콤<span></span></button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_m2"><label for="popc_m2">M +1,000</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_l2"><label for="popc_l2">L +1,500</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">바질어니언<span></span></button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_m3"><label for="popc_m3">M +1,000</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_l3"><label for="popc_l3">L +1,500</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>                                             <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">더블치즈<span></span></button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_m33"><label for="popc_m33">M +1,000</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="popc_43"><label for="popc_43">L +1,500</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                </ul>
+                                                <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                            </div>
+                                        </li>
+                                        <li class="option-detail">
+                                            <div class="inner-wrap">
+                                                <a href="#" class="option-open-btn spriteBefore">
+                                                    <span class="opt-txt">콜라(M,얼음있음)</span>
+                                                    <span class="added-price"></span>
+                                                </a>
+                                            </div>
+                                            <div class="option-item">
+                                                <ul>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">
+                                                                    탄산<span> +1,000</span>
+                                                                </button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">맛</span>
+                                                                    <div>
+                                                                        <input type="radio" id="cola_ta1" name="t1"><label for="cola_ta1">코카콜라</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="radio" id="cola_ta2" name="t1"><label for="cola_ta2">스프라이트</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="radio" id="cola_ta3" name="t1"><label for="cola_ta3">환타오렌지</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="radio" id="cola_ta4" name="t1"><label for="cola_ta4">환타포도</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="radio" id="cola_ta5" name="t1"><label for="cola_ta5">코카콜라제로</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cola_m1"><label for="cola_m1">M +0</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cola_l1"><label for="cola_l1">L +500</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">얼음</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cola_ice1"><label for="cola_ice1">있음</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cola_ice2"><label for="cola_ice2">없음</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">아이스티<span></span>
+                                                                </button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">맛</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_ta1"><label for="tea_ta1">레몬</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_ta2" ><label for="tea_ta2">자몽</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_ta3" ><label for="tea_ta3">오렌지</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_m1"><label for="tea_m1">M +0</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_l1"><label for="tea_l1">L +500</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">얼음</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_ice1"><label for="tea_ice1">있음</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="tea_ice2"><label for="tea_ice2">없음</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">
+                                                                    에이드(M)<span> +1,000</span>
+                                                                </button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">맛</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_ta1"><label for="ade_ta1">레몬</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_ta2" ><label for="ade_ta2">자몽</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_ta3" ><label for="ade_ta3">오렌지</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_m1"><label for="ade_m1">M +0</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_l1"><label for="ade_l1">L +500</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">얼음</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_ice1"><label for="ade_ice1">있음</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="ade_ice2"><label for="ade_ice2">없음</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>
+                                                                <button type="button" class="opt-detail-btn">커피<span></span>
+                                                                </button>
+                                                            </dt>
+                                                            <dd>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">사이즈</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cof_m1"><label for="cof_m1">M +0</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cof_l1"><label for="cof_l1">L +500</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="input-box">
+                                                                    <span class="opt-tit">얼음</span>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cof_ice1"><label for="cof_ice1">있음</label>
+                                                                    </div>
+                                                                    <div>
+                                                                        <input type="checkbox" id="cof_ice2"><label for="cof_ice2">없음</label>
+                                                                    </div>
+                                                                </div>
+                                                            </dd>
+                                                        </dl>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">흑당버블티(L) +1,200</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">맥스(Can) +1,200</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">헛개수 컨디션 +1,200</button>
+                                                    </li>
+                                                </ul>
+                                                <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                            </div>
+                                        </li>
+                                        <li class="option-detail">
+                                            <div class="inner-wrap">
+                                                <a href="#" class="option-open-btn spriteBefore">추가구성상품
+                                                    <span class="opt-desc">추가구성상품은 최대3개, 중복선택이 가능합니다.</span>
+                                                </a>
+                                            </div>
+                                            <div class="option-item">
+                                                <ul class="option-etc-list">
+                                                    <!-- <li class="input-bundle">
+                                                        <dl>
+                                                            <dt>추가구성상품</dt>
+                                                            <dd>추가구성상품은 최대3개, 중복선택이 가능합니다.</dd>
+                                                        </dl>
+                                                    </li> -->
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">BBQ직화구이치킨 +4,500</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">죠스튀김범벅 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">죠스치즈튀김범벅 +4,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">스팸계란말이 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">소시지볼 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">플레인핫도그 +2,500</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">칠리치즈핫도그 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">크리미갈릭핫도그 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">(몸통)즉석구이 오징어 +3,500</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">(다리)즉석구이 오징어 +3,500</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">칠리치즈나쵸 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">치즈볼 +3,000</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">치킨스틱나쵸 +3,500</button>
+                                                    </li>
+                                                    <li class="input-bundle">
+                                                        <button type="button" class="single-item-btn">오징어(팩) +2,000</button>
+                                                    </li>
+                                                </ul>
+                                                <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                            </div>
+                                        </li>
+                                        <!-- 추가구성상품 선택 시 아래와 같이 들어감 -->
+                                        <li class="etc-item">
+                                            <p class="item-info">
+                                                <span>즉석구이 오징어(몸통) +1,500<button type="button" class="del-item">삭제</button></span>
+                                            </p>
+                                            <p class="item-info">
+                                                <span>죠스튀김범벅 +4,500<button type="button" class="del-item">삭제</button></span>
+                                            </p>
+                                            <p class="item-info">
+                                                <span>즉석구이 오징어(몸통) +1,500<button type="button" class="del-item">삭제</button></span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                    <div class="price-total-wrap">
+                                        <span class="base-price">기본금액<i>99,000원</i></span>
+                                        <span class="add-price">+ 추가금액<i>99,999원</i></span>
+                                        <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                        <button type="button" class="item-select-btn">선택</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="common-order-list">
+                    <li id="set00">
+                        <a href="#set00" class="order-item">
+                            <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15464065564020.jpg" alt="상품 이미지 출력">
+                                
+                            <div class="order-info">
+                               <dl class="order-info-detail">
+                                    <dt class="order-title">스몰콤보</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,000원</span>
+                                            <span class="order-discount">999,999원</span>
+                                        </p>
+                                        <span class="order-option">팝콘(M)1 + 음료(M)1</span>
+                                    </dd>
+                               </dl> 
+                            </div>
+                        </a>
+                        <div class="order-option-wrap">
+                            <div class="option-inner">
+                                <ul class="option-list">
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">고소(M)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                고소<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_si1"><label for="popc_si1">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_si2"><label for="popc_si2">L +1,500</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                트윈<span></span>
+                                                                <span class="part-info">2가지맛 선택</span>
+                                                            </button> 
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_ta2"><label for="popc_ta2">고소</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_sw2"><label for="popc_sw2">달콤</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_on2"><label for="popc_on2">바질어니언</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_cz2"><label for="popc_cz2">더블치즈</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                달콤<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_si3"><label for="popc_si3">M +1,000</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_si4"><label for="popc_si4">L +1,500</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                바질어니언<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_si5"><label for="popc_si5">M +1,000</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_si6"><label for="popc_si6">L +1,500</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">콜라(M,얼음있음)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                탄산<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta36"><label for="cola_ta36">코카콜라</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta37" ><label for="cola_ta37">스프라이트</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta38" ><label for="cola_ta38">환타오렌지</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta39"><label for="cola_ta39">환타포도</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta41"><label for="cola_ta41">코카콜라제로</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_m12"><label for="cola_m12">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_l12"><label for="cola_l12">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice13"><label for="cola_ice13">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice14"><label for="cola_ice14">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                에이드(M)<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta14"><label for="ade_ta14">레몬</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta15" ><label for="ade_ta15">자몽</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta16" ><label for="ade_ta16">오렌지</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_m12"><label for="ade_m12">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_l12"><label for="ade_l12">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice13"><label for="ade_ice13">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice14"><label for="ade_ice14">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">추가구성상품
+                                                <span class="opt-desc">추가구성상품은 최대3개, 중복선택이 가능합니다.</span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul class="option-etc-list">
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이 오징어(몸통) +1,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이 오징어(다리) +1,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">칠리치즈나쵸 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">죠스튀김범벅 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이오징어(왕다리) +5,000</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">스쿨푸드 스팸계란말이 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">플레인핫도그 +4,000</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">칠리치즈핫도그 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">맛밤 +3,500</button>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <!-- 추가구성상품 미선택상태 -->
+                                </ul>
+                                <div class="price-total-wrap">
+                                    <span class="base-price">기본금액<i>99,000원</i></span>
+                                    <span class="add-price">+ 추가금액<i>99,999원</i></span>
+                                    <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                    <button type="button" class="item-select-btn">선택</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="set01">
+                        <a href="#set01" class="order-item">
+                            <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15464065564020.jpg" alt="상품 이미지 출력">
+                                
+                            <div class="order-info">
+                               <dl class="order-info-detail">
+                                    <dt class="order-title">더블콤보</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,000원</span>
+                                            <span class="order-discount">999,999원</span>
+                                        </p>
+                                        <span class="order-option">팝콘(L)1 + 음료(M)1</span>
+                                    </dd>
+                               </dl> 
+                            </div>
+                        </a>
+                        <div class="order-option-wrap">
+                            <div class="option-inner">
+                                <ul class="option-list">
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">고소(L)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">고소(L)<span></span></button>
+                                                </li>
+
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                트윈(L)<span></span>
+                                                                <span class="part-info">2가지맛 선택</span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_ta2"><label for="popc_ta2">고소</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_sw2" checked><label for="popc_sw2">달콤</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_on2" checked><label for="popc_on2">바질어니언</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_cz2"><label for="popc_cz2">더블치즈</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">달콤(L)<span> +1,000</span></button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">바질어니언(L)<span> +1,000</span></button>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">콜라(M,얼음있음)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                탄산<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta6"><label for="cola_ta6">코카콜라</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta7" ><label for="cola_ta7">스프라이트</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta8" ><label for="cola_ta8">환타오렌지</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta9"><label for="cola_ta9">환타포도</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta10"><label for="cola_ta10">코카콜라제로</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_m2"><label for="cola_m2">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_l2"><label for="cola_l2">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice3"><label for="cola_ice3">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice4"><label for="cola_ice4">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                에이드(M)<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta4"><label for="ade_ta4">레몬</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta5" ><label for="ade_ta5">자몽</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta6" ><label for="ade_ta6">오렌지</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_m2"><label for="ade_m2">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_l2"><label for="ade_l2">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice3"><label for="ade_ice3">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice4"><label for="ade_ice4">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">추가구성상품
+                                                <span class="opt-desc">추가구성상품은 최대3개, 중복선택이 가능합니다.</span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul class="option-etc-list">
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이 오징어(몸통) +1,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이 오징어(다리) +1,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">칠리치즈나쵸 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">죠스튀김범벅 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이오징어(왕다리) +5,000</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">스쿨푸드 스팸계란말이 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">플레인핫도그 +4,000</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">칠리치즈핫도그 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">맛밤 +3,500</button>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <!-- 추가구성상품 미선택상태 -->
+                                </ul>
+                                <div class="price-total-wrap">
+                                    <span class="base-price">기본금액<i>99,000원</i></span>
+                                    <span class="add-price">+ 추가금액<i>99,999원</i></span>
+                                    <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                    <button type="button" class="item-select-btn">선택</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="set02">
+                        <a href="#set02" class="order-item">
+                            <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463216255090.jpg" alt="상품 이미지 출력">  
+                            <div class="order-info">
+                               <dl class="order-info-detail">
+                                    <dt class="order-title">라지콤보</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,000원</span>
+                                            <span class="order-discount">999,999원</span>
+                                        </p>
+                                        <span class="order-option">팝콘(L)2 + 음료(L)2</span>
+                                    </dd>
+                               </dl> 
+                            </div>
+                        </a>
+                        <div class="order-option-wrap">
+                            <div class="option-inner">
+                                <ul class="option-list">
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">고소(L)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">고소(L)<span></span></button>
+                                                </li>
+
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                트윈(L)<span></span>
+                                                                <span class="part-info">2가지맛 선택</span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_ta3"><label for="popc_ta3">고소</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_sw3"><label for="popc_sw3">달콤</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_on3"><label for="popc_on3">바질어니언</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_cz3"><label for="popc_cz3">더블치즈</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">달콤(L)<span> +1,000</span></button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">바질어니언(L)<span> +1,000</span></button>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">고소(L)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">고소(L)<span></span></button>
+                                                </li>
+
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                트윈(L)<span></span>
+                                                                <span class="part-info">2가지맛 선택</span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_ta4"><label for="popc_ta4">고소</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_sw4"><label for="popc_sw4">달콤</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_on4"><label for="popc_on4">바질어니언</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="popc_cz4"><label for="popc_cz4">더블치즈</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">달콤(L)<span> +1,000</span></button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">바질어니언(L)<span> +1,000</span></button>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">콜라(M,얼음있음)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                탄산<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta11"><label for="cola_ta11">코카콜라</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta12" ><label for="cola_ta12">스프라이트</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta13" ><label for="cola_ta13">환타오렌지</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta14"><label for="cola_ta14">환타포도</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta15"><label for="cola_ta15">코카콜라제로</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_m3"><label for="cola_m3">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_l3"><label for="cola_l3">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice5"><label for="cola_ice5">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice6"><label for="cola_ice6">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                에이드(M)<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta7"><label for="ade_ta7">레몬</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta8" ><label for="ade_ta8">자몽</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta9" ><label for="ade_ta9">오렌지</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_m3"><label for="ade_m3">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_l3"><label for="ade_l3">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice5"><label for="ade_ice5">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice6"><label for="ade_ice6">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">
+                                                <span class="opt-txt">콜라(M,얼음있음)</span>
+                                                <span class="added-price"></span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                콜라<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta16"><label for="cola_ta16">코카콜라</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta17" ><label for="cola_ta17">스프라이트</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta18" ><label for="cola_ta18">환타오렌지</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta19"><label for="cola_ta19">환타포도</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ta20"><label for="cola_ta20">코카콜라제로</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_m4"><label for="cola_m4">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_l4"><label for="cola_l4">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice7"><label for="cola_ice7">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="cola_ice8"><label for="cola_ice8">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <dl>
+                                                        <dt>
+                                                            <button type="button" class="opt-detail-btn">
+                                                                에이드(M)<span></span>
+                                                            </button>
+                                                        </dt>
+                                                        <dd>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">맛</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta10"><label for="ade_ta10">레몬</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta11" ><label for="ade_ta11">자몽</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ta12" ><label for="ade_ta12">오렌지</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">사이즈</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_m4"><label for="ade_m4">M +0</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_l4"><label for="ade_l4">L +500</label>
+                                                                </div>
+                                                            </div>
+                                                            <div class="input-box">
+                                                                <span class="opt-tit">얼음</span>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice7"><label for="ade_ice7">있음</label>
+                                                                </div>
+                                                                <div>
+                                                                    <input type="checkbox" id="ade_ice8"><label for="ade_ice8">없음</label>
+                                                                </div>
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <li class="option-detail">
+                                        <div class="inner-wrap">
+                                            <a href="#" class="option-open-btn spriteBefore">추가구성상품
+                                                <span class="opt-desc">추가구성상품은 최대3개, 중복선택이 가능합니다.</span>
+                                            </a>
+                                        </div>
+                                        <div class="option-item">
+                                            <ul class="option-etc-list">
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이 오징어(몸통) +1,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이 오징어(다리) +1,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">칠리치즈나쵸 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">죠스튀김범벅 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">즉석구이오징어(왕다리) +5,000</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">스쿨푸드 스팸계란말이 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">플레인핫도그 +4,000</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">칠리치즈핫도그 +4,500</button>
+                                                </li>
+                                                <li class="input-bundle">
+                                                    <button type="button" class="single-item-btn">맛밤 +3,500</button>
+                                                </li>
+                                            </ul>
+                                            <!-- <button type="button" class="option-close spriteBefore">옵션닫기</button> -->
+                                        </div>
+                                    </li>
+                                    <!-- 추가구성상품 미선택상태 -->
+                                </ul>
+                                <div class="price-total-wrap">
+                                    <span class="base-price">기본금액<i>99,000원</i></span>
+                                    <span class="add-price">+ 추가금액<i>99,999원</i></span>
+                                    <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                    <button type="button" class="item-select-btn">선택</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="set03">
+                        <a href="#set03" class="order-item">
+                            <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15464128494380.jpg" alt="상품 이미지 출력">  
+                            <div class="order-info">
+                                <dl class="order-info-detail">
+                                    <dt class="order-title">스쿨푸드 스팸계란말이</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,000원</span>
+                                        </p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </a>
+                        <div class="order-option-wrap">
+                            <div class="option-inner">
+                                <div class="single-item-stack">
+                                    <span class="stack-tit">총수량</span>
+                                    <div class="com_form_number">
+                                        <a href="#" class="spriteBefore com_btn_minus">-</a>
+                                        <span class="com_form_count com_form_count2">1</span>
+                                        <a href="#" class="spriteBefore com_btn_plus">+</a>		
+                                    </div>
+                                </div>
+                                <div class="price-total-wrap">
+                                    <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                    <button type="button" class="item-select-btn">선택</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="set04">
+                        <a href="#set04" class="order-item">
+                            <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15464128494380.jpg" alt="상품 이미지 출력">  
+                            <div class="order-info">
+                                <dl class="order-info-detail">
+                                    <dt class="order-title">스쿨푸드 스팸계란말이</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,000원</span>
+                                        </p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </a>
+                        <div class="order-option-wrap">
+                            <div class="option-inner">
+                                <div class="single-item-stack">
+                                    <span class="stack-tit">총수량</span>
+                                    <div class="com_form_number">
+                                        <a href="#" class="spriteBefore com_btn_minus">-</a>
+                                        <span class="com_form_count com_form_count2">1</span>
+                                        <a href="#" class="spriteBefore com_btn_plus">+</a>		
+                                    </div>
+                                </div>
+                                <div class="price-total-wrap">
+                                    <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                    <button type="button" class="item-select-btn">선택</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="set05">
+                        <a href="#set05" class="order-item">
+                            <img class="order-scr" src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15464128494380.jpg" alt="상품 이미지 출력">  
+                            <div class="order-info">
+                                <dl class="order-info-detail">
+                                    <dt class="order-title">스쿨푸드 스팸계란말이</dt>
+                                    <dd>
+                                        <p class="order-price-result">
+                                            <span class="order-price">999,000원</span>
+                                        </p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </a>
+                        <div class="order-option-wrap">
+                            <div class="option-inner">
+                                <div class="single-item-stack">
+                                    <span class="stack-tit">총수량</span>
+                                    <div class="com_form_number">
+                                        <a href="#" class="spriteBefore com_btn_minus">-</a>
+                                        <span class="com_form_count com_form_count2">1</span>
+                                        <a href="#" class="spriteBefore com_btn_plus">+</a>		
+                                    </div>
+                                </div>
+                                <div class="price-total-wrap">
+                                    <p class="result-price"><span>메뉴합계</span><i>999,999원</i></p>
+                                    <button type="button" class="item-select-btn">선택</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 결제 플로팅 레이어 -->
+            <div id="div_payment_float" class="floating_payment active ticket-n-store">
+                <a href="javascript:void(0);" class="wrap_price ticket-n-store-price">
+                    <div class="sum">
+                        <span class="part-price">
+                            티켓<strong id="to_ticket">104,000</strong>
+                        </span>
+                        <span class="part-price">
+                            매점<strong id="to_store">100,000</strong>
+                        </span>
+                    </div>
+                    <div class="result">
+                        <strong>총 결제금액</strong>
+                        <em id="em_final">999,999<span>원</span></em>
+                    </div>
+                </a>
+
+                <a href="#" id="btn_payment" class="btn btn-white">Skip</a>
+                <!-- 
+                    스토어 메뉴 선택 시 아래 버튼으로 변경 
+                <a href="#" id="btn_payment" class="btn btn-red">결제하기</a>
+                 -->
+            </div>
+            <!-- // 결제하기 플로팅 레이어 -->
+            
+            <div class="popup_notice _fnNoticeBalloon store-info-pop">
+                <div class="inner">
+                    <a href="javascript:void(0);" class="btn_toggle">
+                        <div>
+                            <p class="desc">티켓만 구매하실 경우 Skip버튼을 눌러주세요.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+            <div class="popup_option_info">
+                <!-- 
+                    실제로 출력되는 메시지는 상황별로 다릅니다. 
+
+                    선택하신 메뉴가 추가되었습니다.
+                    추가구성상품은 최대 3개까지만 선택이 가능합니다.
+                    맛, 사이즈, 얼음 모두 선택해주세요.
+                    트윈팝콘은 2가지 맛을 선택해주세요. 
+                    등등...
+                    아래 <p class="case-msg"></p> 내 멘트를 바꿔가며 출력해야합니다.
+                -->
+                <div class="msg-wrap">
+                    <p class="case-msg">추가구성상품은 최대 3개까지만 선택이 가능합니다.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="com_pop_wrap">
+		    <div class="com_pop_fog"></div>
+            <div class="pop_fixed_type2">
+                <div class="com_pop_header">
+                    <a href="javascript:void(0);" class="sprite spriteBefore spriteAfter com_pop_btn_close">닫기</a>
+                </div>
+                <div class="pop_fixed_type2_content">
+                    <div class="movie-info">
+                        <img class="movie-info-img" src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82087/82087_20190726_0_320.jpg" alt="영화 사진">
+                        <dl class="movie-info-detail">
+                            <dt>영화의제목이너무길어서넘어갈경우를보여줍니다</dt>
+                            <dd>
+                                <p class="movie-info-type">2D</p>
+                                <ul class="movie-info-seat">
+                                    <li>E05</li>
+                                    <li>E06</li>
+                                    <li>E07</li>
+                                    <li>E08</li>
+                                    <li>E09</li>
+                                    <li>E10</li>
+                                    <li>E11</li>
+                                    <li>E12</li>
+                                </ul>
+                                <!-- 2019-12-03 추가-->
+                                <ul class="movie-info-type2">
+                                    <li>청소년1</li>
+                                    <li>어린이1</li>
+                                    <li>우대1</li>
+                                    <li>청소년1</li>
+                                </ul>
+                                <!-- //2019-12-03 추가-->
+                                <span class="info-price">999,999<i>원</i></span>
+                            </dd>
+                        </dl>                       
+                    </div>
+                    <ul class="store-info-list">
+                        <li>
+                            <dl class="store-info">
+                                <dt>스파이더맨 파프롬홈 스파이더맨 팩</dt>
+                                <dd>
+                                    <p class="store-detail">
+                                        <span class="store-type">팝콘2:</span>
+                                        <span class="store-list">트윈 달콤+바질어니언1, 더블치즈팝콘(L)1</span>
+                                    </p>
+                                    <p class="store-detail">
+                                        <span class="store-type">탄산1:</span>
+                                        <span class="store-list">콜라(M)1</span>
+                                    </p>
+                                    <p class="store-detail">
+                                        <span class="store-type">음료1:</span>
+                                        <span class="store-list">블루베리에이드(M)1</span>
+                                    </p>
+                                    <p class="store-detail">
+                                        <span class="store-type">스낵3:</span>
+                                        <span class="store-list">즉석구이 오징어(몸통)1, 죠스튀김범벅1, 즉석구이 오징어(다리)1</span>
+                                    </p>
+                                </dd>
+                            </dl>
+                            <div class="com_form_number">
+                                <a href="#" class="spriteBefore com_btn_minus">-</a>
+                                <span class="com_form_count com_form_count2">1</span>
+                                <a href="#" class="spriteBefore com_btn_plus">+</a>		
+                            </div>
+                            <div class="edit-option-wrap">
+                                <button type="button" class="edit-option-btn">옵션변경</button>
+                            </div>
+                            <span class="info-price">999,999<i>원</i></span>
+                            <button class="cancel-order-btn">주문삭제</button>
+                        </li>
+                        <li>
+                            <dl class="store-info">
+                                <dt>스쿨푸드 스팸계란말이</dt>
+                                <dd></dd>
+                            </dl>
+                            <div class="com_form_number">
+                                <a href="#" class="spriteBefore com_btn_minus">-</a>
+                                <span class="com_form_count com_form_count2">1</span>
+                                <a href="#" class="spriteBefore com_btn_plus">+</a>		
+                            </div>
+                            <span class="info-price">999,999<i>원</i></span>
+                            <button class="cancel-order-btn">주문삭제</button>
+                        </li>
+                        <li class="has-not-item">
+                            <p>선택하신 매점상품이 없습니다. <br>지금 팝콘을 구매하시고, 영화관에서는 픽업만하세요!</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>        			
+	    </div>
+    </div>
+
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/payment/lib/icheck.min.js"></script> 
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>
+        
+    <script>
+        $('.info_accordion .ia_tit > a').click(function() {
+            var myLi = $(this).closest('li');
+
+            if(myLi.hasClass('on')) {
+                myLi.removeClass('on');
+                myLi.find('.ia_cont').stop().slideUp();
+            }else{
+                myLi.siblings().removeClass('on');
+                myLi.siblings().find('.ia_cont').slideUp();
+                myLi.addClass('on');
+                myLi.find('.ia_cont').stop().slideDown();
+            }
+        });
+
+        $(".add-info").on("click",function(){
+            if( !$("#all-info").hasClass("__open") ){
+                // $(".section_contents .tab-menu > li").removeClass("focus");
+                $("#all-info").addClass("__open");
+                // $(".ohter-payments").stop().slideDown("fast");
+            }
+            else {
+                $("#all-info").removeClass("__open");
+                // $(".ohter-payments").stop().slideUp("fast");
+            }
+        });
+
+        // $(".tab-menu > li > a").on("click",function(){
+        //     if( $("#all-info").hasClass("__open") )
+        //         $("#all-info").removeClass("__open");
+        // });
+
+        $(".ticket-n-store .ticket-n-store-price").on("click",function(e){
+            if( $(".ticket-n-store-main .pop_fixed_type2").css("display") == "block" ){
+                e.preventDefault();
+                $(".com_pop_fog").trigger('click');
+            }    
+            else
+                $.fn.comPopupLayer(true, 'pop_fixed_type2', '0.8');
+        });
+
+        // 상품선택 동작
+        var notd = false;
+
+        var selected_item = null;
+        $(".order-item").on("click",function(e){
+            var cur_item = $(this);
+            if(selected_item == null){
+                //현재 선택된 아이템이 없을 때
+                e.preventDefault();
+                if(!notd){
+                    notd = true;
+                    order_item_open(cur_item);
+                }
+            }
+            else {
+                //선택된 아이템이 이미 있는 경우
+                if( !cur_item.hasClass("__opened") ){
+                    e.preventDefault();
+                    if(!notd){
+                        order_item_close();
+                        notd = true;
+                        order_item_open(cur_item);
+                    }
+                }
+                else {
+                    //자기 자신이 다시 선택된 경우는 무시
+                    e.preventDefault();
+                    if(!notd){
+                        order_item_close();
+                    }
+                }
+            }
+
+        });
+
+        // 옵션변경 동작
+        $(".edit-option-btn").on("click",function(){
+            var cur_ordertitle = $(this).parent().siblings("dl").children("dt").text();
+            $(".com_pop_fog").trigger('click');
+            var item_set;
+            $("dt.order-title").each(function(){
+                if( cur_ordertitle == $(this).text() ){
+                    item_set = $(this).parent(".order-info-detail").parent(".order-info").parent(".order-item");
+                }
+            });
+
+
+            // order_item_close();
+            // notd = true;
+            // setTimeout(function () {
+            //     order_item_open(item_set);
+            // }, 400);
+            order_option_change(item_set);
+            //실제 옵션변경 시엔 각 기존 옵션 정보를 가져와 출력..
+        });
+
+        //옵션펼치기 동작
+        $(".option-open-btn").on("click",function (e) { 
+            e.preventDefault();
+            var opt_sel = $(this).parents(".option-detail");
+            if( !opt_sel.hasClass("__openopt") ){
+                option_item_close();
+                opt_sel.addClass("__openopt").children(".option-item").stop().slideDown(300);
+            }
+            else {
+                //옵션닫기
+                option_item_close();
+            }
+        });
+
+        //옵션닫기(구조변경으로 사용안함)
+        // $(".option-close").on("click",function () { 
+        //     option_item_close();
+        // });
+
+        //세부옵션 열기 동작
+        $(".input-bundle .opt-detail-btn").on("click",function () { 
+            var opt_det_target = $(this).parents(".input-bundle");
+            if( !opt_det_target.hasClass("__selopt") ){
+                option_detail_close();
+                $(this).parent().siblings("dd").stop().slideDown(200);
+                opt_det_target.addClass("__selopt");
+            }
+            else {
+                $(this).parent().siblings("dd").stop().slideUp(200);
+                opt_det_target.removeClass("__selopt");
+            }
+        });
+
+        //단일 상품 선택 동작
+        $(".single-item-btn").on("click",function () { 
+            //<li class="etc-item">를 추가하여, 선택 상품을 추가하여 출력해야함.
+            
+            $(this).addClass("__set");
+            setTimeout(function () {
+                option_item_close();
+            }, 150);
+        });
+
+
+        //상품 선택 완료 버튼(하단 메시지 출력 테스트 용입니다. 실적용시엔 제외하고 사용해주세요)
+        $(".item-select-btn").on("click",function(){
+            show_pop_option();
+        });
+
+
+        function order_item_open(item){
+            //선택한 상품 열때 사용
+            var test = item;
+            if( item.parents().hasClass("recommand-order") ){
+                //추천아이템 선택함
+                if( !$(".recommand-order").hasClass("__selected") ){
+                    $(".recommand-order").addClass("__selected");
+                    if( item.siblings(".common-order-list").length ){
+                        item.siblings(".common-order-list").children("li").children(".order-item").addClass("__opened");
+                        item.siblings(".common-order-list").children("li").children(".order-option-wrap").stop().slideDown(300);
+                        item.siblings(".common-order-list").children("li").children(".order-option-wrap").promise().done(function() {
+                            var hash = test[0].hash;
+                            $('html, body').animate({
+                                scrollTop: $(hash).offset().top
+                                }, 300, function(){
+                                window.location.hash = hash;
+                            });
+                            notd = false;
+                        });
+                    }
+                    else if( item.siblings(".order-option-wrap").length ){
+                        item.addClass("__opened");
+                        item.siblings(".order-option-wrap").stop().slideDown(300);
+                        item.siblings(".order-option-wrap").promise().done(function() {
+                            var hash = test[0].hash;
+                            $('html, body').animate({
+                                scrollTop: $(hash).offset().top
+                                }, 300, function(){
+                                window.location.hash = hash;
+                            });
+                            notd = false;
+                        });
+                    }
+                    selected_item = item;
+                }
+            }
+            else {
+                //일반아이템 선택함
+                item.parent().addClass("__on");
+                item.addClass("__opened");
+                item.siblings(".order-option-wrap").stop().slideDown(300);
+                item.siblings(".order-option-wrap").promise().done(function() {
+                    var hash = test[0].hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                        }, 300, function(){
+                        window.location.hash = hash;
+                    });
+                    notd = false;
+                });
+                selected_item = item;
+            }
+            // var hash = test[0].hash;
+            // setTimeout(function () {
+            //     $('html, body').animate({
+            //     scrollTop: $(hash).offset().top
+            //     }, 300, function(){
+            //         window.location.hash = hash;
+            //     });
+            // }, 300);
+        }
+
+        function order_item_close(){
+            //모든 상품 닫을때 사용
+            if(!notd){
+                notd = true;    
+                $(".recommand-order").removeClass("__selected");
+                $(".order-item").removeClass("__opened");
+                if( $(".order-item").parent().hasClass("__on") )
+                    $(".order-item").parent().removeClass("__on");
+                option_item_close();
+                $(".order-option-wrap").stop().slideUp(300);
+                $(".order-option-wrap").promise().done(function() {
+                    notd = false;
+                });
+                selected_item = null;
+            }
+        }
+
+        function order_option_change(item){
+            //옵션변경 버튼을 눌렀을때 모든 동작
+            if(!notd){
+                notd = true;
+                $(".recommand-order").removeClass("__selected");
+                $(".order-item").removeClass("__opened");
+                if( $(".order-item").parent().hasClass("__on") )
+                    $(".order-item").parent().removeClass("__on");
+                option_item_close();
+                $(".order-option-wrap").stop().slideUp(300);
+                $(".order-option-wrap").promise().done(function() {
+                    order_item_open(item);
+                });
+                selected_item = item;
+            }
+        }
+
+        function option_item_close(){
+            //모든 옵션 닫기
+            if( $(".__openopt").length ){
+                $(".__openopt").children(".option-item").css("display","none");
+                $(".option-detail.__openopt").removeClass("__openopt");
+            }
+            $(".single-item-btn").removeClass("__set");
+            option_detail_close();
+        }
+
+        function option_detail_close(){
+            //세부 옵션 모두 닫기
+            $(".input-bundle").removeClass("__selopt");
+            $(".input-bundle dd").stop().slideUp(200);
+        }
+
+        var isout = false;
+        function show_pop_option (){
+            //옵션 관련 메시지 팝업
+            if(!isout){
+                isout = true;
+                $(".popup_option_info").css("display","block");
+                $(".popup_option_info").addClass("__popshow");
+                setTimeout(function () {
+                    $(".popup_option_info").removeClass("__popshow");
+                        setTimeout(function () {
+                        $(".popup_option_info").css("display","none");
+                        isout = false;
+                    }, 400);
+                }, 2000);
+            }
+        }
+    </script>
+
+    <script>
+        // 수정된 벌룬 메시지 스크립트
+        var ui = ui || {};
+        ui.page = ui.page || {};
+        ui.page.common = function () {
+            this.init();
+        };
+        ui.page.common.prototype = {
+            myScroll: null,
+            sBenefit: null,
+            applyReceipt: null,
+            init: function () {
+                this._assignElements();
+
+                this._initFloatingPayment();
+                this._fnTimerNoticeBalloon();
+                // this._initCheckBox();
+                // this._fnAllCheckbox();
+            },
+            _assignElements: function () {
+                this.welDoc = $(document.body);
+                this.welWin = $(window);
+            },
+            _fnNoticeShow: function () {
+                var welNoticeBalloon = $('.popup_notice');
+                welNoticeBalloon.show();
+            },
+            _fnNoticeHide: function () {
+                var welNoticeBalloon = $('.popup_notice');
+                welNoticeBalloon.fadeOut();
+                setTimeout(function () {
+                        welNoticeBalloon.hide();
+                    }, 500);
+            },
+        
+            _fnNoticeBalloonPosition: function () {
+
+                var visibleFloatingPayment = false;
+
+                if ($('.wrap').hasClass('floating_on') && $(".floating_payment").is(":visible")) {
+                    visibleFloatingPayment = true;
+                }
+
+                if ($('.floating_payment').hasClass('type1')) {
+                    if (visibleFloatingPayment && $('.area_receipt').css('display') == "block") {
+                        $('.popup_notice').css({ bottom: '142px' }, 500);
+                    } else if (visibleFloatingPayment) {
+                        $('.popup_notice').css({ bottom: '62px' }, 500);
+                    } else {
+                        $('.popup_notice').css({ bottom: '12px' }, 500);
+                    }
+                } else {
+                    if (visibleFloatingPayment && $('.area_receipt').css('display') == "block") {
+                        $('.popup_notice').css({ bottom: '152px' }, 500);
+                    } else if (visibleFloatingPayment) {
+                        $('.popup_notice').css({ bottom: '74px' }, 500);
+                    } else {
+                        $('.popup_notice').css({ bottom: '12px' }, 500);
+                    }
+                }
+            },
+            _fnNoticeBalloonOpen: function (e) {
+                var target = (e) ? $(e.currentTarget) : $('.popup_notice');
+                var welTargetingPopup = (e) ? target.parents('.popup_notice') : $('.popup_notice');
+                var nBalloonWidth = $(window).width() - 24;
+                welTargetingPopup.toggleClass('active');
+                if (welTargetingPopup.hasClass('active')) {
+                    welTargetingPopup.find('.inner').css({
+                        width: nBalloonWidth,
+                        height: 40
+                    }, 500);
+                } else {
+                    welTargetingPopup.find('.inner').css({ width: 40, height: 40 }, 500);
+                }
+            },
+            _fnNoticeBalloonClose: function (e) {
+                var target = $('.popup_notice');
+                if (e) {
+                    e.stopPropagation();
+                }
+                // target.find('.inner').css("opacity","0");
+                this._fnNoticeHide();
+            },
+            _fnTimerNoticeBalloon: function () {
+                var self = this;
+                if (sessionStorage.getItem('timer') !== "true") {
+                    setTimeout(function () {
+                        self._fnNoticeBalloonOpen();
+                    }, 500);
+                    setTimeout(function () {
+                        self._fnNoticeBalloonClose();
+                    }, 3000);
+                }
+            },
+            _initFloatingPayment: function () {
+                var welFlotingPayment = $('.floating_payment');
+                var welWrap = $('.wrap');
+                if ($('.payment_main').length <= 0) {
+                    welFlotingPayment.addClass('active');
+                    welWrap.addClass('floating_on');
+                }
+                this._fnNoticeBalloonPosition();
+            },
+            _fnFloatingPayment: function () {
+                this._initReceiptFloating();
+                this._fnNoticeBalloonPosition();
+            },
+            _initCheckBox: function () {
+                // 체크박스가 1개 이상일 때
+                if ($('input[type="checkbox"]').length > 0) {
+                    // iCheck 초기화
+                    $('input[type="checkbox"]').each(function () {
+                        if (!$(this).hasClass('agree_checkbox')) {
+                            if ($(this).hasClass('circle_checkbox')) {
+                                $(this).iCheck({
+                                    checkboxClass: 'icheckbox_circle-red'
+                                })
+                            } else {
+                                $(this).iCheck({
+                                    checkboxClass: 'icheckbox_square-red'
+                                });
+                            }
+                        }
+                    });
+                }
+            },
+            _fnChainCheckbox: function (e) {
+                var elTextBox = $(e.target);
+                elTextBox.on('keypress',
+                    function () {
+                        $(this).next().find('.icheckbox_square-red').iCheck('uncheck');
+                    });
+            },
+            _fnAllCheckbox: function () {
+                var elAllCheckBtn = $('._fnAllCheckBox');
+                var elAllCheckbox = $('#checkList input[type="checkbox"]');
+                var nCheckBoxLength = elAllCheckbox.length;
+
+                // 전체선택 체크박스
+                elAllCheckBtn.on('ifChecked ifUnchecked', function (event) {
+                    if (event.type == 'ifChecked') {
+                        elAllCheckbox.prop('checked', 'checked');
+                        elAllCheckbox.iCheck('check').iCheck('update');
+                    } else {
+                        elAllCheckbox.prop('checked', false);
+                        elAllCheckbox.iCheck('unCheck').iCheck('update');
+                    }
+                });
+
+                // 체크박스
+                elAllCheckbox.on('change ifChanged', function (event) {
+                    setTimeout(function () {
+                        if (elAllCheckbox.filter(':checked').length === nCheckBoxLength) {
+                            elAllCheckBtn.prop('checked', 'checked').iCheck('update');
+                        } else {
+                            elAllCheckBtn.prop('checked', false).iCheck('update');
+                        }
+                    }, 100)
+                });
+            },
+
+        };
+        var uiCommon = new ui.page.common();
+    </script>
+</body>
+
+</html>

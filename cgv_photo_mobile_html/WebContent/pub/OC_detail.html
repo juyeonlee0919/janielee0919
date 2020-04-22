@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>CGV</title>
+	<!-- [S] 운영소스 상속용 -->
+	<link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+	<link rel="canonical" href="http://www.cgv.co.kr/">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+	<!--<script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+	<script type="text/javascript" src="../js/morder.common.js"></script>
+	<script type="text/javascript" src="../js/morder.appInterface.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript">
+		//Global Variable
+		var IsWebView_Master = false;
+		var IsWebViewIPhone_Master = false;
+		var IsNewVersion_Master = false;
+		var AppVersion_Master = 0;
+		var IsIphone_Master = false;
+		var IOSVersion_Master = 0;
+
+		jQuery(document).ready(function () {
+			//아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+			var strIphonenavi = "";
+			if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+				var tmp_url = location.href;
+				history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+				var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+				location.href = tmp_url_rep;
+			}
+		});
+	</script>
+	<meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+	<meta property="og:title" content="CGV 패키지">
+	<meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+	<meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+	<meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:ios:app_store_id" content="370441190">
+	<meta property="al:ios:app_name" content="CGV">
+	<meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:android:package" content="com.cgv.android.movieapp">
+	<meta property="al:android:app_name" content="CGV">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+	<!-- [E] 운영소스 상속용 -->
+</head>
+<body>
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+<div class="wrap">
+
+	<!-- [S] Header -->
+	<div id="header_box">
+		<header id="headerTitle" class="cls_headertitle_box">
+			<a href="javascript:siteMapFn();">
+				<div class="ico_lt">
+					<img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id="headerLeftBtn" src="" style="display: none;"/>
+				</div>
+			</a>
+			<div class="title" id="headerTitleArea">진행 중 주문</div>
+			<div class="txt_rt"><a href="#">뒤로</a></div>
+		</header>
+	</div>
+	<!-- [E] Header -->
+
+
+	<!-- [S] Content -->
+	<section class="content_wrap container mOrder_ingDetail" id="ContainerView">
+
+		
+
+		<div class="ing_num">
+			<em class="num">총 4개</em>
+			<span class="this_time tar">06.28 15:10 기준 <a href="#" class="btn_refresh"><span class="hidden">새로고침</span></a></span>
+		</div>
+
+		<article class="store_payment_detail_buy_info_wrap">
+            <article class="odering_info">
+                <span class="odering_info_posite">CGV 용산 아이파크몰</span>
+				<span class="odering_info_people">픽업자 | 이수지 010-0000-0000</span>
+				<!-- QR CODE IMG -->
+				<span class="odering_info_qr">
+					<a href="#" class="btn_view_qr">
+						<img src="http://img.cgv.co.kr/webapp/images/test/img_qr.jpg" alt="QR CODE">
+					</a>					
+				</span>
+            </article>
+			<div class="com_list_style1_title mOrderAccrodion isAction">
+				<div>
+					<a href="#">
+						<div class="order_pick_position">
+							<span class="pick_label redbg">주문번호</span> <storng class="pick_position">6층 매점 1096</storng>
+						</div>
+					</a>
+				<!-- S [U 20203023] 진행중 주문_레스토랑 메뉴 구매 시 -->
+					
+					<div class="order_info_wrap">
+						<div class="order_info_icon"></div>
+						<div class="order_info_balloon_wrap">
+							<div class="order_info_balloon">
+								<p class="tit">고객님의 <strong>예약정보</strong>에요!</p>
+								<dl>
+									<dt>날짜</dt>
+									<dd>2020.03.13 (금)</dd>
+									<dt>시간</dt>
+									<dd>오후 05:30</dd>
+									<dt>인원</dt>
+									<dd>2명</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<!-- S 기존코드 주석처리
+					<div style="height:20px; background-color:#fff"><span class="msg_order2">상영 15분 전 주문접수 될 예정이에요!</span></div>
+
+					<div class="order_state">
+						<div class="progress_state">
+							<span class="step ready isActive">
+								주문전송 								
+								<span>2019.07.31<br>09:57</span>
+								!--진행중 파코니 이미지 --
+								<span class="anchor_paconi">
+									!--주문 전송 안내 문구 추가--
+									<span class="msg_order2">상영 15분 전 주문접수 될 예정이에요!</span>
+								</span>
+							</span>
+							<span class="step">
+								주문접수 
+								<span>2019.07.31<br>09:57</span>
+								<span class="anchor_paconi"></span>
+							</span>
+							<span class="step ready">준비완료
+								<span class="anchor_paconi"></span>
+							</span>
+							<span class="step isActive ready">픽업완료
+								!-- 픽업완료 파코니 이미지 --
+								<span class="anchor_paconi_end"></span>
+							</span>
+						</div>
+					</div>
+					-->
+				<!-- E [U 20203023] 진행중 주문_레스토랑 메뉴 구매 시 -->
+				</div>
+			</div>
+			<ul class="com_list_style1 mOrderAccrodionCont">
+				<li>
+					<div class="paymentContent">
+						<div class="PayProduct">
+							<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="CGV콤보"></div>
+							<span class="product_textwrap">
+								<div class="myMenu">
+									<input type="checkbox" class="ico_myMenu" title="나만의 메뉴">
+								</div>
+								<span class="textwrap_title">CGV콤보 / <span class="count_num">2개</span></span>
+								<span class="textwrap_name"><span class="prodT">팝콘2:</span><span class="prodN">달콤(L),트윈(고소,달콤)</span></span>
+								<span class="textwrap_name"><span class="prodT">음료2:</span><span class="prodN">콜라(L), 스프라이트(M)</span></span>
+								<span class="textwrap_name"><span class="prodT">스낵3:</span><span class="prodN">(몸통)즉석구이 오징어, (다리) 오징어 오다리,나쵸</span></span>
+							</span>
+						</div>
+						<div class="PayProduct">
+							<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="더블치즈팝콘"></div>
+							<span class="product_textwrap">
+								<div class="myMenu">
+									<input type="checkbox" class="ico_myMenu" title="나만의 메뉴">
+								</div>
+								<span class="textwrap_title">더블치즈팝콘(L)  / <span class="count_num">2개</span></span>
+								<span class="textwrap_name">더블치즈팝콘(L)</span>
+							</span>
+						</div>
+					</div>
+					<div class="btn_total">
+						<a href="#" class="btn_radius redLine">주문 전송 취소</a>
+						<a href="#" class="btn_radius">결제 내역 보기</a>
+					</div>
+				</li>
+			</ul>
+            <article class="odering_info">
+                <span class="odering_info_posite">CGV 용산 아이파크몰</span>
+                <span class="odering_info_people">픽업자 | 이수지 010-0000-0000</span>
+            </article>
+			<div class="com_list_style1_title mOrderAccrodion">				
+				<div>
+					<a href="#">
+						<div class="order_pick_position">
+							<span class="pick_label">주문번호</span> <storng class="pick_position">6층 매점 <em>1096</em></storng>
+						</div>
+					</a>
+					<div class="order_state">
+						<div class="progress_state">
+							<span class="step">
+								주문전송 
+								<span>2019.07.31<br>09:57</span>
+								<span class="anchor_paconi"></span>
+							</span>
+							<span class="step isActive ready">
+								주문접수
+								<span>2019.07.31<br>09:57</span>
+								<span class="anchor_paconi"></span>
+							</span>
+							<span class="step ready">
+								준비완료
+								<span class="anchor_paconi"></span>
+							</span>
+							<span class="step">픽업완료
+								<span class="anchor_paconi_end"></span>
+							</span>
+						</div>
+					</div>
+				</div>								
+			</div>
+			<ul class="com_list_style1 mOrderAccrodionCont">
+				<li>
+					<div class="paymentContent">
+						<div class="PayProduct">
+							<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="CGV콤보"></div>
+							<span class="product_textwrap">
+								<div class="myMenu">
+									<input type="checkbox" class="ico_myMenu" title="나만의 메뉴">
+								</div>
+								<span class="textwrap_title">CGV콤보 / <span class="count_num">2개</span></span>
+								<span class="textwrap_name"><span class="prodT">팝콘2:</span><span class="prodN">달콤(L),트윈(고소,달콤)</span></span>
+								<span class="textwrap_name"><span class="prodT">음료2:</span><span class="prodN">콜라(L), 스프라이트(M)</span></span>
+								<span class="textwrap_name"><span class="prodT">스낵3:</span><span class="prodN">(몸통)즉석구이 오징어, (다리) 오징어 오다리,나쵸</span></span>
+							</span>
+						</div>
+					</div>
+					<div class="btn_total">
+						<a href="#" class="btn_radius">결제 내역 보기</a>
+					</div>
+				</li>
+			</ul>
+		</article>
+
+		<a href="javascript:void(0);" class="btnTop"><img src="http://img.cgv.co.kr/WebApp/images/main/@3x/btn_top.png" alt="맨위로"></a>
+	</section>
+	<div id="popQrCode" class="popup_dim popQr active" style="display: none;"> <!-- 활성화 시 active 클래스 추가 -->
+		<div class="popup">
+			<div class="popup_container">
+				<!--닫기 버튼-->
+				<a href="#" class="btn_pop_close">닫기</a>				
+				<div class="qr_img_area">
+					<img src="http://img.cgv.co.kr/webapp/images/test/img_qr.jpg" alt="QR CODE">
+				</div>
+			</div>
+			
+		</div>
+	</div>	
+	<!-- [E] Content -->
+</div>
+
+<!-- [S] Footer -->
+<footer id="div_footer">
+	<p class="footerLink">
+		<a href="/WebAPP/Support/noti.aspx"><span>공지사항</span></a>
+		<a href="/WebApp/Support/faq.aspx"><span>고객센터</span></a>
+
+		<a href="#" title="로그아웃"><span>로그아웃</span></a>
+		<a href="#" id="footer_pc" title="PC버전"><span>PC버전</span></a>
+	</p>
+	<section class="footerContents">
+		<h1><a href="http://corp.cgv.co.kr/" target="_blank" class="spriteFooter footerLogo">CGV</a></h1>
+		<ul class="footerContentsLink">
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=10"  title="이용약관" >이용약관</a></li>
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=11"  title="개인정보 처리방기" >개인정보 처리방침</a></li>
+			<li><a href="/Agreement/Agreement_disclaimer.aspx" title="법적고지" >법적고지</a></li>
+		</ul>
+		<dl class="companyInfo">
+			<dt>대표이사</dt>
+			<dd>최병환</dd>
+			<dt>사업자등록번호</dt>
+			<dd>104-81-45690</dd>
+			<dt>통신판매업신고번호</dt>
+			<dd>2017-서울용산-0662</dd>
+			<dt>개인정보보호 책임자</dt>
+			<dd>정종민</dd>
+			<dt>주소</dt>
+			<dd><address>(04377)서울특별시 용산구 한강대로<br>23길 55, 아이파크몰 6층(한강로동)</address></dd>
+		</dl>
+	</section>
+	<p class="footerReserved">© CJ CGV. All Rights Reserved</p>
+</footer>
+<script>
+	jQuery('.btn_view_qr').click(function (){
+		popOpenFunc('popQrCode')
+	})	
+	jQuery('.popQr .btn_pop_close').click(function (){
+		popCloseFunc('popQrCode')
+	})	
+</script>
+<!-- [E] Footer -->
+
+<!-- [S] 운영소스 상속용 -->
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script> -->
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+<!-- [E] 운영소스 상속용 -->
+
+<!-- [S] 바로오더 신규 -->
+<script type="text/javascript" src="../js/instOrder.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/instOrder.css" />
+<!-- [E] 바로오더 신규 -->
+</body>
+</html>

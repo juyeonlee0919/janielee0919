@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>CGV</title>
+	<!-- [S] 운영소스 상속용 -->
+	<link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+	<link rel="canonical" href="http://www.cgv.co.kr/">
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+	<script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+	<!--<script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-5CJXRN"></script>
+	<script async="" src="//www.google-analytics.com/analytics.js"></script>-->
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+	<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+	<script type="text/javascript" src="../js/morder.common.js"></script>
+	<script type="text/javascript" src="../js/morder.appInterface.js"></script>
+	<script type="text/javascript" src="../js/clipboard.min.js"></script>
+	<script type="text/javascript" src="../js/date.js"></script>
+	<script type="text/javascript">
+		//Global Variable
+		var IsWebView_Master = false;
+		var IsWebViewIPhone_Master = false;
+		var IsNewVersion_Master = false;
+		var AppVersion_Master = 0;
+		var IsIphone_Master = false;
+		var IOSVersion_Master = 0;
+
+		jQuery(document).ready(function () {
+			//아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+			var strIphonenavi = "";
+			if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+				var tmp_url = location.href;
+				history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+				var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+				location.href = tmp_url_rep;
+			}
+		});
+	</script>
+	<meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+	<meta property="og:title" content="CGV 패키지">
+	<meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+	<meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+	<meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:ios:app_store_id" content="370441190">
+	<meta property="al:ios:app_name" content="CGV">
+	<meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+	<meta property="al:android:package" content="com.cgv.android.movieapp">
+	<meta property="al:android:app_name" content="CGV">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/header.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/sub.css">
+	<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/lib/swiper.css">
+	<!-- [E] 운영소스 상속용 -->
+</head>
+<body>
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+<div class="wrap">
+
+	<!-- [S] Header -->
+	<div id="header_box">
+		<header id="headerTitle" class="cls_headertitle_box">
+			<a href="javascript:siteMapFn();">
+				<div class="ico_lt">
+					<img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴"><img id="headerLeftBtn" src="" style="display: none;"/>
+				</div>
+			</a>
+			<div class="title" id="headerTitleArea">결제</div>
+			<div class="txt_rt"><a href="#">뒤로</a></div>
+		</header>
+
+	</div>
+	<!-- [E] Header -->
+
+
+	<!-- [S] Content -->
+	<section class="content_wrap container" id="ContainerView">
+		<div class="container_inner paymentContent">
+			<article class="payCustomer">
+				<h1 class="mOrderAccrodion isAction" aria-expanded="true">
+					<a href="#"><strong>용산 CGV 구매상품 정보</strong></a>
+				</h1>
+				<div class="paymentWrap mOrderAccrodionCont">
+					<div class="paymentInner">
+						<div class="payTit">
+							<strong>픽업자 정보 확인</strong>
+						</div>
+						<div class="payInfo">
+							<input type="text" class="payInfoName" title="이름">
+							<input type="tel" class="payInfoPhone" title="전화번호">
+							<div class="payInfoBtn">
+								<button>변경</button>
+							</div>
+						</div>
+						<p class="payDesc">구매하신 CGV상품은 픽업자 정보에 입력된 휴대전화 번호로 MMS로 발송됩니다. 입력된 휴대전화 번호가 맞는지 꼭 확인하세요.</p>
+						<div class="PayProduct">
+							<div class="img_wrap"><img src="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15468459403990.jpg" alt="생일축하 패키지 상세보기로 이동"></div>
+							<span class="product_textwrap">
+								<span class="textwrap_title">CGV콤보</span>
+								<span class="textwrap_name">팝콘 : 바질어니언, 달콤팝콘</span>
+								<span class="textwrap_name">음료 : 콜라, 스프라이트</span>
+								<span class="textwrap_name">스낵 : (몸통)즉석구이 오징어</span>
+								<span class="textwrap_price">
+									<strong>8,000원</strong>
+									<em>8,500원</em>
+								</span>
+							</span>
+						</div>
+				</div>
+
+				</div>
+			</article>
+			<article class="payDiscount">
+				<h1 class="mOrderAccrodion" aria-expanded="true">
+					<a href="#"><span class="roundNum">1</span>할인쿠폰</a>
+				</h1>
+				<div class="mOrderAccrodionCont paymentWrap">
+					<div class="paymentInner">
+						<ul class="discountList">
+							<li>
+								<a href="PA_coupon_cgv.html" class="discountInfo" target="_blank">
+									<strong class="disCountTit">CGV 할인쿠폰 <span>[보유: 3]</span></strong>
+								</a>
+							</li>
+							<li>
+								<a href="PA_coupon_cjOne.html" class="discountInfo" target="_blank">
+									<strong class="disCountTit">CJ ONE 할인쿠폰 <span>[보유: 0]</span></strong>
+								</a>
+							</li>
+							<li>
+								<a href="PA_coupon_vip.html" class="discountInfo" target="_blank">
+									<strong class="disCountTit">VIP 할인쿠폰 <span>[보유: 0]</span></strong>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</article>
+			<article class="payDiscount">
+				<h1 class="mOrderAccrodion" aria-expanded="true">
+					<a href="#"><span class="roundNum">2</span>포인트 / 기프트카드</a>
+				</h1>
+				<div class="mOrderAccrodionCont paymentWrap">
+					<div class="paymentInner">
+						<ul class="discountList">
+							<li>
+								<a href="PA_giftcon_cgv.html" class="discountInfo" target="_blank">
+									<strong class="disCountTit">CGV기프트콘 <span>[보유: 3]</span></strong>
+								</a>
+							</li>
+							<li>
+								<div class="discountInfo">
+									<strong class="disCountTit">CJ ONE 포인트 <span>[보유: 8,700P]</span></strong>
+									<div class="pointWrap">
+										<input type="phone" title="포인트 입력" value="8,700">
+										<label class="inp"><input type="checkbox"><span>모두사용</span></label>
+									</div>
+									<p class="payDesc">포인트를 사용하시면 전체 취소만 가능합니다.</p>
+								</div>
+							</li>
+							<li>
+								<div class="discountInfo">
+									<strong class="disCountTit">CJ 기프트카드 <span>[보유: 20,000P]</span></strong>
+									<div class="pointWrap">
+										<input type="phone" title="포인트 입력" value="20,000">
+										<label class="inp"><input type="checkbox"><span>모두사용</span></label>
+									</div>
+									<p class="payDesc">포인트를 사용하시면 전체 취소만 가능합니다.</p>
+								</div>
+							</li>
+							<li>
+								<a href="PA_giftCard_cgv.html" class="discountInfo" target="_blank">
+									<strong class="disCountTit">CGV 기프트카드 <span>[보유: 0]</span></strong>
+								</a>
+							</li>
+						</ul>
+
+					</div>
+				</div>
+			</article>
+			<article class="payMethod">
+				<div class="payment_main">
+					<div class="section_contents">
+						<ul id="ul_options" class="tab-menu _fnMainMenu ">
+							<li id="li_fi" data-groupid="5" data-groupname="최종결제" class="last last_payment on">
+								<a id="a_fi" class="payment_title">
+									<span class="txt_round">3</span>최종결제
+									<div class="last_payment_checkbox"><input type="checkbox" id="lastPaymentChk"><label for="lastPaymentChk">마지막 결제수단 저장</label></div>
+								</a>
+								<div class="area_box" style="display:block">
+									<div class="msg_last_payment_box _chk_last_payment" style="display:none;"><a href="javascript:void(0);" class="opt_type1">최종결제 수단을 선택해 주세요</a></div>
+									<ul class="menu _toggleLastPaymentMenu clear clearfix">
+										<li id="menu_credit_card" class="credit_card"><a href="javascript:void(0);" data-opt="opt_type1">신용/체크카드</a></li>
+										<li id="menu_easy_pay" class="easy_pay"><a href="javascript:void(0);" data-opt="opt_type2">간편결제</a></li>
+										<li id="menu_cell_phone" class="cell_phone"><a href="javascript:void(0);" data-opt="opt_type3">휴대폰 결제</a></li>
+									</ul>
+									<ul class="last_paymnet_opt">
+										<li id="li_cred" name="cred_38" class="opt_type1" style="display:none">
+											<fieldset class="form_payment">
+												<div>
+													<div class="select_area"><span class="txt_select_label">체크/신용카드</span><a href="javascript:void(0);" class="btn_select_card _openPopup" data-popup="wrapSelectCard"><span>카드를 선택해주세요</span><i class="sprite sprite_common icon_select_arrow"></i></a></div>
+													<div class="wrap_select_card">
+														<div id="cards_BCC" class="cards_BCC">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_bc.png" alt="BC카드">BC카드</div>
+															<div class="wrap_radio_check col3">
+																<div ><input type="radio" id="bcc_ispp_3" class="ispp_payment" name="bcc_1" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="ISP"><label for="bcc_ispp_3"><span></span>ISP</label></div>
+																<div ><input type="radio" id="bcc_norm_1" class="norm_payment" name="bcc_1" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="bcc_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="bcc_inst_2" class="inst_payment" name="bcc_1" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="bcc_inst_2"><span></span>즉시할인</label></div>
+															</div>
+															<div class="wrap_first_ispp">
+																<ul>
+																	<li>ISP 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+														</div>
+														<div id="cards_CNB" class="cards_CNB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_kukmin.png" alt="국민카드">국민카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="cnb_norm_1" class="norm_payment" name="cnb_2" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="cnb_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="cnb_inst_2" class="inst_payment" name="cnb_2" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="cnb_inst_2"><span></span>즉시할인</label></div>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+														</div>
+														<div id="cards_WIN" class="cards_WIN">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_samsung.png" alt="삼성카드">삼성카드</div>
+															<div class="wrap_radio_check col3">
+																<div ><input type="radio" id="win_spay_5" class="spay_payment" name="win_3" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="앱카드"><label for="win_spay_5"><span></span>앱카드</label></div>
+																<div ><input type="radio" id="win_norm_1" class="norm_payment" name="win_3" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="win_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="win_inst_2" class="inst_payment" name="win_3" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="win_inst_2"><span></span>즉시할인</label></div>
+															</div>
+															<div class="wrap_first_spay">
+																<ul>
+																	<li>앱카드 결제 시 즉시할인/더블적립은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인/더블적립은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+														</div>
+														<div id="cards_SHB" class="cards_SHB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_shinhan.png" alt="신한카드">신한카드</div>
+															<div class="wrap_radio_check col3">
+																<div ><input type="radio" id="shb_spay_5" class="spay_payment" name="shb_4" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="앱카드"><label for="shb_spay_5"><span></span>앱카드</label></div>
+																<div ><input type="radio" id="shb_norm_1" class="norm_payment" name="shb_4" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="shb_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="shb_inst_2" class="inst_payment" name="shb_4" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="shb_inst_2"><span></span>즉시할인</label></div>
+															</div>
+															<div class="wrap_first_spay">
+																<ul>
+																	<li>앱카드 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+														</div>
+														<div id="cards_DIN" class="cards_DIN">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_hyundai.png" alt="현대카드">현대카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="din_spay_5" class="spay_payment" name="din_5" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="앱카드"><label for="din_spay_5"><span></span>앱카드</label></div>
+																<div ><input type="radio" id="din_norm_1" class="norm_payment" name="din_5" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="din_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_spay"></div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_KEB" class="cards_KEB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_keb_hana.png" alt="KEB하나카드">KEB하나카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="keb_norm_1" class="norm_payment" name="keb_6" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="keb_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="keb_inst_2" class="inst_payment" name="keb_6" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="keb_inst_2"><span></span>즉시할인</label></div>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+														</div>
+														<div id="cards_KKB" class="cards_KKB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_kakao.png" alt="카카오뱅크">카카오뱅크</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="kkb_norm_1" class="norm_payment" name="kkb_7" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="kkb_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="kkb_inst_2" class="inst_payment" name="kkb_7" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="kkb_inst_2"><span></span>즉시할인</label></div>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+														</div>
+														<div id="cards_PHB" class="cards_PHB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_woori.png" alt="우리카드">우리카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="phb_ispp_3" class="ispp_payment" name="phb_8" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="ISP"><label for="phb_ispp_3"><span></span>ISP</label></div>
+															</div>
+															<div class="wrap_first_ispp">
+																<ul></ul>
+															</div>
+														</div>
+														<div id="cards_AMX" class="cards_AMX">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_amex.png" alt="롯데/아맥스카드">롯데/아맥스카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="amx_spay_5" class="spay_payment" name="amx_9" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="앱카드"><label for="amx_spay_5"><span></span>앱카드</label></div>
+																<div ><input type="radio" id="amx_norm_1" class="norm_payment" name="amx_9" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="amx_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_spay"></div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_CIT" class="cards_CIT">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_citi.png" alt="시티카드(구.한미)">시티카드(구.한미)</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="cit_norm_1" class="norm_payment" name="cit_10" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="cit_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_SIN" class="cards_SIN">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_shinsegye.png" alt="신세계카드">신세계카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="sin_norm_1" class="norm_payment" name="sin_11" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="sin_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_NLC" class="cards_NLC">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_nonghyup.png" alt="NH카드">NH카드</div>
+															<div class="wrap_radio_check col4">
+																<div ><input type="radio" id="nlc_spay_5" class="spay_payment" name="nlc_12" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="앱카드"><label for="nlc_spay_5"><span></span>앱카드</label></div>
+																<div ><input type="radio" id="nlc_norm_1" class="norm_payment" name="nlc_12" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="nlc_norm_1"><span></span>일반결제</label></div>
+																<div ><input type="radio" id="nlc_inst_2" class="inst_payment" name="nlc_12" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="즉시할인"><label for="nlc_inst_2"><span></span>즉시할인</label></div>
+																<div ><input type="radio" id="nlc_nhcu_6" class="nhcu_payment" name="nlc_12" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="문화누리카드"><label for="nlc_nhcu_6"><span></span>문화누리카드</label></div>
+															</div>
+															<div class="wrap_first_spay">
+																<ul>
+																	<li>앱카드 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_norm">
+																<ul>
+																	<li>일반 결제 시 즉시할인은 적용되지 않습니다. 즉시할인 적용을 원하시는 경우 "즉시할인" 메뉴를 이용해주세요.</li>
+																</ul>
+															</div>
+															<div class="wrap_first_inst"></div>
+															<div class="wrap_first_nhcu"></div>
+														</div>
+														<div id="cards_HNB" class="cards_HNB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_hana.png" alt="하나카드">하나카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="hnb_norm_1" class="norm_payment" name="hnb_13" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="hnb_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_KJB" class="cards_KJB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_gwangju.png" alt="광주은행카드">광주은행카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="kjb_norm_1" class="norm_payment" name="kjb_14" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="kjb_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_SAN" class="cards_SAN">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_saneun.png" alt="산은캐피탈">산은캐피탈</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="san_norm_1" class="norm_payment" name="san_15" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="san_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_NFF" class="cards_NFF">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_suhyup.png" alt="수협카드">수협카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="nff_norm_1" class="norm_payment" name="nff_16" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="nff_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_KDB" class="cards_KDB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_kdb_saneun.png" alt="KDB산업은행카드">KDB산업은행카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="kdb_norm_1" class="norm_payment" name="kdb_17" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="kdb_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_JBB" class="cards_JBB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_jeonbuk.png" alt="전북은행카드">전북은행카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="jbb_norm_1" class="norm_payment" name="jbb_18" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="jbb_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_JJB" class="cards_JJB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_jeju.png" alt="제주은행카드">제주은행카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="jjb_norm_1" class="norm_payment" name="jjb_19" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="jjb_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_KEP" class="cards_KEP">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_post_office.png" alt="우체국카드">우체국카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="kep_norm_1" class="norm_payment" name="kep_20" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="kep_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_SCB" class="cards_SCB">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_standard.png" alt="스탠다드차티드은행카드">스탠다드차티드은행카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="scb_norm_1" class="norm_payment" name="scb_21" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="scb_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_MGC" class="cards_MGC">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_mg.png" alt="MG체크카드">MG체크카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="mgc_norm_1" class="norm_payment" name="mgc_22" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="mgc_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_HSC" class="cards_HSC">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_hyundai_stock.png" alt="KB증권카드">KB증권카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="hsc_norm_1" class="norm_payment" name="hsc_23" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="일반결제"><label for="hsc_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+														<div id="cards_IBK" class="cards_IBK">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_ibk.png" alt="기업은행카드">기업은행카드</div>
+															<div class="wrap_radio_check ">
+																<div ><input type="radio" id="ibk_ispp_3" class="ispp_payment" name="ibk_24" data-policyallowed="true" data-policyallowed-cjmem="true" checked  data-methodname="ISP"><label for="ibk_ispp_3"><span></span>ISP</label></div>
+																<div ><input type="radio" id="ibk_norm_1" class="norm_payment" name="ibk_24" data-policyallowed="true" data-policyallowed-cjmem="true"   data-methodname="일반결제"><label for="ibk_norm_1"><span></span>일반결제</label></div>
+															</div>
+															<div class="wrap_first_ispp">
+																<ul></ul>
+															</div>
+															<div class="wrap_first_norm"></div>
+														</div>
+													</div>
+												</div>
+											</fieldset>
+										</li>
+										<li id="mobi" name="mobi_39" class="opt_type3" data-thatmonth="true" style="display:none">
+											<fieldset class="form_payment">
+												<div>
+													<ul>
+														<li>통신사에 따라 결제 한도금액이 다를 수 있습니다.</li>
+													</ul>
+												</div>
+											</fieldset>
+										</li>
+										<li class="opt_type2" style="display:none">
+											<fieldset class="form_payment">
+												<div>
+													<div class="select_area"><span class="txt_select_label">간편결제</span><a href="javascript:void(0);" class="btn_select_pay _openPopup" data-popup="wrapSelectPay"><span>간편결제를 선택해주세요</span><i class="sprite sprite_common icon_select_arrow"></i></a></div>
+													<div class="wrap_select_pay">
+														<div id="kakp" name="kakp_40" class="easy_pay7">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_kakao.png" alt="카카오페이"/>카카오 페이</div>
+															<div class="wrap_first_desc">
+																<ul>
+																	<li>kakaopay는 즉시할인 신용카드, 카드사 포인트는 이용이 불가능하며, 신용카드별 청구할인은 이용이 가능합니다.</li>
+																</ul>
+															</div>
+														</div>
+														<div id="payc" name="payc_41" class="easy_pay8">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_payco.png" alt="PAYCO"/>PAYCO</div>
+															<div class="wrap_first_desc">
+																<ul>
+																	<li>PAYCO는 씨티카드와 즉시할인 신용카드, 카드사 포인트 이용이 불가하며 신용카드별 청구할인은 이용이 가능합니다.</li>
+																	<li>PAYCO 포인트 및 할인쿠폰 사용 금액에 대해서는 CJ ONE 포인트 적립이 불가합니다.</li>
+																</ul>
+															</div>
+														</div>
+														<div id="smep" name="smep_50" class="easy_pay9">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_smilepay.png" alt="스마일페이"/>스마일 페이</div>
+															<div class="wrap_first_desc">
+																<ul>
+																	<li>스마일페이 결제 시, 기본 0.5% 스마일캐시가 적립되며 스마일카드로 결제 시, 기본 0.5% + 추가 2.0% 적립되어 최대 2.5% 적립됩니다.</li>
+																	<li>스마일페이는 즉시할인 신용카드, 카드사 포인트는 이용이 불가능하며 신용카드 별 청구할인은 이용이 가능합니다.</li>
+																</ul>
+															</div>
+														</div>
+														<div id="navp" name="navp_51" class="easy_pay10">
+															<div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_naver.png" alt="네이버페이"/>네이버 페이</div>
+															<div class="wrap_first_desc">
+																<ul>
+																	<li class="txt_npay">첫 결제 시 1,000원 네이버페이 포인트가 적립됩니다.</li>
+																	<li>NAVER Pay는 즉시할인 신용카드, 카드사 포인트는 이용 불가능하며, 신용카드별 청구할인은 이용 가능합니다.</li>
+																</ul>
+															</div>
+														</div>
+													</div>
+												</div>
+											</fieldset>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</article>
+
+		</div>
+
+
+		<!-- 결제하기 플로팅 레이어 -->
+		<div id="div_payment_float" class="floating_payment _fnFlotingPayment active">
+			<div class="wrap_price">
+				<div class="sum">결제금액<strong id="st_total">90,000</strong> - 할인금액<strong id="st_discount">0</strong></div>
+				<div class="result"><strong>최종 결제금액</strong><em id="em_final">90,000<span>원</span></em></div>
+			</div>
+			<a href="#" id="btn_payment" class="btn btn-red">결제하기</a>
+		</div>
+		<!-- // 결제하기 플로팅 레이어 -->
+
+		 <!-- 신용카드 팝업 -->
+		<div id="wrapSelectCard" class="popup_dim">
+			<div class="popup popup_select_card">
+				<div class="popup_container">
+					<div class="area_search">
+						<i class="sprite sprite_common icon_search_glass"></i>
+						<div class="ui-widget">
+							<input type="search" id="input_search_creditcard" placeholder="검색">
+						</div>
+						<a href="#" class="btn_close _closePopup"><i class="sprite sprite_common icon_popup_close">
+						</i></a>
+					</div>
+					<div class="area_scroll">
+						<!-- 카드 리스트 -->
+						<div class="wrap_all_card added_card"><div class="area_benefit_card"><div class="area_benefit_card_add"><p class="title">자주 쓰는 신용카드</p><a href="#" id="btn_add_mostusedcreditcard" class="btn_add">+ 추가</a></div><div id="div_mostused" class="card_list _fnSelectCard"><a href="#" id="cards_KEB" data-sequence=1><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_keb_hana.png" alt=""></div><div class="title">KEB하나카드(구,외환)</div></a></div></div><div class="title_all_card">전체</div><div class="area_card"><div class="card_list _fnSelectCard" id="_fnSelectCard"><a href="#" id="cards_BCC" name="BCC_1"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_bc.png" alt=""></div><div class="title">BC카드</div></a><a href="#" id="cards_CNB" name="CNB_2"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_kukmin.png" alt=""></div><div class="title">국민카드</div></a><a href="#" id="cards_WIN" name="WIN_3"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_samsung.png" alt=""></div><div class="title">삼성카드</div></a><a href="#" id="cards_SHB" name="SHB_4"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_shinhan.png" alt=""></div><div class="title">신한카드</div></a><a href="#" id="cards_DIN" name="DIN_5"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_hyundai.png" alt=""></div><div class="title">현대카드</div></a><a href="#" id="cards_KEB" name="KEB_6"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_keb_hana.png" alt=""></div><div class="title">KEB하나카드</div></a><a href="#" id="cards_KKB" name="KKB_7"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_kakao.png" alt=""></div><div class="title">카카오뱅크</div></a><a href="#" id="cards_PHB" name="PHB_8"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_woori.png" alt=""></div><div class="title">우리카드</div></a><a href="#" id="cards_AMX" name="AMX_9"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_amex.png" alt=""></div><div class="title">롯데/아맥스카드</div></a><a href="#" id="cards_CIT" name="CIT_10"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_citi.png" alt=""></div><div class="title">시티카드(구.한미)</div></a><a href="#" id="cards_SIN" name="SIN_11"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_shinsegye.png" alt=""></div><div class="title">신세계카드</div></a><a href="#" id="cards_NLC" name="NLC_12"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_nonghyup.png" alt=""></div><div class="title">NH카드</div></a><a href="#" id="cards_HNB" name="HNB_13"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_hana.png" alt=""></div><div class="title">하나카드</div></a><a href="#" id="cards_KJB" name="KJB_14"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_gwangju.png" alt=""></div><div class="title">광주은행카드</div></a><a href="#" id="cards_SAN" name="SAN_15"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_saneun.png" alt=""></div><div class="title">산은캐피탈</div></a><a href="#" id="cards_NFF" name="NFF_16"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_suhyup.png" alt=""></div><div class="title">수협카드</div></a><a href="#" id="cards_KDB" name="KDB_17"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_kdb_saneun.png" alt=""></div><div class="title">KDB산업은행카드</div></a><a href="#" id="cards_JBB" name="JBB_18"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_jeonbuk.png" alt=""></div><div class="title">전북은행카드</div></a><a href="#" id="cards_JJB" name="JJB_19"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_jeju.png" alt=""></div><div class="title">제주은행카드</div></a><a href="#" id="cards_KEP" name="KEP_20"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_post_office.png" alt=""></div><div class="title">우체국카드</div></a><a href="#" id="cards_SCB" name="SCB_21"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_standard.png" alt=""></div><div class="title">스탠다드차티드은행카드</div></a><a href="#" id="cards_MGC" name="MGC_22"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_mg.png" alt=""></div><div class="title">MG체크카드</div></a><a href="#" id="cards_HSC" name="HSC_23"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_hyundai_stock.png" alt=""></div><div class="title">KB증권카드</div></a><a href="#" id="cards_IBK" name="IBK_24"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/icon_ibk.png" alt=""></div><div class="title">기업은행카드</div></a></div></div></div>
+						<!-- 카드 리스트 -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 신용카드 팝업 -->
+
+		<!--신용카드 > BC카드 선택 시 얼럿-->
+		<div id="infoIspInstall" class="layer_pop_re isActive">
+			<div class="fogbg"></div>
+			<div class="inner">
+				<div class="guide_info">
+					<p>국민, BC,우리, 광주VISA, 수협, KDB산업은행,<br>전북은행, 제주은행, 우체국 카드를 이용하여<br>처음 결제하시는 경우,<br>모바일 ISP설치하기를 터치하여<br>플러그인 설치를 하시기 바랍니다.</p>
+					<div class="btnbox">
+						<a href="#" class="btn_round color1">ISP앱 설치</a>
+					</div>
+				</div>
+				<div class="btnbox_wrap">
+					<div class="btnbox">
+						<button type="button" class="btn_def"><span>결제하기</span></button>
+					</div>
+				</div>
+				<a href="#" class="btn_x"><span class="hidden">팝업 닫기</span></a>
+			</div>
+		</div>
+		<!--//신용카드 > BC카드 선택 시 얼럿-->
+
+		<!-- 간편결제 팝업 -->
+		<div id="wrapSelectPay" class="popup_dim">
+			<div class="popup popup_select_card">
+				<div class="popup_container">
+					<div class="area_tit">간편결제<a href="#" class="btn_close _closePopup"><i class="sprite sprite_common icon_popup_close"></i></a></div>
+					<div class="area_scroll">
+						<!-- 간편결제 리스트 -->
+						<div class="wrap_all_card">
+							<div class="area_benefit_card">
+								<div id="div_mostused" class="card_list _fnSelectPay"></div>
+							</div>
+							<div class="title_all_card">전체</div>
+							<div class="area_card">
+								<div class="card_list _fnSelectPay" id="_fnSelectPay">
+									<a id="easy_pay7" href="javascript:void(0);"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_kakao.png" alt="카카오페이"/></div><div class="title">카카오 페이</div></a><a id="easy_pay8" href="javascript:void(0);"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_payco.png" alt="PAYCO"/></div><div class="title">PAYCO</div></a><a id="easy_pay9" href="javascript:void(0);"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_smilepay.png" alt="스마일페이"/></div><div class="title">스마일페이</div></a><a id="easy_pay10" href="javascript:void(0);"><div class="img"><img src="http://img.cgv.co.kr/WebApp/images/payment/ico_pay_naver.png" alt="네이버페이"/></div><div class="title">네이버페이</div></a>
+								</div>
+							</div>
+						</div>
+						<!-- 간편결제 리스트 -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- // 간편결제 팝업 -->
+
+
+		
+	</section>
+
+	<!-- 현급영수증 팝업 -->
+	<div id="wrapCashReceipt" class="popup_dim full_popup" data-title="현금영수증">
+		<div class="popup popup_cash_receipt">
+			<div class="popup_header">
+				<a href="#" class="btn_close _closePopup" id="btnReceiptClosePopup"><i class="sprite sprite_common icon_popup_close_red"></i></a>
+				<h1>현금영수증</h1>
+			</div>
+			<div class="popup_container">
+				<div class="area_round_checkbox"><div><input type="radio" id="receiptChk1" name="receiptType" checked><label for="receiptChk1">소득공제용</label></div><div><input type="radio" id="receiptChk2" name="receiptType" ><label for="receiptChk2">지출증빙용</label></div><input type="hidden" id="hidReceiptType" value="1"><input type="hidden" id="hidRequestNumber" value="01045814692"></div><div class="area-contents"><div class="area_input"><input type="tel" id="textChangeTarget" maxlength="12" placeholder="휴대폰번호 입력" value="01045814692"><a href="#" class="btn_delete"><i class="sprite sprite_common icon_circle_delete"></i></a></div><ul class="list_dot"><li>휴대폰번호 또는 사업자번호가 유효하지 않으면 발급되지 않습니다.</li></ul><div class="btn_check"><a href="#" id="btn_receipt_save" class="btn btn-white btn-square">저장</a></div></div>
+			</div>
+		</div>
+	</div>
+	<!-- // 현급영수증 팝업 -->
+
+
+
+
+	<!-- 결제 ISP 설치 팝업 -->
+	<div id="infoIspInstall" class="layer_pop_re" style="display:none;">
+		<div class="fogbg"></div>
+		<div class="inner">
+			<div class="guide_info">
+				<p>국민, BC,우리, 광주VISA, 수협, KDB산업은행,<br>전북은행, 제주은행, 우체국 카드를 이용하여<br>처음 결제하시는 경우,<br>모바일 ISP설치하기를 터치하여<br>플러그인 설치를 하시기 바랍니다.</p>
+				<div class="btnbox">
+					<a class="btn_round color1" href="javascript:cgv.common.AppDeepLink.MoveAppStore('ISP');">ISP앱 설치</a>
+				</div>
+			</div>
+			<div class="btnbox_wrap">
+				<div class="btnbox">
+					<button type="button" class="btn_def"><span>결제하기</span></button>
+				</div>
+			</div>
+			<a class="btn_x" href="javascript:IPSPopupClose();">팝업 닫기</a>
+		</div>
+	</div>
+	<!-- // 결제 ISP 설치 팝업 -->
+
+
+	</section>
+
+
+
+		<!-- [E] Content -->
+</div>
+
+<!-- [S] Footer -->
+<footer id="div_footer">
+	<p class="footerLink">
+		<a href="/WebAPP/Support/noti.aspx"><span>공지사항</span></a>
+		<a href="/WebApp/Support/faq.aspx"><span>고객센터</span></a>
+		<a href="#" title="로그아웃"><span>로그아웃</span></a>
+		<a href="#" id="footer_pc" title="PC버전"><span>PC버전</span></a>
+	</p>
+	<section class="footerContents">
+		<h1><a href="http://corp.cgv.co.kr/" target="_blank" class="spriteFooter footerLogo">CGV</a></h1>
+		<ul class="footerContentsLink">
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=10"  title="이용약관" >이용약관</a></li>
+			<li><a href="/Agreement/Agreement_Provision.aspx?type=11"  title="개인정보 처리방기" >개인정보 처리방침</a></li>
+			<li><a href="/Agreement/Agreement_disclaimer.aspx" title="법적고지" >법적고지</a></li>
+		</ul>
+		<dl class="companyInfo">
+			<dt>대표이사</dt>
+			<dd>최병환</dd>
+			<dt>사업자등록번호</dt>
+			<dd>104-81-45690</dd>
+			<dt>통신판매업신고번호</dt>
+			<dd>2017-서울용산-0662</dd>
+			<dt>개인정보보호 책임자</dt>
+			<dd>정종민</dd>
+			<dt>주소</dt>
+			<dd><address>(04377)서울특별시 용산구 한강대로<br>23길 55, 아이파크몰 6층(한강로동)</address></dd>
+		</dl>
+	</section>
+	<p class="footerReserved">© CJ CGV. All Rights Reserved</p>
+</footer>
+<!-- [E] Footer -->
+
+
+
+
+<!-- [S] 운영소스 상속용 -->
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/jquery-3.2.1.min.js"></script> -->
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/common.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/subUi.js"></script>
+<script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/v5/contents/lib/swiper.custom.js"></script>
+<!-- <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script> -->
+<link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/ui.page.css" />
+<!-- [E] 운영소스 상속용 -->
+
+<!-- [S] 바로오더 신규 -->
+<script type="text/javascript" src="../js/instOrder.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/instOrder.css" />
+<!-- [E] 바로오더 신규 -->
+
+</body>
+</html>

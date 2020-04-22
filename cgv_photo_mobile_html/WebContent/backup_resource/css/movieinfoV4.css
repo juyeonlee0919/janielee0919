@@ -1,0 +1,405 @@
+﻿.movieinfo_s_wrap {display:block; background: #000;}
+
+.movieinfo_img_wrap {position: relative; display:block; width:320px; height:130px; margin:auto; background: #000;}
+	.movieinfo_img_wrap .poster {position:absolute; top:0; left:0; overflow:hidden; width:89px; height:130px;}
+	.movieinfo_img_wrap .poster img {width:88px; height:130px;}
+	.movieinfo_img_wrap .bi_bg {position:absolute; bottom:0; left:0; overflow:hidden; width:89px; height:26px; background: #000; opacity: 0.7;}
+	.movieinfo_img_wrap .bi {position:absolute; bottom:7px; left:10px; overflow:hidden; width:57px; height:13px; line-height:0;}
+	.movieinfo_img_wrap .poster1_wrap {position:relative; display:block; height:130px; margin:0 0 0 89px;}
+		.movieinfo_img_wrap .poster1_wrap .img {position:absolute; top:0; left:0; width:100%; height:130px;}
+		.movieinfo_img_wrap .poster1_wrap .img a img{width:231px;height:130px;}
+		.movieinfo_img_wrap .poster1_wrap .deco {position:absolute; top:0; left:0; width:100%; height:130px; background: url("../images/movieinfo/thum_bg.png") left top repeat;background-size:1px;}
+			.movieinfo_img_wrap .poster1_wrap .btn_play {position:absolute; top:39px; left:91px; width:49px; height:49px;}
+			.movieinfo_img_wrap .poster1_wrap .btn_play img {width:100%;}
+
+.movieinfo_info_wrap {display:block; overflow:hidden; position: relative; min-height: 126px;}
+	.movieinfo_info_wrap .ic_g {position:absolute; top:10px; left:11px; width:15px; height:20px;}
+	.movieinfo_info_wrap .ic_g img {width:100%;}
+	.movieinfo_info_wrap .title {display:block; overflow: hidden; height:17px; padding:0 90px 0 32px; margin:13px 0 0 0; font-size: 16px; color:#010101; font-weight: bold;}
+	.movieinfo_info_wrap .title img {width:17px;height:15px;top:-2px !important;}
+	.movieinfo_info_wrap .txt1 {display:block; overflow: hidden; height:13px; padding:0 90px 0 10px; margin:11px 0 0 0; font-size: 12px; color:#747474;}
+		.movieinfo_info_wrap .txt1 span {color:#ec3724;}
+	.movieinfo_info_wrap .txt2 {display:block; overflow: hidden; height:13px; padding:0 90px 0 10px; margin:5px 0 0 0; font-size: 12px; color:#747474;}
+	.movieinfo_info_wrap .jumsu_wrap {display:block; position: absolute; top:20px; right:10px;}
+	.movieinfo_info_wrap .jumsu_wrap .star_wrap {display: block; overflow:hidden; margin:0 2px 0 0;}
+		.movieinfo_info_wrap .jumsu_wrap .star_wrap li {float: left;}
+	.movieinfo_info_wrap .jumsu_wrap .jumsu_txt {display: block; margin:5px 0 0 0; text-align: right; font-size: 31px; line-height:100%; font-weight: bold; color:#000;}
+	.movieinfo_info_wrap .btn {display:block; margin:9px 13px 12px 13px;}
+		.movieinfo_info_wrap .btn div {margin:0 0 0 5px;}
+		.movieinfo_info_wrap .btn div:first-child {margin:0 0 0 0;}
+
+.movieinfo_list_wrap {clear:both; display:block; overflow:hidden;}
+	.movieinfo_list_wrap .list_wrap {display:block; overflow:hidden; position: relative; min-height:55px; border-bottom:1px solid #e5e5e5;}
+	.movieinfo_list_wrap .list_wrap .img {position:absolute; top:0; right:0; width:99px; height:55px;}
+	.movieinfo_list_wrap .list_wrap .img img {width:99px; height:55px;}
+	.movieinfo_list_wrap .list_wrap .ic_play {position:absolute; top:18px; left:10px; width:19px; height:19px; background: url("../images/common/icon_21.png") left top no-repeat;background-size:19px;}
+	.movieinfo_list_wrap .list_wrap .strTitle {display:inline-block; overflow: hidden; height:14px; margin:20px 110px 0 35px; font-size: 14px; color:#000;}
+	/* 2012.09.19. (추가) */
+	.movieinfo_list_wrap .list_wrap .title {display:inline-block; overflow: hidden; height:15px; margin:20px 110px 0 35px; font-size: 14px; color:#010101;}
+		.movieinfo_list_wrap .list_wrap .title a.scut {color:#ec3724;}
+	.movieinfo_list_wrap .list_wrap .ic_photo {position:absolute; top:19px; left:10px; width:19px; height:16px; background: url("../images/common/icon_22.png") left top no-repeat;background-size:19px;}
+
+    /* 2012.10.05. (추가) */
+    .movieinfo_list_wrap .list_wrap .title2 {display:inline-block; overflow: hidden; height:15px; margin:20px 110px 0 35px; font-size: 14px; color:#010101;}
+        .movieinfo_list_wrap .list_wrap .title2 .scut {color:#ec3724;}
+
+.movieinfo_storyview_wrap {clear:both; display:block; overflow:hidden; margin:12px 10px 0 10px; font-size: 13px; color:#3c3c3c; line-height:130%;min-height:80px !important;}
+
+.movieinfo_btn_more {clear:both; overflow: hidden; display:block; padding:19px 0 0 0; margin:15px 0 0 0; text-align:center; font-size:15px; color:#000; background: url("../images/trailer/tbtn_more.png") center top no-repeat;background-size:3px;}
+.movieinfo_btn_more1 {clear:both; overflow: hidden; display:block; padding:19px 0 20px 0; margin:13px 0 0 0; text-align:center; font-size:15px; color:#000; background: url("../images/trailer/tbtn_more.png") center top no-repeat;background-size:3px;}
+
+.movieinfo_appear_wrap {clear:both; display:block; overflow:hidden;}
+	.movieinfo_appear_wrap h1 {height:21px; padding:8px 0 0 10px; margin:24px 0 0 0; font-size: 12px; color:#000; font-weight:bold; border-top:1px solid #cecece; border-bottom:1px solid #cecece;}
+
+.appearlist_wrap {display:block; overflow:hidden; position: relative; padding:8px 0 7px; border-bottom:1px solid #e5e5e5;}
+	.appearlist_wrap .photo {float:left;  width:70px; padding:0 10px 0 8px;}
+	.appearlist_wrap .photo img {width:70px;}
+	.appearlist_wrap .name {display:block; overflow: hidden; height:17px; padding:0 13px 0 0; font-size: 15px; color:#000; font-weight: bold;}
+	.appearlist_wrap .name_e {display:block; overflow: hidden; height:17px; padding:0 13px 0 0; margin:2px 0 0 0; font-size: 15px; color:#8a8a8a;}
+	.appearlist_wrap .txt {display:block; overflow: hidden; margin:3px 0 0 0; padding:0 13px 0 0; font-size: 13px; color:#8a8a8a;}
+
+
+.movieinfo_login_wrap {clear:both; overflow:hidden;}
+	.movieinfo_login_wrap .txt {margin:20px 0 0 0; font-size:15px; text-align: center; color:#3c3c3c;}
+	.movieinfo_login_wrap .btn {margin:12px 0 20px 0; text-align: center;}
+
+.movieinfo_reviewlist_wrap {display:block; position: relative; border-bottom:1px solid #e5e5e5;}
+	.movieinfo_reviewlist_wrap .star_wrap {position:absolute; top:9px; left:11px; overflow:hidden; margin:0 2px 0 0;}
+		.movieinfo_reviewlist_wrap .star_wrap img {width:14px;height:13px;}
+		.movieinfo_reviewlist_wrap .star_wrap li {float: left;}
+		.movieinfo_reviewlist_wrap .star_wrap li:last-child {float: left; margin:2px 0 0 5px; font-size: 14px; color:#ec3724;}
+	.movieinfo_reviewlist_wrap .txt_wrap {position:absolute; top:10px; right:12px; overflow:hidden; margin:0 2px 0 0;}
+		.movieinfo_reviewlist_wrap .txt_wrap li {float: left; padding:0 6px 0 6px; font-size:14px; color:#a5a7a8; background: url("../images/movieinfo/movieinfo_img_bg.png") right 2px no-repeat;background-size:1px;}
+		.movieinfo_reviewlist_wrap .txt_wrap li:last-child {padding:0 0 0 6px; background: none;}
+	.movieinfo_reviewlist_wrap .see {position:absolute; top:31px; right:12px; height:15px; padding:0 0 0 15px; overflow:hidden; font-size: 11px; color:#3c3c3c; background: url("../images/movieinfo/movieinfo_ic_arrow.png") left top no-repeat;background-size:12px;}
+	/*
+	.movieinfo_reviewlist_wrap .see_txt {display:block; overflow: hidden; padding:60px 155px 23px 20px; font-size: 26px; color:#3c3c3c;}
+	*/
+	.movieinfo_reviewlist_wrap .see_txt {display:block; overflow: hidden; padding:30px 78px 12px 10px; font-size: 13px; color:#3c3c3c;word-break:break-all;white-space:pre-line; }
+
+
+.movieinfo_rviewstar_wrap  {display: block; clear:both; position:relative; width:181px; margin:0 auto; text-align: center; }
+	.movieinfo_rviewstar_wrap .btn1 {position:absolute; top:0; left:0; margin:11px 0 0 0;}
+	.movieinfo_rviewstar_wrap .btn2 {position:absolute; top:0; right:0; margin:11px 0 0 0;}
+	.movieinfo_rviewstar_wrap .star {display:inline-block; overflow:hidden; padding:16px 0 10px 0; text-align: center;}
+
+.movieinfo_rviewwrt_wrap {display:block; clear:both; position:relative; height:61px; margin:0 10px 0 10px;}
+	.movieinfo_rviewwrt_wrap .l {position: absolute; top:0; left:0; width:5px; height:61px; background: url("../images/movieinfo/movieinfo_box_1.png") left top no-repeat;background-size:5px;}
+	.movieinfo_rviewwrt_wrap .r {position: absolute; top:0; right:0; width:5px; height:61px; background: url("../images/movieinfo/movieinfo_box_5.png") right top no-repeat;background-size:5px;}
+	.movieinfo_rviewwrt_wrap .m {display:block; height:61px; padding:2px 65px 0 10px; margin:0 5px 0 5px; background: url("../images/movieinfo/movieinfo_box_2.png") left top repeat-x;background-size:5px;}
+		.movieinfo_rviewwrt_wrap .m textarea {overflow:hidden; width:100%; height:43px; padding:7px 0; font-size:13px !important; color:#3c3c3c; line-height:120%; background-color:transparent; border:none;}
+	.movieinfo_rviewwrt_wrap .btn_bar {position: absolute; top:0; right:59px; width:1px; height:61px; background: url("../images/movieinfo/movieinfo_box_3.png") left top no-repeat;background-size:5px;}
+/* 2012.09.20. (수정) */
+    .movieinfo_rviewwrt_wrap a.btn {display: block; position: absolute; top:0; right:5px; width:50px; height:39px; padding:22px 0 0 5px; text-align:center; font-size:16px; color:#ec3724; background: url("../images/movieinfo/movieinfo_box_4.png") left top repeat-x;background-size:5px;}
+	.movieinfo_rviewwrt_wrap a.btn2 {display: block; position: absolute; top:0px; right:5px; width:50px; height:39px; padding:22px 0 0 5px; text-align:center; font-size:16px; color:#ec3724; background: url("../images/movieinfo/movieinfo_box_4.png") left top repeat-x;background-size:5px;}	
+
+.movieinfo_ic_chk {display: block; position:relative; padding:5px 0 0 28px; margin:6px 10px 17px 10px; font-size: 13px; font-weight:bold; color:#3c3c3c;}
+	.movieinfo_ic_chk a.chk {position:absolute; top:0; left:0; width:84px; height:24px; background: url("../images/common/icon_chk1.png") left top no-repeat;background-size:23px;}
+	.movieinfo_ic_chk a.chk_on {position:absolute; top:0; left:0; width:84px; height:24px; background: url("../images/common/icon_chk1_on.png") left top no-repeat;background-size:23px;}
+.movieinfo_ic_chk label{cursor:pointer;padding-left:28px;display:inline-block;padding-top:5px;}
+.movieinfo_ic_chk div {margin-right:8px !important;}
+.movieinfo_myreview_wrap {display:block; position: relative; margin:0 0 18px 0;}
+	.movieinfo_myreview_wrap .star_wrap {position:absolute; top:39px; left:11px; overflow:hidden; margin:0 2px 0 0;}
+		.movieinfo_myreview_wrap .star_wrap li {float: left;}
+		.movieinfo_myreview_wrap .star_wrap li img {width:14px;height:13px;}
+		.movieinfo_myreview_wrap .star_wrap li:last-child {float: left; margin:2px 0 0 5px; font-size: 14px; color:#ec3724;}
+	.movieinfo_myreview_wrap .txt_wrap {position:absolute; top:17px; right:13px; overflow:hidden; margin:0 2px 0 0;}
+		.movieinfo_myreview_wrap .txt_wrap li {float: left; padding:0 6px 0 6px; font-size:14px; color:#a5a7a8; background: url("../images/movieinfo/movieinfo_img_bg.png") right 2px no-repeat;background-size:1px;}
+		.movieinfo_myreview_wrap .txt_wrap li:last-child {padding:0 0 0 6px; background: none;}
+	.movieinfo_myreview_wrap .btn {position:absolute; top:44px; right:13px; overflow:hidden;}
+	.movieinfo_myreview_wrap .see_txt {display:block; overflow: hidden; padding:60px 78px 12px 10px; font-size: 13px; color:#3c3c3c;}
+	.movieinfo_myreview_wrap .nick {position:absolute; top:14px; left:10px; height:17px; overflow:hidden; font-size: 16px; color:#3c3c3c;}
+
+.movieinfo_stillcut_wrap {display:block; overflow:hidden; width:320px; margin:0 auto; border-top:1px solid #4d4d4d; border-left:1px solid #4d4d4d;}
+	.movieinfo_stillcut_wrap li {float:left; overflow:hidden; width:105px; height:69px; border-bottom:1px solid #4d4d4d; border-right:1px solid #4d4d4d;}
+		.movieinfo_stillcut_wrap li a {display: block;}
+		.movieinfo_stillcut_wrap li img {width:100%;}
+		
+.movieinfo_stillcut_wrapV4 {display:block; overflow:hidden; width:320px; margin:0 auto; border-top:1px solid #4d4d4d; border-left:1px solid #4d4d4d;}
+.movieinfo_stillcut_wrapV4 li {float:left; overflow:hidden; width:105px; height:69px; border-bottom:1px solid #4d4d4d; border-right:1px solid #4d4d4d;}
+.movieinfo_stillcut_wrapV4 li a {display: block;}
+.movieinfo_stillcut_wrapV4 li a img {width: 100%;}
+.movieinfo_stillcut_wrapV4 .empty {text-align: center;margin-top: 40px;font-size: 2.3em;height: 40px;color: #ffffff;}
+
+.movieinfo_stillcut1_wrap {padding-bottom:3px; display:block; position:relative; overflow:hidden; min-height:416px; text-align:center; color:#fff; background-color:#000;}
+	.movieinfo_stillcut1_wrap .arrow_l {display:block; position: absolute; top:176px; left:15px; width:18px; height:30px; padding:5px;}
+	.movieinfo_stillcut1_wrap .arrow_r {display:block; position: absolute; top:176px; right:15px; width:18px; height:30px; padding:5px;}
+	.movieinfo_stillcut1_wrap .close {display:block; position: absolute; top:0; right:0; width:14px; height:14px; padding:15px; background: #000; opacity: 0.3;}
+
+.movieinfo_people_wrap {clear:both; display:block; overflow:hidden;}
+
+.appearlist1_wrap {display:block; overflow:hidden; position: relative; padding:8px 0; border-bottom:1px solid #e5e5e5;}
+ .appearlist1_wrap .photo {float:left;  width:70px; padding:0 10px 0 8px;}
+ .appearlist1_wrap .name {display:block; overflow: hidden; height:17px; padding:0 13px 0 0; font-size: 15px; color:#000; font-weight: bold;}
+ .appearlist1_wrap .name_e {display:block; overflow: hidden; height:17px; padding:0 13px 0 0; margin:3px 0 0 0; font-size: 15px; color:#8a8a8a;}
+ .appearlist1_wrap .txt {display:block; overflow: hidden; margin:3px 0 0 0; padding:0 13px 0 0; font-size: 13px; color:#8a8a8a;}
+
+
+#addContent {clear:both;position:relative;}
+#divLoading {position:absolute;top:100px;width:100%;}
+#divContent {height:100%;}
+
+.pop_all_wrap {display:none;}
+
+.movieinfo_btn_more_end {clear:both; overflow: hidden; display:block; margin:5px 0 20px 0; text-align:center; font-size:15px; color:#000;}
+
+.header_wrap h1.appCmtMovieTitle {padding:14px 0 0 0;text-align:center;}
+
+.movieinfo_list_wrap .list_wrap .title span.scut {color:#ec3724;}
+
+#strMore {position:relative;}
+#sp_loading
+    {
+        overflow: hidden; display:none; text-align:center;
+        height:25px; margin:-3px 0 -22px 0;
+        background:url('data:image/gif;base64,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') no-repeat 50% 50%;
+    }
+
+
+/* movieMark */
+.mi_wrap{box-shadow:#d9d9d9 0 0 3px;background-color:#000;}
+.mi_movie_view {position:relative;overflow:hidden;height:140px;display:table;table-layout: fixed;width:100%;max-width:720px;text-align: center;}
+.mi_movie_view .poster{display:inline-block;width:98px;display:table-cell;}
+.mi_movie_view .poster img{min-width:96px; width:100%;}
+@media all and (max-width:375px) {
+	.mi_movie_view .video > img {height:100%;}
+}
+
+.mi_movie_view .mi_video{position:absolute;width:224px;line-height:140px;text-align:center;}
+.mi_movie_view .mi_video img{width:100%;}
+
+.mi_movie_view .video {position:relative; overflow:hidden; height:140px;display:table-cell;}
+.mi_movie_view .video > img {width:100%; position:absolute; left:0; top:50%; -webkit-transform:translateY(-50%);}
+
+.mi_movie_view .btn_mi_play{position:absolute; left:0; top:0; width:100%; height:100%;}
+.mi_movie_view .btn_mi_play img {position:absolute; left:50%; top:50%; width:48px; margin:-24px 0 0 -24px;}
+
+.mi_btn_list {clear:both;overflow:hidden;display:block;background-color:#fff}
+.mi_btn_list li {float:left;width:33.3%;text-align:center}
+.mi_btn_list li a {display:inline-block;width:100%;}
+.mi_btn_list span {display:inline-block; padding-top:40px; font-size:12px; color:#4b3c30;}
+.mi_btn_list .btn_wishlist.on span,
+.mi_btn_list .btn_reserve.on span,
+.mi_btn_list .repair.on span {color:#ad2b32;}
+.mi_btn_list .btn_wishlist {display:inline-block;width:100%;height:64px;background:url("../images/movieinfo/btn_mi_wishlist.png") center 10px no-repeat;background-size:30px;}
+.mi_btn_list .btn_wishlist.on{background:url("../images/movieinfo/btn_mi_wishlist_on.png") center 10px no-repeat;background-size:30px;}
+.mi_btn_list .btn_sns {display:inline-block;width:100%;height:64px;background:url("../images/movieinfo/btn_mi_share.png") center 10px no-repeat;background-size:30px;}
+.mi_btn_list .btn_reserve {display:inline-block;width:100%;height:64px;background:url("../images/movieinfo/btn_mi_reservati.png") center 9px no-repeat;background-size:30px;}
+.mi_btn_list .btn_reserve.on{color:#ad2b32;display:inline-block;width:100%;height:64px;background: url("../images/movieinfo/btn_mi_resreve_on.png") center 9px no-repeat;background-size:30px;}
+.mi_btn_list span.btn_reserve,
+.mi_btn_list span.btn_reserve.on {height:24px;}
+
+.mi_content {background-color:#e5e5e5;}
+.mi_day_data {overflow:hidden;padding:0 10px;margin:10px 0;}
+.mi_day_data .mi_reserve{float:left;}
+.mi_day_data .mi_reserve .ing {display:inline-block;padding:0 4px;height:15px;line-height:15px;color:#fff;font-size:10px;font-style:normal;font-weight:normal;text-align:center;border-radius:3px;background-color:#ad2b32}
+.mi_day_data .mi_reserve .txt {margin:0 3px; vertical-align:bottom;}
+.mi_day_data .mi_reserve .point {color:#ad2b32; vertical-align:bottom;}
+.mi_day_data .mi_openday{float:right;line-height:18px; font-weight:normal;}
+
+.mi_movie_data{clear:both;display:block;padding-bottom:20px;margin:6px 10px 0;border:solid 1px #c1c4c9;text-align:center;box-shadow:#ddd 0 0 3px;background-color:#fff;}
+.mi_movie_data.cgvonly {position:relative;}
+.mi_movie_data.cgvonly:before {position:absolute; left:10px; top:0; display:block; content:''; clear:both; width:33px; height:42px; background:url('../images/common/badge_cgvonly.png') no-repeat 0 0; background-size:33px;}
+.mi_movie_data .tit{display:block;padding-top:25px;font-size:18px;text-align:center}
+.mi_movie_data .data{display:block;padding-top:8px;color:#857362;font-size:13px;text-align:center;}
+.mi_movie_data .btn{padding-top:8px; height:50px; font-size:0;}
+.mi_movie_data .btn > a {display:inline-block; height:100%;}
+.mi_movie_data .btn img{padding:0 4px; height:100%; line-height:0;}
+.mi_movie_data .score_area{display:none; margin-top:6px;text-align:center;}
+.mi_movie_data .score_area .score_number{font-size:18px; line-height:19px; vertical-align:bottom;}
+.mi_movie_data .score_area .score_customer{line-height:16px;vertical-align:top;}
+.img_star{background-repeat:no-repeat;background-size:165px;vertical-align:top;background-image:url('../images/common/img_star.png'); background:none;}
+.img_star span{display:block;background-repeat:no-repeat;font-size:0;line-height:0;text-indent:-9999px;background-size:165px;background-image:url('../images/common/img_star.png');}
+.img_star.size_normal{display:inline-block;width:83px;height:18px;background-position:0 -91px;}
+.img_star.size_normal span{display:block;height:18px;background-position:0 -70px;}
+.img_star.size_large{display:none;width:162px;height:30px;margin:6px auto;background-position:0 -35px;}
+.img_star.size_large span{display:block;height:30px;background-position:0 0px;}
+.img_star.size_small{display:inline-block;width:60px;height:16px;margin-right:5px;background-position:0 -126px;}
+.img_star.size_small span{display:block;height:16px;background-position:0 -110px;}
+
+.img_star.size_medium {display:block;width:145px;height:19px;margin:8px auto;background-position:4px -168px;}
+.img_star.size_medium span{display:block;height:19px;background-position:4px -144px;}
+
+.mi_movie_data .con_txt{display:-webkit-box; margin:0 10px;padding:16px 5px 0px 5px;line-height:150%;/* border-top:solid 1px #cacacc; */text-align:center;}
+.mi_movie_data .con_txt .long{overflow:hidden; height:81px; -webkit-line-clamp:4; -webkit-box-orient:vertical;}
+.mi_movie_data .more{display:inline-block;margin-top:12px;text-align:center;}
+.mi_movie_data .more img{height:12px;}
+
+.mi_menu_warp{display:block;margin:10px;border:solid 1px #c1c4c9;box-shadow:#ddd 0 0 3px;background-color:#fff}
+.mi_menu_list {overflow:hidden;}
+.mi_menu_list li{float:left;width:33.3%;text-align:center;}
+.mi_menu_list li .arrow_view {display:none;position:relative;top:-1px;width:16px;height:12px;background:url(../images/movieinfo/ico_arrow_view.png) no-repeat 0 0;background-size:16px;text-indent:-9999px;}
+.mi_menu_list li.on .arrow_view{display:inline-block;}
+.mi_menu_list li a{display:block;width:100%;padding:12px 0; color:#ab9c8f; font-size:15px;border-bottom:solid 1px #dad6cb;}
+.mi_menu_list li.on a{font-weight:bold; color:#857362;}
+
+/* moviePotoTrailer */
+/*
+.mi_trailer_roll{overflow:hidden;padding:0 10px 15px 10px;}
+.mi_trailer_roll ul{width:99999px;}
+.mi_trailer_roll li:first-child{margin-left:0px;}
+.mi_trailer_roll li{float:left;height:100px;margin-left:8px;}
+.mi_trailer_roll li img{height:100%;}
+*/
+.mi_trailer_list li a{display:block;overflow:hidden;}
+.mi_trailer_list .list_area{margin-left:10px;padding:10px 10px 10px 0px;border-top:solid 1px #dad6cb;}
+.mi_trailer_list li .video{float:left;display:inline-block;width:125px; height:70px;}
+.mi_trailer_list li .txt{display:table-cell;padding-left:10px;height:70px; line-height:120%; vertical-align:middle;}
+
+
+/* movieProfile */
+.mi_profile {margin-top:-4px;}
+.mi_profile li:first-child{border-top:0;padding-top:0;}
+.mi_profile li{overflow:hidden;margin-left:10px;padding:9px 0;border-top:solid 1px #dad6cb;}
+.mi_profile .poto{position:relative;float:left; overflow:hidden; margin:3px 10px 0 0; width:60px; height:60px; background:url(../images/movieinfo/bg_profile_poto.png) no-repeat 0 0;background-size:100%;}
+.mi_profile .poto img{width:100%;}
+.mi_profile .bg_profile{position:absolute;top:0;left:0;display:inline-block;width:60px;height:60px;background:url(../images/movieinfo/bg_profile_poto.png) no-repeat 0 0;background-size:60px;}
+.mi_profile .txt{display:table-cell;height:66px;padding:0 70px 0 0;vertical-align:middle;}
+.mi_profile .txt .screen_name{display:block;}
+.mi_profile .txt .en_name{display:block;margin-top:2px;color:#cbc0b7;font-size:10px;}
+.mi_profile .txt .screen_profile{display:block;margin-top:9px;color:#ab9c8f; font-size:12px; line-height:1.2;}
+
+.mi_profile li .pos {position:absolute; right:11px; top:50%; margin-top:-7px; font-size:13px;}
+.mi_profile li:first-child .pos {margin-top:-12px;}
+.mi_profile li .screen_role {display:block; margin-top:5px; font-size:12px;}
+
+.mi_profile .director, .mi_profile .lead_actor, .mi_profile .supp_actor, .mi_profile .producer {position:relative;}
+.mi_profile .director .pos {color:#9b2c98;}
+.mi_profile .lead_actor .pos,
+.mi_profile .lead_actor .screen_role {color:#e62899;}
+.mi_profile .supp_actor .pos,
+.mi_profile .supp_actor .screen_role {color:#ff6418;}
+.mi_profile .producer .pos {color:#ab9c8f;}
+.mi_profile .producer .txt {height:26px;}
+
+
+/* 2014.11.28 추가 sitllCutViewer */
+
+.stillview { position: relative; }
+.stillview .btn_close1 { display: block; }
+.btn_stillview { position: absolute; top: 12px; right: 6px;  }
+.btn_stillview li { display: inline-block; }
+.btn_stillview li a { display: block; padding: 0 6px; }
+.btn_stillview li a img { width: 24px; height: 24px; }
+
+.btn_stillview .slview {display: inline-block; width: 20px; height: 20px; background: url("../images/common/btn_stilllistview.png") no-repeat 0 0; background-size:100%; text-indent:-9999px;}
+.btn_stillview .slview.on {background: url("../images/common/btn_stilllistview_on.png") no-repeat 0 0; background-size:100%}
+.btn_stillview .sdview {display: inline-block; width: 21px; height: 20px; background: url("../images/common/btn_stillview.png") no-repeat 0 0; background-size:100%; text-indent:-9999px;}
+.btn_stillview .sdview.on {background: url("../images/common/btn_stillview_on.png") no-repeat 0 0; background-size:100%;}
+
+.still_tit { padding: 16px 10px; }
+.still_tit dt { margin-bottom: 5px; color: #000; line-height: 22px; font-size: 20px; font-weight: bold; }
+.still_tit dd { color: #999; line-height: 16px; font-size: 14px; }
+
+.stile_slide {overflow: hidden; }
+.stile_slide > li a {display:block; width:159px; height:159px;}
+.stile_slide.column1 li { width: 100%;  }
+.stile_slide.column2 { margin: 0 auto; padding:0 13px 20px; }
+.stile_slide.column2 li {position:relative; overflow:hidden; width: 50%; height: 159px; margin-bottom: 2px; float: left;  box-sizing:border-box;}
+/*.stile_slide.column2 li:nth-child(odd) { margin-right: 0}*/
+.stile_slide.column2 li:nth-child(odd):after {content:''; position:absolute; right:0; top:0; height:100%; width:2px; background-color:#dad6cb;}
+.stile_slide.column1 img { width: 100%; }
+.stile_slide.column2 img {/* min-width:159px; min-height:159px; */}
+.stile_slide_info { position: relative; padding: 10px 0; width: 100%; overflow:hidden; box-sizing: border-box; text-align: center; height:100px;}
+.slide_paging {  line-height: 32px; font-size: 17px;  }
+.btn_save_img { display: block; position: absolute; top: 10px; right: 10px;  padding: 0 10px; height: 30px; color:#fff; line-height: 30px; font-size: 13px; border: 1px solid #fff; border-radius: 5px; background-color:#000;}
+.stile_slide_info > a:link,
+.stile_slide_info > a:visited,
+.stile_slide_info > a:hover,
+.stile_slide_info > a:active {color:#fff !important;}
+
+/* movieMarkWrite */
+.mark_writing .mark_titbox {position:relative; margin-top:45px; padding:11px; min-height:22px; border-bottom:1px solid #dbdbdb;}
+.mark_writing .mark_titbox .tit {display:block; padding-top:3px; font-size:17px; color:#000; padding-right:100px;}
+.mark_writing .mark_titbox .viewer {position:absolute; top:11px; right:11px; display:table-cell; padding-left:10px; height:22px; vertical-align:middle; border-left:1px solid #cdcdcd;}
+.mark_writing .mark_titbox .viewer > input,
+.mark_writing .mark_titbox .viewer > label {display:inline-block; height:22px; line-height:22px;}
+.mark_writing .mark_titbox .viewer > input {width:16px; background: url("../images/common/icon_chkbox3.png") 0 2px no-repeat; background-size:16px; vertical-align:middle; -webkit-appearance:none; border:0;}
+.mark_writing .mark_titbox .viewer > input:checked {background-position:0 -98px;}
+.mark_writing .mark_titbox .viewer > label {vertical-align:middle; color:#999;}
+.mark_writing .mark_titbox .viewer > input:checked + label {color:#c13030;}
+
+.mark_writing .give_mark {position:relative; background-color:#dad6cb; height:34px; padding:5px 0; border-bottom:1px solid #dbdbdb; text-align:center;}
+.mark_writing .give_mark .img_star {margin:0 auto 4px;}
+.mark_writing .give_mark .score_info {display:inline-block; margin:0 auto; font-size:11px; color:#999;}
+
+.mark_writing .give_mark > button {position:absolute; top:10px; padding:0 13px; height:24px; background:none; border:0;}
+.mark_writing .give_mark > button > span {display:inline-block; width:18px; height:18px; background:url("../images/common/btn_incr_decr.png") no-repeat  0 0; background-size:18px; text-indent:-999em;}
+.mark_writing .give_mark .btn_incr {left:0; border-right:1px solid #dcdbd9;}
+.mark_writing .give_mark .btn_incr > span {background-position:0 -98px;}
+.mark_writing .give_mark .btn_decr {right:0; border-left:1px solid #dcdbd9;}
+.mark_writing .give_mark .btn_decr > span {background-position:0 0;}
+
+.mark_writing .oneline_txt {padding:10px 10px 80px; overflow:hidden;}
+.mark_writing .oneline_txt textarea {border:0; width:100%;}
+
+.mark_writing .oneline_txt .limit_txt {float:right; padding:10px 6px 3px; border-bottom:1px solid #000;}
+.mark_writing .oneline_txt .limit_txt span {display:inline-block; color:#999;}
+
+
+/* mark_sp */
+.sp_area {display:table; height:100%; width:100%; text-align:center;}
+.sp_area .ss_area {display:table-cell; vertical-align:middle;}
+.sp_area .mark_sp {display:inline-block; width:34px; height:35px; background: url("../images/common/bg_mark_sp.png") no-repeat; background-size:34px; text-indent:-9999px;}
+.sp_area .ico_sp {background-position:0px 0px;}
+.sp_area .ico_sr {background-position:0px -35px;}
+.sp_area .ico_ss {background-position:0px -71px;}
+.sp_area .sp_txt {display:block; margin-top:10px; line-height:130%; font-size:13px; color:#848484; font-weight:bold;}
+
+/* 누적 관객수 */
+.audience_wrap {margin-top:10px; padding:0 10px;}
+.audience_cnt {position:relative; padding:10px 24px 9px; /* border:1px solid #c9cacc; */ background-color:#eae9e4;}
+.audience_cnt dl {overflow:hidden; display:inline-block; font-size:13px; vertical-align:top;}
+.audience_cnt dl dt {float:left; color:#666; margin-right:2px; letter-spacing:-1px;}
+.audience_cnt dl dd {float:left; color:#000; font-weight:bold; letter-spacing:-1px;}
+.audience_cnt dl dt:nth-child(3) {margin-left:8px;}
+.audience_cnt .ico_help {position:absolute; right:10px; top:50%; margin-top:-7px; display:inline-block; border:0; width:14px; height:14px; text-indent:-9999em; font-size:1px; line-height:1px; background:url('../images/common/btn_help.png') no-repeat 0 0; background-size:14px;}
+
+.audience_cnt2 {position:relative; padding:6px 24px 6px 0; /* border:1px solid #c9cacc; */ background-color:#eae9e4;}
+.audience_cnt2 .audience_inner {display:table; width:100%;}
+.audience_cnt2 .audience_inner > li {overflow:hidden; display:table-cell; width:33%; vertical-align:top;}
+.audience_cnt2 .audience_inner .day_cnt {border-right:1px solid #ddd;}
+.audience_cnt2 .audience_inner .cnt_tit {display:block; color:#4b3c30; font-size:11px;}
+.audience_cnt2 .audience_inner .cnt_num {display:block; margin-bottom:3px; color:#000; font-size:13px;}
+.audience_cnt2 .ico_help {position:absolute; right:10px; top:50%; margin-top:-7px; display:inline-block; border:0; width:14px; height:14px; text-indent:-9999em; font-size:1px; line-height:1px; background:url('../images/common/btn_help.png') no-repeat 0 0; background-size:14px;}
+
+.audience_cnt2.type1 {padding:9px 24px 9px;}
+.audience_cnt2.type1 .audience_inner > li {display:block; width:100%;}
+.audience_cnt2.type1 .audience_inner .cnt_tit {display:inline-block; font-size:13px;}
+.audience_cnt2.type1 .audience_inner .cnt_num {display:inline-block; margin:0;}
+.audience_cnt2.type1 .day_cnt {border-right:0;}
+
+.audience_cnt2.type2 {padding:6px 24px;}
+.audience_cnt2.type2 .audience_inner > li {width:50%;}
+
+.audience_cnt2.type3 {padding:9px 24px 9px 0;}
+.audience_cnt2.type3 .audience_inner > li {display:inline-block; width:auto;}
+.audience_cnt2.type3 .audience_inner .cnt_tit {display:inline-block; font-size:13px; margin-left:8px;}
+.audience_cnt2.type3 .audience_inner > li:first-child .cnt_tit {margin-left:0;}
+.audience_cnt2.type3 .audience_inner .cnt_num {display:inline-block; margin:0;}
+
+/* 빠른길 */
+.fast_track_info {position:relative; padding:15px; min-height:60px; background:#222;}
+/* .fast_track_info:before {clear:both; display:block; content:''; position:absolute; top:-10px; left:15px; width:20px; height:10px; background:url('../images/movieinfo/bg_arrow_fast_info.png') no-repeat 0 0; background-size:20px;} */
+.fast_track_info .slide_desc {font-size:14px; line-height:140%; color:#fff; margin-right:50px;}
+.fast_track_info .slide_paging {position:absolute; bottom:15px; right:15px; padding:5px; font-size:14px; line-height:120%; color:#666; border:1px solid #666; border-radius:3px;}
+
+.clsFastWayBody {background:#222;}
+
+
+/* CGV코멘터리 */
+.commentary {text-align: center;padding-bottom: 20px;}
+.commentary .com_header {position: relative;}
+.commentary .com_header h3 {padding:12px 10px 12px;font-weight: bold;color: #000;font-size: 15px;text-align: center;line-height: 17px;}
+.commentary .com_header .commentary_btn {position: absolute;right:0;top: 0;background:url("../images/common/ico_i.png") no-repeat 50% 50%;background-size:14px 14px;text-indent:-9999px;overflow: hidden;padding:14px 10px;z-index: 9999;display: block;}
+
+.commentary .com_content {padding: 16px 5px 0px 5px;text-align: center;color: #000;font-size: 14px;line-height: 21px;border-top: 1px solid #c9cacc;}
+.commentary .com_content p {color: #000;font-size: 14px;line-height: 21px;margin-bottom:10px;}
+.commentary .com_content p:last-child {margin-bottom:0;}
+.commentary .commentary_more {display: inline-block;margin-top: 12px;text-align: center;}
+.commentary .commentary_more img{height: 12px;}
+
+/* 영화 상세 로딩레이어 */
+.video .loading_inlayer {display:none; position:absolute; left:0; right:0; top:0; bottom:0;z-index:10;}
+.video .loading_inlayer .load_box {position:relative; width:100%; height:140px;}
+.video .loading_inlayer .load_box .loader {position:absolute; left:50%; top:50%; width:40px; height:40px; margin:-23px 0 0 -23px;}
