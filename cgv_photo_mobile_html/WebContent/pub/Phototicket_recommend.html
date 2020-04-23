@@ -41,7 +41,7 @@
             var strIphonenavi = "";
             if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
                 var tmp_url = location.href;
-                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
                 var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
                 location.href = tmp_url_rep;
             }
@@ -51,14 +51,15 @@
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
     <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
-    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:ios:app_store_id" content="370441190">
     <meta property="al:ios:app_name" content="CGV">
-    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
-
     <!--
     [S] 2020.04.20
     작성자 : 이주연
@@ -73,19 +74,20 @@
     <!--  [E] 2020.04.20	-->
 </head>
 <body class="bg_white">
+<!--<img src="../images/phototicket/temp/pt_photoflip" width="375" style="position: absolute; z-index:10; top: -20px; opacity: .5" alt="">-->
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
 
     <!-- [S] Header -->
     <div id="header_box" class="pt_header">
         <header id="headerTitle">
-            <a class="title_area" href="javascript:void(0);">
-                <i class="sprite sprite-pt sprite-icBack"></i>
-            </a>
-            <div class="title" id="headerTitleArea">내 포토티켓</div>
+            <div class="title_area">
+              <span class="name">nickname님의 포토티켓</span>
+            </div>
+            <div class="title" id="headerTitleArea"></div>
             <div class="btn_wrap">
-                <a class="btn_menu" href="javascript:siteMapFn();">
-                    <i class="sprite sprite-pt sprite-icSideMenu"></i>
+                <a class="btn_menu" href="javascript:void(0);">
+                    <i class="sprite sprite-pt sprite-icClose"></i>
                 </a>
             </div>
         </header>
@@ -143,13 +145,6 @@
             </article>
         </section>
         <!-- [E] siteMap -->
-        <nav id="navMain" class="type_pt" style="position: static; top: initial;">
-            <div class="inner">
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">제작완료(10)</a>
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">출력완료(3)</a>
-                <a class="icon_search" href="javascript:void(0);" onclick="" id=""><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
-            </div>
-        </nav>
     </div>
     <!-- [E] Header -->
 
@@ -157,123 +152,79 @@
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
 
-        <!--  [S] 이벤트 광고 영역     -->
-        <article class="mypt_wrap">
-            <div class="title_wrap">
-                <div class="title">내 포토티켓</div>
-                <div class="all">
-                    <a href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
+        <!-- [S] 플립 슬라이더 -->
+        <!-- tip 클래스 유무, 분기 처리 필요 -->
+        <!-- 체크박스   -->
+        <article class="myPhtoticketFlip small">
+            <div class="title_area">
+
+                <!-- 광주충장로 점일 때 -->
+                <!-- <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>-->
+            </div>
+            <div class="swiper-container ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="flip-container">
+                            <div class="flipper">
+                                <div class="front">
+                                    <div class="dim"></div>
+                                    <div class="inner">
+                                        <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
+                                             alt="">
+                                        <input id='checkFront1' type='checkbox' title='checkbox'/>
+                                        <label for='checkFront1'><span></span></label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="inner">
+                                        <p class="title">IMAX 2D(인생영화 기획전)<span><i></i></span></p>
+                                        <p class="title_lg">날씨의 아이(인생영화기획전)</p>
+                                        <p class="title_sm">(IMAX 2D) Weathering With You</p>
+                                        <ul class="info">
+                                            <li class="bar"><span>CGV왕십리</span><span>2020. 03. 29(일)</span></li>
+                                            <li class="bar"><span>6회</span><span>21:45(오후) ~ 23:47(오후)</span></li>
+                                            <li>IMAX관</li>
+                                            <li><span>일반 3명</span></li>
+                                        </ul>
+                                        <div class="bg_grey">
+                                            <p class="number">예매번호 : <span>2020-0000-0000-0000</span></p>
+                                            <p class="text">이포토티켓으로는 입장하실 수 없습니다.<br/>
+                                                모바일 티켓 혹은 예매번호로 티켓을 추력 후<br/>
+                                                입장해주세요.</p>
+                                        </div>
+                                        <div class="sign">
+                                            <p class="lg">CURTUREPLEX CGV</p>
+                                            <p class="sm">© CJ CGV. All rights reserved.</p>
+                                        </div>
+                                        <input type='checkbox' title='checkbox'/>
+                                        <label for="checkFront1"><span></span></label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+<!--                <div class="swiper-pagination"></div>-->
+            </div>
+            <div class="btn_area">
+                <div class="inner">
+                    <p class="text-lg">포토티켓 제작이 완료되었습니다.</p>
+                    <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
+                        생년월일+휴대폰번호를 입력하여 출력해주세요</p>
+                    <div>
+                        <a class="btn-outline-red disabled" href="javascript:void(0);">자랑하기</a>
+                        <a class="btn-grey" href="javascript:void(0);">결제취소</a>
+                    </div>
                 </div>
             </div>
-            <div class="card_wrap">
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">클로젯</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <!--
-                        작성자 : 이주연
-                        제목 : 뱃지 컬러
-                        내용 : badge-blue(d-day가 10일 초과 경우) / badge-red(d-day가 10일 이하일 경우)
-                     -->
-                    <div class="badge badge-red">
-                        <p class="dday">D-3</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie2@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">작은아씨들</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-8</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie3@2x.png" alt="영화 이미지">
-                        <div class="badge_top">+10</div>
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">다크워터스</p>
-                        <p class="tip">광주 충장로점 출력가능</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-10</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie4@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">어바웃타임(인생영화인생영화)</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge_blue">
-                        <p class="dday">D-17</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie5@2x.png" alt="영화 이미지">
-                        <div class="badge_top">+2</div>
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">타오르는 여인의 초상</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge_blue">
-                        <p class="dday">D-20</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="btn_grey" href="javascript:void(0);">더보기 <i class="sprite sprite-pt sprite-icDownMore"></i>
-                </a>
-            </div>
         </article>
-
     </section>
     <!-- [E] Content -->
-
 </div>
-
-
 </body>
 </html>

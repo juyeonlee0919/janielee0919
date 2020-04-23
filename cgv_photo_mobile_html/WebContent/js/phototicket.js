@@ -1,6 +1,121 @@
+// 포토티켓
+// 작성일 : 20.04.20
+// 작성자 : 이주연
 
-var win = this;
-var focusReturn = 0;
+$( document ).ready( function() {
+
+    var win = this;
+    var focusReturn = 0;
+
+    var app = document.URL.indexOf( 'http://' ) == -1 && document.URL.indexOf( 'https://' ) == -1;
+    if ( app ) {
+        // 하이브리드 앱일때
+        $(".slider_wrap").removeClass('web');
+    } else {
+        // 모바일 웹 일때
+        $(".slider_wrap").addClass('web');
+    }
+
+    // headera
+    var jbOffset = $( '#headerTitle' ).offset();
+    $( window ).scroll( function() {
+        if ( $( document ).scrollTop() > jbOffset.top ) {
+            $( '#headerTitle' ).siblings('#navMain').addClass( 'active' );
+        }
+        else {
+            $( '#headerTitle' ).siblings('#navMain').removeClass( 'active' );
+        }
+    });
+
+    // header 클릭 이벤트
+    $('#navMain ._tab').on('click', function() {
+        $('._tab').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    });
+
+    // 이벤트 슬라이더
+    var photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
+        speed: 400,
+        direction: 'horizontal',
+        loop: true,
+        spaceBetween: 40,
+        slidesPerView: 1,
+        centeredSlides: true,
+    });
+
+    // 플립 슬라이더
+    var flipPhotoTicketSlider = new Swiper('.myPhtoticketFlip .swiper-container', {
+        speed: 400,
+        autoPlay: true,
+        autoHeight: false,
+        direction: 'horizontal',
+        loop: false,
+        spaceBetween: 28,
+        slidesPerView: 1,
+        centeredSlides: true,
+        breakpointsInverse: false,
+        roundLengths: false,
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        on: {
+            init: function () {
+                var nWindowWidth = $(window).width();
+                var nPadding = (nWindowWidth - 235) / 2
+                setTimeout(function () {
+                    $('.myPhtoticketFlip .swiper-container')
+                        .css({
+                            'width': '100%',
+                            'margin': '0 auto',
+                            'padding-left': nPadding
+                        })
+                }, 100)
+            },
+        }
+    });
+
+    // max-width 계산
+    function setScrollWidth(_target){
+        try{
+            var _width = 0;
+            var _totalWidth;
+
+            var _targetParentPL = Number(_target.css('padding-left').replace('px', ''));
+            var _targetParentPR = Number(_target.css('padding-right').replace('px', ''));
+
+            _target.find('> li').each(function(){
+                _width = $(_target).outerWidth(true) + _width;
+                console.log(_width)
+            });
+            if($(win).width() < Math.ceil(_targetParentPL + _width + _targetParentPR)){
+                _totalWidth = Math.ceil(_targetParentPL + _width + _targetParentPR) + 'px';
+            }else{
+                _totalWidth = '100.1%'; // 앱에서 컨텐츠가 100% 미만일때 바운스 되게 처리하기 위해 스크롤바 생성을 위해 0.1 % 줌
+            }
+            _target.css({'width':_totalWidth});
+
+
+            // if( _btnL != null){
+            //     (_target.parent().scrollLeft() <= 0)?_btnL.hide():_btnL.show();
+            //     _target.parent().on({
+            //         scroll:function(){
+            //             ($(this).scrollLeft() <= 0)?_btnL.hide():_btnL.show()
+            //         }
+            //     });
+            // }
+        }catch(e){
+            //win.console.log('error');
+        }
+    }
+    setScrollWidth($('.cgvMovieChartContainer > li.active .cgvMovieChartContents > li.active .cgvMovieChartContent'), null);
+
+    // 플립 슬라이더 팝업
+    // 버튼 클릭시 플립
+    $('._flip').on('click',function () {
+        $(this).parent().parent().parent().parent().toggleClass('active')
+    });
+});
 
 //사이트맵
 window.siteMapFn = siteMapFn;

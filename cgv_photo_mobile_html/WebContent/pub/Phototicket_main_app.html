@@ -41,7 +41,7 @@
             var strIphonenavi = "";
             if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
                 var tmp_url = location.href;
-                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
                 var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
                 location.href = tmp_url_rep;
             }
@@ -51,12 +51,10 @@
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
     <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
-    <meta property="al:ios:url"
-          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:ios:app_store_id" content="370441190">
     <meta property="al:ios:app_name" content="CGV">
-    <meta property="al:android:url"
-          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
@@ -69,6 +67,7 @@
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
+    <script type="text/javascript" src="../js/jquery.sticky.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
@@ -151,9 +150,6 @@
         <!-- [E] siteMap -->
 
     </div>
-    <script type="text/javascript">
-
-    </script>
     <!-- [E] Header -->
 
     <!-- [S] Content -->
@@ -261,6 +257,7 @@
         <script>
             var photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
                 speed: 400,
+                autoPlay:true,
                 autoHeight: false,
                 direction: 'horizontal',
                 loop: false,
@@ -330,14 +327,7 @@
             </div>
         </article>
         <script>
-            var photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
-                speed: 400,
-                direction: 'horizontal',
-                loop: true,
-                spaceBetween: 40,
-                slidesPerView: 1,
-                centeredSlides: true,
-            });
+
         </script>
         <!-- [E] 이벤트 슬라이더 영역     -->
 
