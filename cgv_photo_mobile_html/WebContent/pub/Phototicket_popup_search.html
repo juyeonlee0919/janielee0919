@@ -77,50 +77,79 @@
 
 <div class="wrap">
     <br><br><br>
-    <a href="javascript:void(0);" class="btnLayerPop">
-        <span>전체구분</span>
-        <span>상태전체</span>
-        <span>1개월</span>
-    </a>
+    <a href="#" class="btn btn-white btn-square" data-popup="popupShare"
+       style="height:50px;line-height:50px;border:1px solid red;display:inline-block;">popup fullpopup</a>
     <br><br><br>
-    <!-- [S] 팝업 : 조회 레이어-->
-    <div class="popLayer">
-        <div class="popFogBg"></div>
-        <div class="popTicketPopcornStore">
-            <div class="popLayerHeader">선택<a href="javascript:void(0);" class="sprite btnPopClose">닫기</a></div>
-            <div class="popLayerContainer popLayerContainerPopcorn">
-
-                <dl id="dl_popcorn_type" class="popContentType3"><!-- 클래스 popContentType2 로 수정됨 -->
-                    <dt>상태</dt>
-                    <dd data-type="P" class="active"><a href="javascript:void(0);">전체</a></dd><!-- data-type="P" 속성 삭제 -->
-                    <dd data-type="C"><a href="javascript:void(0);">적립</a></dd><!-- data-type="c"" 속성 삭제 -->
-                    <dd data-type="C"><a href="javascript:void(0);">취소</a></dd><!-- data-type="c"" 속성 삭제 -->
-                </dl>
-
-                <dl class="popContentType4 ctlDatepickerLayer">
-                    <dt>조회기간</dt>
-                    <dd class="active"><a id="btn_one_month" href="javascript:void(0);">1개월</a></dd>
-                    <dd><a href="javascript:void(0);">3개월</a></dd>
-                    <dd><a href="javascript:void(0);">6개월</a></dd>
-                    <dd><a href="javascript:void(0);" class="ctlDatepicker">직접입력</a></dd>
-                    <dd class="inputDatepicker">
-											<span class="inputDatepickerStart">
-												<input type="date" disabled="">
-											</span>
-                        <span class="inputDatepickerEnd">
-												<input type="date" disabled="">
-											</span>
-                    </dd>
-                </dl>
+    <div id="popupShare" class="popup_dim">
+        <div class="popup popup_share">
+            <div class="popup_header">
+                <h1>조회기간</h1>
+                <a href="#" class="btn_close _closePopup"><i class="sprite sprite-pt sprite-icClose"></i></a>
             </div>
-            <div class="popLayerFooter"><a href="javascript:void(0);" id="btn_popcorn_inquiry" class="btnPopConfirm">확인</a></div>
+            <div class="popup_container">
+                <ul class="DatepickerLayer clearfix row">
+                    <li class="active"><a href="javascript:void(0);">7일</a></li>
+                    <li><a href="javascript:void(0);">1개월</a></li>
+                    <li><a href="javascript:void(0);">3개월</a></li>
+                    <li><a href="javascript:void(0);">6개월</a></li>
+                    <li class="lg"><a href="javascript:void(0);">직접입력</a></li>
+                </ul>
+                <div class="inputDatepicker">
+                        <span class="inputDatepickerStart">
+                            <input type="date" disabled="">
+                        </span>
+                    <span class="inputDatepickerEnd">
+                            <input type="date">
+                        </span>
+                </div>
+                <div class="com_btn_fixed_wrap" style="">
+                    <div class="stemp_btn_wrap">
+                        <a class="stem_btn01" data-popup="totallist">적립 히스토리</a>
+                        <a class="stem_btn01" data-popup="pop_stemp_gift"> 스탬프 선물하기</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- [E] 팝업 : 조회 레이어-->
+<style>
+    .popup.popup_share {top: auto !important;height: 167px;bottom: 50px !important;}
+    .DatepickerLayer {padding: 20px 20px 6px;}
+    .DatepickerLayer li {float: left;height: 36px;margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
+    .DatepickerLayer li.lg {flex: 0 0 23%; margin-right: 0}
+    .DatepickerLayer li a {display: block; text-align: center; line-height: 36px; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+    .DatepickerLayer li.active a {background: var(--watermelon); color: #ffffff}
+    .com_btn_fixed_wrap {overflow: hidden;position: fixed;left: 0;bottom: 0;width: 100%;height: auto;min-height: 50px;background-color: #ffffff;z-index: 10;padding-bottom: env(safe-area-inset-bottom);}
+    .com_btn_fixed_wrap .stemp_btn_wrap {float: none;overflow: hidden;background: linear-gradient(45deg, #fb4357, #ef642f);padding: 0 0 env(safe-area-inset-bottom) 0;}
+    .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01 {float: left;display: block;width: 50%;min-height: 50px;padding: 15px 0 0 12px;color: #fff;font-size: 14px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
+    .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01:first-child {border-left: 0 !important;}
+    .row {display: flex;flex-wrap: wrap;}
+    .inputDatepicker {position: relative; padding: 0 20px;}
+    .inputDatepicker:before {content: '~';position: absolute;left: 50%;top: 9px;display: block;margin-left: -3px;}
+    .inputDatepicker span {width: 47%; display: block;height: 36px;line-height: 36px;}
+    .inputDatepicker span:first-child {float: left;}
+    .inputDatepicker span:last-child {float: right;}
+    .inputDatepicker span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+    .inputDatepicker span input[type='date']:focus {outline: none}
+    .inputDatepicker span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242,.8);}
+    .inputDatepicker span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
+    .inputDatepicker span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: -1;}
+
+    @media only screen and (-webkit-min-device-pixel-ratio:1){
+        .inputDatepicker span input[type='date']:after,
+        .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio:2){
+        .inputDatepicker span input[type='date']:after,
+        .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@2x.png');background-repeat: no-repeat; display: block; background-size: 200px;}
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio:3){
+        .inputDatepicker span input[type='date']:after,
+        .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@3x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+    }
+</style>
 
 
 
     <!-- [E] Content -->
-</div>
 </body>
 </html>
