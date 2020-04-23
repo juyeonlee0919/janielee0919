@@ -43,8 +43,8 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .sprite.sprite-pt.sprite-icBoastNor {width: 20px;height: 20px;background-position: -74px -63px;}
 .sprite.sprite-pt.sprite-icBoastSel {width: 20px;height: 20px;background-position: -98px -63px;}
 .sprite.sprite-pt.sprite-icBtnLikeSel {width: 20px;height: 20px;background-position: -123px -63px;}
-.sprite.sprite-pt.sprite-icCalChDim {width: 17px;height: 18px;background-position: -56px -160px;}
-.sprite.sprite-pt.sprite-icCalCh {width: 17px;height: 18px;background-position: -79px -160px;}
+.sprite.sprite-pt.sprite-icCalChDim {width: 15px;height: 16px;background-position: -65px -152px;}
+.sprite.sprite-pt.sprite-icCalCh {width: 15px;height: 16px;background-position: -85px -152px;}
 .sprite.sprite-pt.sprite-icCardRotation {width: 32px;height: 32px;background-position: -36px -59px;}
 .sprite.sprite-pt.sprite-icClose {width: 30px;height: 30px;background-position: -161px 0;}
 .sprite.sprite-pt.sprite-icDownMore {width: 13px;height: 10px;background-position: -38px -40px;}
@@ -325,4 +325,31 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 	to {
 		height: 331px;
 	}
+}
+
+/*  모달  */
+.modal {
+	background: #fff;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+	top: 100%;
+	position: fixed;
+	left: 0;
+	text-align: left;
+}
+.modal .header {
+	padding:20px;
+	border-bottom: 1px solid #ddd;
+	font: 300 24px Lato;
+	position: relative;
+}
+.modal .body {
+	padding: 20px;
+	font: 300 16px Lato;
+}
+.container.modal-open .modal {
+	top: 0;
 }
