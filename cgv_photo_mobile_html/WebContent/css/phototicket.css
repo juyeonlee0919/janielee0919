@@ -3,12 +3,20 @@
     작성자: 이주연
     CGV 포토티켓
 */
-/* 포토티켓 공통 */
+
+/* [S]포토티켓 공통 */
 .photo_ticket .clearfix::after { content: ''; clear: both; display: block;}
 .photo_ticket .primary { color: #ff2f35;}
 .photo_ticket.container article::before {height: 7px;}
 .photo_ticket .btn_grey {position: relative; width: 115px; height: 34px; margin: 0 auto;display: block;border-radius: 18px;color: #999999;background-color: #ffffff;font-size: 14px;text-align: center;line-height: 32px;border: 1px solid #eeeeee;padding: 0;}
-.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+.sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@2x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+.photo_ticket .btn-outline-red {display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 42px; font-size: 16px; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px;padding-left: 21px; background-color: #ffffff;}
+.photo_ticket .bt-red { display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 42px; font-size: 16px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -2px;padding-left: 21px;}
+.photo_ticket .btn-grey { display: inline-block; width: 135px; height: 44px; line-height: 42px; font-size: 16px; background-color: #bebebe; border-radius: 22px;  color: #ffffff; font-weight: bold; letter-spacing: -2px;border: 1px solid #bebebe}
+.type_pt2 .btn-badge { display: inline-block; text-align: center; width: 125px; height: 25px; border-radius:12px; line-height: 25px; font-size: 12px; background-color: #ffffff; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px;}
+.type_pt2 .btn-badge.active { display: inline-block; width: 125px; height: 25px; border-radius:12px; line-height: 23px; font-size: 12px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -2px;}
+
+/* [E]포토티켓 공통 */
 
 /*
     [S]날짜: 2020.04.20
@@ -45,61 +53,83 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .sprite.sprite-pt.sprite-icBtnLikeSel {width: 20px;height: 20px;background-position: -123px -63px;}
 .sprite.sprite-pt.sprite-icCalChDim {width: 15px;height: 16px;background-position: -65px -152px;}
 .sprite.sprite-pt.sprite-icCalCh {width: 15px;height: 16px;background-position: -85px -152px;}
-.sprite.sprite-pt.sprite-icCardRotation {width: 32px;height: 32px;background-position: -36px -59px;}
+.sprite.sprite-pt.sprite-icCardRotation {width: 32px;height: 32px;background-position: -44px -55px;}
 .sprite.sprite-pt.sprite-icClose {width: 30px;height: 30px;background-position: -161px 0;}
 .sprite.sprite-pt.sprite-icDownMore {width: 13px;height: 10px;background-position: -38px -40px;}
 .sprite.sprite-pt.sprite-icFilterDateSel {width: 19px;height: 19px;background-position: -17px -151px;}
-.sprite.sprite-pt.sprite-icFilterDate {width: 19px;height: 19px;background-position: -41px -151px;}
+.sprite.sprite-pt.sprite-icFilterDate {width: 19px;height: 19px;background-position: -40px -151px;}
 .sprite.sprite-pt.sprite-icInfo {width: 30px;height: 30px;background-position: -48px 1px;}
 .sprite.sprite-pt.sprite-icLikeNor {width: 42px;height: 52px;background-position: -56px -89px;}
 .sprite.sprite-pt.sprite-icLikeSel {width: 42px;height: 52px;background-position: -8px -89px;}
-.sprite.sprite-pt.sprite-icShare {width: 30px;height: 30px;background-position: -120px 0;}
+.sprite.sprite-pt.sprite-icShare {width: 30px;height: 30px;background-position: -123px 0;}
 .sprite.sprite-pt.sprite-icSideMenu {width: 31px;height: 30px;background-position: -85px 2px;}
 .sprite.sprite-pt.sprite-icTMore {width: 9px;height: 13px;background-position: -23px -39px;}
-.sprite.sprite-pt.sprite-icTMoreLarge {width: 9px;height: 13px;background-position: 1px -42px;}
-.sprite.sprite-pt.sprite-kakao {width: 26px;height: 26px;background-position: -69px -29px;}
+.sprite.sprite-pt.sprite-icTMoreLarge {width: 9px;height: 13px;background-position: -23px -39px;}
+.sprite.sprite-pt.sprite-kakao {width: 26px;height: 26px;background-position: -75px -27px;}
 .sprite.sprite-pt.sprite-icLikeGray {width: 10px;height: 10px; background-position:-58px -38px;}
 
 /* 포토티켓 header */
 #header_box {background-color: #ffffff; border: 0; z-index: 1111;}
 #header_box.pt_header {height: 47px; background-color:transparent; font-size: 16px; margin: 0; line-height: 47px; color: #000000;}
-#header_box.pt_header .title_area {position: absolute; left: 14px; top: 7px;}
+#header_box.pt_header .title_area {position: absolute; left: 14px; top: 10px;}
+#header_box.pt_header .title_area .name { display: block; line-height: 34px; font-size: 17px; text-align: left; padding-left: 20px; width: 265px; text-overflow: ellipsis; overflow: hidden; white-space: nowrap}
 #header_box.pt_header .title {font-size: 16px; margin: 0;line-height: 47px;padding-left: 50px;color: #000000; text-align: left}
+#header_box.pt_header .badge {width: 219px;height: 30px;line-height: 28px;border-radius: 15px; color: #ffffff; margin: 14px auto 0;}
+#header_box.pt_header .badge.badge_blue { background: #209eff}
+#header_box.pt_header .badge.badge_red { background: var(--watermelon)}
+#header_box.pt_header .badge .dday { position: relative; font-size: 15px; font-weight: bold; letter-spacing: -1.1px; padding-right: 17px;}
+#header_box.pt_header .badge .dday::after { content: ''; position: absolute; height:10px; border-right: 1px solid rgba(255,255,255,.5); right: 7px;top: 4px;}
+#header_box.pt_header .badge .text { font-size: 14px; font-weight: normal; letter-spacing: -1.1px;}
 
 #header_box.pt_header .btn_wrap {position: absolute; right: 15px; top: 9px}
 #header_box.pt_header .btn_wrap .btn_info { display: inline-block }
 #header_box.pt_header .btn_wrap .btn_menu { display: inline-block; margin-left: 3px; }
 #header_box.pt_header .allview_wrap .allview_box_wrap .allview_header:before {right: 20px; left: auto}
 
-#header_box.pt_header nav.type_pt {padding: 0 20px;}
-#header_box.pt_header nav.type_pt::after {bottom: 2px;}
+#header_box.pt_header nav.type_pt { position: relative; padding: 0 20px;}
+#header_box.pt_header nav.type_pt::after {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: -37px; border-bottom: 1px solid #dddddd; z-index: 2;}
+#header_box.pt_header nav.type_pt::before {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: -44px; border-bottom: 7px solid #f2f2f2; z-index: 1;}
+#header_box.pt_header nav.type_pt.active::before {content:none;}
+#header_box.pt_header nav.type_pt.active::after {bottom: -42px;}
+#header_box.pt_header nav.type_pt .inner { overflow: hidden }
 #header_box.pt_header nav.type_pt .inner a {color: #666666; font-size: 14px; margin-right: 20px; white-space: nowrap; font-weight: normal}
 #header_box.pt_header nav.type_pt .inner a:last-child {margin-right: 0}
 #header_box.pt_header nav.type_pt .inner a.active {color: #fb4357; border-color: #fb4357}
 #header_box.pt_header nav.type_pt .icon_search { color: #666666; border: 0; float: right; text-align: right; margin-right: 0;}
 #header_box.pt_header nav.type_pt .icon_search.active { color: #666666 !important; }
 #header_box.pt_header nav.type_pt .icon_search i {display: inline-block; vertical-align: sub;}
-#header_box.pt_header nav.type_pt .icon_search i.sprite-icFilterDateSel {vertical-align: text-bottom;}
+#header_box.pt_header nav.type_pt .icon_search i.sprite-icFilterDateSel {}
+
+#header_box.pt_header nav.type_pt2 { position: relative; padding: 0 20px;}
+#header_box.pt_header nav.type_pt2::after {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: -37px; border-bottom: 1px solid #dddddd; z-index: 2;}
+#header_box.pt_header nav.type_pt2::before {content:''; position: absolute; width: 100%; height:0; left: 0; bottom: -44px; border-bottom: 7px solid #f2f2f2; z-index: 1;}
+#header_box.pt_header nav.type_pt2.active::before {content:none;}
+#header_box.pt_header nav.type_pt2 .inner { overflow: hidden }
+#header_box.pt_header nav.type_pt2 .inner a { position: relative; color: rgb(102,102,102); font-size: 14px; margin-right: 20px; white-space: nowrap; font-weight: normal; text-align: left; padding-left: 7px; width: auto}
+#header_box.pt_header nav.type_pt2 .inner a.active { color: #222222; border: 0}
+#header_box.pt_header nav.type_pt2 .inner a.active::after { content: ''; position: absolute; width: 3px; height: 3px; background-color: #222222; top: 20px; left: 0; border-radius: 50%;}
+#header_box.pt_header nav.type_pt2 .inner a:last-child {margin-right: 0}
+#header_box.pt_header nav.type_pt2 .inner .btn-badge {float: right;width: 125px;text-align: center;font-size: 12px;color: var(--watermelon);font-weight: 500; padding: 0; transform: translateY(9px);}
+#header_box.pt_header nav.type_pt2 .inner .btn-badge::after {content: none}
+
+
+
+
+
 
 /* 포토티켓 메인 - app */
 .content_wrap.photo_ticket { padding-top: 47px; }
 .content_wrap.photo_ticket .slider_wrap .title { padding-left: 30px; font-size: 22px; line-height: 30px; font-weight: 600; padding-top: 15px; margin-bottom: 19px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container { width: 260px; margin: 0 auto;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide { position: relative; text-align:center; display:flex; align-items:center; justify-content:center; margin-bottom: 30px;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster {width: 100%; height: 360px; border-radius: 20px; cursor: pointer}
+.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster {width: 100%; height: 360px; border-radius: 20px; cursor: pointer;transition: 0.3s}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster::after {content:''; position: absolute; width: 100%; height: 360px; border-radius: 20px; top: 0; left: 0; box-shadow: 0 10px 20px rgba(0,0,0,.3); z-index: -1;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .poster img { width: 100%; height: 100%; border-radius: 20px;}
 
-
-/*todo : animation 추가*/
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-prev .poster,
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-next .poster { height: 331px; padding-top: 13px;}
+.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-next .poster {transform: scale(0.92); transition: 0.3s}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-prev .poster::after,
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-next .poster::after { content: none;}
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-prev .poster .badge_top,
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-next .poster .badge_top { top: 13px; }
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-prev .poster .poster_info,
-.content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide.swiper-slide-next .poster .poster_info { top: 206px }
 
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .dim {position: absolute; bottom: 0; left: 0; width:100%; height: 284px; border-radius: 0 0 20px 20px; background: linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.57) 100%); background: -webkit-linear-gradient(270deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.57) 100%);}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_top { position:absolute; padding:0 12px; height: 25px; top: 0; right: 0; background-color: rgb(251,67,87); border-radius: 0 19px 0 10px; color: #ffffff; font-size: 11px; font-weight: 400; line-height: 25px;}
@@ -117,6 +147,7 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle {position: absolute; display: block; width: 80px; height: 80px; border-radius: 40px; color: #ffffff; background: linear-gradient(124deg, #fb4357 14%, #ef642f 86%); background: -webkit-linear-gradient(124deg, #fb4357 14%, #ef642f 86%);  box-shadow: 0 4px 10px 0 rgba(251, 67, 87, 0.4); bottom: -11px; right: -18px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .txt {font-size: 16px; font-weight: bold; padding-top: 27px; margin-bottom: 5px;}
 .content_wrap.photo_ticket .slider_wrap .swiper-container .swiper-slide .badge_circle .btn-circle .count {font-size: 12px;}
+
 /* 포토티켓 메인 - web */
 .content_wrap.photo_ticket .slider_wrap.web .swiper-container { width: 100%; overflow: auto; padding: 0 30px; }
 .content_wrap.photo_ticket .slider_wrap.web .swiper-container .swiper-slide { width: 260px; margin-right: 40px;}
@@ -141,8 +172,8 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: -2.1px; line-height: 60px;}
 .photo_ticket .title_wrap .all {float: right; font-size: 14px;}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 9px 15px 15px; line-height: 30px;}
-.photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 23px;}
-.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 25px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;}
+.photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 22px;}
+.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 27px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-2px);}
 
 /*   내 포토티켓    */
 .content_wrap.photo_ticket .mypt_wrap { position: relative; padding: 0 0 20px;}
@@ -184,8 +215,8 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
    - 뱃지가 없을 경우
    - 상단 nav에 border가 있을 경우
 */
-.photo_ticket .card_wrap.single {; }
-.photo_ticket .card_wrap.single .movie_info { ;}
+.photo_ticket .card_wrap.single {}
+.photo_ticket .card_wrap.single .movie_info {padding: 25px 20px 0 104px;}
 
 /*   포토티켓 자랑하기  - 이미지 컴포넌트    */
 .photo_ticket .imgcard_wrap { padding: 0 15px; }
@@ -198,10 +229,10 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .photo_ticket .imgcard_wrap .card .img { display: block; border-radius: 10px; }
 .photo_ticket .imgcard_wrap .card .img img { width: 100%;}
 .photo_ticket .imgcard_wrap .card .info { display: block; font-size: 13px; font-weight: 500;}
-.photo_ticket .imgcard_wrap .card .info .user { display: block; font-size: 13px; font-weight: 500; padding-top: 8px; margin-bottom: 5px; color: rgb(136,136,136)}
-.photo_ticket .imgcard_wrap .card .info .count_like { display: block; color: var(--watermelon); font-size: 12px; }
-.photo_ticket .imgcard_wrap .card .info .count_like i { display: inline-block; margin-right: 4px;}
-.photo_ticket .imgcard_wrap .card .btn_like { display:inline-block; position: absolute; bottom: -15px; right: 2px;}
+.photo_ticket .imgcard_wrap .card .info .user { display: block; font-size: 13px; font-weight: 500; margin-bottom: 3px; padding-top: 8px; color: rgb(136,136,136); line-height: 15px; padding-right: 23px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
+.photo_ticket .imgcard_wrap .card .info .count_like { display: block; color: var(--watermelon); font-size: 12px; padding-right: 27px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
+.photo_ticket .imgcard_wrap .card .info .count_like i { display: inline-block; margin-right: 4px;line-height: 13px;}
+.photo_ticket .imgcard_wrap .card .btn_like { display:inline-block; position: absolute; bottom: -17px; right: 2px;}
 
 /*   포토티켓 자랑하기  */
 .photo_ticket .ptboast_wrap { position: relative; }
@@ -213,77 +244,7 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .photo_ticket .cgvMovieChartContainer > li{display:none; position:relative; overflow: auto; -webkit-overflow-scrolling: touch; z-index: 1;}
 .photo_ticket .cgvMovieChartContainer > li.active{display:list-item}
 .photo_ticket .cgvMovieChartContainer > li.active:after { content: none}
-
-/*
- 수정 사항:
- .photo_ticket .cgvMovieChartContent{ padding:0 30px; } 추가
- */
 .photo_ticket .cgvMovieChartContent{padding:0 30px;}
-/*.photo_ticket .cgvMovieChartContent > li{float:left; width:34.667vw; max-width:130px; margin-left:10px; !*margin-bottom:100px*!}*/
-/*.photo_ticket .cgvMovieChartContent > li:first-child{margin-left:0}*/
-
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPoster{overflow:hidden; height:48vw; max-height:180px; border-radius:10px 10px}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPoster a{overflow:hidden; position:relative; display:block; width:100%; height:100%; background:transparent url('./../../images/main/common/noimg_176x260.png') left top scroll no-repeat; background-size:cover}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPoster a:before{content:''; position:absolute; left:0; bottom:0; width:100%; height:100%; background:linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0), rgba(0,0,0,0.4)); z-index:2}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPoster a:after{content:counter(cgvMovieChartListCnt); display:block; position:absolute; left:0; top:0; width:6.4vw; height:6.4vw; font-weight:500; font-size:14px; font-style:italic; color:#fff; line-height:6.4vw; text-align:center; counter-increment:cgvMovieChartListCnt; background-color:rgba(0,0,0,0.5); border-radius:0 0 50% 0; z-index:3}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPoster a img{position:relative; width:100%; z-index:1}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPoster a > img{position:absolute; left:0; top:0; width:auto; min-width:100%; max-height:100%}*/
-/*.photo_ticket .cgvMovieChartContent > li.movieInfo .cgvMovieChartPoster a .badgeWrap > img{position:absolute; right:10px; top:0; width:24px; z-index:9}*/
-/*.photo_ticket .cgvMovieChartContent > li.movieInfo .cgvMovieChartPoster a .badgeWrap .screenType{overflow:hidden; position:absolute; left:6px; bottom:6px; width:46px; z-index:9; background-position:46px top}*/
-/*.photo_ticket .cgvMovieChartContent > li.movieInfo .cgvMovieChartPoster a .badgeWrap .screenType img{float:left; display:block; width:100%; margin-top:2px}*/
-/*.photo_ticket .cgvMovieChartContent > li.movieInfo .cgvMovieChartPoster a .badgeWrap .screenType img:first-child{margin-top:0}*/
-
-/*.photo_ticket .cgvMovieChartContent > li.movieInfo .cgvMovieChartPoster .ico_grade {position:absolute; right:5px; bottom:5px; width:20px; height:20px; z-index:2}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgbMovieTitle{overflow:hidden; padding:9px 0 0; font-weight:600; font-size:14px; color:#222; line-height:17px; text-align:center; text-overflow:ellipsis; white-space:nowrap}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer{overflow:hidden; width:100%; margin-top:4px}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul{width:100%; font-size:0; text-align:center}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li{display:inline-block; position:relative; font-size:0; color:#9a9a9a; line-height:15px; vertical-align:middle}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li:before{content:none;}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li:first-child:before{content:none}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li span{display:inline-block; font-size:12px; line-height:15px; vertical-align:middle}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span{position:relative; left:0; top:0; padding-right: 10px;}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState0{padding-left:20px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState0::before{content:''; position:absolute; left:0; top:0; width:16px; height:20px; background-position:left -128px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState1{padding-left:16px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState1::before{content:''; position:absolute; left:0; top:0; width:12px; height:20px; background-position:-16px -128px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState2{padding-left:15px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState2::before{content:''; position:absolute; left:0; top:0; width:11px; height:20px; background-position:-28px -128px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState3{padding-left:15px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState3::before{content:''; position:absolute; left:0; top:0; width:11px; height:20px; background-position: -40px -130px}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{content:'%'}*/
-
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li { display: inline-block;position: relative;font-size: 0;color: #9a9a9a;line-height: 15px;vertical-align: middle;}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li::before {content: ''; display: inline-block; position: relative;left: 0;top: 4px;width: 1px; height: 1px;margin: 0 5px;font-size: 0;background-color: #686868;opacity: .1;}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li span {display: inline-block;font-size: 12px;line-height: 15px;vertical-align: middle;}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartTicketing span:before{content:'예매율 '}*/
-/*.cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartTicketing span:after{content:'%'}*/
-
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartDDay span{color:#fb4357}*/
-
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartBtnWrap{padding:16px 0 30px; text-align:center}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartBtnWrap a{margin:0 auto; display:block; width:100px; height:28px; font-weight:600; font-size:13px; color:#fb4357; line-height:28px; border:1px solid #fb4357; border-radius: 14px; box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);}*/
-/*.photo_ticket .cgvMovieChartContent > li .cgvMovieChartBtnWrap span{margin:0 auto; display:block; width:100px; height:32px; font-weight:600; font-size:14px; color:#bdc1c8; line-height:32px; border:1px solid #bdc1c8; border-radius:14px}*/
-
-/*.photo_ticket .cgvMovieChartContent > li.ad{position:relative}*/
-/*.photo_ticket .cgvMovieChartContent > li.ad div{overflow:hidden; height:48vw; max-height:180px; border-radius:10px 10px}*/
-/*.photo_ticket .cgvMovieChartContent > li.ad div a{overflow:hidden; position:relative; display:block; width:100%; height:100%}*/
-/*.photo_ticket .cgvMovieChartContent > li.ad div a img{position:absolute; left:0; top:0; width:auto; min-width:100%; max-height:100%}*/
-/*.photo_ticket .cgvMovieChartContent > li.ad strong{display:block; overflow:hidden; padding:9px 0 0; font-weight:400; font-size:13px; color:#222; line-height:17px; text-align:center; text-overflow:ellipsis; white-space:nowrap}*/
-/*.photo_ticket .cgvMovieChartContent > li.ad span{display:-webkit-box; overflow:hidden; -webkit-line-clamp:3; -webkit-box-orient:vertical; width:100%; max-height:51px; margin-top:2px; font-size:12px; color:#4b4f56; line-height:17px; text-align:center; vertical-align:text-bottom; text-overflow:ellipsis}*/
-/*.photo_ticket .cgvMovieChartContent > li.wideAd{position:relative; width:calc(69.334vw + 10px); max-width:270px}*/
-/*.photo_ticket .cgvMovieChartContent > li.wideAd div{overflow:hidden; height:48vw; max-height:180px; border-radius:10px 10px}*/
-/*.photo_ticket .cgvMovieChartContent > li.wideAd div a{overflow:hidden; position:relative; display:block; width:100%; height:100%}*/
-/*.photo_ticket .cgvMovieChartContent > li.wideAd div a img{position:absolute; left:0; top:0; width:auto; min-width:100%; max-height:100%}*/
-/*.photo_ticket .cgvMovieChartContent > li.wideAd strong{display:block; overflow:hidden; padding:9px 0 0; font-weight:400; font-size:12px; color:#222; line-height:17px; text-align:center; text-overflow:ellipsis; white-space:nowrap}*/
-/*.photo_ticket .cgvMovieChartContent > li.wideAd span{display:-webkit-box; overflow:hidden; -webkit-line-clamp:3; -webkit-box-orient:vertical; width:100%;  max-height:51px; margin-top:4px; font-size:12px; color:#4b4f56; line-height:15px; text-align:center; vertical-align:middle; text-overflow:ellipsis}*/
-/*.photo_ticket .cgvMovieChartContent > li.cgvMovieChartBtnMore{width:66px}*/
-/*.photo_ticket .cgvMovieChartContent > li.cgvMovieChartBtnMore div{overflow:hidden; height:190px}*/
-/*.photo_ticket .cgvMovieChartContent > li.cgvMovieChartBtnMore div a{display:block; height:100%; padding-top:80px; text-align:center}*/
-/*.photo_ticket .cgvMovieChartContent > li.cgvMovieChartBtnMore div a:before{content:''; display:block; width:16px; height:16px; margin:0 auto 10px; background-position:left -148px}*/
-
-/*.cgvMovieChartWrap .btnFirstMove {overflow: hidden;display: none;position: absolute;left: 0;top: calc(94px + 24vw);width: 42px;height: 29px;border-radius: 0 15px 15px 0;z-index: 10;}*/
-/*.cgvMovieChartWrap .btnFirstMove:before {content: '';display: block;width: 100%;height: 100%;background-color: #000;opacity: .5;}*/
-/*.cgvMovieChartWrap .btnFirstMove:after {content: '';display: block;position: absolute;left: 3px;top: 0;width: 27px;height: 29px;background-position: -96px -44px;}*/
 
 /* popup-share */
 .popup.popup_share {padding-bottom: 0; height: 135px; bottom: 0 !important; top: auto !important; border-radius: 20px 20px 0 0 !important;}
@@ -294,6 +255,78 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .popup.popup_share .popup_container .list  li {  position: relative; line-height: 80px; padding: 0 20px}
 .popup.popup_share .popup_container .list  li i { position: absolute; top: 26px; display: inline-block;}
 .popup.popup_share .popup_container .list  li .sns { display: inline-block; padding-left: 32px;}
+
+.content_wrap.photo_ticket .myPhtoticketFlip { padding-top: 11px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .title_area .title {display:block; font-size: 20px; line-height: 24px; font-weight: bold; text-align: center; color: #222222; margin-bottom: 4px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137); margin-bottom: 15px;}
+.content_wrap.photo_ticket .myPhtoticketFlip.small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; }
+.content_wrap.photo_ticket .myPhtoticketFlip .title_area {}
+
+/* 포토티켓 플립 슬라이더 - app */
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container { width: 260px; margin: 0 auto;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-wrapper { }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide { position: relative; text-align:center; display:flex; align-items:center; justify-content:center; margin-bottom: 34px; width: 235px !important;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 100%; height: 358px; border-radius: 20px; cursor: pointer;transition: 0.3s;perspective: 1000;}
+/*.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container::after {content:''; position: absolute; width: 100%; height: 358px; border-radius: 20px; top: 0; left: 0; box-shadow: 0 10px 20px rgba(0,0,0,.3); z-index: -1;}*/
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container img { width: 100%; height: 100%; }
+
+/*.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .front .dim {position: absolute; bottom: 0; left: 0; width:100%; height: 358px; border-radius: 12px; box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15); background-color: #ffffff;}*/
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper {border-radius: 13px;transition: 0.6s;transform-style: preserve-3d;position: relative;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .front { padding: 13px; width: 235px; height: 358px; z-index: 2;border-radius: 12px; box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15);/* for firefox 31 */transform: rotateY(0deg);backface-visibility: hidden;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .front .inner { position: relative; height: 100% }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .front img { width: 209px; height: 332px; border-radius: 8px; }
+
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back { position: absolute; top: 0; padding: 40px 18px 20px 18px; width: 235px; height: 358px; z-index: 2;border-radius: 12px; box-shadow: 0 6px 14px 0 rgba(0, 0, 0, 0.15);backface-visibility: hidden;transform: rotateY(180deg);}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner { position: relative; height: 100%; text-align: left}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .title { font-size: 12px; color: #898989; line-height: 15px; border-bottom: 1px solid #c3c3c3; margin-bottom: 15px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .title_lg { font-size: 14px; color: #222222; line-height: 17px; margin-bottom: 2px; font-weight: bold}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .title_sm { font-size: 11px; color: #898989; line-height: 17px; margin-bottom: 16px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info { padding-left: 10px; margin-bottom: 20px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info li { position: relative; font-size: 10px; line-height: 12px; color: #555555; margin-bottom: 5px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info li::after { position: absolute; content: ''; background: #7a7a7a; width: 2px; height: 2px; border-radius: 50%; top: 4px; left: -5px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info li:last-child  { margin-bottom: 0;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info li:last-child  { margin-bottom: 0;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info li.bar span:first-child { position: relative; padding-right: 8px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .info li.bar span:first-child::after { position: absolute; content: ''; border-right: 1px solid #555555; height: 8px; top:1px; right: 4px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .bg_grey {width: 100%; height: 90px; background: #f4f4f4;border-radius: 6px; padding: 17px 0 0 0; margin-bottom: 14px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .bg_grey .number {text-align: center; font-size: 12px; font-weight: bold; line-height: 15px; margin-bottom: 4px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .bg_grey .text {text-align: center; color:#555555; font-size: 10px; font-weight: bold; line-height: 13px; letter-spacing: -1px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .sign .lg {text-align: center; font-size: 13px; font-weight: bold; line-height: 16px; letter-spacing: -.54px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container .flipper .back .inner .sign .sm {text-align: center; color:#898989; font-size: 10px; line-height: 11px;}
+
+
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container .swiper-slide .flip-container.active .flipper {transform: rotateY(180deg);}
+
+/*  포토티켓 플립 슬라이더 - pagination  */
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets { bottom: 12px }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet { margin: 0 1.5px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-pagination-bullet-active { background: var(--watermelon) }
+.content_wrap.photo_ticket .myPhtoticketFlip .swiper-pagination-bullet { width: 5px; height: 5px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .btn-flip {display: inline-block;position: absolute;right: -6px;bottom: -8px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .back .btn-flip {right: -11px;bottom: -15px;}
+
+/*  포토티켓 플립 슬라이더 - checkbox custom  */
+.content_wrap.photo_ticket .myPhtoticketFlip label { position: absolute;left: -26px;top: -13px; }
+.content_wrap.photo_ticket .myPhtoticketFlip label input[type='checkbox'] { height: 0; width: 0; }
+.content_wrap.photo_ticket .myPhtoticketFlip label input[type='checkbox'] {position: absolute;top: -20px;left: -25px;display: flex;margin: .6em 0;align-items: center;color: #9e9e9e;transition: color 250ms cubic-bezier(.4,.0,.23,1);}
+.content_wrap.photo_ticket .myPhtoticketFlip label input[type='checkbox'] + span {display: flex;justify-content: center;align-items: center;width: 40px;height: 40px;border-radius: 50%;background: var(--watermelon);border: 0;cursor: pointer;transition: all 250ms cubic-bezier(.4,.0,.23,1);}
+.content_wrap.photo_ticket .myPhtoticketFlip label input[type='checkbox']:focus {color: #ffffff;}
+.content_wrap.photo_ticket .myPhtoticketFlip label input[type='checkbox']:checked + span {border: .5em solid var(--watermelon);animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1);}
+.content_wrap.photo_ticket .myPhtoticketFlip label input[type='checkbox']:checked + span::before {content: "";position: absolute;top: 12px;left: 9px;border-right: 2px solid transparent;border-bottom: 2px solid transparent;transform: rotate(45deg);transform-origin: 0 100%;animation: checkbox-check 125ms 250ms cubic-bezier(.4,.0,.23,1) forwards;}
+.content_wrap.photo_ticket .myPhtoticketFlip .flip-container .flipper .back label{top: -40px}
+
+/* 포토티켓 플립 슬라이더 - 버튼 영역 */
+.content_wrap.photo_ticket .myPhtoticketFlip .btn_area { position: relative; width: 100%; margin: 0;}
+.content_wrap.photo_ticket .myPhtoticketFlip .btn_area .inner .text-lg { font-weight: bold; font-size: 17px; line-height: 20px; letter-spacing: -2px; margin-bottom: 2px;}
+.content_wrap.photo_ticket .myPhtoticketFlip .btn_area .inner .text-sm { font-size: 13px; color: #555555; line-height: 16px; letter-spacing: -1.6px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .btn_area .inner > div { padding-top: 19px; margin-bottom: 20px; }
+.content_wrap.photo_ticket .myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 5px;}
+
+/* 포토티켓 플립 슬라이더 - web */
+.content_wrap.photo_ticket .myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 0 30px; }
+.content_wrap.photo_ticket .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px; margin-right: 40px;}
+
+
 
 @media only screen and (max-width: 350px){
 	.photo_ticket .card_wrap .movie_info .info .title { font-size: 10px }
@@ -310,46 +343,34 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 	.cgvMovieChartWrap .btnFirstMove {top: 185px;}
 }
 
-@-moz-keyframes upHeight {
-	from {
-		height: 331px;
-	}
-	to {
-		height: 360px;
-	}
-}
-@-moz-keyframes downHeight {
-	from {
-		height: 360px;
-	}
-	to {
-		height: 331px;
-	}
-}
 
-/*  모달  */
-.modal {
-	background: #fff;
-	width: 100%;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
-	top: 100%;
-	position: fixed;
-	left: 0;
-	text-align: left;
+@keyframes shrink-bounce{
+	0%{
+		transform: scale(1);
+	}
+	33%{
+		transform: scale(.85);
+	}
+	100%{
+		transform: scale(1);
+	}
 }
-.modal .header {
-	padding:20px;
-	border-bottom: 1px solid #ddd;
-	font: 300 24px Lato;
-	position: relative;
-}
-.modal .body {
-	padding: 20px;
-	font: 300 16px Lato;
-}
-.container.modal-open .modal {
-	top: 0;
+@keyframes checkbox-check{
+	0%{
+		width: 0;
+		height: 0;
+		border-color: #ffffff;
+		transform: translate3d(0,0,0) rotate(45deg);
+	}
+	33%{
+		width: .2em;
+		height: 0;
+		transform: translate3d(0,0,0) rotate(45deg);
+	}
+	100%{
+		width: 9px;
+		height: 18px;
+		border-color: #ffffff;
+		transform: translate3d(0,-.8em,0) rotate(45deg);
+	}
 }
