@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 -->
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <!-- [E] 운영소스 상속용 -->
+
+    <!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <!--  [E] 2020.04.20	-->
+</head>
+<body class="bg_white">
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+
+<div class="wrap">
+
+    <div class="com_pop_btn_wrap">
+        <p class="com_sort_title_wrap">
+            <a href="#none" data-cd="MOVIE" onclick="fnGetSortedSchedule('MOVIE');" class="active">영화순</a>
+            <a href="#none" data-cd="THEATER" onclick="fnGetSortedSchedule('THEATER');">극장순</a>
+            <a href="#none" data-cd="TIME" onclick="fnGetSortedSchedule('TIME');">시간순</a>
+        </p>
+        <a href="javascript:fnSetPopupFilterBefore();" id="btn_filter" class="btn_filter">필터</a>
+        <!-- S [U 20200403]
+                Description:
+                    - 필터 선택된 값이 표현되어야함 (개발구현해야됨)
+                    - 필터 항목은 최대 3개
+                    - 필터 항목의 수에 따라 class 'filter_selectedValue' 에 추가 클래스 추가 및 하위 span 수 맞춰주세요
+                        1개 : class 'filterUnit1' 추가
+                        2개 : class 'filterUnit2' 추가
+                        3개 : class 'filterUnit3' 추가
+         -->
+        <div class="filter_selectedValue filterUnit0" id="filter_selectedValue"></div>
+        <!-- E [U 20200403] -->
+    </div>
+
+    <a href="javascript:fnSetPopupFilterBefore();" id="btn_filter" class="btn_filter">필터</a>
+    <br><br><br>
+    <div id="popupShare" class="popup_dim">
+        <div class="popup popup_share">
+            <div class="popup_header">
+                <h1>조회기간</h1>
+                <a href="#" class="btn_close _closePopup"><i class="sprite sprite-pt sprite-icClose"></i></a>
+            </div>
+            <div class="popup_container">
+                <ul class="DatepickerLayer clearfix row">
+                    <li class="active"><a href="javascript:void(0);">7일</a></li>
+                    <li><a href="javascript:void(0);">1개월</a></li>
+                    <li><a href="javascript:void(0);">3개월</a></li>
+                    <li><a href="javascript:void(0);">6개월</a></li>
+                    <li class="lg"><a href="javascript:void(0);">직접입력</a></li>
+                </ul>
+                <div class="inputDatepicker">
+                        <span class="inputDatepickerStart">
+                            <input type="date" disabled="">
+                        </span>
+                    <span class="inputDatepickerEnd">
+                            <input type="date">
+                        </span>
+                </div>
+                <div class="com_btn_fixed_wrap" style="">
+                    <div class="stemp_btn_wrap">
+                        <a class="stem_btn01" data-popup="totallist">적립 히스토리</a>
+                        <a class="stem_btn01" data-popup="pop_stemp_gift"> 스탬프 선물하기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popLayer">
+        <div class="popFogBg">
+        </div>
+        <div class="popScheduleInfo">
+            <div class="popLayerHeader"><a href="#none" class="sprite btnPopClose">닫기</a></div>
+            <div class="popLayerContainer">
+                <ul class="popScheduleInfo_type_list" id="popScheduleInfo_type_list">
+                    <li id="lblFilterList"></li>
+                    <li><strong>상영시간</strong>
+                        <ul class="popScheduleInfo_list">
+                            <li><input type="radio" name="ftime" data-gubun="ftime" data-cd="" id="ftime_00" checked="checked"><label for="ftime_00">전체</label></li>
+                            <li><input type="radio" name="ftime" data-gubun="ftime" data-cd="0000_1159" id="ftime_am"><label for="ftime_am">오전</label></li>
+                            <li><input type="radio" name="ftime" data-gubun="ftime" data-cd="1200_3000" id="ftime_pm"><label for="ftime_pm">오후</label></li>
+                            <li><input type="radio" name="ftime" data-gubun="ftime" data-cd="1800_3000" id="ftime_18"><label for="ftime_18">18시이후</label></li>
+                            <li><input type="radio" name="ftime" data-gubun="ftime" data-cd="2401_3000" id="ftime_24"><label for="ftime_24">심야</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="popLayerFooter w50p"><a href="javascript:fnFilterInit();">초기화</a><a href="javascript:fnFilterSetSch();">적용</a></div>
+            <div id="filterToast" class="popToast" data-comment="초기화되었습니다."></div>
+        </div>
+        <!-- S 이벤트배너 더보기 리스트 팝업 추가 20180403 CKC -->
+        <div class="popVideoAdListWrap">
+            <div class="popLayerHeader">
+                전체보기<a href="javascript:void(0);" class="sprite btnPopClose btnPopCloseW">닫기</a></div>
+            <ul class="popLayerContainer videoAdWrap" id="videoAdList">
+            </ul>
+        </div>
+        <!-- E 이벤트배너 더보기 리스트 팝업 추가 20180330 CKC -->
+        <!-- S 공유하기 팝업 추가 20180413 CKC -->
+        <div class="popShareWrap">
+            <div class="popLayerHeader">
+                <h1>조회기간</h1>
+                <a href="#" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
+            </div>
+            <ul class="popLayerContainer">
+                <ul class="DatepickerLayer clearfix row">
+                    <li class="active"><a href="javascript:void(0);">7일</a></li>
+                    <li><a href="javascript:void(0);">1개월</a></li>
+                    <li><a href="javascript:void(0);">3개월</a></li>
+                    <li><a href="javascript:void(0);">6개월</a></li>
+                    <li class="lg"><a href="javascript:void(0);">직접입력</a></li>
+                </ul>
+                <div class="inputDatepicker">
+                        <span class="inputDatepickerStart">
+                            <input type="date" disabled="">
+                        </span>
+                    <span class="inputDatepickerEnd">
+                            <input type="date">
+                        </span>
+                </div>
+                <div class="com_btn_fixed_wrap" style="">
+                    <div class="stemp_btn_wrap">
+                        <a class="stem_btn01" data-popup="totallist">적립 히스토리</a>
+                        <a class="stem_btn01" data-popup="pop_stemp_gift"> 스탬프 선물하기</a>
+                    </div>
+                </div>
+            </ul>
+            <div class="popLayerFooter">
+                <a href="javascript:void(0);" class="btnPopClose">닫기</a></div>
+        </div>
+        <!-- E 공유하기 팝업 추가 -->
+    </div>
+
+    <style>
+        .popup.popup_share {
+            top: auto !important;
+            height: 167px;
+            bottom: 50px !important;
+        }
+
+        .DatepickerLayer {
+            padding: 20px 20px 6px;
+        }
+
+        .DatepickerLayer li {
+            float: left;
+            height: 36px;
+            margin-right: 6px;
+            width: 123px;
+            flex: 0 0 17%;
+            max-width: 33.333333%;
+        }
+
+        .DatepickerLayer li.lg {
+            flex: 0 0 23%;
+            margin-right: 0
+        }
+
+        .DatepickerLayer li a {
+            display: block;
+            text-align: center;
+            line-height: 36px;
+            color: rgb(102, 102, 102);
+            border-radius: 8px;
+            background: rgba(242, 242, 242, .8);
+        }
+
+        .DatepickerLayer li.active a {
+            background: var(--watermelon);
+            color: #ffffff
+        }
+
+        .com_btn_fixed_wrap {
+            overflow: hidden;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+            min-height: 50px;
+            background-color: #ffffff;
+            z-index: 10;
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .com_btn_fixed_wrap .stemp_btn_wrap {
+            float: none;
+            overflow: hidden;
+            background: linear-gradient(45deg, #fb4357, #ef642f);
+            padding: 0 0 env(safe-area-inset-bottom) 0;
+        }
+
+        .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01 {
+            float: left;
+            display: block;
+            width: 50%;
+            min-height: 50px;
+            color: #fff;
+            line-height: 50px;
+            font-size: 14px;
+            letter-spacing: -0.5px;
+            text-align: center;
+            border-right: 1px solid #e33745;
+            border-left: 1px solid #f9847f;
+        }
+
+        .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01:first-child {
+            border-left: 0 !important;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .inputDatepicker {
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .inputDatepicker:before {
+            content: '~';
+            position: absolute;
+            left: 50%;
+            top: 9px;
+            display: block;
+            margin-left: -3px;
+        }
+
+        .inputDatepicker span {
+            width: 47%;
+            display: block;
+            height: 36px;
+            line-height: 36px;
+        }
+
+        .inputDatepicker span:first-child {
+            float: left;
+        }
+
+        .inputDatepicker span:last-child {
+            float: right;
+        }
+
+        .inputDatepicker span input[type='date'] {
+            position: relative;
+            display: block;
+            width: 100%;
+            font-size: 14px;
+            text-indent: 10px;
+            line-height: 36px;
+            border: 0;
+            color: rgb(102, 102, 102);
+            border-radius: 8px;
+            background: rgba(242, 242, 242, .8);
+        }
+
+        .inputDatepicker span input[type='date']:focus {
+            outline: none
+        }
+
+        .inputDatepicker span input[type='date']:disabled {
+            width: 100%;
+            height: 100%;
+            line-height: 36px;
+            border: 0;
+            color: rgb(203, 203, 203);
+            border-radius: 8px;
+            background: rgba(242, 242, 242, .8);
+        }
+
+        .inputDatepicker span input[type='date']:disabled::after {
+            width: 15px;
+            height: 16px;
+            background-position: -65px -152px;
+            z-index: 1;
+        }
+
+        .inputDatepicker span input[type='date']::after {
+            content: '';
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 15px;
+            height: 16px;
+            background-position: -85px -152px;
+            z-index: -1;
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 1) {
+            .inputDatepicker span input[type='date']:after,
+            .inputDatepicker span input[type='date']:disabled::after {
+                content: '';
+                background-image: url('../images/phototicket/common/phototicket@1x.png');
+                background-repeat: no-repeat;
+                display: block;
+                background-size: 200px;
+            }
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+            .inputDatepicker span input[type='date']:after,
+            .inputDatepicker span input[type='date']:disabled::after {
+                content: '';
+                background-image: url('../images/phototicket/common/phototicket@2x.png');
+                background-repeat: no-repeat;
+                display: block;
+                background-size: 200px;
+            }
+        }
+
+        @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+            .inputDatepicker span input[type='date']:after,
+            .inputDatepicker span input[type='date']:disabled::after {
+                content: '';
+                background-image: url('../images/phototicket/common/phototicket@3x.png');
+                background-repeat: no-repeat;
+                display: block;
+                background-size: 200px;
+            }
+        }
+    </style>
+
+
+    <!-- [E] Content -->
+</body>
+</html>
