@@ -16,14 +16,14 @@ $( document ).ready( function() {
         $(".slider_wrap").addClass('web');
     }
 
-    // headera
+    // header
     var jbOffset = $( '#headerTitle' ).offset();
     $( window ).scroll( function() {
         if ( $( document ).scrollTop() > jbOffset.top ) {
-            $( '#headerTitle' ).siblings('#navMain').addClass( 'active' );
+            $( '#header_box' ).find('#navMain').addClass( 'active' );
         }
         else {
-            $( '#headerTitle' ).siblings('#navMain').removeClass( 'active' );
+            $( '#header_box' ).find('#navMain').removeClass( 'active' );
         }
     });
 
@@ -32,6 +32,11 @@ $( document ).ready( function() {
         $('._tab').removeClass('active');
         $(this).addClass('active');
         return false;
+    });
+
+    // click 이벤트
+    $('._click').on('click', function() {
+        $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
     });
 
     // 이벤트 슬라이더
@@ -113,7 +118,7 @@ $( document ).ready( function() {
     // 플립 슬라이더 팝업
     // 버튼 클릭시 플립
     $('._flip').on('click',function () {
-        $(this).parent().parent().parent().parent().toggleClass('active')
+        $(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
     });
 });
 

@@ -76,7 +76,7 @@
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
 
 <div class="wrap">
-    <br><br><br>
+
     <a href="#" class="btn btn-white btn-square" data-popup="popupShare"
        style="height:50px;line-height:50px;border:1px solid red;display:inline-block;">popup fullpopup</a>
     <br><br><br>
@@ -111,42 +111,45 @@
             </div>
         </div>
     </div>
-<style>
-    .popup.popup_share {top: auto !important;height: 167px;bottom: 50px !important;}
-    .DatepickerLayer {padding: 20px 20px 6px;}
-    .DatepickerLayer li {float: left;height: 36px;margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
-    .DatepickerLayer li.lg {flex: 0 0 23%; margin-right: 0}
-    .DatepickerLayer li a {display: block; text-align: center; line-height: 36px; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
-    .DatepickerLayer li.active a {background: var(--watermelon); color: #ffffff}
-    .com_btn_fixed_wrap {overflow: hidden;position: fixed;left: 0;bottom: 0;width: 100%;height: auto;min-height: 50px;background-color: #ffffff;z-index: 10;padding-bottom: env(safe-area-inset-bottom);}
-    .com_btn_fixed_wrap .stemp_btn_wrap {float: none;overflow: hidden;background: linear-gradient(45deg, #fb4357, #ef642f);padding: 0 0 env(safe-area-inset-bottom) 0;}
-    .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01 {float: left;display: block;width: 50%;min-height: 50px;padding: 15px 0 0 12px;color: #fff;font-size: 14px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
-    .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01:first-child {border-left: 0 !important;}
-    .row {display: flex;flex-wrap: wrap;}
-    .inputDatepicker {position: relative; padding: 0 20px;}
-    .inputDatepicker:before {content: '~';position: absolute;left: 50%;top: 9px;display: block;margin-left: -3px;}
-    .inputDatepicker span {width: 47%; display: block;height: 36px;line-height: 36px;}
-    .inputDatepicker span:first-child {float: left;}
-    .inputDatepicker span:last-child {float: right;}
-    .inputDatepicker span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
-    .inputDatepicker span input[type='date']:focus {outline: none}
-    .inputDatepicker span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242,.8);}
-    .inputDatepicker span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
-    .inputDatepicker span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: -1;}
 
-    @media only screen and (-webkit-min-device-pixel-ratio:1){
-        .inputDatepicker span input[type='date']:after,
-        .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
-    }
-    @media only screen and (-webkit-min-device-pixel-ratio:2){
-        .inputDatepicker span input[type='date']:after,
-        .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@2x.png');background-repeat: no-repeat; display: block; background-size: 200px;}
-    }
-    @media only screen and (-webkit-min-device-pixel-ratio:3){
-        .inputDatepicker span input[type='date']:after,
-        .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@3x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
-    }
-</style>
+
+
+    <style>
+        .popup.popup_share {top: auto !important;height: 167px;bottom: 50px !important;}
+        .DatepickerLayer {padding: 20px 20px 6px;}
+        .DatepickerLayer li {float: left;height: 36px;margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
+        .DatepickerLayer li.lg {flex: 0 0 23%; margin-right: 0}
+        .DatepickerLayer li a {display: block; text-align: center; line-height: 36px; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+        .DatepickerLayer li.active a {background: var(--watermelon); color: #ffffff}
+        .com_btn_fixed_wrap {overflow: hidden;position: fixed;left: 0;bottom: 0;width: 100%;height: auto;min-height: 50px;background-color: #ffffff;z-index: 10;padding-bottom: env(safe-area-inset-bottom);}
+        .com_btn_fixed_wrap .stemp_btn_wrap {float: none;overflow: hidden;background: linear-gradient(45deg, #fb4357, #ef642f);padding: 0 0 env(safe-area-inset-bottom) 0;}
+        .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01 {float: left;display: block;width: 50%;min-height: 50px;color: #fff; line-height: 50px; font-size: 14px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
+        .com_btn_fixed_wrap .stemp_btn_wrap .stem_btn01:first-child {border-left: 0 !important;}
+        .row {display: flex;flex-wrap: wrap;}
+        .inputDatepicker {position: relative; padding: 0 20px;}
+        .inputDatepicker:before {content: '~';position: absolute;left: 50%;top: 9px;display: block;margin-left: -3px;}
+        .inputDatepicker span {width: 47%; display: block;height: 36px;line-height: 36px;}
+        .inputDatepicker span:first-child {float: left;}
+        .inputDatepicker span:last-child {float: right;}
+        .inputDatepicker span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+        .inputDatepicker span input[type='date']:focus {outline: none}
+        .inputDatepicker span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242,.8);}
+        .inputDatepicker span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
+        .inputDatepicker span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: -1;}
+
+        @media only screen and (-webkit-min-device-pixel-ratio:1){
+            .inputDatepicker span input[type='date']:after,
+            .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+        }
+        @media only screen and (-webkit-min-device-pixel-ratio:2){
+            .inputDatepicker span input[type='date']:after,
+            .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@2x.png');background-repeat: no-repeat; display: block; background-size: 200px;}
+        }
+        @media only screen and (-webkit-min-device-pixel-ratio:3){
+            .inputDatepicker span input[type='date']:after,
+            .inputDatepicker span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@3x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
+        }
+    </style>
 
 
 

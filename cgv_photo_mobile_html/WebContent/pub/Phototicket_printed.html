@@ -81,8 +81,21 @@
         내용 : #header_box에 pt_header 클래스 추가
               - nav에  border가 있는 경우 사용
      -->
+    <!--
+        날짜 : 2020.04.24
+        작성자 : 이주연
+        내용 :
+           - nav의 타입은 2가지
+           - type_pt : 포토티켓 제작완료/출력완료
+           - type_pt2 : 포토티켓 자랑하기
+    -->
     <!-- [S] Header -->
-    <div id="header_box" class="pt_header">
+    <!--
+      날짜 : 2020.04.24
+      작성자 : 이주연
+      내용 : nav의 유무에 따라 double 클래스 추가
+     -->
+    <div id="header_box" class="pt_header double">
         <header id="headerTitle">
             <a class="title_area" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icBack"></i>
@@ -94,6 +107,14 @@
                 </a>
             </div>
         </header>
+        <nav id="navMain" class="type_pt" style="position: static; top: initial;">
+            <div class="inner">
+                <a class="_tab" href="javascript:void(0);" onclick="" id="">제작완료(10)</a>
+                <a class="_tab" href="javascript:void(0);" onclick="" id="">출력완료(3)</a>
+                <a class="icon_search" href="javascript:void(0);" onclick="" id=""><i
+                        class="sprite sprite-pt sprite-icFilterDateSel"></i>기간검색</a>
+            </div>
+        </nav>
         <!-- [S] siteMap -->
         <section class="allview_wrap" id="siteMap">
             <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>
@@ -148,14 +169,7 @@
             </article>
         </section>
         <!-- [E] siteMap -->
-        <nav id="navMain" class="type_pt" style="position: static; top: initial;">
-            <div class="inner">
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">제작완료(10)</a>
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">출력완료(3)</a>
-                <a class="icon_search" href="javascript:void(0);" onclick="" id=""><i
-                        class="sprite sprite-pt sprite-icFilterDateSel"></i>기간검색</a>
-            </div>
-        </nav>
+
     </div>
     <!-- [E] Header -->
 
@@ -173,7 +187,9 @@
             [S] card_wrap component
             날짜 : 2020.04.20
             작성자 : 이주연
-            내용 : card_wrap클래스에 single 클래스 추가
+            내용 :
+                - card_wrap클래스에 single 클래스 추가
+                - badge 유무에 따른, 분기 처리
             -->
             <div class="card_wrap single">
                 <a class="card" href="javascript:void(0);">

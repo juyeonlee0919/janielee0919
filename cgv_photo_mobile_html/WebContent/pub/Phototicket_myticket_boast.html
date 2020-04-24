@@ -75,19 +75,18 @@
 <body class="bg_white">
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
-<!--    <img src="../images/phototicket/temp/completed.png" width="375" style="position: absolute; z-index:10; top: -20px; opacity: .5" alt="">-->
     <!--
       날짜 : 2020.04.24
       작성자 : 이주연
       내용 : nav의 유무에 따라 double 클래스 추가
      -->
     <!--
-        날짜 : 2020.04.24
-        작성자 : 이주연
-        내용 :
-           - nav의 타입은 2가지
-           - type_pt : 포토티켓 제작완료/출력완료
-           - type_pt2 : 포토티켓 자랑하기
+    날짜 : 2020.04.24
+    작성자 : 이주연
+    내용 :
+       - nav의 타입은 2가지
+       - type_pt : 포토티켓 제작완료/출력완료
+       - type_pt2 : 포토티켓 자랑하기
     -->
     <!-- [S] Header -->
     <div id="header_box" class="pt_header double">
@@ -95,18 +94,18 @@
             <a class="title_area" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icBack"></i>
             </a>
-            <div class="title" id="headerTitleArea">내 포토티켓</div>
+            <div class="title" id="headerTitleArea">포토티켓 자랑하기</div>
             <div class="btn_wrap">
                 <a class="btn_menu" href="javascript:siteMapFn();">
                     <i class="sprite sprite-pt sprite-icSideMenu"></i>
                 </a>
             </div>
         </header>
-        <nav id="navMain" class="type_pt" style="position: static; top: initial;">
+        <nav id="navMain" class="type_pt2" style="position: static; top: initial;">
             <div class="inner">
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">제작완료(10)</a>
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">출력완료(3)</a>
-                <a class="icon_search" href="javascript:void(0);" onclick="" id=""><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
+                <a class="_tab active" href="javascript:void(0);" onclick="" id="">최신순</a>
+                <a class="_tab" href="javascript:void(0);" onclick="" id="">인기순</a>
+                <a class="btn-badge-red _click" href="javascript:void(0);" onclick="" id="">내가 자랑한 포토티켓</a>
             </div>
         </nav>
         <!-- [S] siteMap -->
@@ -170,117 +169,98 @@
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
 
-        <!--  [S] 이벤트 광고 영역     -->
-        <article class="mypt_wrap">
+        <!--  [S] 포토티켓 자랑하기    -->
+        <article class="ptboast_wrap">
             <div class="title_wrap">
-                <div class="title">내 포토티켓</div>
+                <div class="title">
+                    포토티켓 자랑하기<a class="badge" href="javascript:void(0);">내 포토티켓 자랑</a>
+                </div>
                 <div class="all">
-                    <a href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
+                    <a class="btn-all" href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
                 </div>
             </div>
-            <div class="card_wrap">
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">클로젯</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <!--
-                        작성자 : 이주연
-                        제목 : 뱃지 컬러
-                        내용 : badge-blue(d-day가 10일 초과 경우) / badge-red(d-day가 10일 이하일 경우)
-                     -->
-                    <div class="badge badge-red">
-                        <p class="dday">D-3</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie2@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">작은아씨들</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
+            <div class="imgcard_wrap">
+                <div class="row">
+                    <div class="col ">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="../images/phototicket/main/boast1@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">good_photo</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>999</span>
+                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-8</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie3@2x.png" alt="영화 이미지">
-                        <div class="badge_top">+10</div>
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">다크워터스</p>
-                        <p class="tip">광주 충장로점 출력가능</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
+                    <div class="col ">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="../images/phototicket/main/boast2@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">good_photo</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
+                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-10</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie4@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">어바웃타임(인생영화인생영화)</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="../images/phototicket/main/boast3@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>10</span>
+                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
-                    <div class="badge badge_blue">
-                        <p class="dday">D-17</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie5@2x.png" alt="영화 이미지">
-                        <div class="badge_top">+2</div>
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">타오르는 여인의 초상</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
+                    <div class="col ">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="../images/phototicket/main/boast4@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
+                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
-                    <div class="badge badge_blue">
-                        <p class="dday">D-20</p>
-                        <p class="txt">출력가능일</p>
+                </div>
+                <div class="row">
+                    <div class="col ">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="../images/phototicket/main/boast5@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
+                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                        </div>
                     </div>
-                </a>
-                <a class="btn_grey" href="javascript:void(0);">더보기 <i class="sprite sprite-pt sprite-icDownMore"></i>
-                </a>
+                    <div class="col ">
+                        <div class="card" onclick="">
+                            <div class="img">
+                                <img src="../images/phototicket/main/boast6@2x.png" alt="자랑한 이미지">
+                            </div>
+                            <div class="info">
+                                <span class="user">usernickname</span>
+                                <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
+                            </div>
+                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </article>
+        <!--  [E] 포토티켓 자랑하기    -->
 
     </section>
     <!-- [E] Content -->

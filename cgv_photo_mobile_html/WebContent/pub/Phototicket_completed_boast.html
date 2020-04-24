@@ -80,6 +80,11 @@
 
     <!-- [S] Header -->
     <div id="header_box" class="pt_header">
+        <!--
+        날짜 : 20.04.24
+        작성자 : 이주연
+        내용 :  class="lg"
+        -->
         <header id="headerTitle">
             <a class="title_area" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icShare"></i>
@@ -180,8 +185,10 @@
                                     <div class="inner">
                                         <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                              alt="">
-                                        <input id='checkFront1' type='checkbox' title='checkbox'/>
-                                        <label for='checkFront1'><span></span></label>
+                                        <label>
+                                            <input value="1" name="group1" type='checkbox'/>
+                                            <span></span>
+                                        </label>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -207,8 +214,10 @@
                                             <p class="lg">CURTUREPLEX CGV</p>
                                             <p class="sm">© CJ CGV. All rights reserved.</p>
                                         </div>
-                                        <input type='checkbox' title='checkbox'/>
-                                        <label for="checkFront1"><span></span></label>
+                                        <label>
+                                            <input value="1" name="group1" type='checkbox'/>
+                                            <span></span>
+                                        </label>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -224,8 +233,10 @@
                                     <div class="inner">
                                         <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                              alt="">
-                                        <input id='checkFront3' type='checkbox' title='checkbox'/>
-                                        <label for='checkFront3'><span></span></label>
+                                        <label>
+                                            <input value="1" name="group2" type='checkbox'/>
+                                            <span></span>
+                                        </label>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -251,8 +262,10 @@
                                             <p class="lg">CURTUREPLEX CGV</p>
                                             <p class="sm">© CJ CGV. All rights reserved.</p>
                                         </div>
-                                        <input id="checkFront1" type='checkbox' title='checkbox'/>
-                                        <label for="checkFront1"><span></span></label>
+                                        <label>
+                                            <input value="1" name="group2" type='checkbox'/>
+                                            <span></span>
+                                        </label>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -268,8 +281,10 @@
                                     <div class="inner">
                                         <img src="http://img.cgv.co.kr/Movie/Thumbnail/Poster/000079/79273/79273_20170905_0_320.jpg"
                                              alt="">
-                                        <input id='checkFront' type='checkbox' title='checkbox'/>
-                                        <label for='checkFront'><span></span></label>
+                                        <label>
+                                            <input value="1" name="group3" type='checkbox'/>
+                                            <span></span>
+                                        </label>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -295,8 +310,10 @@
                                             <p class="lg">CURTUREPLEX CGV</p>
                                             <p class="sm">© CJ CGV. All rights reserved.</p>
                                         </div>
-                                        <input id="checkFront1" type='checkbox' title='checkbox'/>
-                                        <label for="checkFront1"><span></span></label>
+                                        <label>
+                                            <input value="1" name="group3" type='checkbox'/>
+                                            <span></span>
+                                        </label>
                                         <a class="btn-flip _flip" href="javascript:void(0)"><i
                                                 class="sprite sprite-pt sprite-icCardRotation"></i></a>
                                     </div>
@@ -325,7 +342,14 @@
     <script>
         var flipPhotoTicketSlider = new Swiper('.myPhtoticketFlip .swiper-container', {
             speed: 400,
+            /* [S]
+            날짜 : 2020.04.24
+            내용 :
+             - autoPlay: true 추가
+             - 새로고침시 재생되는 버그 수정
+            * */
             autoPlay: true,
+            /* [E] */
             autoHeight: false,
             direction: 'horizontal',
             loop: false,
@@ -340,7 +364,7 @@
             on: {
                 init: function () {
                     var nWindowWidth = $(window).width();
-                    var nPadding = (nWindowWidth - 235) / 2
+                    var nPadding = (nWindowWidth - 328) /2
                     setTimeout(function () {
                         $('.myPhtoticketFlip .swiper-container')
                             .css({
