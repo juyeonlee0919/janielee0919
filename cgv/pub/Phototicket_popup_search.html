@@ -64,53 +64,100 @@
     내용 : 포토티켓 추가
     -->
     <!--
-    [S] 2020.04.24
+    날짜 : 2020.04.24
     작성자 : 이주연
-    내용 : subUi.js/sub.css 추가
+    내용 :
+     - <script> var screenId = "PT002";</script> 추가
+     - MP002 : 내 포토티켓 페이지
     -->
-    <script> var screenId = "MW002";</script>
-    <script type="text/javascript" src="http://cloudm.cgv.co.kr/WebApp/CDN/js/v6/contents/subUi.js"></script>
+    <script> var screenId = "PT002";</script>
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="http://cloudm.cgv.co.kr/WebApp/CDN/css/v6/sub.css?2020042420">
-    <!--  [E] 2020.04.20	-->
+    <!--  [E] 포토티켓 추가	-->
 </head>
 <body class="bg_white">
-<script type="text/javascript">
-
-    //CJ SSO 로그인
-    if ((typeof _cjssoEncData) !== "undefined" && _cjssoEncData !== "") {
-        var cjssoDate = new Date();
-
-        jQuery.ajax({
-            type: "GET",
-            url: "/WebApp/Common/SetLog.aspx?dt=" + cjssoDate.getFullYear() + "-" + (parseInt(cjssoDate.getMonth().toString(), 10) + 1) + "-" + cjssoDate.getDate() + " " + cjssoDate.getHours() + ":" + cjssoDate.getMinutes() + ":" + cjssoDate.getSeconds() + "." + cjssoDate.getMilliseconds() + "&key=" + _cjssoEncData,
-            async: true,
-            success: function (txt) {
-            },
-            error: function (xhr, status, err) {
-            }
-        });
-
-        document.getElementById("cjssoDataType").value = "1";
-        document.getElementById("cjssoEncData").value = encodeURIComponent(_cjssoEncData);
-        document.ssologinfrm.submit();
-    }
-
-</script>
 <div class="wrap">
     <section class="content_wrap container photo_ticket">
-        <article class="screeningSchedule_time">
-            <!--   [S] 기간검색    -->
-            <div class="com_pop_btn_wrap">
-                <a href="javascript:void(0);" id="btn_filter" class="btn_filter">기간검색</a>
-            </div>
-        </article>
+        <div id="header_box" class="pt_header double">
+            <header id="headerTitle">
+                <a class="title_area" href="javascript:void(0);">
+                    <i class="sprite sprite-pt sprite-icBack"></i>
+                </a>
+                <div class="title" id="headerTitleArea">내 포토티켓</div>
+                <div class="btn_wrap">
+                    <a class="btn_menu" href="javascript:siteMapFn();">
+                        <i class="sprite sprite-pt sprite-icSideMenu"></i>
+                    </a>
+                </div>
+            </header>
+            <nav id="navMain" class="type_pt" style="position: static; top: initial;">
+                <div class="inner">
+                    <a class="_tab" href="javascript:void(0);">제작완료(10)</a>
+                    <a class="_tab active" href="javascript:void(0);">출력완료(3)</a>
+                    <!--   [S] 기간 검색    -->
+                    <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDateSel"></i>기간검색</a>
+                    <!--   [E] 기간 검색    -->
+                </div>
+            </nav>
+            <!-- [S] siteMap -->
+            <section class="allview_wrap" id="siteMap">
+                <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>
+                <article class="allview_box_wrap">
+                    <div class="allview_box_in">
+                        <h2 class="hidden">전체메뉴</h2>
 
+                        <div class="allview_header">
+                            <a href="/" class="cgv_logo">CGV 홈</a>
+                        </div>
+                        <div class="area">
+                            <ul class="group_wrap">
+                                <li><a href="#" title="My CGV"><b>My CGV</b></a><span class="countnum">1</span></li>
+                                <li><a href="#"><b>빠른예매</b></a></li>
+                                <li><a href="#"><b>상영시간표</b></a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="CGV안내">CGV안내</a></li>
+                                <li><a href="#" title="바로오더">바로오더</a></li>
+                                <li><a href="#" title="아트하우스">아트하우스</a></li>
+                                <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>
+                                <li><a href="#" title="이벤트">이벤트</a></li>
+                                <li><a href="#" title="스토어">스토어</a></li>
+
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="IMAX">IMAX</a></li>
+                                <li><a href="#" title="4DX">4DX</a></li>
+                                <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>
+                                <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>
+                                <li><a href="#" title="STARIUM">STARIUM</a></li>
+                                <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                                <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>
+
+                                <li><a href="#" title="Screen X">Screen X</a></li>
+                                <li><a href="#" title="Sound X">Sound X</a></li>
+                                <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                                <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>
+                                <li><a href="#" title="SphereX">Sphere X</a></li>
+                                <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>
+                                <li><a href="#" title="SKYBOX">SKYBOX</a></li>
+                                <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            </ul>
+                            <ul class="group_wrap">
+                                <li><a href="#" title="고객센터">고객센터</a></li>
+                                <li><a href="#" title="Club서비스">Club서비스</a></li>
+                                <li><a href="#" title="매거진">매거진</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>
+                    </div>
+                </article>
+            </section>
+            <!-- [E] siteMap -->
+        </div>
         <!-- S 레이어 팝업 관련  -->
         <div class="popLayer">
             <div class="popFogBg"></div>
@@ -137,57 +184,14 @@
                         </span>
                     </div>
                 </div>
-                <div class="popLayerFooter w50p">
+                <div class="popLayerFooter w50p ">
                     <a class="stem_btn01" href="javascript:void(0);">초기화</a>
                     <a class="stem_btn01" href="javascript:void(0);">적용</a>
                 </div>
             </div>
             <!--   [E] 기간검색 팝업   -->
         </div>
-        <style>
-            .photo_ticket .popLayer {height: 55px;line-height: 55px;border-bottom: 1px solid #f2f2f2;border-radius: 20px 20px 0 0;}
-            .photo_ticket .popLayer .popLayerHeader {position: relative; height: 55px;line-height: 55px;border-bottom: 1px solid #f2f2f2;border-radius: 20px 20px 0 0;}
-            .photo_ticket .popLayer .popLayerHeader h1 {line-height: 55px; color: #030303;font-weight: bold;font-size: 17px;}
-            .photo_ticket .popLayer .popLayerHeader .btn_close {left: auto; right: 16px;display: inline-block;position: absolute;top: 12px;}
-            .photo_ticket .popLayer .popScheduleInfo {height: 216px;}
-            .photo_ticket .popScheduleInfo .popLayerContainer{margin-bottom: 11px;}
-            .photo_ticket .popScheduleInfo .popLayerFooter.w50p a:before {content: none}
-            .photo_ticket .popScheduleInfo .popLayerFooter.w50p a {font-size: 17px; letter-spacing: -.43px; }
-            .photo_ticket .DatepickerBox {padding: 20px 20px 6px;}
-            .photo_ticket .DatepickerBox li {float: left;height: 36px;margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
-            .photo_ticket .DatepickerBox li.lg {flex: 0 0 23%; margin-right: 0}
-            .photo_ticket .DatepickerBox li a {display: block; text-align: center; line-height: 36px; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
-            .photo_ticket .DatepickerBox li.active a {background: var(--watermelon); color: #ffffff}
-            .photo_ticket .stem_btn01 {float: left;display: block;width: 50%;min-height: 50px;color: #fff; line-height: 50px; font-size: 17px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
-            .photo_ticket .stem_btn01:first-child {border-left: 0 !important;}
-            .photo_ticket .row {display: flex;flex-wrap: wrap;}
-            .photo_ticket .inputBox {position: relative; padding: 0 20px;}
-            .photo_ticket .inputBox:before {content: '~';position: absolute;left: 50%;top: 12px;display: block;margin-left: -3px;}
-            .photo_ticket .inputBox span {width: 47%; display: block;height: 36px;line-height: 36px;}
-            .photo_ticket .inputBox span:first-child {float: left;}
-            .photo_ticket .inputBox span:last-child {float: right;}
-            .photo_ticket .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
-            .photo_ticket .inputBox span input[type='date']:focus {outline: none}
-            .photo_ticket .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242,.8);}
-            .photo_ticket .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
-            .photo_ticket .inputBox span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: 1;}
-
-            @media only screen and (-webkit-min-device-pixel-ratio:1){
-                .inputBox span input[type='date']:after,
-                .inputBox span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@1x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
-            }
-            @media only screen and (-webkit-min-device-pixel-ratio:2){
-                .inputBox span input[type='date']:after,
-                .inputBox span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@2x.png');background-repeat: no-repeat; display: block; background-size: 200px;}
-            }
-            @media only screen and (-webkit-min-device-pixel-ratio:3){
-                .inputBox span input[type='date']:after,
-                .inputBox span input[type='date']:disabled::after {content:''; background-image:url('../images/phototicket/common/phototicket@3x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
-            }
-        </style>
         <!-- E 레이어 팝업 관련  -->
-        <!-- E 레이어 팝업 관련  -->
-
     </section>
 
 </div>

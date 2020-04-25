@@ -4,6 +4,83 @@
     CGV 포토티켓
 */
 
+/* S RESET */
+.popLayer{z-index:10000}
+.com_btn_bottom_fixed{position:fixed; left:0; bottom:0; width:100%; padding:15px 0 calc(constant(safe-area-inset-bottom) + 15px); padding:15px 0 calc(env(safe-area-inset-bottom) + 15px); text-align:center}
+
+.popTabTitleWrap::-webkit-scrollbar{-webkit-appearance:none}
+.popTabTitleWrap::-webkit-scrollbar:vertical{width:0}
+.popTabTitleWrap::-webkit-scrollbar:horizontal{height:0}
+.popTabTitleWrap::-webkit-scrollbar-thumb,
+.popTabTitleWrap::-webkit-scrollbar-track{background-color:transparent}
+
+.scrlOff{position: fixed;height:100vh;width:100vw;overflow:hidden !important;}
+
+nav:after{content:''; display:block; position:absolute; left:0; bottom:0; width:100%; height:1px; background-color:#dfdfdf; z-index:-1}
+
+.content_wrap{background-color:#fff}
+
+
+/* S > Popup */
+.popLayerHeader{height:50px; padding-left:26px; line-height:50px; font-weight:400; font-size:14px; text-align:left; color:#373e46; vertical-align:middle; border-bottom:1px solid #dcdee3}
+.popLayerHeader .btnPopSearch{display:block}
+.popLayerHeader .btnPopSearch:before{display:block; position:absolute; top:18px; width:14px; height:14px; background-position:-29px -66px}
+.popLayerHeader .btnPopSearch input[type='search']{width:calc(100% - 38px); height:30px; margin-top:10px; padding-left:20px; font-size:14px; border:medium none transparent; background-color:transparent}
+
+.popLayerContainer{padding:0 26px}
+.popLayerContainer dl{overflow:hidden; padding-top:10px}
+.popLayerContainer dl dt{float:left; width:100%; padding:10px 0px; font-weight:400; font-size:12px; line-height:15px; color:#6a6f77; border-bottom:1px solid #bdc1c8}
+.popLayerContainer dl dd{position:relative; float:left; border-right:1px solid #bdc1c8; border-bottom:1px solid #bdc1c8}
+.popLayerContainer dl dd a{display:block; font-weight:400; font-size:12px; color:#373e46; line-height:30px; text-align:center}
+.popLayerContainer dl dd.active a{font-weight:600; color:#fb4357}
+.popLayerContainer dl dd.active a:before{content:''; position:absolute; left:-1px; top:-1px; width:100%; height:100%; border:1px solid #fb4357}
+dl.popContentType2 dd{width:50%}
+dl.popContentType2 dd:nth-child(2n){border-left:1px solid #bdc1c8}
+dl.popContentType3 dd{width:33.3%}
+dl.popContentType3 dd:nth-child(3n){width:33.4%}
+dl.popContentType3 dd:nth-child(3n - 1){border-left:1px solid #bdc1c8}
+dl.popContentType4 dd{width:25%}
+dl.popContentType4 dd:nth-child(4n - 2){border-left:1px solid #bdc1c8}
+
+.popLayerFooter{width:100%; padding-top:30px}
+.popLayerFooter .btnPopConfirm{display:block; width:100%; height:50px; font-weight:400; font-size:16px; color:#fff; line-height:50px; text-align:center; background-color:#373e46}
+
+.btnPopClose{position:absolute; right:0; top:6px; display:block; width:38px; height:38px; background-position:left -22px}
+
+.com_pop_wrap{position:fixed; top:100%; right:100%; bottom:100%; left:100%; width:100%; height:100%; z-index:100}
+.com_pop_fog{position:fixed; top:150%; left:0; width:100%; height:100%; background-color:#000}
+.com_pop_header{position:relative; height:50px; padding-left:20px; line-height:50px; font-weight:400; font-size:16px; text-align:left; color:#000; vertical-align:middle; border-bottom:1px solid #d3d6db}
+.com_pop_btn_close{position:absolute; right:0; top:6px; display:block; width:38px; height:38px; background-position:left -22px}
+/* .com_pop_container{} */
+
+
+/* S > Filter */
+.popScheduleInfo{position:fixed; left:0; bottom:-100%; width:100%; max-height:80vh; background-color:#fff; border-radius:16px 16px 0 0; z-index:9}
+.popScheduleInfo .popLayerHeader{position:absolute; left:0; top:0; width:100%; background-color:transparent; border-bottom:none; z-index:9}
+.popScheduleInfo .popLayerContainer{overflow-y:auto; max-height:calc(80vh - 52px - env(safe-area-inset-bottom)); max-height:calc(80vh - 52px - constant(safe-area-inset-bottom)); padding:0 calc(14px + env(safe-area-inset-right)) 0 calc(20px + env(safe-area-inset-left)); padding:0 calc(14px + constant(safe-area-inset-right)) 0 calc(20px + constant(safe-area-inset-left))}
+.popScheduleInfo_type_list{overflow:hidden}
+.popScheduleInfo_type_list > li{float:left; width:100%}
+.popScheduleInfo_type_list > li strong{display:block; padding:26px 0 8px; font-size:17px; color:#000; line-height:20px}
+.popScheduleInfo_type_list > li:first-child strong{padding-top:30px}
+.popScheduleInfo_list{overflow:hidden; font-size:0}
+.popScheduleInfo_list > li{display:inline-block; margin-right:1.6vw; margin-bottom:1.6vw}
+.popScheduleInfo_list > li:last-child{margin-right:0}
+.popScheduleInfo_list > li input[type="radio"],
+.popScheduleInfo_list > li input[type="checkbox"]{display:inline; border:none}
+.popScheduleInfo_list > li label{display:block; padding:9px 3.6vw 10px; font-size:14px; line-height:17px; color:#666; border-radius:8px; background-color:#f2f2f2}
+.popScheduleInfo_list > li input[type="radio"]:checked + label,
+.popScheduleInfo_list > li input[type="radio"]:checked + label{color:#fff; background:linear-gradient(to left, var(--dustyOrange), var(--watermelon))}
+
+.popTheater_list{overflow:hidden}
+.popTheater_list li{float:left; width:100%; margin-top:8px}
+.popTheater_list li:first-child{margin-top:0}
+
+.popScheduleInfo .popLayerFooter.w50p{overflow:hidden; width:100%; padding:0 0 env(safe-area-inset-bottom) 0; padding:0 0 constant(safe-area-inset-bottom) 0; background:linear-gradient(to left, var(--dustyOrange), var(--watermelon))}
+.popScheduleInfo .popLayerFooter.w50p a{display:block; float:left; position:relative; width:50%; font-weight:600; font-size:18px; color:#fff; line-height:52px; text-align:center}
+.popScheduleInfo .popLayerFooter.w50p a:before{content:''; position:absolute; left:0; top:16px; width:1px; height:20px; background-color:#fff}
+.popScheduleInfo .popLayerFooter.w50p a:first-child:before{content:none}
+
+
 /* [S]포토티켓 공통 */
 .photo_ticket .clearfix::after { content: ''; clear: both; display: block;}
 .photo_ticket .primary { color: #ff2f35;}

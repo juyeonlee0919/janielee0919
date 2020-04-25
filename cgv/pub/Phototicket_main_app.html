@@ -58,20 +58,6 @@
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
-
-    <!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src="../js/phototicket.js"></script>
-    <script type="text/javascript" src="../js/jquery.sticky.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [E] 2020.04.20	-->
 </head>
 <body class="bg_white">
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
@@ -255,53 +241,7 @@
             </div>
         </article>
         <script>
-            var photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
-                speed: 400,
-                /* [S]
-                날짜 : 2020.04.24
-                내용 :
-                 - autoPlay: true 추가
-                 - 새로고침시 재생되는 버그 수정
-                * */
-                autoPlay: true,
-                /* [E] */
-                autoHeight: false,
-                direction: 'horizontal',
-                loop: false,
-                spaceBetween: 40,
-                slidesPerView: 1,
-                centeredSlides: true,
-                breakpointsInverse: false,
-                roundLengths: false,
-                breakpoints: {
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
-                    },
-                    360: {
-                        slidesPerView: 1,
-                        spaceBetween: 40
-                    }
-                },
-                on: {
-                    init: function () {
-                        var nWindowWidth = $(window).width();
-                        var nPadding = (nWindowWidth - 260) / 2
-                        setTimeout(function () {
-                            $('.slider_wrap .swiper-container')
-                                .css({
-                                    'width': '100%',
-                                    'margin': '0 auto',
-                                    'padding-left': nPadding
-                                })
-                        }, 100)
-                    },
-                }
-            });
-            photoTicketSlider.translateTo(0, 500, true, true);
-            $(window).resize(function () {
-                location.reload();
-            });
+
         </script>
         <!-- [E] 나의 영화 슬라이더 -->
 
@@ -474,19 +414,22 @@
             <div class="imgcard_wrap">
                 <div class="row">
                     <div class="col ">
-                        <div class="card" onclick="">
+                        <!--  2020.04.24 경로 테스트   -->
+                        <div class="card" onclick="location.href='../pub/Phototicket_popup_kakao.html'">
                             <div class="img">
+
                                 <img src="../images/phototicket/main/boast1@2x.png" alt="자랑한 이미지">
                             </div>
                             <div class="info">
                                 <span class="user">good_photo</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>999</span>
                             </div>
-                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                            <!--  2020.04.24 경로 테스트   -->
+                            <a class="btn_like" href="../pub/Phototicket_completed.html"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
                     </div>
                     <div class="col ">
-                        <div class="card" onclick="">
+                        <div class="card" onclick="location.href=''">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast2@2x.png" alt="자랑한 이미지">
                             </div>
@@ -501,7 +444,7 @@
                 </div>
                 <div class="row">
                     <div class="col ">
-                        <div class="card" onclick="">
+                        <div class="card" onclick="location.href=''">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast3@2x.png" alt="자랑한 이미지">
                             </div>
@@ -513,7 +456,7 @@
                         </div>
                     </div>
                     <div class="col ">
-                        <div class="card" onclick="">
+                        <div class="card" onclick="location.href=''">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast4@2x.png" alt="자랑한 이미지">
                             </div>
@@ -527,7 +470,7 @@
                 </div>
                 <div class="row">
                     <div class="col ">
-                        <div class="card" onclick="">
+                        <div class="card" onclick="location.href=''">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast5@2x.png" alt="자랑한 이미지">
                             </div>
@@ -539,7 +482,7 @@
                         </div>
                     </div>
                     <div class="col ">
-                        <div class="card" onclick="">
+                        <div class="card" onclick="location.href=''">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast6@2x.png" alt="자랑한 이미지">
                             </div>
@@ -557,7 +500,29 @@
 
     </section>
     <!-- [E] Content -->
-
+    <!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+    <!--
+    [S] 2020.04.23
+    작성자 : 이주연
+    내용 : 웹에서 앱모드 전환시 슬라이더 동작을 안하는 생기는 첫 화면 버그 -> script 위치 변경
+    -->
+    <!--
+    [S] 2020.04.24
+    작성자 : 이주연
+    내용 : <script> var screenId = "PT001";</script> 추가 : 메인 화면
+    -->
+    <!--  [E] 2020.04.20	-->
+    <script> var screenId = "PT001";</script>
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
 </div>
 </body>
 </html>

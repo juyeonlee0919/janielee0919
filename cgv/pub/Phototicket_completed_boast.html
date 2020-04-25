@@ -60,21 +60,9 @@
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
-    <!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src="../js/phototicket.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [E] 2020.04.20	-->
+
 </head>
 <body class="bg_white">
-<!--<img src="../images/phototicket/temp/pt_photoflip" width="375" style="position: absolute; z-index:10; top: -20px; opacity: .5" alt="">-->
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
 
@@ -331,7 +319,7 @@
                     <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
                         생년월일+휴대폰번호를 입력하여 출력해주세요</p>
                     <div>
-                        <a class="btn-outline-red disabled" href="javascript:void(0);">자랑하기</a>
+                        <a class="btn-outline-red" href="javascript:void(0);">자랑하기</a>
                         <a class="btn-grey" href="javascript:void(0);">결제취소</a>
                     </div>
                 </div>
@@ -342,14 +330,6 @@
     <script>
         var flipPhotoTicketSlider = new Swiper('.myPhtoticketFlip .swiper-container', {
             speed: 400,
-            /* [S]
-            날짜 : 2020.04.24
-            내용 :
-             - autoPlay: true 추가
-             - 새로고침시 재생되는 버그 수정
-            * */
-            autoPlay: true,
-            /* [E] */
             autoHeight: false,
             direction: 'horizontal',
             loop: false,
@@ -382,5 +362,17 @@
         });
     </script>
 </div>
+<!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/phototicket.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+<!--  [E] 2020.04.20	-->
 </body>
 </html>

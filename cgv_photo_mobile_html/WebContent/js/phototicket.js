@@ -7,15 +7,6 @@ $( document ).ready( function() {
     var win = this;
     var focusReturn = 0;
 
-    var app = document.URL.indexOf( 'http://' ) == -1 && document.URL.indexOf( 'https://' ) == -1;
-    if ( app ) {
-        // 하이브리드 앱일때
-        $(".slider_wrap").removeClass('web');
-    } else {
-        // 모바일 웹 일때
-        $(".slider_wrap").addClass('web');
-    }
-
     // header
     var jbOffset = $( '#headerTitle' ).offset();
     $( window ).scroll( function() {
@@ -114,6 +105,39 @@ $( document ).ready( function() {
         }
     }
     setScrollWidth($('.cgvMovieChartContainer > li.active .cgvMovieChartContents > li.active .cgvMovieChartContent'), null);
+
+
+    this.setScrollWidth = function (_target, _btnL) {
+        try {
+            var _width = 0;
+
+            var _targetParentPL = Number(_target.css('padding-left').replace('px', ''));
+            var _targetParentPR = Number(_target.css('padding-right').replace('px', ''));
+
+            _target.find('> li').each(function () {
+                _width = $(this).outerWidth(true) + _width;
+            });
+
+            if (_target.width() < _width) {
+                _totalWidth = Math.ceil(_targetParentPL + _width + _targetParentPR) + 'px';
+            } else {
+                _totalWidth = '100%';
+            }
+
+            _target.css({ 'width': _totalWidth });
+
+            if (_btnL != null) {
+                (_target.parent().scrollLeft() == 0) ? _btnL.hide() : _btnL.show();
+                _target.parent().on({
+                    scroll: function () {
+                        (_target.parent().scrollLeft() == 0) ? _btnL.hide() : _btnL.show()
+                    }
+                });
+            }
+        } catch (e) {
+            win.console.log("error");
+        }
+    };
 
     // 플립 슬라이더 팝업
     // 버튼 클릭시 플립
