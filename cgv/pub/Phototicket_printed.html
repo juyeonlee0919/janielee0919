@@ -58,44 +58,18 @@
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
-
-    <!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src="../js/phototicket.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [E] 2020.04.20	-->
 </head>
 <body class="bg_white">
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
     <!--
-        날짜 : 2020.04.20
-        작성자 : 이주연
-        내용 : #header_box에 pt_header 클래스 추가
-              - nav에  border가 있는 경우 사용
-     -->
-    <!--
-        날짜 : 2020.04.24
-        작성자 : 이주연
-        내용 :
-           - nav의 타입은 2가지
-           - type_pt : 포토티켓 제작완료/출력완료
-           - type_pt2 : 포토티켓 자랑하기
-    -->
+     날짜 : 2020.04.20
+     작성자 : 이주연
+     내용 : #header_box에 pt_header 클래스 추가
+           - nav에  border가 있는 경우 사용
+  -->
     <!-- [S] Header -->
-    <!--
-      날짜 : 2020.04.24
-      작성자 : 이주연
-      내용 : nav의 유무에 따라 double 클래스 추가
-     -->
-    <div id="header_box" class="pt_header double">
+    <div id="header_box" class="pt_header double">  <!-- header에 nav가 있을 경우 double 클래스 추가 -->
         <header id="headerTitle">
             <a class="title_area" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icBack"></i>
@@ -107,10 +81,18 @@
                 </a>
             </div>
         </header>
+        <!--
+            날짜 : 2020.04.24
+            작성자 : 이주연
+            내용 :
+               - nav의 타입은 2가지
+               - type_pt : 포토티켓 제작완료/출력완료
+               - type_pt2 : 포토티켓 자랑하기
+        -->
         <nav id="navMain" class="type_pt" style="position: static; top: initial;">
             <div class="inner">
                 <a class="_tab" href="javascript:void(0);" onclick="" id="">제작완료(10)</a>
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">출력완료(3)</a>
+                <a class="_tab active" href="javascript:void(0);" onclick="" id="">출력완료(3)</a>
                 <a class="icon_search" href="javascript:void(0);" onclick="" id=""><i
                         class="sprite sprite-pt sprite-icFilterDateSel"></i>기간검색</a>
             </div>
@@ -169,13 +151,12 @@
             </article>
         </section>
         <!-- [E] siteMap -->
-
     </div>
     <!-- [E] Header -->
 
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket " id="ContainerView">
-
+        <!--  [S] 내 포토티켓    -->
         <article class="mypt_wrap">
             <div class="title_wrap">
                 <div class="title">내 포토티켓</div>
@@ -297,11 +278,22 @@
             [E] card_wrap component
             -->
         </article>
-
+        <!--  [E] 내 포토티켓    -->
     </section>
     <!-- [E] Content -->
 
 </div>
-
+<!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/phototicket.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+<!--  [E] 2020.04.20	-->
 </body>
 </html>

@@ -124,7 +124,10 @@
             $('#pop_alert').hasClass('active') ? $('#header_box').css('z-index','0') : ''
 
             // 사이트맵 위치 조정
-            $('#header_box').hasClass('double') ? $('.allview_wrap .allview_box_wrap').css('top','-44px') : '' ;
+            if($('#header_box').hasClass('double')) {
+                $('.allview_wrap .allview_box_wrap').css('top','-44px');
+                $('.photo_ticket .ptboast_wrap').css('padding-top','56px');
+            }
 
             //팝업 dim
             window.dimed = dimed;
@@ -186,7 +189,7 @@
 
     this._PT002 = {
         load: function () {
-
+            //tab
         },
     }
 
@@ -234,9 +237,9 @@
                 }
             });
             flipPhotoTicketSlider.translateTo(0, 500, true, true);
-            // $(window).resize(function () {
-            //     location.reload();
-            // });
+            $(window).resize(function () {
+                location.reload();
+            });
         },
     }
 
