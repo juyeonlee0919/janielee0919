@@ -1,5 +1,5 @@
 // 포토티켓
-// 작성일 : 20.04.20
+// 작성일 : 2020.04.20
 // 작성자 : 이주연
 
 (function ($) {
@@ -55,7 +55,8 @@
 
                     var _targetParentPL = Number(_target.css('padding-left').replace('px', ''));
                     var _targetParentPR = Number(_target.css('padding-right').replace('px', ''));
-
+                    console.log(_targetParentPL);
+                    console.log(_targetParentPR);
                     _target.find('> li').each(function(){
                         _width = $(_target).outerWidth(true) + _width;
                         console.log(_width)
@@ -80,6 +81,8 @@
                     //win.console.log('error');
                 }
             }
+
+            //메인 스크롤
             setScrollWidth($('.cgvMovieChartContainer > li.active .cgvMovieChartContents > li.active .cgvMovieChartContent'), null);
 
             // 플립 슬라이더 팝업
@@ -111,7 +114,6 @@
                     $('body').off('scroll touchmove mousewheel');
                 }
             });
-
 
             // alert
             window.alertMessage = alertMessage;
