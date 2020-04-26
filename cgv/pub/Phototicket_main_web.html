@@ -58,19 +58,6 @@
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
-
-    <!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src="../js/phototicket.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [E] 2020.04.20	-->
 </head>
 <body class="bg_white">
 <div class="header_wrap" style="display:none;" id="header_wrap"></div>
@@ -284,17 +271,6 @@
                 </div>
             </div>
         </article>
-        <script>
-            var photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
-                speed: 400,
-                autoPlay: true,
-                direction: 'horizontal',
-                loop: true,
-                spaceBetween: 40,
-                slidesPerView: 1,
-                centeredSlides: true,
-            });
-        </script>
         <!-- [E] 이벤트 슬라이더 영역     -->
 
         <!-- [S] 이벤트 광고 영역     -->
@@ -512,11 +488,20 @@
             </div>
         </article>
         <!--  [E] 포토티켓 자랑하기   -->
-
     </section>
     <!-- [E] Content -->
-
 </div>
-
+<!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/phototicket.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+<!--  [E] 2020.04.20	-->
 </body>
 </html>

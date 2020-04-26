@@ -100,6 +100,29 @@
                 dimed();
             }
 
+            popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
+            popLayerShowHide("icon_share", "popShare", "popFogBg");
+            $('.popFogBg').on({
+                click:function(e){
+                    var $fogBg = $(e.target);
+                    var $popLayer;
+                    $fogBg.css({'display':'none'});
+                    popLayerBgShowHide($('popFogBg'), $popLayer, true);
+                    $('body').off('scroll touchmove mousewheel');
+                }
+            });
+
+
+            // alert
+            window.alertMessage = alertMessage;
+            function alertMessage(){
+                jQuery('#pop_alert').show();
+                dimed();
+            }
+
+            // pop_alert, 헤더 z-index 조정
+            $('#pop_alert').hasClass('active') ? $('#header_box').css('z-index','0') : ''
+
             // 사이트맵 위치 조정
             $('#header_box').hasClass('double') ? $('.allview_wrap .allview_box_wrap').css('top','-44px') : '' ;
 
@@ -163,7 +186,15 @@
 
     this._PT002 = {
         load: function () {
-            popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
+
+        },
+    }
+
+    this._PT003 = {
+        load: function () {
+            // 플립 슬라이더
+            console.log('플립 슬라이더');
+            popLayerShowHide("icon_boast", "popCompleted", "popFogBg");
             $('.popFogBg').on({
                 click:function(e){
                     var $fogBg = $(e.target);
@@ -173,20 +204,12 @@
                     $('body').off('scroll touchmove mousewheel');
                 }
             });
-        },
-    }
-
-    this._PT003 = {
-        load: function () {
-            // 플립 슬라이더
-            //!todo 슬라이더 옵션이 작동하지 않음
-            console.log('플립 슬라이더')
-            var flipPhotoTicketSlider = new Swiper('.myPhtoticketFlip .swiper-container', {
+            var flipPhotoTicketSlider = new Swiper('.swiper-container', {
                 speed: 400,
                 autoHeight: false,
                 direction: 'horizontal',
                 loop: false,
-                spaceBetween: 28,
+                spaceBetween: 5,
                 slidesPerView: 1,
                 centeredSlides: true,
                 breakpointsInverse: false,
@@ -196,9 +219,9 @@
                 },
                 on: {
                     init: function () {
+                        console.log('동작');
                         var nWindowWidth = $(window).width();
-                        var nPadding = (nWindowWidth - 230) /2;
-                        console.log(nPadding)
+                        var nPadding = (nWindowWidth - 282) /2
                         setTimeout(function () {
                             $('.myPhtoticketFlip .swiper-container')
                                 .css({
@@ -211,25 +234,15 @@
                 }
             });
             flipPhotoTicketSlider.translateTo(0, 500, true, true);
-            $(window).resize(function () {
-                location.reload();
-            });
-            popLayerShowHide("icon_search.test", "popCompleted", "popFogBg");
-            $('.popFogBg').on({
-                click:function(e){
-                    var $fogBg = $(e.target);
-                    var $popLayer;
-                    $fogBg.css({'display':'none'});
-                    popLayerBgShowHide($('popFogBg'), $popLayer, true);
-                    $('body').off('scroll touchmove mousewheel');
-                }
-            });
+            // $(window).resize(function () {
+            //     location.reload();
+            // });
         },
     }
 
     this._PT004 = {
         load: function () {
-            console.log('4번')
+            // console.log('4번')
             popLayerShowHide('icon_popup_my','popMyPhototicket','popFogBg');
             popLayerShowHide('icon_popup_other','popOtherPhototicket','popFogBg');
             $('.popFogBg').on({

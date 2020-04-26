@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* S RESET */ 
+/* S RESET */
     ::-webkit-scrollbar{-webkit-appearance:none; display:none}
     ::-webkit-scrollbar:vertical{width:0}
     ::-webkit-scrollbar:horizontal{height:0}
@@ -52,39 +52,39 @@
 ::-webkit-scrollbar {
     width: 0;
 }
- 
+
 
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
     -webkit-border-radius: 0;
     border-radius: 0;
 }
- 
+
 
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 0;
     border-radius: 0;
-    background: rgba(0,0,0,0); 
-    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0); 
+    background: rgba(0,0,0,0);
+    -webkit-box-shadow: inset 0 0 0 rgba(0,0,0,0);
 }
 ::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(0,0,0,0); 
+	background: rgba(0,0,0,0);
 }
 */
 
-    
+
     *{box-sizing:border-box; letter-spacing:normal}
     html{height:100%}
     body{height:auto; /*min-height:100%*/}
     input[type="text"]{-webkit-appearance: none !important; border-radius: 0 !important}
     .wrap{z-index:6}
 
-/* S > Header */    
+/* S > Header */
         /* 새로 마크업에서 css 설정 */
 
         header{overflow:hidden; width:100%; background-color:#fff; z-index:2;/* S override */height:auto; padding-top:0; border:none;/* E override */}
         header .title{height:44px; line-height:44px; vertical-align:middle}
-        header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; background-position:left top}      
+        header .headerLogo{display:block; width:77px; height:44px; margin:0 auto; background-position:left top}
     /* E > Header */
 
 /* E RESET */
@@ -94,7 +94,7 @@
 /* S [U 20200330 앱 다운로드 유도] */
 	.banner_suggest{position:relative; background-color:#f3f3f3}
 	.banner_suggest > a {display:block; height:45px; font-size:0; text-align:center}
-	.banner_suggest .txtbox{position:relative; display:inline-block; margin-right:4px; height:45px; font-weight:500; font-size:14px; color:#434343; line-height:45px}	
+	.banner_suggest .txtbox{position:relative; display:inline-block; margin-right:4px; height:45px; font-weight:500; font-size:14px; color:#434343; line-height:45px}
 	.banner_suggest .btnbox{display:inline-block; margin-top:9px; padding:5px 5px 5px 5px; font-weight:600; font-size:13px; color:#222; letter-spacing:-1px; line-height:16px; vertical-align:top; background-color:#fff; box-shadow:1px 1px 1px 0 rgba(0, 0, 0, 0.13); border-radius:15px 15px}
 	.banner_suggest .btn_close{position:absolute; right:5px; top:50%; width:20px; height:20px; font-size:0; text-indent:-9999em; letter-spacing:-1px; cursor:pointer; transform:translate(0, -50%)}
     .banner_suggest .btn_close:before{display:block; width:20px; height:20px; background-position:-82px -91px}
@@ -117,33 +117,33 @@
     .fixed_link_btn_wrap.initActive .fixed_link_card_wrap .fixed_link_card .fixed_link_thunder{transition:opacity 1s 0.3s; opacity:1}
     .fixed_link_btn_wrap.initActive .fixed_link_onceNoti{overflow:hidden; position:absolute; right:5px; bottom:5px; width:40px; padding:6px 0; font-weight:600; font-size:12px; color:#fff; line-height:14px; text-align:right; white-space:nowrap; background-color:rgba(0, 0, 0, 0.7); border-radius:25px 25px; ; z-index:1; animation:onceNoti 2s linear}
     .fixed_link_btn_wrap.initActive .fixed_link_onceNoti strong{font-weight:600; color:#ffa2ac}
-    
-    
+
+
     .fixed_link_btn_wrap.active .fixed_link_card_txt{ animation:cardTxtAni 3s infinite}
     .fixed_link_btn_wrap.active .fixed_link_card_wrap .fixed_link_card{bottom:-15px; animation:cardAni 3s infinite}
     .fixed_link_btn_wrap.active .fixed_link_card_wrap .fixed_link_card .fixed_link_thunder{opacity:1}
-        
-    @keyframes cardAni{ 
+
+    @keyframes cardAni{
         0% {opacity:1}
         30% {opacity:0}
         70% {opacity:0}
         100% {opacity:1}
     }
 
-    @keyframes cardTxtAni{ 
+    @keyframes cardTxtAni{
         0% {opacity:0}
         40% {opacity:1}
         60% {opacity:1}
         100% {opacity:0}
     }
 
-    @keyframes onceNoti{ 
+    @keyframes onceNoti{
         0% {width:40px; opacity:0}
-        40% {width:145px; opacity:1}        
-        60% {width:145px; opacity:1} 
-        100% {width:40px; opacity:0}        
+        40% {width:145px; opacity:1}
+        60% {width:145px; opacity:1}
+        100% {width:40px; opacity:0}
     }
-        
+
 
     .fixed_link_btn_wrap.hasTopBtn{bottom:90px; transition:bottom 0.6s}
 /* E [U 20200330 Fixed Link 추가] */
@@ -178,7 +178,7 @@
         .comMenuUnitWrap ul.menuUnit.unit2 li{width:50%}
         .comMenuUnitWrap ul.menuUnit.unit3 li{width:33.3%}
         .comMenuUnitWrap ul.menuUnit.unit3 li:nth-child(2){width:33.4%}
-        .comMenuUnitWrap ul.menuUnit.unit4 li{width:25%}            
+        .comMenuUnitWrap ul.menuUnit.unit4 li{width:25%}
         .comMenuUnitWrap ul.menuUnit li a{display:block; height:80px; padding-top:15px; font-weight:bold; font-size:12px; color:#4b4f56; text-align:center}
         .comMenuUnitWrap ul.menuUnit2 li a{padding-top:13px}
         .comMenuUnitWrap ul.menuUnit li a img{width:30px; height:30px}
@@ -188,7 +188,7 @@
         .comMenuUnitWrap ul.menuUnit2 li.newIcon a:after{top:6px; margin-left:6px}
 		.comMenuUnitWrap ul.menuUnit li.cntIcon{position:relative}
 		.comMenuUnitWrap ul.menuUnit li.cntIcon .cnt{display:inline-block; overflow:hidden; position:relative; left:15px; top:-65px; min-width:16px; width:auto; height:16px; margin:0 auto; padding:0 1px; font-weight:400; font-size:11px; color:#fff; line-height:16px; text-align:center; vertical-align:middle; background-color:#fc5c4f; border-radius:10px}
-        
+
     /* E > 메뉴 유닛 */
 
     /* S > 기타 메뉴 유닉 */
@@ -268,7 +268,7 @@
         .com_article_list_style0 li.hotdeal a .img_wrap:after{content:'핫딜 \A 진행중'; position:absolute; left:4px; top:5px; font-weight:700; font-size:10px; color:#fff; line-height:12px; text-align:center; white-space:pre; transform:rotate(-45deg); z-index:2}
         .com_article_list_style0 li.hotdeal a .com_article_list_style0_content .product_info_sale_percent{display:block; float:left; margin-top:8px; margin-right:5px; font-weight:600; font-size:14px; color:#dc291e;line-height:16px}
         .com_article_list_style0 li.hotdeal a .com_article_list_style0_content .product_info_sale_percent:after{content:'%'; font-size:11px}
-        
+
 
     /* E > 리스트 */
 
@@ -298,7 +298,7 @@
         100% {width:9.6vw; height:9.6vw; background-size:9.6vw 9.6vw}
     }*/
 /* E [U 20200410] ios 12이하 버전에서 스크롤시 떨림현상 수정 */
-    
+
 
     /* S > 홈 */
 
@@ -332,7 +332,7 @@
 
 			.popLayerContainer.videoAdWrap .videoAdContent .poster_img {display:none;}
 			.popLayerContainer.videoAdWrap .videoAdContent.set .poster_img {display:block;}
-			
+
 			/* 비디오 및 포스터 노출 속성 정의 */
 			.imgtype .videoAdContent video {object-fit:contain}
 			/*.videoAdWrap .videoAdContent video,*/
@@ -345,7 +345,7 @@
         /* S > 영상 광고 영역 */
             .videoAdWrap .videoAdContent{overflow:hidden; position:relative; width:100%; /*padding-bottom:56.25%*/ padding-bottom:34.667vw; border-radius:14px 10px 10px 14px}
             .videoAdWrap .videoAdContent video{display:none; position:absolute; left:0; top:50%; display:block; width:0; height:0; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%); -ms-transform:translate(0, -50%); -o-transform:translate(0, -50%); border-radius:14px 10px 10px 14px; object-fit:contain}
-			
+
 			/* safari bug fix */
             /* S [U 20200410] ios 12이하 버전에서 스크롤시 떨림현상 수정 */
             /* [기존코드]
@@ -358,7 +358,7 @@
 
             /* .videoAdWrap .btnNowTicketing{max-width:100%; width:100%; left:0; top:0; right:auto; height:64px; margin-top:0}
             .videoAdWrap .btnNowTicketing span{position:absolute; right:12px; top:50%; max-width:86px; min-width:68px; height:28px; margin-top:-14px} */
-                
+
                 .btnVideoAdPlay{display:block; position:absolute; left:0; top:0; width:100%; height:100%; font-size:0; line-height:0; z-index:4}
 /* .btnVideoAdMoreWrap span+.btnVideoAdMore{font-size:0; line-height:0} */
 
@@ -366,7 +366,7 @@
 .clipTime:before{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background-color:#000; opacity:.8}
 .clipTime span{display:block; position:relative; min-width:32px; height:16px; padding:0 3px; font-size:11px; color:#fff; line-height:16px; text-align:center} */
 
-                
+
 /* .btnVideoAdMoreWrap{display:block; position:absolute; right:6px; bottom:10px; width:62px; height:22px; font-size:12px; color:#fff; z-index:3}
 .btnVideoAdMoreWrap:before{content:''; position:absolute; left:0; top:0; width:62px; height:22px; background-color:#000; border-radius:31px; opacity:.4}
 .btnVideoAdMoreWrap .btnVideoAdMore{position:absolute; right:0; top:0; width:100%; font-size:0}
@@ -390,13 +390,13 @@
                         .videoAdThumnail{overflow:hidden; position:absolute; left:0; top:0; width:40px; height:40px; background-position:-160px top; border-radius:20px}
                         .videoAdThumnail img{width:100%}
                         .videoAdTitle{overflow:hidden; float:left; max-width:100%; padding-left:47px; font-weight:bold; font-size:15px; color:#000; line-height:19px; text-overflow:ellipsis; white-space:nowrap}
-                        .videoAdTxt{overflow:hidden; clear:both; float:left; max-width:100%; padding-left:47px; font-size:12px; color:#9197a3; line-height:15px; text-overflow:ellipsis; white-space:nowrap}                    
+                        .videoAdTxt{overflow:hidden; clear:both; float:left; max-width:100%; padding-left:47px; font-size:12px; color:#9197a3; line-height:15px; text-overflow:ellipsis; white-space:nowrap}
 
                         .btnViewDetail{position:absolute; right:12px; top:50%; max-width:86px; min-width:68px; height:28px; margin-top:-14px}
                         .btnViewDetail span{display:block; overflow:hidden; /*position:absolute; right:12px; top:6px; max-width:86px; min-width:68px;*/ /*height:28px;*/ /*margin-top:12px;*/ font-weight:bold; font-size:12px; color:#666666; line-height:26px; text-align:center; text-overflow:ellipsis; white-space:nowrap; border:1px solid #d6d6d6; border-radius:3px}
 
         /* E > 영상 광고 영역 */
-        
+
         /* S > CGV 무비차트 */
             .cgvMovieChartWrap{position:relative; z-index:1}
             .cgvMovieChartWrap .btnFirstMove{overflow:hidden; display:none; position:absolute; left:0; top:calc(94px + 24vw); width:42px; height:29px; border-radius:0 15px 15px 0; z-index:10}
@@ -415,12 +415,12 @@
                 /* .cgvMovieChartTitle li:before {content:''; position:absolute; left:0; top:50%; margin-top:-7px; padding:0; display:block; content:''; width:1px; height:14px; background-color:#ededed;} */
                 .cgvMovieChartTitle li:first-child{margin-left:0; padding-left:0}
                 .cgvMovieChartTitle li:first-child:before{content:''; display:none}
-                
-                
+
+
                 .cgvMovieChartTitle li:first-child a:after{content:''; display:block; position:absolute; right:-16px; top:0; width:24px; height:42px; pointer-events:none; background:transparent url('./../../images/main/common/bg_tabL_off.png') left top scroll no-repeat; background-size:24px 42px}
-                
-                
-                .cgvMovieChartTitle li a{display:block; position:relative; padding:13px 0 10px; font-weight:500; font-size:15px; color:#999; line-height:19px; text-align:center}                
+
+
+                .cgvMovieChartTitle li a{display:block; position:relative; padding:13px 0 10px; font-weight:500; font-size:15px; color:#999; line-height:19px; text-align:center}
                 .cgvMovieChartTitle li a:after{content:''; display:block; position:absolute; right:-12px; top:0; width:24px; height:42px; pointer-events:none; background:transparent url('./../../images/main/common/bg_tabR_off.png') left top scroll no-repeat; background-size:24px 42px}
                 .cgvMovieChartTitle li:last-child a:after{content:none}
 
@@ -431,8 +431,8 @@
 
                 .cgvMovieChartTitle li:first-child.active a:after{content:''; display:block; position:absolute; right:-12px; top:0; width:24px; height:42px; pointer-events:none; background:transparent url('./../../images/main/common/bg_tabR_on.png') left top scroll no-repeat; background-size:24px 42px}
                 .cgvMovieChartTitle li:last-child.active a:before{content:''; display:block; position:absolute; left:-12px; top:0; width:24px; height:42px; pointer-events:none; background:transparent url('./../../images/main/common/bg_tabL_on.png') left top scroll no-repeat; background-size:24px 42px}
-                
-                
+
+
 
                 /*.cgvMovieChartTitle li.comingSoon {position:relative; margin-left:20px; padding-left:12px;}
                 .cgvMovieChartTitle li.comingSoon:before {position:absolute; left:0; top:50%; margin-top:-9px; padding:0; display:block; content:''; width:1px; height:18px; background:#d8d8d8;}
@@ -449,7 +449,7 @@
             .cgvMovieChartWrap h1 .btnArrowR:after{position:absolute; right:6px; top:50%; width:24px; height:24px; margin-top:-12px; background-position:-72px -45px}*/
             .cgvMovieChartWrap h1 .btnArrowR{position:absolute; right:12px; top:65px; display:block; font-size:13px; color:#999; line-height:16px; text-align:right; z-index:2}
             .cgvMovieChartWrap h1 .btnArrowR:after{content:''; display:inline-block; width:6px; height:10px; margin-left:5px; margin-top:3px; background:transparent url('./../../images/main/common/bg_recommendMovie_linkFanpage_arrow.png') left top scroll no-repeat; background-size:6px 10px}
-            
+
             .cgvMovieChartWrap h1 + .cgvMovieChartContainer{}
             .cgvMovieChartContainer > li{display:none; position:relative}
             .cgvMovieChartContainer > li.active{display:list-item}
@@ -527,7 +527,7 @@
 
                 .cgvMovieChartContent > li .cgvMovieChartBtnWrap{padding:16px 0 30px; text-align:center}
                 .cgvMovieChartContent > li .cgvMovieChartBtnWrap a{margin:0 auto; display:block; width:100px; height:28px; font-weight:600; font-size:13px; color:var(--watermelon); line-height:28px; border:1px solid var(--watermelon); border-radius:16px; box-shadow:0 2px 2px rgba(0, 0, 0, 0.1);}
-                .cgvMovieChartContent > li .cgvMovieChartBtnWrap span{margin:0 auto; display:block; width:100px; height:28px; font-weight:600; font-size:13px; color:#bdc1c8; line-height:28px; border:1px solid #bdc1c8; border-radius:16px}                
+                .cgvMovieChartContent > li .cgvMovieChartBtnWrap span{margin:0 auto; display:block; width:100px; height:28px; font-weight:600; font-size:13px; color:#bdc1c8; line-height:28px; border:1px solid #bdc1c8; border-radius:16px}
 
 
 
@@ -572,7 +572,7 @@
                 .onlyCGVSpecialTitle li:first-child{margin-left:0; padding-left:0}
                 .onlyCGVSpecialTitle li:first-child:before{content:''; display:none}
                 .onlyCGVSpecialTitle li a{display:block; position:relative; padding:13px 0 10px; font-weight:500; font-size:15px; color:#999; line-height:19px; text-align:center}
-                
+
                 .onlyCGVSpecialTitle li.active{background-color:#fff; z-index:2}
                 .onlyCGVSpecialTitle li.active a{font-weight:700; color:#222}
                 .onlyCGVSpecialTitle li:first-child.active a:after{content:''; display:block; position:absolute; right:-12px; top:0; width:24px; height:42px; pointer-events:none; background:transparent url('./../../images/main/common/bg_tabR_on.png') left top scroll no-repeat; background-size:24px 42px}
@@ -594,19 +594,19 @@
                 .onlyCGVSpecialContainer > li h2 .hashList > li.active a{position:relative; color:#222; border-bottom:2px solid var(--water)}
                 .onlyCGVSpecialContainer > li h2 .hashList > li.active a:after{content:''; display:block; position:absolute; left:0; bottom:0; width:100%; height:2px; background-color:var(--watermelon)}
                 .onlyCGVSpecialContainer > li h2 .hashList > li.onlyCGVSpecialDot a:before{content:''; position:absolute; right:-4px; top:-2px; width:4px; height:4px; background-color:#dc291e; border-radius:2px 2px}
-               
+
                     .onlyCGVSpecialContainer > li h2 + ul.onlyCGVSpecialContents{overflow:hidden; background-color:#fff}
                     .onlyCGVSpecialContainer > li h2 + ul.onlyCGVSpecialContents > li{display:none; float:left; width:100%; /*height:301px*/}
                     .onlyCGVSpecialContainer > li h2 + ul.onlyCGVSpecialContents > li.noData{height:87.4667vw; padding-top:calc(23.733vw + 113px); font-weight:600; font-size:15px; color:#000; line-height:19px; text-align:center; background:transparent url('./../../images/main/ico_noData.png') center 23.733vw scroll no-repeat; background-size:105px 110px}
                     .onlyCGVSpecialContainer > li h2 + ul.onlyCGVSpecialContents > li.active{display:block; overflow:auto; -webkit-overflow-scrolling:touch}
-               
-                
+
+
                     .onlyCGVSpecialContent{overflow:auto; padding:0 12px; white-space:nowrap; counter-reset:onlyCGVListCnt}
                     .onlyCGVSpecialContent > li{display:inline-block;  width:80.8vw; margin-left:10px; vertical-align:top;}
                     .onlyCGVSpecialContent > li:first-child{margin-left:0}
                     .onlyCGVSpecialContent > li > *{margin-top:10px}
                     .onlyCGVSpecialContent > li > *:first-child{margin-top:0}
-                    
+
                     .onlyCGVSpecialContent > li .movieInfo{overflow:hidden; position:relative}
                     .onlyCGVSpecialContent > li .movieInfo:before{content:counter(onlyCGVListCnt); display:block; position:absolute; left:0; top:0; width:22px; height:22px; font-weight:700; font-size:12px; font-style:italic; color:#fff; line-height:22px; text-align:center; counter-increment:onlyCGVListCnt; background-color:rgba(0,0,0,0.7); border-radius:6px 0 4px 0; z-index:3}
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieChartPoster{float:left; overflow:hidden; width:70px; height:100px; border-radius:6px 6px}
@@ -638,9 +638,9 @@
                 /* S [U 20200326] Egg 상태 추가 */
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState3{padding-left:15px}
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span.eggState3::before{content:''; position:absolute; left:0; top:0; width:11px; height:20px; background-position:-40px -130px}
-                /* E [U 20200326] Egg 상태 추가 */                    
+                /* E [U 20200326] Egg 상태 추가 */
                     .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{content:'%'}
-                    
+
 
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartTicketing{}
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartTicketing span{}
@@ -655,7 +655,7 @@
 
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieInfo .cgvMovieChartBtnWrap{position:absolute; bottom:10px; padding:0; text-align:center}
                     .onlyCGVSpecialContent > li .movieInfo .cgvMovieInfo .cgvMovieChartBtnWrap a{display:block; width:70px; height:20px; font-weight:600; font-size:12px; color:var(--watermelon); line-height:20px; border:1px solid var(--watermelon); border-radius:16px; box-shadow:0 2px 2px rgba(0, 0, 0, 0.1);}
-                    
+
                     .onlyCGVSpecialContent > li .ad{overflow:hidden; position:relative}
                     .onlyCGVSpecialContent > li .ad div{float:left; overflow:hidden; width:70px; height:100px; border-radius:6px 6px}
 
@@ -682,7 +682,7 @@
         /* E Only CGV & 특별관 */
 
 
-        
+
             /* S > 추천영화 */
             .recommendMovie_wrap{padding:0 0 30px}
             .recommendMovie_wrap h1{padding:26px 12px 14px; font-weight:700; font-size:17px; color:#222; line-height:20px}
@@ -693,7 +693,7 @@
                     .recommendMovie_infoImg{display:block; overflow:hidden; position:relative; height:111px; border-radius:6px 6px}
 
                     .favoriteFpVideoContent{overflow:hidden; position:relative; height:111px; background-color:#000;  border-radius:6px 6px 0 0; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0)}
-                    .favoriteFpVideoContent video{display:none; position:absolute; left:0; top:50%; width:100%; height:100%; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%); -ms-transform:translate(0, -50%); -o-transform:translate(0, -50%)}				    
+                    .favoriteFpVideoContent video{display:none; position:absolute; left:0; top:50%; width:100%; height:100%; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%); -ms-transform:translate(0, -50%); -o-transform:translate(0, -50%)}
 				    .favoriteFpVideoContent.active .poster_img {display:none;}
                     .favoriteFpVideoContent.active video{display:block}
                     .favoriteFpVideoContent .poster_img{position:absolute; left:0; top:50%; width:100%; transform:translate(0, -50%); -webkit-transform:translate(0, -50%); -moz-transform:translate(0, -50%); -ms-transform:translate(0, -50%); -o-transform:translate(0, -50%); z-index:2}
@@ -718,7 +718,7 @@
         /* E > 추천영화 */
 
 
-        /* S > 이런 영화관은 어떠세요? */ 
+        /* S > 이런 영화관은 어떠세요? */
             /* S [D 20200317 메뉴 @CGV에서 메뉴 홈으로 이동] 으로 main.css로 이동 및 수정 */
                 .rcm_special > div {position:relative; padding:20px 0}
                 .rcm_special .rcm_list_area{overflow:hidden; padding:0}
@@ -733,8 +733,8 @@
                     .rcm_list_area_list li a{display:block; }
                     .rcm_list_area_list li a img{width:180px; height:162px}
             /* E [D 20200317 메뉴 @CGV에서 메뉴 홈으로 이동] 으로 main.css로 이동 및 수정 */
-        /* E > 이런 영화관은 어떠세요? */ 
-        
+        /* E > 이런 영화관은 어떠세요? */
+
 
         /* S > 배너 영역 */
             .content_banner_wrap{padding:10px; background-color:#e1e1e1}
@@ -757,7 +757,7 @@
 
                 .sponsorFpVideo > li .videoAdContent{position:relative; padding-bottom:56.26%}
 				.sponsorFpVideo > li .videoAdContent video{position:absolute; left:0; top:0; width:100%; height:100%; z-index:1}
-                .sponsorFpVideo > li .videoAdContent .poster{position:relative; left:0; top:0; width:100%; z-index:1}                
+                .sponsorFpVideo > li .videoAdContent .poster{position:relative; left:0; top:0; width:100%; z-index:1}
                 .sponsorFpVideo > li .videoAdreplyCntWrap{overflow:hidden; display:block; padding:15px 0 16px; margin:0 11px; border-bottom:1px solid #dcdee3}
                 .sponsorFpVideo > li .videoAdreplyCntWrap span{float:left; font-size:12px; color:#9197a3; line-height:15px}
                 .sponsorFpVideo > li .videoAdreplyCntWrap span:before{content:'ㆍ'}
@@ -765,7 +765,7 @@
                 .sponsorFpVideo > li .videoAdBtnWrap{overflow:hidden}
                 .sponsorFpVideo > li .videoAdBtnWrap .spriteBefore{float:left; width:33.3%; padding:12px 0; font-weight:600; font-size:12px; color:#4b4f56; line-height:1.250em; text-align:center}
                 .sponsorFpVideo > li .videoAdBtnWrap .spriteBefore:before{display:inline-block; width:15px; height:15px; margin-right:8px; vertical-align:middle}
-                    
+
                 .sponsorFpVideo > li .videoAdBtnWrap .btnLike{}
                 .sponsorFpVideo > li .videoAdBtnWrap .btnLike:before{background-position:left -185px}
                 .sponsorFpVideo > li .videoAdBtnWrap .btnLike.active:before{background-position:-16px -185px}
@@ -786,11 +786,11 @@
                     border-radius: 50%;
                     border:1px solid #e6e7ea;
                     margin:0 12px 0 23px
-                }                
+                }
                 .movieDetailCount .profile_thumb > img {
                     width: auto;
                     max-width: 100%;
-                    height:auto;    
+                    height:auto;
                     min-height: 62px;
                     position: absolute;
                     top:50%;
@@ -798,11 +798,11 @@
                     transform: translateX(-50%) translateY(-50%);
                     object-fit: cover;
                     object-position: center;
-                }        
+                }
                 .movieDetailCount li{position: relative;width:85px;height:100%;text-align: center;float: left;}
                 .movieDetailCount li:after{content:'';position: absolute;width:1px;height:30px;top:50%;right:0;transform: translateY(-50%);background:#e7e7e7;}
                 .movieDetailCount li em{display: block;font-style: normal;color:#222222;font-size:18px;font-weight: bold;letter-spacing: -0.5px;}
-                .movieDetailCount li span{color:rgb(153,153,153);font-size:12px;letter-spacing:-0.5px;}                
+                .movieDetailCount li span{color:rgb(153,153,153);font-size:12px;letter-spacing:-0.5px;}
                 .moveDetailVideo{background-color:#f2f2f2}
                 .moveDetailVideo > li{margin-top:10px; background-color:#fff; /*border-bottom:1px solid #dcdee3; box-shadow:0 0 1px rgba(0, 0, 0, 0.1)*/}
                 .moveDetailVideo > li:first-child{margin-top:0}
@@ -813,7 +813,7 @@
                 .moveDetailVideo > li .videoAdreplyTxt.opened .more {display:none;}
                 .moveDetailVideo > li .videoAdContent{position:relative; padding-bottom:56.26%}
                 .moveDetailVideo > li .videoAdContent video{position:absolute; left:0; top:0; width:100%; height:100%; z-index:1}
-                .moveDetailVideo > li .videoAdContent .poster{position:relative; left:0; top:0; width:100%; z-index:1}                
+                .moveDetailVideo > li .videoAdContent .poster{position:relative; left:0; top:0; width:100%; z-index:1}
                 .moveDetailVideo > li .videoAdreplyCntWrap{overflow:hidden; display:block; padding:15px 0 16px; margin:0 11px; border-bottom:1px solid #dcdee3}
                 .moveDetailVideo > li .videoAdreplyCntWrap span{float:left; font-size:12px; color:#9197a3; line-height:15px}
                 .moveDetailVideo > li .videoAdreplyCntWrap span:before{content:'ㆍ'}
@@ -821,53 +821,53 @@
                 .moveDetailVideo > li .detail_btn_area{position: relative;;height:40px;padding:0;display: flex;display: -webkit-flex;align-items: center;justify-content: flex-start;}
                 .moveDetailVideo > li .detail_btn_area:before{content: '';position: absolute;left:0;top:0;width: 100%;border-top:1px solid rgb(238,238,238);}
                 .moveDetailVideo > li .detail_btn_area a{display:flex;display: -webkit-flex;height:20px;color:#999999;font-size:13px;align-content:center;justify-content: center;line-height: 20px;margin:0 15px 0 0;letter-spacing:-0.5px;}
-                .moveDetailVideo > li .detail_btn_area a:before{content:'';display: block;width: 20px;height:20px;margin:0 3px 0 0;background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;}                                            
-                .moveDetailVideo > li .detail_btn_area span{display:block;line-height: 19px;}                
+                .moveDetailVideo > li .detail_btn_area a:before{content:'';display: block;width: 20px;height:20px;margin:0 3px 0 0;background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;}
+                .moveDetailVideo > li .detail_btn_area span{display:block;line-height: 19px;}
                 .moveDetailVideo > li .detail_btn_area .btn_like:before{background-position:0 -133px;}
                 .moveDetailVideo > li .detail_btn_area .btn_like.on:before{background-position:-27px -133px;}
                 .moveDetailVideo > li .detail_btn_area .btn_reply:before{background-position:-53px -133px;}
                 .moveDetailVideo > li .detail_btn_area .btn_share{position: absolute;right:0;top:50%;transform: translateY(-50%);margin:0}
                 .moveDetailVideo > li .detail_btn_area .btn_share:before{background-position:-80px -133px;margin: 0;}
-                .moveDetailVideo > li .detail_btn_area .btn_share{font-size:0;line-height: 0;color:transparent}                     
+                .moveDetailVideo > li .detail_btn_area .btn_share{font-size:0;line-height: 0;color:transparent}
                 .moveDetailVideo .videoAdContent.v2 a{font-size:0;line-height: 0;color:transparent;}
-                .moveDetailVideo .videoAdContent.v2 .btnVideoAdPlay:before{content:''; position:absolute; left:50%; top:50%; width:32px; height:41px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:0 0}                
-                .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{content:''; position:absolute; left:50%; top:50%; width:32px; height:41px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:0 -54px}                                                             
+                .moveDetailVideo .videoAdContent.v2 .btnVideoAdPlay:before{content:''; position:absolute; left:50%; top:50%; width:32px; height:41px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:0 0}
+                .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{content:''; position:absolute; left:50%; top:50%; width:32px; height:41px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:0 -54px}
                 .moveDetailVideo .videoAdContent.v2 .btnSound{background:none!important;width: 43px;height:43px;}
                 .moveDetailVideo .videoAdContent.v2 .btnSound:before{content:''; position:absolute; left:50%; top:50%; width:23px; height:23px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:-54px 0}
-                .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{content:''; position:absolute; left:50%; top:50%; width:23px; height:23px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:-80px 0}                                                             
+                .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{content:''; position:absolute; left:50%; top:50%; width:23px; height:23px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:-80px 0}
                 .moveDetailVideo .videoAdContent.v2 .btnFullScreen{background:none!important;width: 40px;height:40px;}
                 .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{content:''; position:absolute; left:50%; top:50%; width:18px; height:18px; transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); -moz-transform:translate(-50%, -50%); -ms-transform:translate(-50%, -50%); -o-transform:translate(-50%, -50%);background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px; background-position:-54px -27px}
-                
+
 
                 @media only screen and (-webkit-min-device-pixel-ratio:1){
-                    .moveDetailVideo > li .detail_btn_area a:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;}                            
+                    .moveDetailVideo > li .detail_btn_area a:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;}
                     .moveDetailVideo .videoAdContent.v2 .sprite_skin2:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;}
                     .moveDetailVideo .videoAdContent.v2 .btnVideoAdPlay:before{background-position:0 0}
-                    .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{background-position:0 -54px}                                                                                 
+                    .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{background-position:0 -54px}
                     .moveDetailVideo .videoAdContent.v2 .btnSound:before{background-position:-54px 0}
-                    .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{background-position:-80px 0}                                                                                 
-                    .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{background-position:-54px -27px}                    
-                }                
+                    .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{background-position:-80px 0}
+                    .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{background-position:-54px -27px}
+                }
                 @media only screen and (-webkit-min-device-pixel-ratio:2){
-                    .moveDetailVideo > li .detail_btn_area a:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@2x.png) no-repeat 0 0;background-size:200px 200px;}                            
+                    .moveDetailVideo > li .detail_btn_area a:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@2x.png) no-repeat 0 0;background-size:200px 200px;}
                     .moveDetailVideo .videoAdContent.v2 .sprite_skin2:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@2x.png) no-repeat 0 0;background-size:200px 200px;}
                     .moveDetailVideo .videoAdContent.v2 .btnVideoAdPlay:before{background-position:0 0}
-                    .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{background-position:0 -54px}                                                                                 
+                    .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{background-position:0 -54px}
                     .moveDetailVideo .videoAdContent.v2 .btnSound:before{background-position:-54px 0}
-                    .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{background-position:-80px 0}                                                                                 
-                    .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{background-position:-54px -27px}                        
+                    .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{background-position:-80px 0}
+                    .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{background-position:-54px -27px}
                 }
                 @media only screen and (-webkit-min-device-pixel-ratio:3){
-                    .moveDetailVideo > li .detail_btn_area a:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@3x.png) no-repeat 0 0;background-size:200px 200px;}                            
+                    .moveDetailVideo > li .detail_btn_area a:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@3x.png) no-repeat 0 0;background-size:200px 200px;}
                     .moveDetailVideo .videoAdContent.v2 .sprite_skin2:before{background:url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@3x.png) no-repeat 0 0;background-size:200px 200px;}
                     .moveDetailVideo .videoAdContent.v2 .btnVideoAdPlay:before{background-position:0 0}
-                    .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{background-position:0 -54px}                                                                                 
+                    .moveDetailVideo .videoAdContent.v2 .played .btnVideoAdPlay:before{background-position:0 -54px}
                     .moveDetailVideo .videoAdContent.v2 .btnSound:before{background-position:-54px 0}
-                    .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{background-position:-80px 0}                                                                                 
-                    .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{background-position:-54px -27px}    
-                }                                
+                    .moveDetailVideo .videoAdContent.v2 .btnSound.soundMute:before{background-position:-80px 0}
+                    .moveDetailVideo .videoAdContent.v2 .btnFullScreen:before{background-position:-54px -27px}
+                }
         /* E > 팬페이지 영상 노출 - 스폰서 */
-		
+
 		/* S > 특별관 리스트 */
 			.link_img_list:after {display:block; content:''; clear:both;}
 			.link_img_list > li {position:relative; float:left; width:33.3%; text-align:center; height:38px; line-height:38px; border-top:1px solid #dddfe2; box-sizing:content-box;}
@@ -878,11 +878,11 @@
 			.link_img_list > li:nth-child(2),
 			.link_img_list > li:nth-child(3) {border-top:0;}
 			.link_img_list > li a {display:block; height:inherit; text-align:center;}
-			.link_img_list > li a img {height:100%;}	
+			.link_img_list > li a img {height:100%;}
 		/* E > 특별관 리스트 */
 
         /* S > 굿 리뷰어 */
-            .goodReviewerWrap{padding:0 0 24px 0}            
+            .goodReviewerWrap{padding:0 0 24px 0}
             .goodReviewerWrap .goodReviewerDetail{}
             .videoAdDetail{overflow:hidden; position:relative;background-color:#fff;height:50px;padding:0}
             .videoAdDetail span.pinGoodReview{position: absolute;top:6px;right:12px;background: url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;background-position:-126px -134px;width:61px;height: 38px;font-size:0;line-height:0;color:transparent}
@@ -890,7 +890,7 @@
             .videoAdThumnail{position: relative;overflow:hidden;width:30px; height:30px; background-position:-160px top; border-radius:50%}
             .videoAdThumnail img{width:100%}
             .videoAdTitle{overflow:hidden;max-width:100%; padding-left:10px; font-weight:bold; font-size:16px; color:#000; text-overflow:ellipsis; white-space:nowrap;line-height:50px;}
-            .videoAdTxt{overflow:hidden; padding-left:10px;max-width:100%;font-size:12px; color:#9197a3;text-overflow:ellipsis; white-space:nowrap;line-height: 50px;}                                                                                                    
+            .videoAdTxt{overflow:hidden; padding-left:10px;max-width:100%;font-size:12px; color:#9197a3;text-overflow:ellipsis; white-space:nowrap;line-height: 50px;}
             .goodReviewerWrap .goodReviewerimg{position:relative;padding:0 12px;box-sizing: border-box;position: relative;}
             .goodReviewerWrap .goodReviewerimg a{position:relative; display:block;border-radius: 6px;overflow: hidden;}
             .goodReviewerWrap .goodReviewerimg a:after{content:''; position:absolute; left:0; top:0; width:100%; height:100%; background-color:#000; opacity:.4; z-index:2}
@@ -899,7 +899,7 @@
             .goodReviewerWrap .goodReviewerimg a .cover_img_writer em{font-weight: bold;font-style: normal;}
             .goodReviewerWrap .goodReviewerimg a .cover_img_writer img{float:left; width:24px; height:24px; margin-right:5px; border-radius:12px}
             .goodReviewerWrap .goodReviewerimg a .cover_img_txt{position:absolute; left:0; top:50%; width:100%; margin-top:-20px; font-size:18px; line-height:20px; text-align:center; color:#fff; z-index:4}
-            .goodReviewerWrap .goodReviewerimg a .cover_img_txtTitle{position:absolute; left:0; bottom:14px; width:100%; font-size:12px; text-align:center; color:#fff; z-index:5}            
+            .goodReviewerWrap .goodReviewerimg a .cover_img_txtTitle{position:absolute; left:0; bottom:14px; width:100%; font-size:12px; text-align:center; color:#fff; z-index:5}
             .goodReviewerWrap .goodReviewerimg .btnLike{position: absolute;display: flex;display: inline-flex;color:#d8d8d8;font-size:13px;align-items: center;-webkit-align-items:center;height:20px;line-height:20px;left:23px;bottom:12px;z-index:8;}
             .goodReviewerWrap .goodReviewerimg .btnLike:before{display: block;content: '';width: 20px;height: 17px;background: url(http://img.cgv.co.kr/webapp/images/common/sprite_movie_detail@1x.png) no-repeat 0 0;background-size:200px 200px;z-index:8;margin-right:5px;background-position:0 -160px;}
             .goodReviewerWrap .goodReviewerimg .btnLike:after{display: none;}
@@ -952,33 +952,33 @@
 
                 .imgtype4 li{width:49.375%; padding-top:100%;}
                 .imgtype4 li:nth-child(even){margin-left:1.25%}
-                .imgtype4 li a img{width:auto; height:100%}                
+                .imgtype4 li a img{width:auto; height:100%}
 
                 .imgtype5 li{width:49.375%; padding-top:49.375%}
                 .imgtype5 li:nth-child(2n){margin-left:1.25%}
                 .imgtype5 li:nth-child(2n + 3),
-                .imgtype5 li:nth-child(2n + 4) {margin-top:1.25%}  
+                .imgtype5 li:nth-child(2n + 4) {margin-top:1.25%}
 
                 .imgtype6 li{width:49.375%; padding-top:49.375%}
                 .imgtype6 li:first-child{width:100%; margin-bottom:1.25%; padding-top:49.375%}
                 .imgtype6 li:first-child .videoAdContent{padding-bottom:50%}
                 .imgtype6 li:nth-child(2n + 3){margin-left:1.25%}
                 .imgtype6 li a img{width:auto; height:100%}
-                
+
                 .imgtype6 li:first-child a img,
                 .imgtype6 li:first-child video{width:100%; height:auto}
 
                 .imgtype7 li{width:49.375%; padding-top:49.375%}
                 .imgtype7 li:first-child{width:49.375%; margin-right:1.25%; padding-top:100%}
                 .imgtype7 li:first-child a img{width: auto; height:100%}
-                
+
                 .imgtype7 li:nth-child(2n + 3){margin-top:1.25%}
-                
+
                 .imgtype8 li{width:49.375%; padding-top:49.375%}
                 .imgtype8 li:nth-child(2n){margin-left:1.25%}
                 .imgtype8 li:nth-child(2n + 3),
-                .imgtype8 li:nth-child(2n + 4) {margin-top:1.25%}                
-                
+                .imgtype8 li:nth-child(2n + 4) {margin-top:1.25%}
+
                 .imgtype9 li{width:32.5%; padding-top:32.5%}
                 .imgtype9 li:first-child{width:100%; margin-bottom:1.25%; padding-top:49.375%}
                 .imgtype9 li:first-child .videoAdContent{padding-bottom:50%}
@@ -1070,7 +1070,7 @@
                 .eventBannerList .swiper-slide > span img{position:absolute; top:0; bottom:0; left:0; right:0; width:100%; margin:auto}
                 .eventBannerList .swiper-slide a span,
                 .eventBannerList .swiper-slide > span span{position:absolute; top:35%; width:100%; padding:0 28px; font-weight:bold; font-size:22px; color:#fff; line-height:28px; text-align:left; z-index:2}
-            
+
             .btnEventBannerNext{display:none; position:absolute; right:0; top:calc(50% - 14px); width:28px; height:28px; background-position:-123px -44px; z-index:8}
 
             .eventBannerControlWrap{display:none; overflow:hidden; position:absolute; right:0; bottom:0; z-index:9}
@@ -1088,7 +1088,7 @@
             .eventBannerControlWrap .btnEventBannerControl.active:before{background-position:-129px -22px}
 
         /* E > 이벤트 배너 및 문구 노출 */
-        
+
         /* S > 이벤트 카테고리 (이벤트 유닛) */
         .sponsorFpWrap{position:relative}
         .sponsorFpWrap:after{content:''; position:absolute; left:12px; top:52px; width:calc(100% - 24px); height:1px; background-color:#d8d8d8; z-index:1}
@@ -1116,7 +1116,7 @@
             .sponsorFpH2Title li.active a{color:#4e88cf}
             .sponsorFpH2Title li.btnFindCinema a{display:block; position:relative; height:28px; padding:0 15px 0 21px; font-size:12px; color:#373e46; line-height:28px; border:1px solid #9197a3; border-radius:14px}
             .sponsorFpH2Title li.btnFindCinema a:before{content:''; display:block; position:absolute; left:13px; top:11px; width:2px; height:6px; background-color:#373e46}
-            .sponsorFpH2Title li.btnFindCinema a:after{content:''; display:block; position:absolute; left:11px; top:13px; width:6px; height:2px; background-color:#373e46}        
+            .sponsorFpH2Title li.btnFindCinema a:after{content:''; display:block; position:absolute; left:11px; top:13px; width:6px; height:2px; background-color:#373e46}
         .sponsorFpContents{overflow:hidden; padding:0 12px 12px}
         .sponsorFpContents > li{float:left; width:100%; margin-top:12px}
         .sponsorFpContents > li.noData{height:84px; margin-top:0; padding-left:0; padding-right:0; color:#6a6f77; line-height:84px; text-align:center; vertical-align:middle}
@@ -1132,7 +1132,7 @@
                     .sponsorFpCGV{color:#fb4357}
                     .sponsorFpDday:before,
                     .sponsorFpCGV:before{content:'·'; padding:0 3px}
-            
+
         .sponsorFpContents li.sponsorFpType0{}  /* type0: (추천,멤버쉽/클럽, 제휴, 극장)  뱃지 작업예정 */
         .sponsorFpContents li.sponsorFpType0.noneDim .sponsorFpImgWrap:before{content:none}
         .sponsorFpContents li.sponsorFpType0 .sponsorFpImgWrap:before{content:''; position:absolute; left:0; bottom:0; width:100%; height:0; padding-bottom:56.08%; background:linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.6)); z-index:1}
@@ -1143,7 +1143,7 @@
         .sponsorFpContents li.sponsorFpType1 .sponsorFpImgWrap .sponsorCinemaList{width:75%; padding-right:11px; text-align:left}
         .sponsorFpContents li.sponsorFpType1 .sponsorFpTxtWrap img{position:absolute; right:11px; bottom:88%; width:25%}
 
-        .sponsorFpContents li.sponsorFpType2{position:relative; margin:0; border-bottom:1px solid #dcdee3}  /* type2: 지난이벤트 */      
+        .sponsorFpContents li.sponsorFpType2{position:relative; margin:0; border-bottom:1px solid #dcdee3}  /* type2: 지난이벤트 */
         .sponsorFpContents li.sponsorFpType2 a{display:block; overflow:hidden; width:100%; height:100%; padding:10px 0}
         .sponsorFpContents li.sponsorFpType2 img{float:left; width:30%}
             .sponsorFpType2TxtWrap{float:left; display:block; width:70%; padding-left:10px}
@@ -1158,9 +1158,9 @@
 		.evt_menu_wrap.fixed h2 {height:auto;}
 		.evt_menu_wrap.fixed .sponsorFpH2Title {padding-bottom:8px;}
 		*/
-		
 
-		.evt_menu_wrap, 
+
+		.evt_menu_wrap,
 		.evt_menu_wrap > .inner {position:relative;}
 		.evt_menu_wrap > .inner:after{content:''; position:absolute; left:12px; top:43px; right:12px; height:1px; background-color:#d8d8d8; z-index:1;}
 		/* .evt_menu_wrap .sponsorFpH1Title {height:inherit;} */
@@ -1174,9 +1174,9 @@
 		.evt_menu_fixed .evt_menu_wrap h1 .sponsorFpH1Title {overflow:visible; height:43px; background:#fff;}
 		.evt_menu_fixed .evt_menu_wrap h2 {height:50px; background:#fff;}
 		/* .evt_menu_fixed .evt_menu_wrap h1 .active a {color:red !important;} fixed 테스트용 */
-		
+
         /* E > 이벤트 카테고리 (이벤트 유닛) */
-    
+
         /* S > 광고 유닛 */
         .eventBannerWrap{position:relative; height:59px}
         .eventBannerWrap a{display:block; text-align:center}
@@ -1221,7 +1221,7 @@
                 .popTabContent{overflow:auto; height:214px; padding:0; -webkit-overflow-scrolling:touch}
                 .popTabContent li{float:left; width:100%; padding:0 16px; border-bottom:1px solid #d8d8d8}
                 .popTabContent li.noData{text-align:center; color:#6a6f77; line-height:40px}
-                .popTabContent li a{float:left; display:block; width:100%; font-size:14px; line-height:40px}                
+                .popTabContent li a{float:left; display:block; width:100%; font-size:14px; line-height:40px}
                 .popTabContent li span{float:left; margin-left:5px; margin-top:10px; padding:3px 8px; font-size:10px; color:#666; line-height:12px; border:1px solid #666; border-radius:10px}
 
         .popEventBannerListWrap{overflow:auto; position:fixed; left:0; top:150%; width:100%; height:100%; background-color:transparent; z-index:9; -webkit-overflow-scrolling:touch}
@@ -1239,7 +1239,7 @@
         .popEventBannerListWrap .popLayerContainer li a img{position:absolute; top:0; bottom:0; left:0; right:0; width:100%; margin:auto}
         .popEventBannerListWrap .popLayerContainer li a span{position:absolute; top:35%; width:100%; padding:0 28px; font-weight:bold; font-size:22px; color:#fff; line-height:28px; text-align:left; z-index:2}
 
-            
+
             .btnEventBannerNext{position:absolute; right:0; top:50%; width:28px; height:28px; margin-top:-14px; background-position:-123px -44px; z-index:8}
 
 
@@ -1312,7 +1312,7 @@
                         .hotdeal_time_remaining{display:block; overflow:hidden; position:absolute; right:8px; top:8px; min-width:83px; height:28px; padding:5px 10px; color:#fff; line-height:28px; text-align:center; background-color:rgba(0, 0, 0, 0.4); border-radius:14px; border:1px solid #fff; z-index:2}
                             .hotdeal_dday{float:left; margin-right:7px; font-weight:400; font-size:15px; color:#ffecc9; line-height:15px}
                             .hotdeal_dday:before{content:'D - '; line-height:15px}
-            
+
                             .hotdeal_count{float:left; overflow:hidden; font-weight:600; font-size:0; line-height:0; color:#fff;padding:0 2px}
                             .hotdeal_count > span{display:inline-block; position:relative; top:0; font-size:15px; line-height:16px}
                             .hotdeal_count > .hour00,
@@ -1331,7 +1331,7 @@
                             .hotdeal_count .min0:after{content:attr(data-min0)}
                             .hotdeal_count .sec00:after{content:attr(data-sec00)}
                             .hotdeal_count .sec0:after{content:attr(data-sec0)}
-            
+
                         .hotdeal_rest_items{display:block; position:absolute; bottom:9px; left:12px; font-weight:400; font-size:11px; color:#9197a3; line-height:13px; /*visibility:hidden*/}
                             .hotdeal_rest_items:after{content:'개 남음'}
 
@@ -1382,7 +1382,7 @@
                 .eventBannerList .swiper-slide > span img{position:absolute; top:0; bottom:0; left:0; right:0; width:100%; margin:auto}
                 .eventBannerList .swiper-slide a span,
                 .eventBannerList .swiper-slide > span span{position:absolute; top:35%; width:100%; padding:0 28px; font-weight:bold; font-size:22px; color:#fff; line-height:28px; text-align:left; z-index:2}
-            
+
             .btnEventBannerNext{display:none; position:absolute; right:0; top:calc(50% - 14px); width:28px; height:28px; background-position:-123px -44px; z-index:8}
 
             .eventBannerControlWrap{display:none; overflow:hidden; position:absolute; right:0; bottom:0; z-index:9}
@@ -1450,7 +1450,7 @@
     /* S > MY */
         /* S > 프로필 영역 */
         .myProfileSet{overflow:hidden; position:relative; padding:27px 12px; background:#373e46;}
-		/* 		
+		/*
 		.myProfileSet.on {background:#fff;}
 		.myProfileSet.on .myProfileTxtWrap .myProfileName {color:#000;}
 		*/
@@ -1468,7 +1468,7 @@
             .myEventBannerWrap:before{display:block; width:36px; height:26px; background-position:left -100px}
             .myEventBannerWrap .eventBannerCnt{overflow:hidden; position:absolute; right:-9px; top:-9px; width:20px; height:20px; margin-left:5px; font-weight:600; font-size:11px; color:#fff; line-height:20px; text-align:center; vertical-align:middle; background-color:#fc5c4f; border-radius:10px}
             .myProfileSet .btn_employees{position: absolute;line-height:28px; text-align:center; border:1px solid #9599a0; border-radius:15px;color:#fff;font-size:12px;padding:0 16px 0 10px;right:12px;top:50%;transform: translateY(-50%);letter-spacing: -0.4px}
-            .myProfileSet .btn_employees:after{content:'';position: absolute;width:0px; height:0px; border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:3px solid #fff;top:50%;right:8px;transform: translateY(-50%)}            
+            .myProfileSet .btn_employees:after{content:'';position: absolute;width:0px; height:0px; border-top:3px solid transparent;border-bottom:3px solid transparent;border-left:3px solid #fff;top:50%;right:8px;transform: translateY(-50%)}
         /* E > 프로필 영역 */
         /* E > 모바일티켓 영역 */
 /*
@@ -1485,7 +1485,7 @@
         /* S > 인포그래픽 영역 */
         .infoGraphicWrap{}
             .chartWrap{overflow:auto; position:relative; margin:8px 0 0; padding-bottom:12px; text-align:center; ; -webkit-overflow-scrolling:touch}
-                
+
                 .lineChart{max-height:100px}
                 .chartUserWrap{position:absolute; left:20px; bottom:25px; width:calc(100% - 40px); height:95px}
                     .chartUser{position:absolute; left:0; bottom:0; display:block; width:22px; height:22px; margin-left:-11px; margin-bottom:17px; border:2px solid #ff9100; border-radius:11px}
@@ -1517,7 +1517,7 @@
                 .barChart li.on .barChartCnt{color:#000}
                 .barChart li.on .barChartDate span{color:#000; /*text-shadow: 1px 1px #000*/}
                 .barChart li.on .barChartDate .barChartGraph{background:linear-gradient(#fbda61, #f76b1c)}
-                
+
         /* E > 인포그래픽 영역 */
 
         /* S > 포인트/등급 정보 노출&CJ ONE 포인트 */
@@ -1542,9 +1542,9 @@
                 .btnRiseRating.v2{display:block; width:45%; margin:0 auto; padding:6px 14px 14px 14px; font-weight:600;border:none;text-decoration: underline;}
         /* E > 포인트/등급 정보 노출&CJ ONE 포인트 */
 
-        /* S > 포인트 적립 레이어 팝업 */        
+        /* S > 포인트 적립 레이어 팝업 */
         .popEarnPointsWrap{display:none; overflow:auto; position:fixed; left:11%; top:50%; width:78%; margin:-76px auto 0; text-align:center; background-color:#fff; border-radius:6px; z-index:9; -webkit-overflow-scrolling:touch}
-        
+
         .popEarnPointsWrap li a{display:block; position:relative; padding:30px 0; font-weight:400; font-size:16px; color:#000}
         .popEarnPointsWrap li a:before{content:''; display:block; position:absolute; left:8%; top:0; width:84%; height:1px; background-color:#9197a3}
         .popEarnPointsWrap li:first-child a:before{content:none}
@@ -1561,9 +1561,9 @@
         .popVIPPointWrap .popLayerContainer li dt:first-child{margin-top:0}
         .popVIPPointWrap .popLayerContainer li dt:before{content:''; position:absolute; left:0; top:5px; width:4px; height:4px; background-color:#333; border-radius:2px}
         .popVIPPointWrap .popLayerContainer li dd{padding-left:7px; font-weight:400; font-size:12px; letter-spacing:-0.5px; line-height:1.4em}
-        
+
         .popVIPPointWrap .popLayerContainer li:first-child{border-bottom:1px solid #f4f3ef}
-        .popVIPPointWrap .popLayerContainer li:first-child dt{padding-left:0}        
+        .popVIPPointWrap .popLayerContainer li:first-child dt{padding-left:0}
         .popVIPPointWrap .popLayerContainer li:first-child dt:before{content:none}
         .popVIPPointWrap .popLayerContainer li:first-child dd{padding-left:0}
 
@@ -1571,7 +1571,7 @@
 
         .popVIPPointWrap .popLayerContainer li p{margin-top:20px; font-weight:400; font-size:12px; line-height:1.4em}
 
-        /* E > VIP선정 포인트 팝업 */        
+        /* E > VIP선정 포인트 팝업 */
     /* E > MY */
 
 
@@ -1604,11 +1604,11 @@
         .fastOrder_main_banner_list li.typeNowOrder .typeNowOrderContent .typeNowOrderInfo{position:absolute; left:13px; bottom:13px; line-height:17px; text-align:left}
         .fastOrder_main_banner_list li.typeNowOrder .typeNowOrderContent .typeNowOrderInfo strong{display:inline-block; font-weight:500; font-size:13px; color:var(--watermelon); line-height:17px}
         .fastOrder_main_banner_list li.typeNowOrder .typeNowOrderContent .typeNowOrderInfo span{padding-left:4px}
-        
+
         .fastOrder_main_banner_list li.typeNowOrder .btn_changeCinema{display:block; width:36px; height:36px; position:absolute; right:8px; top:8px; width:36px; height:36px; font-size:0; background:transparent url('./../images/main/bg_changeCinema.png') center center scroll no-repeat; background-size:24px 24px; z-index:5}
         .fastOrder_main_banner_list li.typeNowOrder .btn_changeCinema:after{content:'변경'; width:100%; position:absolute; bottom:-10px; left:0; font-weight:600; font-size:10px; color:var(--warmGrey); line-height:12px; text-align:center}
         .fastOrder_main_banner_list li.typeNowOrder .btn_nowOrder{display:block; position:absolute; left:0; bottom:0; width:100%; padding:12px 0; font-weight:600; font-size:15px; color:#fff; line-height:19px; text-align:center; background-color:var(--watermelon); border-radius:20px 0 20px 20px; z-index:2}
-        
+
 
 
     /* E > 패스트오더 */
@@ -1624,7 +1624,7 @@
     .bx-stop,
     .btnVideoAdPlay:after,
     .btnVideoAdMore:before,
-    .btnBannerMore:before,    
+    .btnBannerMore:before,
     /*.comMenuUnitWrap ul.menuUnit li.newIcon a:after,*/
     .cgvMovieChartWrap .btnFirstMove:after,
     .cgvMovieChartContent > li.cgvMovieChartBtnMore div a:before,
@@ -1641,7 +1641,7 @@
     .sprite,
     .bx-next,
     .bx-start,
-    .bx-stop,    
+    .bx-stop,
     .btnVideoAdPlay:after,
     .btnVideoAdMore:before,
     .btnBannerMore:before,
@@ -1661,7 +1661,7 @@
     .sprite,
     .bx-next,
     .bx-start,
-    .bx-stop,    
+    .bx-stop,
     .btnVideoAdPlay:after,
     .btnVideoAdMore:before,
     .btnBannerMore:before,
@@ -1699,7 +1699,7 @@
 .msg_member_coupon > div{position: relative;text-align: center;box-sizing: border-box;transition: all .4s ease-in;}
 .msg_member_coupon > div.off{display: none;height:0}
 .msg_member_coupon > div.on{display: block;height:auto}
-.msg_member_coupon img{display: block;width: auto!important;height: 90px!important;margin: 0 auto}    
+.msg_member_coupon img{display: block;width: auto!important;height: 90px!important;margin: 0 auto}
 .msg_member_coupon p{font-size:15px;font-weight: 500;width: 100%;line-height:18px;text-align: center;letter-spacing: -0.5px;box-sizing: border-box;padding:0 12px}
 .msg_member_coupon p em{font-style:normal;font-weight: 600;display: inline-block;max-width: 100px; text-overflow: ellipsis;white-space: nowrap;overflow: hidden;vertical-align: top;line-height: 18px;}
 .msg_member_coupon p span{font-style:normal;font-weight: 600;}
@@ -1707,4 +1707,4 @@
 .msg_member_coupon .btn_coupon_down_wrap{position: relative;display: block;left: 0;top:0;width: 100%;height: 100%;padding:0 0 24px 0}
 .msg_member_coupon .btn_close_msg_cpn{font-size: 0;text-indent: -99999em;position: absolute;right:7px;top:7px;width: 18px;height: 18px;z-index: 10;}
 .msg_member_coupon .btn_close_msg_cpn:before{position: absolute;top:0;left:8px;display: block;content: '';height: 18px; width: 1px;border-radius: 4px;;background: #000;transform: rotate(45deg)}
-.msg_member_coupon .btn_close_msg_cpn:after{position: absolute;top:0;left:8px;display: block;content: '';height: 18px; width: 1px;border-radius: 4px;;background: #000;transform: rotate(-45deg)} 
+.msg_member_coupon .btn_close_msg_cpn:after{position: absolute;top:0;left:8px;display: block;content: '';height: 18px; width: 1px;border-radius: 4px;;background: #000;transform: rotate(-45deg)}
