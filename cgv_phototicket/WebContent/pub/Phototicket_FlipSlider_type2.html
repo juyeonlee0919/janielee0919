@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 -->
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <!-- [E] 운영소스 상속용 -->
+</head>
+<body class="bg_white">
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+<div class="wrap">
+<!--    <img src="../images/phototicket/temp/printed2.png" style="width: 375px; opacity:.5; z-index: 11; position: absolute; top: -23px;" alt="">-->
+    <!-- [S] Content -->
+    <section class="content_wrap container photo_ticket" id="ContainerView">
+        <div class="pop_header">
+            <a class="btn_share" href="javascript:void(0);">
+                <i class="sprite sprite-pt sprite-icShare"></i>
+            </a>
+            <!--
+             날짜 : 20.04.23
+             작성자 : 이주연
+             내용 :  클래스 badge_blue / badge_red 두 타입
+             -->
+            <div>
+                <p class="badge badge_blue">
+                    <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>
+                </p>
+            </div>
+                <a class="btn_close btnPopClose" href="javascript:void(0);">
+                    <i class="sprite sprite-pt sprite-icClose"></i>
+                </a>
+        </div>
+        <!-- [S] 플립 슬라이더 -->
+        <!-- tip 클래스 유무, 분기 처리 필요 -->
+        <article class="myPhtoticketFlip">
+            <div class="title_area">
+                <span class="title">다크워터스(2D)</span>
+                <span class="title-sm">예매번호 : 001-0000-0000-002</span>
+                <!-- 광주충장로 점일 때 -->
+                <!-- <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>-->
+            </div>
+            <div class="swiper-container ">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="flip-container">
+                            <div class="flipper">
+                                <div class="front">
+                                    <div class="dim"></div>
+                                    <div class="inner">
+                                        <img src="../images/phototicket/main/sample.png"
+                                             alt="">
+                                        <label>
+                                            <input value="1" name="group1" type='checkbox'/>
+                                            <span></span>
+                                        </label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="inner">
+                                        <p class="title">IMAX 2D(인생영화 기획전)<span class="rating"><i class="icon_rating icon_12"></i></span></p>
+                                        <p class="title_lg">날씨의 아이(인생영화기획전)</p>
+                                        <p class="title_sm">(IMAX 2D) Weathering With You</p>
+                                        <ul class="info">
+                                            <li class="bar"><span>CGV왕십리</span><span>2020. 03. 29(일)</span></li>
+                                            <li class="bar"><span>6회</span><span>21:45(오후) ~ 23:47(오후)</span></li>
+                                            <li>IMAX관</li>
+                                            <li><span>일반 3명</span></li>
+                                        </ul>
+                                        <div class="bg_grey">
+                                            <p class="number">예매번호 : <span>2020-0000-0000-0000</span></p>
+                                            <p class="text">이포토티켓으로는 입장하실 수 없습니다.<br/>
+                                                모바일 티켓 혹은 예매번호로 티켓을 추력 후<br/>
+                                                입장해주세요.</p>
+                                        </div>
+                                        <div class="sign">
+                                            <p class="lg">CURTUREPLEX CGV</p>
+                                            <p class="sm">© CJ CGV. All rights reserved.</p>
+                                        </div>
+                                        <label>
+                                            <input value="1" name="group1" type='checkbox'/>
+                                            <span></span>
+                                        </label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flip-container active">
+                            <div class="flipper">
+                                <div class="front">
+                                    <div class="dim"></div>
+                                    <div class="inner">
+                                        <img src="../images/phototicket/main/sample.png"
+                                             alt="">
+                                        <label>
+                                            <input value="1" name="group2" type='checkbox'/>
+                                            <span></span>
+                                        </label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="inner">
+                                        <p class="title">IMAX 2D(인생영화 기획전)<span class="rating"><i class="icon_rating icon_15"></i></span></p>
+                                        <p class="title_lg">날씨의 아이(인생영화기획전)</p>
+                                        <p class="title_sm">(IMAX 2D) Weathering With You</p>
+                                        <ul class="info">
+                                            <li class="bar"><span>CGV왕십리</span><span>2020. 03. 29(일)</span></li>
+                                            <li class="bar"><span>6회</span><span>21:45(오후) ~ 23:47(오후)</span></li>
+                                            <li>IMAX관</li>
+                                            <li><span>일반 3명</span></li>
+                                        </ul>
+                                        <div class="bg_grey">
+                                            <p class="number">예매번호 : <span>2020-0000-0000-0000</span></p>
+                                            <p class="text">이포토티켓으로는 입장하실 수 없습니다.<br/>
+                                                모바일 티켓 혹은 예매번호로 티켓을 추력 후<br/>
+                                                입장해주세요.</p>
+                                        </div>
+                                        <div class="sign">
+                                            <p class="lg">CURTUREPLEX CGV</p>
+                                            <p class="sm">© CJ CGV. All rights reserved.</p>
+                                        </div>
+                                        <label>
+                                            <input value="1" name="group2" type='checkbox'/>
+                                            <span></span>
+                                        </label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flip-container active">
+                            <div class="flipper">
+                                <div class="front">
+                                    <div class="dim"></div>
+                                    <div class="inner">
+                                        <img src="../images/phototicket/main/sample.png"
+                                             alt="">
+                                        <label>
+                                            <input value="1" name="group3" type='checkbox'/>
+                                            <span></span>
+                                        </label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                                <div class="back">
+                                    <div class="inner">
+                                        <p class="title">IMAX 2D(인생영화 기획전)<span class="rating"><i class="icon_rating icon_19"></i></span></p>
+                                        <p class="title_lg">날씨의 아이(인생영화기획전)</p>
+                                        <p class="title_sm">(IMAX 2D) Weathering With You</p>
+                                        <ul class="info">
+                                            <li class="bar"><span>CGV왕십리</span><span>2020. 03. 29(일)</span></li>
+                                            <li class="bar"><span>6회</span><span>21:45(오후) ~ 23:47(오후)</span></li>
+                                            <li>IMAX관</li>
+                                            <li><span>일반 3명</span></li>
+                                        </ul>
+                                        <div class="bg_grey">
+                                            <p class="number">예매번호 : <span>2020-0000-0000-0000</span></p>
+                                            <p class="text">이포토티켓으로는 입장하실 수 없습니다.<br/>
+                                                모바일 티켓 혹은 예매번호로 티켓을 추력 후<br/>
+                                                입장해주세요.</p>
+                                        </div>
+                                        <div class="sign">
+                                            <p class="lg">CURTUREPLEX CGV</p>
+                                            <p class="sm">© CJ CGV. All rights reserved.</p>
+                                        </div>
+                                        <label>
+                                            <input value="1" name="group3" type='checkbox'/>
+                                            <span></span>
+                                        </label>
+                                        <a class="btn-flip _flip" href="javascript:void(0)"><i
+                                                class="sprite sprite-pt sprite-icCardRotation"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="btn_area">
+                <div class="inner">
+                    <p class="text-lg">포토티켓 제작이 완료되었습니다.</p>
+                    <p class="text-sm">티켓판매기에서 예매번호 혹은<br/>
+                        생년월일+휴대폰번호를 입력하여 출력해주세요</p>
+                    <div>
+                        <a class="btn-outline-red" href="javascript:void(0);">자랑하기</a>
+                        <a class="btn-grey" href="javascript:void(0);">결제취소</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- [E] 플립 슬라이더 -->
+    </section>
+    <!-- [E] Content -->
+</div>
+<!--
+    2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+-->
+<!--
+    2020.04.20
+    작성자 : 이주연
+    내용 : <script> var screenId = "PT003";</script> 추가
+-->
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script> var screenId = "PT003";</script>
+<script type="text/javascript" src="../js/phototicket.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+<!--  [E] 2020.04.20	-->
+</body>
+</html>

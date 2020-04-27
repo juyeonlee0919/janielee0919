@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 -->
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <!-- [E] 운영소스 상속용 -->
+
+</head>
+<body class="bg_white">
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+<div class="wrap">
+
+    <!-- [S] Content -->
+
+    <section class="content_wrap container photo_ticket" id="ContainerView">
+        <button class="button button--moema"><i class="sprite sprite-pt sprite-icBoastSel"></i>자랑하기</button>
+    </section>
+    <!-- [E] Content -->
+    <style>
+        .button--moema > i {display: inline-block;position: absolute;left: 27px;top: 10px;}
+        .button--moema {
+            position: relative;
+            display: inline-block;
+            width: 135px;
+            height: 44px;
+            border-radius: 22px;
+            line-height: 42px;
+            font-size: 16px;
+            border: 1px solid var(--watermelon);
+            color: var(--watermelon);
+            font-weight: bold;
+            letter-spacing: -2px;
+            padding-left: 21px;
+            background-color: #ffffff;
+            -webkit-transition: background-color 0.3s, color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .button--moema.button--inverted {
+            background: #ECEFF1;
+            color: #37474f;
+        }
+        .button--moema.active {
+            -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+            transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+            color: #ffffff;
+            background-color: var(--watermelon);
+            -webkit-animation: anim-moema-1 0.3s forwards;
+            animation: anim-moema-1 0.3s forwards;
+        }
+        .button--moema.active i {
+            background-position: -80px -59px !important;
+        }
+        .button--moema.button--inverted.active {
+            color: #ECEFF1;
+            background-color: #7986cb;
+        }
+        .button--moema.active::before {
+            -webkit-animation: anim-moema-2 0.3s 0.3s forwards;
+            animation: anim-moema-2 0.3s 0.3s forwards;
+        }
+        @-webkit-keyframes anim-moema-1 {
+            60% {
+                -webkit-transform: scale3d(0.8, 0.8, 1);
+                transform: scale3d(0.8, 0.8, 1);
+            }
+            85% {
+                -webkit-transform: scale3d(1.1, 1.1, 1);
+                transform: scale3d(1.1, 1.1, 1);
+            }
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+
+</div>
+<!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.button--moema').on('click',function () {
+            $('.button--moema').hasClass('active') ? $('.button--moema').removeClass('active').text('자랑취소') : $('.button--moema').addClass('active').text('자랑하기');
+            if($('.button--moema').children().hasClass('sprite-icBoastSel')) {
+                // $('.button--moema').children().removeClass('sprite-icBoastNor').addClass('sprite-icBoastSel');
+                // $('.button--moema').text('자랑취소');
+                // $('.button--moema').html(`<i class="sprite sprite-pt sprite-icBoastSel"></i>`+'자랑취소');
+            } else {
+                // $('.button--moema').children().removeClass('sprite-icBoastSel').addClass('sprite-icBoastNor');
+                // $('.button--moema').text('자랑하기');
+                // $('.button--moema').html(`<i class="sprite sprite-pt sprite-icBoastNor"></i>`+'자랑하기');
+            }
+        })
+    })
+</script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/phototicket.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css">
+<link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+<link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+<!--  [E] 2020.04.20	-->
+</body>
+</html>
