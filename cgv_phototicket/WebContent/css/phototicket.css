@@ -10,7 +10,7 @@
 .photo_ticket .btn_grey {position: relative; width: 115px; height: 34px; margin: 0 auto;display: block;border-radius: 18px;color: #999999;background-color: #ffffff;font-size: 14px;text-align: center;line-height: 32px;border: 1px solid #eeeeee;padding: 0;}
 .sprite.sprite-pt{content:''; background-image:url('../images/phototicket/common/phototicket@2x.png'); background-repeat: no-repeat; display: block; background-size: 200px;}
 .photo_ticket .btn-outline-red {display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 42px; font-size: 16px; border: 1px solid var(--watermelon); color: var(--watermelon); font-weight: bold; letter-spacing: -2px; background-color: #ffffff;}
-.photo_ticket .btn-red { display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 44px; font-size: 16px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -2px;}
+.photo_ticket .btn-red { display: inline-block; width: 135px; height: 44px; border-radius:22px; line-height: 44px; font-size: 16px; background-color: var(--watermelon); border: 1px solid var(--watermelon); color: #ffffff; font-weight: bold; letter-spacing: -.5px;}
 .photo_ticket .btn-red.disabled { background-color: rgba(251,61,87,.5); border: 0;}
 .photo_ticket .btn-red.btn-lg { width: 165px; height: 50px; line-height: 48px;border-radius: 25px;font-size: 18px}
 .photo_ticket .btn-grey { display: inline-block; width: 135px; height: 44px; line-height: 42px; font-size: 16px; background-color: #bebebe; border-radius: 22px;  color: #ffffff; font-weight: bold; letter-spacing: -2px;border: 1px solid #bebebe}
@@ -21,28 +21,38 @@
 .photo_ticket .btn-badge-grey .dday::after {content:''; position: absolute; height: 12px; border-right: 1px solid rgb(165,165,165); top: 2px; right: 4px;}
 .content_wrap.photo_ticket .cancel_area { padding-top: 2px !important; }
 .content_wrap.photo_ticket .cancel_area .btn-cancel { display: inline-block; padding-bottom: 2px; font-size: 13px; color: rgb(118,118,118);font-weight: 500; letter-spacing: -2px; border-bottom: 1px solid rgb(202,202,202)}
-
-
+/*  [S] btn-toggle   */
+.btn-toggle {display:inline-block;position: absolute;left: -30px;top: -28px;}
+.btn-toggle .outline {
+	stroke: #efefef;
+}
+.btn-toggle .check {
+	stroke: #c6c6c6;
+}
+.btn-toggle.active .outline {
+	transform: rotate(0deg);
+	transform-origin: center;
+	stroke: #fb4357;
+}
+.btn-toggle.active .white-circle {
+	animation: .15s ease-in .15s forwards circle;
+	transform: none;
+	transform-origin: center;
+}
+.btn-toggle.active .check {
+	animation: .10s cubic-bezier(0.65, 0, 1, 1) .5s forwards check;
+	stroke-dasharray: 0, 75px;
+	stroke: #ffffff;
+}
+.btn-toggle.active .check-group {
+	animation: .10s ease-in-out check-group;
+	transform-origin: center;
+}
+/*  [E] btn-toggle   */
 .btn-outline-red {position: relative}
-.btn-outline-red i {
-	display: inline-block;
-	position: absolute;
-	left: 27px;
-	top: 10px;
-	animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1)
-}
-.btn-outline-red.active i {
-	animation: expand-bounce 200ms cubic-bezier(.4,.0,.23,1)
-}
+.btn-outline-red i {display: inline-block;position: absolute;left: 27px;top: 10px;}
 .btn-red {position: relative;}
-.btn-red.active i {animation: expand-bounce 200ms cubic-bezier(.4,.0,.23,1);}
-.btn-red i {
-	display: inline-block;
-	position: absolute;
-	left: 27px;
-	top: 10px;
-	animation: shrink-bounce 200ms cubic-bezier(.4,.0,.23,1)
-}
+.btn-red i {display: inline-block;position: absolute;left: 27px;top: 10px;}
 /* [E]포토티켓 공통 */
 
 /* [S]팝업 공통 */
@@ -346,6 +356,7 @@
 .myPhtoticketFlip .back .inner .bg_grey .text {text-align: center; color:#555555; font-size: 10px; font-weight: bold; line-height: 13px; letter-spacing: -1px;}
 .myPhtoticketFlip .back .inner .sign .lg {text-align: center; font-size: 13px; font-weight: bold; line-height: 16px; letter-spacing: -.54px;}
 .myPhtoticketFlip .back .inner .sign .sm {text-align: center; color:#898989; font-size: 10px; line-height: 11px;}
+.myPhtoticketFlip .back .inner .btn-toggle {top: -56px;}
 .myPhtoticketFlip .flip-container.active .flipper {transform: rotateY(180deg);}
 
 	/*  포토티켓 플립 슬라이더 - pagination  */
@@ -394,7 +405,8 @@
  .myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 15px;}
  .myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
  .myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
- .myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 32px 18px 20px 18px;}
+ .myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 24px 18px 20px 18px;}
+ .myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -39px;left: -36px; }
  .myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide { margin-bottom: 15px;}
 	/* [E] CGV광주충정로 점일 경우  */
 
@@ -492,6 +504,7 @@
 .popMyPhototicket .popLayerHeader .btn_close { top: 11px; right: 7px;}
 .popMyPhototicket .popLayerHeader .name { padding-left: 20px;letter-spacing: -2px; }
 .popMyPhototicket .popLayerContainer .btn_area { margin-top: 0 }
+.popMyPhototicket .popLayerContainer .btn-red {padding-left: 22px;font-weight: 600;  box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);}
 
 /* [E] 내가 자랑한 포토티켓 */
 
@@ -501,6 +514,7 @@
 .popOtherPhototicket .popLayerHeader .btn_close { top: 9px;}
 .popOtherPhototicket .popLayerHeader .name { padding-left: 20px;letter-spacing: -2px }
 .popOtherPhototicket .popLayerContainer .btn_area { margin-top: 0 }
+.popOtherPhototicket .popLayerContainer .btn-red { padding-left: 22px;font-weight: 600;box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5) }
 .popOtherPhototicket .popLayerContainer .myPhtoticketFlip.onlyPhoto .front { width: 287px; height: 440px; }
 .popOtherPhototicket .popLayerContainer .myPhtoticketFlip .btn_area .inner > div { padding-top: 24px; }
 /* [E] 다른 사람이 자랑한 포토티켓 */
@@ -522,11 +536,24 @@
 	.myPhtoticketFlip .back {width: 262px;height: 398px;}
 	.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -2px;}
 }
-
 @media only screen and (min-width: 375px) {
 	.cgvMovieChartWrap .btnFirstMove {top: 185px;}
 }
 
+.sprite-icBtnLikeNorLarge.active {
+	-webkit-animation-duration: 0.55s;
+	animation-duration: 0.55s;
+	-webkit-animation-name: bounceIn;
+	animation-name: bounceIn;
+}
+.icon-heart.active {
+}
+.btn-red.active path{
+	-webkit-animation-duration: 0.55s;
+	animation-duration: 0.55s;
+	animation-name: bounceIn;
+	fill: #ffffff;
+}
 
 @keyframes shrink-bounce{
 	0%{
@@ -588,5 +615,95 @@
 		height: 18px;
 		border-color: #c6c6c6;
 		transform: translate3d(0,-.8em,0) rotate(45deg);
+	}
+}
+@keyframes circle {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(0);
+	}
+}
+@keyframes check {
+	from {
+		stroke-dasharray: 0, 75px;
+	}
+	to {
+		stroke-dasharray: 75px, 75px;
+	}
+}
+@keyframes check-group {
+	from {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.09);
+	}
+	to {
+		transform: scale(1);
+	}
+}
+@keyframes bounceIn {
+	from,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+
+	0% {
+		opacity: 0;
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+
+	20% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+
+	40% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+
+	60% {
+		opacity: 1;
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+
+	80% {
+		-webkit-transform: scale3d(0.97, 0.97, 0.97);
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+}
+@keyframes zoomIn {
+	from {
+		opacity: 0;
+		-webkit-transform: scale3d(1, 1, 1);
+		transform: scale3d(1, 1, 1);
+	}
+	50% {
+		width: 30px;
+		opacity: .5;
+		left: 10px;
+		transform: scale3d(.5, 2, 1);
+		fill: #ffffff;
+	}
+	100% {
+		fill: #ffffff;
+		transform: scale3d(1, 1, 1);
+		opacity: 1;
 	}
 }

@@ -54,6 +54,9 @@
                 jQuery('#headerTitle').siblings('#siteMap').hide();
                 dimed();
             }
+             $('.btn-toggle').on('click',function () {
+                 $(this).toggleClass('active');
+             })
 
             popLayerShowHide("icon_share", "popShare", "popFogBg");
             $('.popFogBg').on({

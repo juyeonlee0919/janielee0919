@@ -69,67 +69,111 @@
     <!-- [S] Content -->
 
     <section class="content_wrap container photo_ticket" id="ContainerView">
-        <button class="button button--moema"><i class="sprite sprite-pt sprite-icBoastSel"></i>자랑하기</button>
+        <button class="button button--wapasha _click" style="margin-right: 20px;">자랑하기</button>
+        <button class="button button--ujarak _click">Publish</button>
+<!--        <button class="button button&#45;&#45;moema"><i class="sprite sprite-pt sprite-icBoastSel"></i>자랑하기</button>-->
     </section>
     <!-- [E] Content -->
     <style>
-        .button--moema > i {display: inline-block;position: absolute;left: 27px;top: 10px;}
-        .button--moema {
-            position: relative;
-            display: inline-block;
+        .button {
+            float: left;
             width: 135px;
-            height: 44px;
-            border-radius: 22px;
-            line-height: 42px;
+            height: 50px;
+            line-height: 49px;
+            display: inline-block;
+            border: none;
+            background: var(--watermelon);
+            color: #ffffff;
+            vertical-align: middle;
+            position: relative;
+            z-index: 1;
             font-size: 16px;
-            border: 1px solid var(--watermelon);
-            color: var(--watermelon);
-            font-weight: bold;
-            letter-spacing: -2px;
-            padding-left: 21px;
-            background-color: #ffffff;
+            border-radius: 22px;
+            -webkit-backface-visibility: hidden;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .button:focus {
+            outline: none;
+        }
+        /* Wapasha */
+        .button.button--wapasha {
+            background: var(--watermelon);
+            color: #fff;
             -webkit-transition: background-color 0.3s, color 0.3s;
             transition: background-color 0.3s, color 0.3s;
         }
-        .button--moema.button--inverted {
-            background: #ECEFF1;
-            color: #37474f;
+        .button--wapasha::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 135px;
+            height: 48px;
+            line-height: 46px;
+            border: 2px solid var(--watermelon);
+            z-index: -1;
+            border-radius: 22px;
+            opacity: 0;
+            -webkit-transform: scale3d(0.6, 0.6, 1);
+            transform: scale3d(0.6, 0.6, 1);
+            -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+            transition: transform 0.3s, opacity 0.3s;
+            -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
+            transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
         }
-        .button--moema.active {
-            -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
-            transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
-            color: #ffffff;
-            background-color: var(--watermelon);
-            -webkit-animation: anim-moema-1 0.3s forwards;
-            animation: anim-moema-1 0.3s forwards;
+        .button--wapasha.active {
+            background-color: #fff;
+            color: var(--watermelon);
         }
-        .button--moema.active i {
-            background-position: -80px -59px !important;
+        .button--wapasha.active::before {
+            -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+            opacity: 1;
+            border-radius: 30px;
         }
-        .button--moema.button--inverted.active {
-            color: #ECEFF1;
-            background-color: #7986cb;
+
+    </style>
+    <style>
+        /* Ujarak */
+        .button--ujarak {
+            -webkit-transition: border-color 0.4s, color 0.4s;
+            transition: border-color 0.4s, color 0.4s;
         }
-        .button--moema.active::before {
-            -webkit-animation: anim-moema-2 0.3s 0.3s forwards;
-            animation: anim-moema-2 0.3s 0.3s forwards;
+        .button--ujarak::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 135px;
+            height: 50px;
+            background: #ffffff;
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            border: 1px solid;
+            box-sizing: content-box;
+            -webkit-transform: scale3d(0.7, 1, 1);
+            transform: scale3d(0.7, 1, 1);
+            -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+            transition: transform 0.4s, opacity 0.4s;
+            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
         }
-        @-webkit-keyframes anim-moema-1 {
-            60% {
-                -webkit-transform: scale3d(0.8, 0.8, 1);
-                transform: scale3d(0.8, 0.8, 1);
-            }
-            85% {
-                -webkit-transform: scale3d(1.1, 1.1, 1);
-                transform: scale3d(1.1, 1.1, 1);
-            }
-            100% {
-                -webkit-transform: scale3d(1, 1, 1);
-                transform: scale3d(1, 1, 1);
-            }
+        .button--ujarak,
+        .button--ujarak::before {
+            -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+            transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .button--ujarak.active {
+            color: var(--watermelon);
+            border-color: var(--watermelon);
+        }
+        .button--ujarak.active::before {
+            opacity: 1;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
         }
     </style>
-
 </div>
 <!--
     [S] 2020.04.20
@@ -137,22 +181,6 @@
     내용 : 포토티켓 추가
     -->
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.button--moema').on('click',function () {
-            $('.button--moema').hasClass('active') ? $('.button--moema').removeClass('active').text('자랑취소') : $('.button--moema').addClass('active').text('자랑하기');
-            if($('.button--moema').children().hasClass('sprite-icBoastSel')) {
-                // $('.button--moema').children().removeClass('sprite-icBoastNor').addClass('sprite-icBoastSel');
-                // $('.button--moema').text('자랑취소');
-                // $('.button--moema').html(`<i class="sprite sprite-pt sprite-icBoastSel"></i>`+'자랑취소');
-            } else {
-                // $('.button--moema').children().removeClass('sprite-icBoastSel').addClass('sprite-icBoastNor');
-                // $('.button--moema').text('자랑하기');
-                // $('.button--moema').html(`<i class="sprite sprite-pt sprite-icBoastNor"></i>`+'자랑하기');
-            }
-        })
-    })
-</script>
 <script type="text/javascript" src="../js/swiper.min.js"></script>
 <script type="text/javascript" src="../js/phototicket.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
