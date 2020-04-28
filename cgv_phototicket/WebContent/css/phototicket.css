@@ -149,7 +149,7 @@
 #header_box.pt_header nav.type_pt .inner a.active {color: #fb4357; border-color: #fb4357}
 #header_box.pt_header nav.type_pt .icon_search { color: #666666; border: 0; float: right; text-align: right; margin-right: 0;}
 #header_box.pt_header nav.type_pt .icon_search.active { color: #666666 !important; }
-#header_box.pt_header nav.type_pt .icon_search i {display: inline-block;position: absolute;right: 46px;top: 13px;}
+#header_box.pt_header nav.type_pt .icon_search i {display: inline-block;position: absolute;right: 51px;top: 13px;}
 /** [S]
 	날짜 : 2020.04.24
 	작성자 : 이주연
@@ -419,7 +419,7 @@
 
 /* 포토티켓 플립 슬라이더 - web */
 .myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 0 14px; }
-.myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px;}
+.myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px;margin-right: 29px;}
 
 /* [S] 포토티켓만 한개만 보여질 경우  */
 .myPhtoticketFlip.onlyPhoto { padding: 12px 0 0;} /** padding: 12px 46px 0; */
@@ -444,7 +444,7 @@
 .photo_ticket .pop_header a {line-height: 55px;}
 .photo_ticket .pop_header .btn_share {position: absolute;left: 15px;top: 9px;}
 .photo_ticket .pop_header > div {width: 100%;height: 47px;padding-top: 14px;}
-.photo_ticket .pop_header .badge {width: 219px;height: 30px;line-height: 28px;border:1px solid transparent; border-radius: 15px;color: #ffffff;margin: 0 auto;text-align: center;}
+.photo_ticket .pop_header .badge {width: 219px;height: 30px;line-height: 30px;border:1px solid transparent; border-radius: 15px;color: #ffffff;margin: 0 auto;text-align: center;}
 .photo_ticket .pop_header .badge.badge_blue {background: #209eff;}
 .photo_ticket .pop_header .badge.badge-red {background: var(--watermelon);}
 .photo_ticket .pop_header .badge.badge_grey {width: 194px; background: rgb(231,231,231);color:#222222}
@@ -1045,37 +1045,119 @@
 }
 
 /* Button style */
-/* Ripple effect */
-.ripple {
-	background-position: center;
-	transition: background 0.8s;
-}
-.ripple:active {
-	background: #ffffff radial-gradient(circle, transparent 1%, var(--watermelon) 1%) center/15000%;
-	border: 1px solid var(--watermelon);
-	color: var(--watermelon);
-}
-.ripple.active {
-	background-color: #ffffff;
-	background-size: 100%;
-	/*transition: background 0.5s;*/
-	border: 1px solid #ffffff;
-	color: #ffffff;
-}
-
-/* Button style */
-.btn-ripple {
+.md-btn {
+	font-size: 16px;
 	display: inline-block;
 	width: 135px;
 	height: 44px;
 	line-height: 44px;
-	border: none;
-	font-size: 16px;
-	font-weight: 600;
-	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
 	cursor: pointer;
-	color: white;
-	background-color: var(--watermelon);
-	outline: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 0;
+	font-weight: 600;
 	border-radius: 22px;
+	background: var(--watermelon);
+	color: #fff;
+	outline: 0;
 }
+.md-btn:hover {
+	color: #ffffff;
+ }
+/*
+ Ripple
+*/
+.md-btn-ripple.on {
+	overflow: hidden;
+	position: relative;
+	background: #ffffff;
+	color: var(--watermelon);
+	border: 1px solid var(--watermelon);
+	transition: background .2s;
+}
+
+.md-btn-ripple.on::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 7px;
+	left: 50px;
+	border-radius: 50%;
+	background: rgba(255,255,255,.8);
+	animation: md-btn-ripple 0.6s ease-out;
+	opacity: 0;
+}
+/*.md-btn-ripple2 {*/
+/*	background: #ffffff;*/
+/*	color: var(--watermelon);*/
+/*	border: 1px solid var(--watermelon);*/
+/*}*/
+/*.md-btn-ripple2:hover {*/
+/*	color: var(--watermelon);*/
+/*}*/
+.md-btn-ripple.off {
+	overflow: hidden;
+	position: relative;
+	background: var(--watermelon);
+	transition: background .5s;
+	color: #ffffff;
+	opacity: 1;
+}
+
+.md-btn-ripple.off::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	top: 7px;
+	left: 50px;
+	border-radius: 50%;
+	background: rgba(251,67,87,.8);
+	animation: md-btn-ripple2 .2s ease-out;
+	opacity: 0;
+}
+@keyframes md-btn-ripple {
+	0% {
+		transform: scale(0);
+		opacity: 1;
+	}
+	20% {
+		transform: scale(2);
+	}
+	50% {
+		 transform: scale(3);
+	 }
+	100% {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
+@keyframes md-btn-ripple2 {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+	20% {
+		transform: scale(2);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(3);
+	}
+	100% {
+		transform: scale(4);
+	}
+}
+
+
+
+
