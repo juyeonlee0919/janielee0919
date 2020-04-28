@@ -1630,9 +1630,9 @@
     .cgvMovieChartContent > li.cgvMovieChartBtnMore div a:before,
     .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,
     .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,
-    .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{background-image:url('./../../images/main/sprite@1x.png'); background-size:200px 200px}
-    .spriteBefore:before{content:''; background-image:url('./../../images/main/common/sprite@1x.png'); background-size:200px 200px}
-    .spriteAfter:after{content:''; background-image:url('./../../images/main/common/sprite@1x.png'); background-size:200px 200px}
+    .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{background-image:url('../images/main/sprite@1x.png'); background-size:200px 200px}
+    .spriteBefore:before{content:''; background-image:url('../images/main/sprite@1x.png'); background-size:200px 200px}
+    .spriteAfter:after{content:''; background-image:url('../images/main/sprite@1x.png'); background-size:200px 200px}
     .together_view_list li.comingsoon:after{content:''; background-image:url('./../../images/main/@1x/bg_comingsoon.png'); background-size:168px 65px}
     .together_view_list li.comingsoon_default{background-image:url('./../../images/main/@1x/bg_comingsoon_default.png');  background-size:240px 240px;background-repeat: no-repeat}
     .together_view_list li.soldout a:after{content:'';  background-image:url('./../../images/main/common/bg_store_soldout@1x.png'); background-size:138px 116px}
@@ -1650,9 +1650,9 @@
     .cgvMovieChartContent > li.cgvMovieChartBtnMore div a:before,
     .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,
     .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,
-    .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{background-image:url('./../../images/main/sprite@2x.png'); background-size:200px 200px}
-    .spriteBefore:before{content:''; background-image:url('./../../images/main/common/sprite@2x.png'); background-size:200px 200px}
-    .spriteAfter:after{content:''; background-image:url('./../../images/main/common/sprite@2x.png'); background-size:200px 200px}
+    .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{background-image:url('../images/main/sprite@2x.png'); background-size:200px 200px}
+    .spriteBefore:before{content:''; background-image:url('../images/main/sprite@2x.png'); background-size:200px 200px}
+    .spriteAfter:after{content:''; background-image:url('../images/main/sprite@2x.png'); background-size:200px 200px}
     .together_view_list li.comingsoon:after{content:''; background-image:url('./../../images/main/@2x/bg_comingsoon.png'); background-size:168px 65px}
     .together_view_list li.comingsoon_default{background-image:url('./../../images/main/@2x/bg_comingsoon_default.png');  background-size:240px 240px;background-repeat: no-repeat}
     .together_view_list li.soldout a:after{content:'';  background-image:url('./../../images/main/common/bg_store_soldout@2x.png'); background-size:138px 116px}
@@ -1670,9 +1670,9 @@
     .cgvMovieChartContent > li.cgvMovieChartBtnMore div a:before,
     .cgvMovieChartContent > li .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,
     .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:before,
-    .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{background-image:url('./../../images/main/sprite@3x.png'); background-size:200px 200px}
-    .spriteBefore:before{content:''; background-image:url('./../../images/main/common/sprite@3x.png'); background-size:200px 200px}
-    .spriteAfter:after{content:''; background-image:url('./../../images/main/common/sprite@3x.png'); background-size:200px 200px}
+    .onlyCGVSpecialContents > li .movieInfo .cgvMovieInfo .cgvMovieChartPer ul li.cgbMovieChartEgg span:after{background-image:url('../images/main/sprite@3x.png'); background-size:200px 200px}
+    .spriteBefore:before{content:''; background-image:url('../images/main/sprite@3x.png'); background-size:200px 200px}
+    .spriteAfter:after{content:''; background-image:url('../images/main/sprite@3x.png'); background-size:200px 200px}
     .together_view_list li.comingsoon:after{content:''; background-image:url('./../../images/main/@3x/bg_comingsoon.png');  background-size:168px 65px}
     .together_view_list li.comingsoon_default{background-image:url('./../../images/main/@3x/bg_comingsoon_default.png');  background-size:240px 240px;background-repeat: no-repeat}
     .together_view_list li.soldout a:after{content:'';  background-image:url('./../../images/main/common/bg_store_soldout@3x.png'); background-size:138px 116px}
