@@ -147,9 +147,9 @@
                 }
             });
             photoTicketSlider.translateTo(0, 1, true);
-            $(window).resize(function () {
-                location.reload();
-            });
+            // $(window).resize(function () {
+            //     location.reload();
+            // });
         },
     }
 
@@ -213,9 +213,9 @@
                 }
             });
             flipPhotoTicketSlider.translateTo(0, 500, true, true);
-            $(window).resize(function () {
-                location.reload();
-            });
+            // $(window).resize(function () {
+            //     location.reload();
+            // });
         },
     }
 
