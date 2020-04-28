@@ -26,6 +26,16 @@
                 $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
             });
 
+            // heart 이벤트
+            $('._heartclick').on('click', function() {
+                $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+            });
+
+            // 자랑하기 버튼
+            $('._btnBoast').on('click', function() {
+                $(this).hasClass('active') ? $(this).removeClass('active').text('자랑하기') : $(this).text('자랑취소').addClass('active');
+            });
+
             // 이벤트 슬라이더 - 메인 공통
             var photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
                 speed: 400,
@@ -54,9 +64,9 @@
                 jQuery('#headerTitle').siblings('#siteMap').hide();
                 dimed();
             }
-             $('.btn-toggle').on('click',function () {
-                 $(this).toggleClass('active');
-             })
+            $('.btn-toggle').on('click',function () {
+                $(this).toggleClass('active');
+            })
 
             popLayerShowHide("icon_share", "popShare", "popFogBg");
             $('.popFogBg').on({
@@ -162,7 +172,7 @@
     this._PT003 = {
         load: function () {
             // 플립 슬라이더
-            console.log('플립 슬라이더');
+            // console.log('플립 슬라이더');
             popLayerShowHide("icon_boast", "popCompleted", "popFogBg");
             $('.popFogBg').on({
                 click:function(e){
@@ -209,30 +219,62 @@
         },
     }
 
-    // this._PT004 = {
-    //     load: function () {
-    //         // console.log('4번')
-    //         popLayerShowHide('icon_popup_my','popMyPhototicket','popFogBg');
-    //         popLayerShowHide('icon_popup_other','popOtherPhototicket','popFogBg');
-    //         $('.popFogBg').on({
-    //             click:function(e){
-    //                 var $fogBg = $(e.target);
-    //                 var $popLayer;
-    //                 $fogBg.css({'display':'none'});
-    //                 popLayerBgShowHide($('popFogBg'), $popLayer, true);
-    //                 $('body').off('scroll touchmove mousewheel');
-    //             }
-    //         });
-    //     },
-    // }
+    this._PT004 = {
+        load: function () {
+            var flipPhotoTicketSlider = new Swiper('.swiper-container', {
+                speed: 400,
+                autoHeight: false,
+                direction: 'horizontal',
+                loop: false,
+                spaceBetween: 5,
+                slidesPerView: 1,
+                centeredSlides: true,
+                breakpointsInverse: false,
+                roundLengths: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+                on: {
+                    init: function () {
+                        var nWindowWidth = $(window).width();
+                        var nPadding = (nWindowWidth - 290) /2
+                        setTimeout(function () {
+                            $('.myPhtoticketFlip .swiper-container')
+                                .css({
+                                    'width': '100%',
+                                    'margin': '0 auto',
+                                    'padding-left': nPadding
+                                })
+                        }, 100)
+                    },
+                }
+            });
+            flipPhotoTicketSlider.translateTo(0, 500, true, true);
+            $(window).resize(function () {
+                location.reload();
+            });
+            // console.log('4번')
+            // popLayerShowHide('icon_popup_my','popMyPhototicket','popFogBg');
+            // popLayerShowHide('icon_popup_other','popOtherPhototicket','popFogBg');
+            // $('.popFogBg').on({
+            //     click:function(e){
+            //         var $fogBg = $(e.target);
+            //         var $popLayer;
+            //         $fogBg.css({'display':'none'});
+            //         popLayerBgShowHide($('popFogBg'), $popLayer, true);
+            //         $('body').off('scroll touchmove mousewheel');
+            //     }
+            // });
+        },
+    }
 
     $(this).on(this._commonHandlers);
 
     switch (win.screenId) {
-        case 'PT001': $(this).on(this._PT001); break; // 메인페이지(app)
-        case 'PT002': $(this).on(this['_' + win.screenId]); break; // 상세 페이지 (내 포토티켓)
-        case 'PT003': $(this).on(this._PT003); break; // 상세 페이지 (자랑하기)
-        // case 'PT004': $(this).on(this._PT004); break; // 상세 페이지 (자랑하기)
+        case 'PT001': $(this).on(this._PT001); break; // 메인 - 플립 슬라이더
+        case 'PT002': $(this).on(this['_' + win.screenId]); break; // 상세 페이지 (내 포토티켓) - 헤더에 nav가 있는 경우
+        case 'PT003': $(this).on(this._PT003); break; // 플립 슬라이더(normal)
+        case 'PT004': $(this).on(this._PT004); break; // 플립 슬라이더(small)
         default: break;
     }
 
@@ -379,17 +421,6 @@
                     click: function () {
                         $fogBg.css({ 'opacity': '.5', 'top': '0' });
                         popLayerBgShowHide($fogBg, $popLayer, _isFogBg);
-
-//                            if(_popLayer == 'popMiniMap'){  // 미니맵일 경우 예외처리
-//                                var winWidth = $(window).outerWidth();
-//                                var activeItemLeft = $('.popMiniMap_Schedule_list li.active').offset().left;
-//                                var scrollLeft = $('.popMiniMap_Schedule_list').scrollLeft();
-//                                var itemWidth = $('.popMiniMap_Schedule_list li.active').outerWidth();
-//
-//                                var centerScroll = scrollLeft + activeItemLeft - (winWidth - itemWidth) / 2;
-//
-//                                $('.popMiniMap_Schedule_list').scrollLeft(centerScroll)
-//                            }
                     }
                 });
             }
@@ -573,12 +604,6 @@
                 }
             });
         }
-    }
-
-    function flipSlider(){
-        if ( $(".popCompleted .swiper-slide").length <= 1 ) {
-            $(".popCompleted").find(".swiper-pagination").hide();
-        };
     }
 
     /* [S] 공통 팝업 닫음 */
@@ -828,6 +853,7 @@
         return obj;
     }
     var interval;
+
     $.dDaySet = function(){
         cntObj = arguments;
 
@@ -905,65 +931,6 @@
         }
 
     };
-
-    $.fn.setDisplayCnt = function(_target, _time){
-        var $target = _target;
-        var timeObj = $.dDaySetTime(_time) ;
-
-        var $hotdealDDay = $target.children('.hotdeal_dday');
-        var $hour00 = $target.find('.hour00');
-        var $hour0 = $target.find('.hour0');
-        var $min00 = $target.find('.min00');
-        var $min0 = $target.find('.min0');
-        var $sec00 = $target.find('.sec00');
-        var $sec0 = $target.find('.sec0');
-
-        $hotdealDDay.text(timeObj.day);
-
-        $hour00.text(timeObj.hour00);
-        $hour0.text(timeObj.hour0);
-        $min00.text(timeObj.min00);
-        $min0.text(timeObj.min0);
-        $sec00.text(timeObj.sec00);
-        $sec0.text(timeObj.sec0);
-
-        $hour00.attr('data-hour00', timeObj.prevHour00);
-        $hour0.attr('data-hour0', timeObj.prevHour0);
-        $min00.attr('data-min00', timeObj.prevMin00);
-        $min0.attr('data-min0', timeObj.prevMin0);
-        $sec00.attr('data-sec00', timeObj.prevSec00);
-        $sec0.attr('data-sec0', timeObj.prevSec0);
-    }
-
-    $.fn.animationEnd = function(_target, _txt, _cnt){
-        var $target = $('#' + _target.target);
-
-        $target.on({
-            animationend:function(e){
-                $(e.target).off('animationend');
-                $(e.target).removeClass('ani');
-                $.fn.setDisplayCnt($target, cntObj[_cnt].time);
-            }
-        });
-    }
-
-    //무비차트 레이어 선택영역, 버튼 Style 제어
-    fnMovieChartLayerSelectItemsShowHide = function(_isShow, _selData, _selCount){
-        if(_isShow){
-            jQuery(".popSelectMovie .popLayerSelect").css("display", "block");
-            jQuery(".popSelectMovie .popLayerSelect").html(_selData);
-            jQuery(".popSelectMovie .popLayerFooter a").attr("data-count", _selCount);
-            jQuery(".popSelectMovie .popLayerFooter a").removeClass("dimmed");
-            jQuery(".popSelectMovie .popLayerFooter").removeClass("dimmed");
-        }else{
-            jQuery(".popSelectMovie .popLayerSelect").css("display", "none");
-            jQuery(".popSelectMovie .popLayerSelect").html('<li></li>');
-            jQuery(".popSelectMovie .popLayerFooter a").attr("data-count", "0");
-            jQuery(".popSelectMovie .popLayerFooter a").attr("class", "dimmed");
-            jQuery(".popSelectMovie .popLayerFooter").addClass("dimmed");
-        }
-    }
-
 
 })(jQuery);
 

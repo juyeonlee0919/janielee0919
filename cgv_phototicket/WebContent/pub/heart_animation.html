@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title><script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-    <link rel="stylesheet" href="../css/animate.min.css">
 </head>
 <body>
 <div class="container">
@@ -21,11 +20,43 @@
     <div class="btn-heart-white"><div class="icon-heart-white">
         <div><div></div></div>
     </div></div>
-    <div class="animated infinite bounce delay-2s">
-        
-    </div>
+    <svg width="150" height="150" viewBox="0 0 200 200">
+        <g transform="translate(100 100)">
+            <path transform="translate(-50 -50)" fill="tomato" d="M92.71,7.27L92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27v0 c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z"></path>
+            <animateTransform
+                    attributeName="transform"
+                    type="scale"
+                    values="1; 1.5; 1.25; 1.5; 1.5; 1;"
+                    dur="1s"
+                    repeatCount="indefinite"
+                    additive="sum">
+            </animateTransform>
+        </g>
+    </svg>
+    <input id="toggle-heart" type="checkbox"/>
+    <label for="toggle-heart">❤</label>
 </div>
 </body>
+<style>
+    [id='toggle-heart'] {
+        position: absolute;
+        left: -100vw;
+    }
+    [id='toggle-heart']:checked + label {
+         color: #e2264d;
+         will-change: font-size;
+         animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
+     }
+    [for='toggle-heart'] {
+        align-self: center;
+        color: #aab8c2;
+        font-size: 2em;
+        cursor: pointer;
+    }
+    @keyframes heart {
+        0%, 15% { font-size: 0; }
+    }
+</style>
 <style>
     body {background: gray}
     .heart {
@@ -122,80 +153,80 @@
         }
     }
 
-    input[type=checkbox] {
-        clear: both;
-        display: none;
-    }
+    /*input[type=checkbox] {*/
+    /*    clear: both;*/
+    /*    display: none;*/
+    /*}*/
 
-    input[type="checkbox"] {
-        display: none;
-    }
+    /*input[type="checkbox"] {*/
+    /*    display: none;*/
+    /*}*/
 
-    input[type="checkbox"] + label {
-        position: absolute;
-        z-index: 100;
-        overflow: hidden;
-        height: 6em;
-        width: 6em;
-        left: calc(50% - 3em);
-        top: calc(50% - 3em);
-        display: block;
-        text-align: center;
-        line-height: 95px;
-        cursor: pointer;
-        -webkit-transition: all 300ms ease;
-        transition: all 300ms ease;
-        border-radius: 50%;
-        background-color: #fff;
-    }
+    /*input[type="checkbox"] + label {*/
+    /*    position: absolute;*/
+    /*    z-index: 100;*/
+    /*    overflow: hidden;*/
+    /*    height: 6em;*/
+    /*    width: 6em;*/
+    /*    left: calc(50% - 3em);*/
+    /*    top: calc(50% - 3em);*/
+    /*    display: block;*/
+    /*    text-align: center;*/
+    /*    line-height: 95px;*/
+    /*    cursor: pointer;*/
+    /*    -webkit-transition: all 300ms ease;*/
+    /*    transition: all 300ms ease;*/
+    /*    border-radius: 50%;*/
+    /*    background-color: #fff;*/
+    /*}*/
 
-    input[type="checkbox"] + label:before {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        background: rgb(220, 72, 127);
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        top: 0;
-        left: 0;
-        transform: scale(0);
-        -webkit-ransform: scale(0);
-    }
+    /*input[type="checkbox"] + label:before {*/
+    /*    content: '';*/
+    /*    z-index: -1;*/
+    /*    position: absolute;*/
+    /*    background: rgb(220, 72, 127);*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*    border-radius: 50%;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    transform: scale(0);*/
+    /*    -webkit-ransform: scale(0);*/
+    /*}*/
 
-    input[type="checkbox"] + label:after {
-        content: '';
-        z-index: -1;
-        position: absolute;
-        background: white;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        top: 0;
-        left: 0;
-        transform: scale(0);
-        -webkit-transform: scale(0);
-    }
+    /*input[type="checkbox"] + label:after {*/
+    /*    content: '';*/
+    /*    z-index: -1;*/
+    /*    position: absolute;*/
+    /*    background: white;*/
+    /*    width: 100%;*/
+    /*    height: 100%;*/
+    /*    border-radius: 50%;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    transform: scale(0);*/
+    /*    -webkit-transform: scale(0);*/
+    /*}*/
 
-    input[type="checkbox"]:checked + label svg {
-        -webkit-transition: all 300ms ease-in-out;
-        transition: all 300ms ease-in-out;
-        fill: rgb(220, 72, 127);
-        transform: scale(1.3);
-        -webkit-transform: scale(1.3);
-    }
+    /*input[type="checkbox"]:checked + label svg {*/
+    /*    -webkit-transition: all 300ms ease-in-out;*/
+    /*    transition: all 300ms ease-in-out;*/
+    /*    fill: rgb(220, 72, 127);*/
+    /*    transform: scale(1.3);*/
+    /*    -webkit-transform: scale(1.3);*/
+    /*}*/
 
-    input[type="checkbox"]:checked + label:after {
-        -webkit-animation: like-a 0.3s 0.2s forwards;
-        -moz-animation: like-a 0.3s 0.2s forwards;
-        animation: like-a 0.3s 0.2s forwards;
-    }
+    /*input[type="checkbox"]:checked + label:after {*/
+    /*    -webkit-animation: like-a 0.3s 0.2s forwards;*/
+    /*    -moz-animation: like-a 0.3s 0.2s forwards;*/
+    /*    animation: like-a 0.3s 0.2s forwards;*/
+    /*}*/
 
-    input[type="checkbox"]:checked + label:before {
-        -webkit-animation: like-a 0.5s 0s forwards;
-        -moz-animation: like-a 0.5s 0s forwards;
-        animation: like-a 0.5s 0s forwards;
-    }
+    /*input[type="checkbox"]:checked + label:before {*/
+    /*    -webkit-animation: like-a 0.5s 0s forwards;*/
+    /*    -moz-animation: like-a 0.5s 0s forwards;*/
+    /*    animation: like-a 0.5s 0s forwards;*/
+    /*}*/
 
     label svg {
         display: inline-flex;
@@ -289,5 +320,4 @@
     .icon-heart-white div { box-sizing: content-box; }
     /* generated by https://loading.io/ */
 </style>
-
 </html>

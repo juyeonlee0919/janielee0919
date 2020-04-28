@@ -93,7 +93,7 @@
                 <span class="title">다크워터스(2D)</span>
                 <span class="title-sm">예매번호 : 001-0000-0000-002</span>
                 <!-- 광주충장로 점일 때 -->
-                 <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>
+                <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>
             </div>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
@@ -297,43 +297,13 @@
     -->
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="../js/swiper.min.js"></script>
+<script> var screenId = "PT004";</script>
 <script type="text/javascript" src="../js/phototicket.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/main.css">
 <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
 <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
 <script>
-    var flipPhotoTicketSlider = new Swiper('.swiper-container', {
-        speed: 400,
-        autoHeight: false,
-        direction: 'horizontal',
-        loop: false,
-        spaceBetween: 5,
-        slidesPerView: 1,
-        centeredSlides: true,
-        breakpointsInverse: false,
-        roundLengths: false,
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        on: {
-            init: function () {
-                var nWindowWidth = $(window).width();
-                var nPadding = (nWindowWidth - 290) /2
-                setTimeout(function () {
-                    $('.myPhtoticketFlip .swiper-container')
-                        .css({
-                            'width': '100%',
-                            'margin': '0 auto',
-                            'padding-left': nPadding
-                        })
-                }, 100)
-            },
-        }
-    });
-    flipPhotoTicketSlider.translateTo(0, 500, true, true);
-    $(window).resize(function () {
-        location.reload();
-    });
+
 </script>
 <!--  [E] 2020.04.20	-->
 </body>
