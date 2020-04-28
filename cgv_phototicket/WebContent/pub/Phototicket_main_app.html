@@ -397,7 +397,7 @@
         </article>
         <!--  [E] 내 포토티켓     -->
 
-        <!--  [S] 포토티켓 자랑하기   -->
+        <!--  [S] 포토티켓 자랑하기    -->
         <article class="ptboast_wrap">
             <div class="title_wrap">
                 <div class="title">
@@ -410,9 +410,8 @@
             </div>
             <div class="imgcard_wrap">
                 <div class="row">
-                    <div class="col ">
-                        <!--  2020.04.24 경로 테스트   -->
-                        <div class="card" onclick="location.href=''">
+                    <div class="col">
+                        <div class="card" onclick="location.href='javascript:void(0);'">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast1@2x.png" alt="자랑한 이미지">
                             </div>
@@ -421,9 +420,15 @@
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>999</span>
                             </div>
                         </div>
+                        <!--
+                         날짜: 2020.04.28
+                         수정 사항 : 링크 연결 중복 현상 수정\
+                          <a class="btn_like _click" href="javas..> 분리
+                        -->
+                        <a class="btn-heart _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNor"></i></a>
                     </div>
-                    <div class="col ">
-                        <div class="card" onclick="location.href=''">
+                    <div class="col">
+                        <div class="card" onclick="">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast2@2x.png" alt="자랑한 이미지">
                             </div>
@@ -432,12 +437,12 @@
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
                             </div>
                         </div>
-                        <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
+                        <a class="btn-heart _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNor"></i></a>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col ">
-                        <div class="card" onclick="location.href=''">
+                    <div class="col">
+                        <div class="card" onclick="">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast3@2x.png" alt="자랑한 이미지">
                             </div>
@@ -445,11 +450,11 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>10</span>
                             </div>
-                            <a class="btn_like" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
+                        <a class="btn-heart _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNor"></i></a>
                     </div>
-                    <div class="col ">
-                        <div class="card" onclick="location.href=''">
+                    <div class="col">
+                        <div class="card" onclick="">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast4@2x.png" alt="자랑한 이미지">
                             </div>
@@ -457,13 +462,13 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>19,932</span>
                             </div>
-                            <a class="btn_like" href="javascript:void(0);" ><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
+                        <a class="btn-heart _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNor"></i></a>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col ">
-                        <div class="card" onclick="location.href=''">
+                        <div class="card" onclick="">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast5@2x.png" alt="자랑한 이미지">
                             </div>
@@ -471,11 +476,11 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
                             </div>
-                            <a class="btn_like" href="javascript:void(0);" ><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
+                        <a class="btn-heart _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNor"></i></a>
                     </div>
                     <div class="col ">
-                        <div class="card" onclick="location.href=''">
+                        <div class="card" onclick="">
                             <div class="img">
                                 <img src="../images/phototicket/main/boast6@2x.png" alt="자랑한 이미지">
                             </div>
@@ -483,13 +488,13 @@
                                 <span class="user">usernickname</span>
                                 <span class="count_like"><i class="sprite sprite-pt sprite-icLikeGray"></i>435</span>
                             </div>
-                            <a class="btn_like" href="javascript:void(0);" ><i class="sprite sprite-pt sprite-icLikeNor"></i></a>
                         </div>
+                        <a class="btn-heart _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNor"></i></a>
                     </div>
                 </div>
             </div>
         </article>
-        <!--  [E] 포토티켓 자랑하기   -->
+        <!--  [E] 포토티켓 자랑하기    -->
 
     </section>
     <!-- [E] Content -->
@@ -509,9 +514,9 @@
     내용 : <script> var screenId = "PT001";</script> 추가 : 메인 화면
     -->
     <!--  [E] 2020.04.20	-->
-    <script> var screenId = "PT001";</script>
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script> var screenId = "PT001";</script>
     <script type="text/javascript" src="../js/phototicket.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">

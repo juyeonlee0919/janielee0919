@@ -253,7 +253,7 @@
 .photo_ticket .card_wrap .card { position: relative; display: block; width: 100%; height: 120px; background-color: #ffffff; border: 1px solid #efefef; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); border-radius: 10px; margin-bottom: 33px; cursor: pointer}
 .photo_ticket .card_wrap .card .img { position: absolute; top: -13px; left: 14px; display:block; width: 80px; height: 120px; border-radius: 10px; border: 1px solid rgba(153,153,153,0.1); overflow: hidden}
 .photo_ticket .card_wrap .card .img img { width: 100%; height: 100%; }
-.photo_ticket .card_wrap .card .img .badge_top {position: absolute; width: 27px; height: 20px; border-radius: 0 10px 0 10px; background-color: rgba(0, 0, 0, 0.3); color: #ffffff; top: 1px; right: 1px; font-size: 12px; line-height: 20px; text-align: center}
+.photo_ticket .card_wrap .card .img .badge_top {position: absolute; width: 27px; height: 20px; border-radius: 0 10px 0 10px; background-color: rgba(0, 0, 0, 0.3); color: #ffffff; top: 0; right: 0; font-size: 12px; line-height: 20px; text-align: center}
 .photo_ticket .card_wrap .movie_info { position: relative; padding: 22px 86px 0 106px;}
 .photo_ticket .card_wrap .movie_info > .title {display: block; font-weight: bold; margin-bottom: 25px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;line-height: 19px}
 .photo_ticket .card_wrap .movie_info > .tip { position: absolute; display: block; font-weight: 500; color: #ff2f35; font-size: 12px; top: 44px; letter-spacing: -1.6px;}
@@ -545,7 +545,7 @@
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
 .photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;top: 9px;}
-	/* [E] 플립슬라이더 팝업 헤더 */
+/* [E] 플립슬라이더 팝업 헤더 */
 /* [E]포토티켓 플립 슬라이더 - app */
 
 /* [S] 기간검색 팝업 */
