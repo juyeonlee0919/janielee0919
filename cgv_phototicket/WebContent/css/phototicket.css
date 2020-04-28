@@ -231,7 +231,7 @@
 .photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: 0; line-height: 60px;}
 .photo_ticket .title_wrap .all {float: right; font-size: 14px;}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 9px 15px 15px; line-height: 30px;}
-.photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 22px;}
+.photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 23px; right: 17px;}
 .photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 23px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
 /*  [E] 포토티켓 - 헤더 컴포넌트    */
 
@@ -454,7 +454,7 @@
 .photo_ticket .pop_header .badge .text {font-size: 14px;font-weight: normal;letter-spacing: -1.1px;}
 .photo_ticket .btnPopClose {width: 38px;height: 38px;background-position: left -22px;}
 .photo_ticket .pop_header .btn_close {left: auto;right: 7px;display: inline-block;position: absolute;top: 9px;}
-	/* [E] 플립슬라이더 팝업 헤더 */
+/* [E] 플립슬라이더 팝업 헤더 */
 /* [E]포토티켓 플립 슬라이더 - app */
 
 /* [S] 기간검색 팝업 */
