@@ -259,11 +259,11 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 
 /*   포토티켓 - 헤더 컴포넌트    */
 .photo_ticket .title_wrap {position: relative; padding: 0 15px; height: 60px; margin-bottom: 13px;}
-.photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: -2.1px; line-height: 60px;}
+.photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: 0; line-height: 60px;}
 .photo_ticket .title_wrap .all {float: right; font-size: 14px;}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 9px 15px 15px; line-height: 30px;}
-.photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 22px;}
-.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 27px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-2px);}
+.photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 22px; right: 16px; top: 23px}
+.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 24px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-2px);}
 
 /*   내 포토티켓    */
 .content_wrap.photo_ticket .mypt_wrap { position: relative; padding: 0 0 20px;}
@@ -317,7 +317,7 @@ body.scroll_popup .area_scroll{height:100%;overflow-y:scroll}
 .photo_ticket .ptboast_wrap .row .col:last-child .btn_like { right: -8px; }
 .photo_ticket .imgcard_wrap .card { display: block; border-radius: 10px; box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.08); background-color: #ffffff; padding: 10px 10px 8px 10px; cursor: pointer}
 .photo_ticket .imgcard_wrap .card .img { display: block; border-radius: 10px; }
-.photo_ticket .imgcard_wrap .card .img img { width: 100%;}
+.photo_ticket .imgcard_wrap .card .img img { width: 100%; height: auto}
 .photo_ticket .imgcard_wrap .card .info { display: block; font-size: 13px; font-weight: 500;}
 .photo_ticket .imgcard_wrap .card .info .user { display: block; font-size: 13px; font-weight: 500; margin-bottom: 3px; padding-top: 8px; color: rgb(136,136,136); line-height: 15px; padding-right: 23px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
 .photo_ticket .imgcard_wrap .card .info .count_like { display: block; color: var(--watermelon); font-size: 12px; padding-right: 27px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
