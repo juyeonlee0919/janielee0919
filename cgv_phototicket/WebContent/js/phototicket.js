@@ -135,14 +135,14 @@
                     init: function () {
                         var nWindowWidth = $(window).width();
                         var nPadding = (nWindowWidth - 260) / 2
-                        setTimeout(function () {
+
                             $('.slider_wrap .swiper-container')
                                 .css({
                                     'width': '100%',
                                     'margin': '0 auto',
                                     'padding-left': nPadding
                                 })
-                        }, 100)
+
                     },
                 }
             });
@@ -155,7 +155,6 @@
 
     this._PT002 = {
         load: function () {
-            popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
             // header
             var jbOffset = $( '#headerTitle' ).offset();
             $( window ).scroll( function() {
