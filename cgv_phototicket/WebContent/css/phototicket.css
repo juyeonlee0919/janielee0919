@@ -228,11 +228,11 @@
 
 /*  [S] 포토티켓 - 헤더 컴포넌트    */
 .photo_ticket .title_wrap {position: relative; padding: 0 15px; height: 60px; margin-bottom: 13px;}
-.photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: -2.1px; line-height: 60px;}
+.photo_ticket .title_wrap .title {float: left; font-size: 17px; font-weight: bold; left: 15px; top: 22px; letter-spacing: 0; line-height: 60px;}
 .photo_ticket .title_wrap .all {float: right; font-size: 14px;}
 .photo_ticket .title_wrap .all .btn-all {display: block; font-size: 14px; font-weight: 500; color: #999999; padding: 15px 9px 15px 15px; line-height: 30px;}
 .photo_ticket .title_wrap .all .btn-all i {display: inline-block; position: absolute; top: 22px;}
-.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 27px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
+.photo_ticket .title_wrap .title .badge {width: 100px; height: 25px; display: inline-block; color: #fb4357; font-weight: 500; font-size: 12px; line-height: 23px; text-align: center; border: 1px solid #fb4357; border-radius: 12px; margin-left: 4px;transform: translateY(-1px);}
 /*  [E] 포토티켓 - 헤더 컴포넌트    */
 
 /*  [S] 내 포토티켓    */
@@ -253,7 +253,7 @@
 .photo_ticket .card_wrap .card { position: relative; display: block; width: 100%; height: 120px; background-color: #ffffff; border: 1px solid #efefef; box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1); border-radius: 10px; margin-bottom: 33px; cursor: pointer}
 .photo_ticket .card_wrap .card .img { position: absolute; top: -13px; left: 14px; display:block; width: 80px; height: 120px; border-radius: 10px; border: 1px solid rgba(153,153,153,0.1); overflow: hidden}
 .photo_ticket .card_wrap .card .img img { width: 100%; height: 100%; }
-.photo_ticket .card_wrap .card .img .badge_top {position: absolute; width: 27px; height: 20px; border-radius: 0 10px 0 10px; background-color: rgba(0, 0, 0, 0.3); color: #ffffff; top: 1px; right: 1px; font-size: 12px; line-height: 20px; text-align: center}
+.photo_ticket .card_wrap .card .img .badge_top {position: absolute; width: 27px; height: 20px; border-radius: 0 10px 0 10px; background-color: rgba(0, 0, 0, 0.3); color: #ffffff; top: 0; right: 0; font-size: 12px; line-height: 20px; text-align: center}
 .photo_ticket .card_wrap .movie_info { position: relative; padding: 22px 86px 0 106px;}
 .photo_ticket .card_wrap .movie_info > .title {display: block; font-weight: bold; margin-bottom: 25px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;line-height: 19px}
 .photo_ticket .card_wrap .movie_info > .tip { position: absolute; display: block; font-weight: 500; color: #ff2f35; font-size: 12px; top: 44px; letter-spacing: -1.6px;}
@@ -291,12 +291,12 @@
 .photo_ticket .imgcard_wrap .card .info .user { display: block; font-size: 13px; font-weight: 500; margin-bottom: 3px; padding-top: 8px; color: rgb(136,136,136); line-height: 15px; padding-right: 23px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
 .photo_ticket .imgcard_wrap .card .info .count_like { display: block; color: var(--watermelon); font-size: 12px; padding-right: 27px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis}
 .photo_ticket .imgcard_wrap .card .info .count_like i { display: inline-block; margin-right: 4px;line-height: 13px;}
-/*.photo_ticket .imgcard_wrap .card .btn_like { display:inline-block; position: absolute; bottom: -17px; right: 2px;}*/
 
-.photo_ticket .btn_like {
+/* [S] 2020.04.28 하트 버튼 애니메이션 추가 */
+.btn-heart {
 	bottom: -17px; right: 2px;
 	display: inline-block;
-	bottom: -17px;
+	bottom: -9px;
 	right: 2px;
 	width: 40px;
 	position: absolute;
@@ -311,110 +311,17 @@
 	font-weight: 600;
 	box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);
 }
-.photo_ticket .btn_like i {
+.btn-heart i {
 	position: absolute;;
 	top: 11px;
 	right: 9px;
 }
-.btn_like.active {
-	bottom: -17px; right: 2px;
-}
-.btn_like.active i {
-	-webkit-animation-duration: 0.55s;
-	animation-duration: 0.55s;
-	-webkit-animation-name: test;
-	animation-name: test;
-}
-.btn_like.active::after {
-	content: '';
-	position: absolute;
-	display: inline-block;
-	width: 23px;
-	height: 20px;
-	background: url(../images/phototicket/common/ic_like_sel.png) no-repeat;
-	animation-delay: 1s;
-	-webkit-animation-name: opacity;
-	animation-name: opacity;
-	top: 12px;
-	left: 10px;
-}
-.photo_ticket .btn_like2 {
-	bottom: -17px; right: 2px;
-	display: inline-block;
-	bottom: -17px;
-	right: 2px;
-	width: 40px;
-	position: absolute;
-	height: 40px;
-	border-radius: 12px;
-	line-height: 40px;
-	font-size: 16px;
-	background-color: var(--watermelon);
-	border: 1px solid var(--watermelon);
-	color: #ffffff;
-	letter-spacing: -.5px;
-	font-weight: 600;
-	box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);
-}
-.photo_ticket .btn_like2 i {
-	position: absolute;;
-	top: 11px;
-	right: 9px;
-}
-.btn_like2.active {
-	bottom: -17px; right: 2px;
-}
-.btn_like2.active i {
-	animation-duration: .5s;
-	-webkit-animation-name: opacity2;
-	animation-name: opacity2;
-}
-.btn_like2.active::after {
-	content: '';
-	position: absolute;
-	display: inline-block;
-	width: 20px;
-	height: 17px;
-	background: url(../images/phototicket/common/ic_like_sel.png) no-repeat;
-	animation-duration: .5s;
-	-webkit-animation-name: opacity3;
-	animation-name: opacity3;
-	top: 12px;
-	left: 10px;
-}
-
-.photo_ticket .btn_like3 {
-	bottom: -17px; right: 2px;
-	display: inline-block;
-	bottom: -17px;
-	right: 2px;
-	width: 40px;
-	position: absolute;
-	height: 40px;
-	border-radius: 12px;
-	line-height: 40px;
-	font-size: 16px;
-	background-color: var(--watermelon);
-	border: 1px solid var(--watermelon);
-	color: #ffffff;
-	letter-spacing: -.5px;
-	font-weight: 600;
-	box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);
-}
-.photo_ticket .btn_like3 i {
-	position: absolute;;
-	top: 11px;
-	right: 9px;
-}
-.btn_like3.active {
-	bottom: -17px; right: 2px;
-}
-.btn_like3.active i {
+.btn-heart.active i {
 	animation-duration: .5s;
 	-webkit-animation-name: stroke;
 	animation-name: stroke;
 }
-.btn_like3.active::after {
+.btn-heart.active::after {
 	content: '';
 	position: absolute;
 	display: inline-block;
@@ -427,6 +334,8 @@
 	top: 12px;
 	left: 10px;
 }
+/* [E] 2020.04.28 하트 버튼 애니메이션 추가 */
+
 .photo_ticket .ptboast_wrap { position: relative; }
 .photo_ticket .ptboast_wrap .title_wrap { margin-bottom: 0 }
 /* [E] 포토티켓 자랑하기  */
@@ -678,8 +587,6 @@
 	top: 13px;
 	left: 57px;
 }
-.icon-heart.active {
-}
 .btn-red.active path{
 	-webkit-animation-duration: 0.55s;
 	animation-duration: 0.55s;
@@ -687,7 +594,6 @@
 	animation-name: zoomIn;
 	fill: #ffffff;
 }
-
 .btn-test {
 	position: relative;
 	display: inline-block;
@@ -726,17 +632,16 @@
 	height: 25px;
 	background: url("../images/phototicket/common/ic_btn_like_nor.png") no-repeat;
 	animation-duration: .5s;
-	-webkit-animation-name: opacity3;
-	animation-name: opacity3;
+	-webkit-animation-name: fill;
+	animation-name: fill;
 	top: 13px;
 	left: 57px;
 }
 .btn-test.active i{
 	animation-duration: .5s;
-	-webkit-animation-name: opacity2;
-	animation-name: opacity2;
+	-webkit-animation-name: stroke;
+	animation-name: stroke;
 }
-
 .btn-test2 {
 	position: relative;
 	display: inline-block;
@@ -785,44 +690,6 @@
 	-webkit-animation-name: stroke;
 	animation-name: stroke;
 }
-@keyframes fill{
-	0%{
-		opacity: 0;
-		transform: scale(.8);
-	}
-	33%{
-
-		opacity: 0;
-	}
-	34%{
-		transform: scale(.8);
-		opacity: 1;
-	}
-	60% {
-		transform: scale(1.2);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-@keyframes stroke{
-	0%{
-		transform: scale(1);
-	}
-	34%{
-		transform: scale(.8);
-	}
-	58% {
-		opacity: .8;
-	}
-	72% {
-		transform: scale(1.2);
-		opacity: 1;
-	}
-	100% {
-		transform: scale(1);
-	}
-}
 @keyframes test{
 	0%{
 		transform: scale(1);
@@ -834,21 +701,7 @@
 		transform: scale(1);
 	}
 }
-@keyframes opacity{
-	0%{
-		opacity: 0;
-		transform: scale(1);
-	}
-	33%{
-		opacity: 0.5;
-		transform: scale(1.5);
-	}
-	100% {
-		opacity: 1;
-		transform: scale(1);
-	}
-}
-@keyframes opacity2{
+@keyframes stroke{
 	0%{
 		transform: scale(1);
 	}
@@ -860,7 +713,7 @@
 		transform: scale(1);
 	}
 }
-@keyframes opacity3{
+@keyframes fill{
 	0%{
 		transform: scale(1);
 		opacity: 0;
@@ -873,18 +726,6 @@
 	}
 	100% {
 		transform: scale(1);
-	}
-}
-@keyframes opacity4{
-	0%{
-		transform: scale(0);
-	}
-	50%{
-		transform: scale(1.3);
-	}
-	100% {
-		transform: scale(1);
-		fill: #ffffff;
 	}
 }
 @keyframes shrink-bounce{
