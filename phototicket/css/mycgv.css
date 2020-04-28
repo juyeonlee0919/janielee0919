@@ -1,0 +1,520 @@
+/* .header_wrap {background:url('https://img.cgv.co.kr/WebApp/images/mycgv/bg_top.gif') repeat-x 0 0;} */
+.header_wrap .logo_myCgv {margin:8px 0 0 12px;position:absolute;top:0;left:0;}
+.header_wrap .title_pg {text-align:center;height:44px;line-height:44px;font-size:20px;color:#fff;font-weight:bold;}
+.header_wrap .title_pg a {text-align:center;height:44px;line-height:44px;font-size:20px;color:#fff;font-weight:bold;}
+/*.header_wrap .Mybtn_wrap {right:24px; top:24px;}*/
+
+
+/*.Mytab_sty1_wrap {border-bottom:4px solid #000;padding:29px 30px 20px 0;text-align:center;}*/
+/*.Mytab_sty1_wrap a.tab {float:left; width:25%;font-size:34px;height:auto;padding:0;background:none;color:#bbb;}*/
+/* 대메뉴 간격이 안맞아 tab 배열 나눔 */
+/*
+.Mytab_sty1_wrap a {font-weight:bold;}
+.Mytab_sty1_wrap a.tab1 {float:left; width:20%;font-size:34px;height:auto;padding:0;background:none;color:#bbb;}
+.Mytab_sty1_wrap a.tab2 {float:left; width:25%;font-size:34px;height:auto;padding:0;background:none;color:#bbb;}
+.Mytab_sty1_wrap a.tab3 {float:left; width:35%;font-size:34px;height:auto;padding:0;background:none;color:#bbb;}
+.Mytab_sty1_wrap a.tab4 {float:left; width:20%;font-size:34px;height:auto;padding:0;background:none;color:#bbb;}
+.Mytab_sty1_wrap a.on {color:#333;}
+.Mytab_sty1_wrap a.last {padding-right:0;} */
+.Mytab_sty1_wrap ul li:nth-child(2){width:25%}
+.Mytab_sty1_wrap ul li:nth-child(3){width:35%}
+.Mytab_sty1_wrap ul li:first-child {width:20%;}
+.Mytab_sty1_wrap ul li:last-child {width:20%;background:none;}
+
+
+/*.customerName {padding:40px 0 0 24px;height:56px;border-bottom:2px solid #f2f2f2;}*/
+/* 예매내역 없을때 일 경우 라인 제거 */
+.customerName {padding:15px 0 0 12px;height:33px;}
+.customerName h3 {font-size:20px;letter-spacing:-0.5px;}
+.customerName h3 span {font-size:13px;color:#bf0000;font-weight:bold;}
+.customerName .img_1 {width:84px;height:28px;}
+
+/* 20130116 메인에서 사용 */
+.mySlide1 {padding-top:5px; height:auto; padding-bottom:18px; border-bottom:1px solid #f2f2f2;border-top:1px solid #f2f2f2;} /* 130115 add kong */
+.mySlide1 .movie {padding-bottom:6px; margin-left:14px; position:relative;}
+.mySlide1 .movie dt {font-size:15px;padding-left:86px;}
+.mySlide1 .movie dt strong {display:inline-block;padding:5px 5px 7px 0;font-size:17px;}
+.mySlide1 .movie dt img {position:absolute; top:0; left:0;width:75px;height:107px;}
+.mySlide1 .movie dd {padding-left:86px;font-size:14px;color:#707070;font-weight:normal;}
+.mySlide1 .movie dd.location {padding-bottom:4px;}
+.mySlide1 .movie dd.reservNum {overflow:hidden;color:#000;padding-top:10px;font-size:17px;font-weight:bold;}
+.mySlide1 .movie dd.reservNum input {float:left;font-size:17px;font-weight:bold;-webkit-appearance:none;color:#000;border:0;width:41px;}
+.mySlide1 .movie dd.reservNum input.red {width:150px;color:#bf0000;}
+
+/*.mySlide {padding-top:10px; height:257px;border-bottom:1px solid #f2f2f2;}*/
+/* 예매내역 있을때 일 경우 top 라인 추가 */
+.mySlide {padding-top:5px; height:auto; padding-bottom:18px; margin-bottom:12px; border-bottom:1px solid #f2f2f2;border-top:1px solid #f2f2f2; background:#fff;} /* 130115 add kong */
+.mySlide .movie {padding-bottom:6px; position:relative;}
+.mySlide .movie dt {font-size:15px;padding-left:86px;}
+/*.mySlide .movie dt strong {display:inline-block;padding:25px 10px 14px 0;font-size:34px;}*/
+/* 영화제목이 길 경우 두줄로 생겨 padding top 10px로 수정 */
+.mySlide .movie dt strong {display:inline-block;padding:13px 5px 7px 0;font-size:17px;}
+.mySlide .movie dt img {position:absolute; top:0; left:0;width:75px;}
+.mySlide .movie dd {padding-left:86px;font-size:14px;color:#707070;font-weight:normal;}
+.mySlide .movie dt + dd.iconbox {margin-top:-3px;}
+.mySlide .movie dd.iconbox {padding-bottom:7px;}
+.mySlide .movie dd.location {padding-bottom:4px;}
+/*.mySlide .movie dd.reservNum {overflow:hidden;color:#000;padding-top:26px;font-size:34px;font-weight:bold;}*/
+/* padding top 20으로 수정 */
+.mySlide .movie dd.reservNum {overflow:hidden;color:#000;padding-top:13px;font-size:17px;font-weight:bold;}
+.mySlide .movie dd.reservNum input {float:left;font-size:17px;font-weight:bold;-webkit-appearance:none;color:#000;border:0;width:41px;}
+.mySlide .movie dd.reservNum input.red {width:150px;color:#bf0000;}
+.red {color:#bf0000;}
+
+.btnInfo {padding:0; width:296px; margin:0 auto;}
+.btnInfo ul {width:296px; height:150px;background:url('../../images/mycgv/bg_btnInfo.png') no-repeat 0 0;background-size:296px 150px;}
+.btnInfo ul li {float:left;width:148px;height:74px;}
+.btnInfo ul li a {display:block;height:100%;}
+.bottom_info {letter-spacing:-1px;text-align:left;padding:11px 0 15px 0;font-size:13px;color:#707070;line-height:1.4em;}
+
+.smallTab {position:relative;padding:12px 0 0 60px;height:23px;border-bottom:1px solid #f2f2f2;background:#eae9e4;}
+.smallTab li {float:left;margin-right:12px;font-weight:bold;}
+.smallTab li .fot_pa {position:absolute;top:4px;left:8px;padding:0 13px;line-height:25px;font-weight:normal;color:#666;}
+.smallTab li.on a{color:#000; text-decoration:none;/* border-bottom:2px solid black; */}
+.smallTab li a{font-size:13px;color:#9197a3; letter-spacing:-1px;}
+.smallTab li.last {margin-right:0;}
+
+.mySlideAnother {height:auto;padding:0;float:left;width:100%;border:0;}
+.mySlideAnother .movie {position:relative;}
+.mySlideAnother .row {clear:both;border-bottom:1px solid #f2f2f2; padding:10px 11px;}
+/* 130111 예매내역 없을 시 */
+.mySlideAnother .empty {padding-top:215px; text-align:center; background:#f2f2f2 url(../../images/mycgv/bgicon_ticket.png) no-repeat 50% 136px; background-size:68px; color:#000; font-size:17px; font-weight:bold;}
+
+.mySlideAnother .bottomInfo2 {clear:both;padding:11px 0;font-size:13px;color:#707070;letter-spacing:-1px;text-align:center;display:block;}
+/* 130114 set */
+.reservCancel .movie .mask {opacity:0.6;background:#000;position:absolute;left:0;top:0;z-index:50;width:75px;height:100%;}
+.reservCancel dt strong,
+.reservCancel dd input {text-decoration:line-through;}
+
+.movieViewList h3,
+.movieViewList ul li {padding:0 10px;border-bottom:1px solid #f2f2f2;}
+.movieViewList ul li strong {font-size:15px;}
+.movieViewList h3 {padding:13px 10px;height:27px;}
+.movieViewList h3 .txt {letter-spacing:-1px;float:left;padding-top:8px;font-weight:normal;font-size:15px;color:#000;}
+.btn {letter-spacing:-1px;height:19px;float:right;padding:7px 5px 0;text-align:center;color:#fff !important;font-size:15px;font-weight:normal;}
+.btnAdd {border:1px solid #8e0000;background:#bf0000;font-size:13px;}
+.btnCancel {padding:7px 8px 0;border:1px solid #666;background:#999;font-size:13px;font-weight:normal;} 
+.btnCancel2 {position:absolute; top:27px; right:10px;} 
+.movieViewList ul li {position:relative;padding:10px 0 0 14px;height:68px;}
+.movieViewList ul li p.num {padding:5px 0 15px 0;color:#666;font-size:15px;}
+.movieViewList ul li p.date {color:#8d97a3;font-size:13px;}
+.movieViewList ul li div.red {position:absolute; right:12px; top:33px; font-size:13px;}
+
+.movieViewList .addList {height:auto;padding:10px;background:#eae9e4;text-align:center;display:none;}
+.movieViewList .addList .btnAdd {position:relative;top:0;left:0;width:148px;float:none;padding-top:11px;height:24px; display:inline-block; margin-top:5px;}
+.movieViewList .addList input {text-align:center; color:#383838; padding:7px 0; margin-bottom:5px; width:100%;border:1px solid #f2f2f2; font-size:14px;}
+
+/*추가*/
+.movieViewList .addList select {text-align:center; color:#bbb; padding:7px 0; margin-bottom:5px; font-weight:bold; width:100%;border:1px solid #f2f2f2; font-size:20px;}
+.movieViewList .addList div {text-align:center; color:#bbb; padding:7px 0; margin-bottom:5px; font-weight:bold; width:100%;border:1px solid #f2f2f2; font-size:20px; background:white;}
+
+.movieViewList {position:relative;}
+.movieLocationList .addList{border-top:1px solid #f2f2f2;}
+.movieLocationList .title_area{height:72px;padding-left:10px;}
+.movieLocationList h3 {padding-top:0;padding-bottom:0;padding-left:0;letter-spacing:-1.5px;border-bottom:0;}
+.movieLocationList h3 .txt {display:block;padding:14px 0 9px 0;font-size:15px;color:#333;font-weight:bold;}
+.movieLocationList .txt2 {width:60%;clear:both;color:#444;font-size:13px;font-weight:normal;}
+.movieLocationList ul{border-top:1px solid #f2f2f2; background:#fff;}
+.movieLocationList ul li {padding-left:5px;height:47px;position:relative;}
+.movieLocationList li .titList .tit {font-weight:bold;padding:3px 0 4px 0;font-size:15px;}
+.movieLocationList li .titList .locationNum {color:#707070;width:60%;font-size:14px;}
+.movieLocationList li .titList {height:35px;text-indent:31px;background:url('https://img.cgv.co.kr/WebApp/images/mycgv/icon_location.png') no-repeat 0 3px;background-size:21px 32px;}
+.movieLocationList .btnAdd {position:absolute; top:27px; right:10px;font-weight:normal;}
+.movieLocationList .btnAdd2 {font-weight:normal; border:1px solid #8e0000;background:#bf0000;width:148px;float:none;padding-top:11px;height:25px; display:inline-block; margin-top:5px;}
+.movieLocationList .btnDel {position:absolute; font-weight:normal; font-size:13px; top:15px; right:10px; width:48px; background:#fff;color:#666 !important;border:1px solid #f2f2f2;}
+.moviecouponList  .btnCancel{position:absolute;top:14px;right:10px;}
+
+.movieLocationList .stikerin li {height:auto; padding-bottom:12px;}
+.movieLocationList .stikerin li .titList {height:auto;}
+.movieLocationList .stikerin li .titList a {display:block; margin:0 70px 3px 30px; text-indent:0;}
+.movieLocationList .stikerin li .titList .tit {display:inline; font-weight:bold; padding:0; font-size:15px; vertical-align:middle; line-height:1.4;}
+.movieLocationList .stikerin li .titList .sticker {text-indent:0;}
+
+.myCaution {padding:15px 10px 0 10px;font-size:10px;}
+.myCaution li{padding:0 0 7px 5px;color:#707070;background:url('https://img.cgv.co.kr/WebApp/images/mycgv/bg_list.png') no-repeat 0 4px;font-size:13px !important;background-size:2px;}
+.bottomTxt {padding:15px 10px;font-size:13px;color:#707070;}
+
+.myPoint {padding:13px 10px;}
+.myPoint h3{overflow:hidden;font-size:15px;}
+.myPoint h3 .line{display:inline-block;padding-top:8px;font-weight:normal;}
+.myPoint .bottomInfo {padding:8px 0;}
+.myPoint .bottomInfo,
+.myPoint .bottomInfo a{font-size:13px;color:#707070;line-height:1.4em;}
+.bottomInfo.bottomcol1 {margin-top: 10px;margin-bottom: 15px;font-size: 13px;}
+
+.myPoint .btn {width:57px;height:18px;float:right;padding-top:7px;text-align:center;color:#fff;font-size:15px;font-weight:bold;}
+.myPoint .btnAdd3 {border:1px solid #666;background:#999;font-size:13px;}
+.pointInfo {padding:0 10px;}
+.pointInfo .info_area{background:#eae9e4;border:1px solid #f2f2f2;}
+.pointInfo .info_area .tit{padding:15px 0 13px 10px;border-bottom:1px solid #f2f2f2;}
+.pointInfo .info_area .tit2{padding:15px 0 5px 10px;}
+.pointInfo .info_area .info{clear:both;overflow:hidden;}
+.pointInfo .info_area .info span.club{clear:both;display:block;}
+.pointInfo .info_area .info strong{float:left;text-align:left;font-size:15px;}
+.pointInfo .info_area .info var{float:right;padding-right:10px;text-align:right;font-style:normal;}
+.pointInfo .info_area .info ul{clear:both;padding-top:10px;}
+.pointInfo .info_area .info ul li{color:#8d97a3;text-align:left;padding:0 0 8px 0;font-size:14px;}
+.pointInfo .info_area .info ul li strong{font-weight:normal;font-size:14px;padding-right:5px;}
+.pointInfo table {width:100%;background:#eae9e4;border:1px solid #f2f2f2;}
+.pointInfo table th,
+.pointInfo table td {padding:0;border-spacing:0;}
+.pointInfo table th {padding-left:10px;text-align:left;font-size:15px;}
+.pointInfo table td {padding-right:10px;text-align:right;}
+.pointInfo table caption{display:none;}
+.pointInfo table .tit th,  
+.pointInfo table .tit td {height:43px;border-bottom:1px solid #f2f2f2;}
+.pointInfo table .tit2 th{padding:15px 0 10px 10px;}
+.pointInfo table .tit2 td {padding:15px 10px 10px 0;}
+
+.pointInfo table .titSub td {font-weight:normal;color:#666;text-align:left;padding:0 0 8px 10px;}
+.pointInfo table .titSub td dt {float:left;margin-right:5px;}
+.pointInfo .info_area .info.col1 {border: none;}
+.pointInfo .info_area .info.col1 ul, .pointInfo .info_area .info.col1 ul li {padding: 0;}
+
+
+/* 메인 플리킹 영역 */
+.pageing2_wrap {display:block; clear:both; height:24px; text-align: center; padding: 0px 7px 0 7px; margin: 0 0 20px 0; border-bottom: 1px solid #f2f2f2;}
+.pageing2_wrap a {display:inline-block; width:9px; height:9px; margin:0px 10px 0 5px;}
+.pageing2_wrap a:last-child {margin:0px 0 0 5px;}
+.pageing2_wrap a.normal {background: url("https://img.cgv.co.kr/WebApp/images/common/icon_page6.png") left top no-repeat;background-size:9px;}
+.pageing2_wrap a.on {background: url("https://img.cgv.co.kr/WebApp/images/common/icon_page5.png") left top no-repeat;background-size:9px;}
+
+#MyCGVflick{position:relative;overflow:hidden;width:100%;height:115px;}
+.MyCGV-panel{width:100%;height:100%;position:absolute;}
+
+/* VIP 쿠폰내역 팝업 */
+.mycgv_chk_h1 {display: block; padding:15px 0 0 15px; font-size: 14px; font-weight: bold; color:#000000;}
+
+.myboxsty_03_wrap {margin:9px 10px 13px 10px; -webkit-border-radius:10px;  -moz-border-radius:10px; border:1px solid #cecece; background: #fff;}
+.myboxsty_03_wrap .area{overflow: auto;height:365px;width:268px;margin-top:10px;}
+
+.myboxsty_03_wrap li:last-child {border-bottom:none;}
+.myboxsty_01_con {position:relative; min-height:55px; border-bottom:1px solid #cecece;}
+.myboxsty_01_con .title {overflow:hidden; position: absolute; top:12px; left:0; width:88px; height:17px; padding:0 0 0 11px; font-size:13px; line-height:100%; color:#5a5959;}
+.myboxsty_01_con .title1 {overflow:hidden; position: absolute; top:8px; left:0; width:175px; height:17px; padding:0 0 0 11px; font-size:13px; line-height:100%; color:#231f20;}
+.myboxsty_01_con .title2 {overflow:hidden; position: absolute; top:12px; left:0; width:100px; height:17px; padding:0 0 0 11px; font-size:13px; line-height:100%; color:#5a5959;}
+.myboxsty_01_con .title3 {overflow:hidden; display:block; width:125px; padding:12px 0 0 11px; font-size:13px; line-height:100%; color:#5a5959;}
+.myboxsty_01_con .title4 {overflow:hidden; position: absolute; top:12px; left:0; width:175px; height:17px; padding:0 0 0 11px; font-size:16px; line-height:100%; color:#5a5959;}
+.myboxsty_01_con .title5 {overflow:hidden; display:block; width:125px; padding:28px 0 0 11px; font-size:11px; line-height:100%; color:#716f6f;}
+.myboxsty_01_con .title6 {overflow:hidden; display:block; width:125px; padding:4px 0 0 11px; font-size:11px; line-height:100%; color:#716f6f;}
+.myboxsty_01_con .cont {position:absolute; top:30px; right:10px; font-size: 18px; color:#000; font-weight: bold; text-align: right;}
+.myboxsty_01_con .cont1 {display: block; padding:12px 0 0 0; margin:0 0 0 99px; font-size: 13px; color:#a5a7a8;}
+.myboxsty_01_con .cont2 {display: block; min-height:53px; padding:12px 0 12px 0; margin:0 0 0 99px; font-size: 13px; color:#a5a7a8;}
+.myboxsty_01_con .cont3 {display: block; padding:0 0 0 0; margin:0 15px 0 99px; text-align: right;}
+.myboxsty_01_con .cont4 {position:absolute; top:23px; right:10px; font-size: 13px; color:#ec3724; font-weight: bold; text-align: right;}
+.myboxsty_01_con .cont5 {position:absolute; top:23px; right:10px; font-size: 13px; color:#436EEE; font-weight: bold; text-align: right;}
+.myboxsty_01_con .cont3 ul.su_wrap {float:right; overflow:hidden;}
+.myboxsty_01_con .cont3 ul.su_wrap li {float:left;}
+.myboxsty_01_con .cont3 ul.su_wrap li.txt1 {margin:13px 11px 0 0; font-size:13px; color:#7f7f7f;}
+.myboxsty_01_con .cont3 ul.su_wrap li.txt2 {padding:12px 15px 0 15px; font-size:16px; color:#000;}
+.myboxsty_01_con .cont3 ul.su_wrap li.btn {margin:6px 0 0 8px;}
+.myboxsty_01_con .cont4 {display: block; min-height:53px; margin:0 15px 0 99px;}
+.myboxsty_01_con .cont5 {display: block; min-height:53px; margin:0 15px 0 99px;}
+.myboxsty_01_con .cont6 {display: block; padding:7px 0 0 0; margin:0 15px 0 99px;}
+.myboxsty_01_con .cont6 input.phonenum {width:100%; padding:3px 0; text-align:right; font-size: 18px; color:#000; letter-spacing:-0.5px; font-weight: bold; text-align: right; border:none;}
+.myboxsty_01_con .cont7 {display: block; padding:11px 0 0 0; margin:0 15px 0 99px; text-align: right;}
+.myboxsty_01_con .cont8 {display: block; padding:7px 0 0 0; margin:0 50px 0 99px;}
+.myboxsty_01_con .cont8 input.phonenum {width:100%; padding:3px 0; text-align:right; font-size: 18px; color:#000; letter-spacing:-0.5px; font-weight: bold; text-align: right; border:none;}
+.myboxsty_01_con .txt_r {text-align: right;}
+.myboxsty_01_con .btnn {overflow:hidden; position: absolute; top:7px; right:15px;}
+.myboxsty_01_con .btn2 {display:block; position:absolute; top:12px; right:11px; font-size:0; padding:5px;}
+
+/* 더보기 */
+.strMore {clear:both;padding:1px 0;display:block;}
+#sp_loading
+{
+    overflow: hidden; display:none; text-align:center;
+    height:17px; margin:5px 0 -22px 0;
+    background:url('data:image/gif;base64,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') no-repeat 50% 50%;
+}
+.coupon_btn_more {clear:both; overflow: hidden; display:block; padding:19px 0 0 0; margin:20px 0 20px 0; text-align:center; font-size:13px; color:#000; background: url("https://img.cgv.co.kr/WebApp/images/trailer/tbtn_more.png") center top no-repeat;background-size:3px;}
+.coupon_btn_more a {color:#000;}
+.next_btn_more_end {clear:both; overflow: hidden; display:block; padding:19px 0 0 0; margin:20px 0 20px 0; text-align:center; font-size:13px; color:#000;}
+
+/* 모바일 티켓 */
+.topTicket {padding:15px 0 5px 26px; margin-bottom:13px; overflow:hidden; height:auto;background:url('https://img.cgv.co.kr/WebApp/images/mycgv/bg_top_big.gif') repeat-x 0 0;background-size:50px 148px;}
+.topTicket span.title {display:block;font-size:14px;color:#888;padding-bottom:5px;}
+.topTicket span.title .small {font-size:13px;}
+.topTicket strong  input{font-size:28px;color:#fff;border:0;background:transparent;font-weight:bold;float:left;}
+.topTicket strong  input.default {width:74px;}
+.topTicket strong  input.long {width:205px;}
+
+.qrSection {position:relative;text-align:center;padding:0 12px;}
+.qrSection .iconInfo {float:right;width:18px;height:18px;}
+.qrSection .qrcode {width:150px;height:150px;}
+
+.infoTicket {padding:5px 12px 0;}
+.infoTicket h4 .red {font-size:14px;}
+.infoTicket h4 .small {font-size:14px;}
+.infoTicket h4 span.movieTit {display:block;font-size:18px;color:#000;padding-bottom:10px;}
+.infoTicket h4 span.movieTit img {width:15px;height:15px;}
+.infoTicket .grey {font-size:12px;color:#888;padding-bottom:5px;}
+.infoTicket dl.dateTime {padding-bottom:15px;}
+.infoTicket dl dt, .infoTicket dl dd{font-weight:bold;}
+.infoTicket dl.dateTime dd{font-size:17px;}
+.infoTicket .seatInfo {float:left;width:140px;word-wrap:break-word;}
+.infoTicket dl dd{font-size:14px;}
+.infoTicket .tickets {float:right;width:150px;word-wrap:break-word;}
+.btnArea {clear:both;padding:17px 0;text-align:center;}
+
+.infoTicket + .btn_area {margin-top:50px;}
+
+.addBottomResize {clear:both;background:#000011;width:100%;overflow:hidden;}
+.addBottomResize .left {float:left;}
+.addBottomResize .right {float:right;}
+
+.addBottomResize1 {clear:both;background:#313131;width:100%;overflow:hidden;}
+.addBottomResize1 .left {float:left;}
+.addBottomResize1 .right {float:right;}
+
+/* 선물함 */
+/*
+.giftImg {float:left;margin-right:25px;}
+.giftImg td {width:170px;height:163px;vertical-align:middle;text-align:center;}
+*/
+
+/* 12월 30일수정 - 반영*/
+.giftImg {float:left;margin-right:13px;width:85px;height:82px;text-align:center;margin-bottom:10px;}
+.giftImg img {vertical-align:middle;width:100%;height:100%;}
+
+
+.gift ul li {padding:13px 12px 13px 14px;height:auto;overflow:hidden;}
+.gift ul li .eaName {margin-top:5px;}
+.gift ul li .fir {margin-top:4px;}
+.gift ul li .ea {font-size:14px;font-weight:bold;color:#666;margin-bottom:3px;}
+.gift ul li .date {font-size:12px;margin-top:8px;}
+.gift ul li .giftCancel {text-decoration:line-through;}
+.gift ul li .arrowRIght {display:block; overflow:hidden; background:url('https://img.cgv.co.kr/WebApp/images/mycgv/icon_arrowRIght.png') no-repeat right center;background-size:5px;}
+
+.giftArea {padding:28px 0 0 0;}
+.giftArea .sectiontop .eaName {font-size:21px;margin-bottom:8px;}
+.giftArea .sectiontop .detaile {width:258px;margin:0 auto;}
+.giftArea .sectiontop .detaile dd {margin-bottom:5px;font-size:14px;color:#888;letter-spacing:-1px;}
+.giftArea .sectiontop .barcode {clear:both;text-align:center;margin-top:15px;padding-bottom:29px;border-bottom:1px solid #f2f2f2;}
+.giftArea .sectiontop .barcode p.num {margin-top:5px;text-align:center;font-weight:bold;font-size:15px;}
+.giftArea_notice {padding:21px 12px 0;}
+.giftArea_notice dt {font-size:17px; color:#bf0000; margin-bottom:9px;}
+.giftArea_notice dd {font-size:12px; color:#707070;}
+.giftArea_notice dd {line-height:1.5em;}
+.btnBottom {text-align:center;padding:18px 0;}
+.btnBottom  .btnCancel{float:none;display:inline-block;}
+
+.giftState {padding:18px 12px 0;}
+.giftState h3{padding:0;border:0;height:auto;}
+.giftState .date {display:block;font-size:20px;margin-bottom:13px;}
+.giftState .gift_title strong {font-size:17px;}
+.giftState .gift_title span {display:block;font-size:14px;color:#666;margin-top:5px;}
+.giftState table.info {width:100%;border:1px solid #f2f2f2;margin-top:15px;}
+.giftState table.info th {background:#eae9e4;}
+.giftState table.info th,
+.giftState table.info td {font-size:16px;text-align:center;border-bottom:1px solid #f2f2f2;border-right:1px solid #f2f2f2;padding:11px 0;}
+.sectionMiddle {padding:15px 12px 0;}
+.sectionMiddle h4 {font-size:17px;margin-bottom:10px;}
+.sectionMiddle ul li a {background:#eae9e4 url('https://img.cgv.co.kr/WebApp/images/mycgv/icon_arrowRIght.png') no-repeat 98% center;background-size:5px;position:relative;padding:0 21px 0 11px;height:43px;display:block;line-height:43px;border:1px solid #f2f2f2;border-top:0;}
+.sectionMiddle ul li:first-child a{border-top:1px solid #f2f2f2;}
+.sectionMiddle ul li a.fir {border:1px solid #f2f2f2;}
+.sectionMiddle ul li a span {display:inline-block;font-weight:bold;}
+.sectionMiddle ul li a span.num01 {font-size:15px;color:#000;margin-right:13px;}
+.sectionMiddle ul li a span.num02 {font-size:16px;color:#666;}
+.sectionMiddle ul li a span.num03 {position:absolute;top:50%;right:21px;margin-top:-8px;height:15px;font-size:15px;color:#bf0000;}
+
+.bul_circle {padding:0 12px 10px;}
+.bul_circle li {margin-bottom:3px;color:#707070;font-size:12px;letter-spacing:-2px;background:url('https://img.cgv.co.kr/WebApp/images/mycgv/bul_circle.png') no-repeat 0 6px;background-size:3px 3px;text-indent:8px;}
+
+/* 팝업 */
+.pop_all_wrap1 {position:absolute; top:0; left:0; width:100%; height:800px;}
+
+.pop_type1_wrap1 {width:94%;height:90%; margin:25px auto 0 auto; position:relative; border:5px solid #373737; -webkit-border-radius:10px;  -moz-border-radius:10px; background: #fff;}
+.pop_type1_wrap1 h1 {display:block; overflow:hidden; margin:16px 40px 18px 14px; font-size: 15px; color:#000; font-weight: bold;}
+.pop_type1_wrap1 .btn_close {position: absolute; top:16px; right:16px; width:19px; height:19px;}
+.pop_type1_wrap1 .btn_close img {width:19px; height:19px;}
+
+.mycgv_txt1_wrap {clear:both;}
+.mycgv_txt1_wrap h4 {display:block; padding:11px 13px 0 13px; color:#000; font-size:15px; font-weight: bold;}
+.mycgv_txt1_wrap .txt1 {display:block; padding:5px 13px 0 13px; font-size: 13px; color:#7d7d7d;}
+.mycgv_txt1_wrap .txt2 {display:block; padding:5px 13px 0 13px; font-size: 13px; color:#7d7d7d;}
+.mycgv_txt1_wrap .txt3 {display:block; padding:5px 13px 0 13px; font-size: 13px; color:#7d7d7d;}
+.mycgv_txt1_wrap .btn {display:block; margin:10px 13px 12px 13px; padding:0 0 8px 0;}
+.mycgv_txt1_wrap .btn div {margin:0 0 0 5px;}
+.mycgv_txt1_wrap .btn div:first-child {margin:0 0 0 0;}
+
+.mycgv_txt2_wrap {clear:both; margin:18px 0 18px 0; border-top:1px solid #cecece;}
+.mycgv_txt2_wrap h5 {display:block; padding:13px 13px 0 13px; color:#000; font-size:15px; font-weight: bold;}
+.mycgv_txt2_wrap h2 {display:block; padding:13px 13px 0 13px; color:#7d7d7d; font-size:13px;}
+.mycgv_txt2_wrap .txt {display:block; padding:5px 13px 0 13px; font-size: 13px; color:#7d7d7d; line-height:120%;}
+.mycgv_txt2_wrap .btn {display:block; padding:0 13px 23px 13px;}
+.mycgv_txt2_wrap .btn div {margin:0 0 0 5px;}
+.mycgv_txt2_wrap .btn div:first-child {margin:0 0 0 0;}
+
+.mycgv_txt3_wrap {clear:both; margin:0px 0 0px 0; border-top:1px solid #cecece;}
+.mycgv_txt3_wrap h5 {display:block; padding:13px 13px 0 13px; color:#000; font-size:15px; font-weight: bold;}
+.mycgv_txt3_wrap h2 {display:block; padding:13px 13px 0 13px; color:#7d7d7d; font-size:13px;}
+.mycgv_txt3_wrap .txt {display:block; padding:5px 13px 0 13px; font-size: 13px; color:#7d7d7d; line-height:120%;}
+.mycgv_txt3_wrap .btn {display:block; padding:0 13px 23px 13px;}
+.mycgv_txt3_wrap .btn div {margin:0 0 0 5px;}
+.mycgv_txt3_wrap .btn div:first-child {margin:0 0 0 0;}
+
+.mycgv_txt4_wrap {clear:both; margin:0px 0 0px 0; border-top:1px solid #ccc;}
+.mycgv_txt4_wrap h1 {display:block; padding:13px 13px 0 13px; color:#000; font-size:15px; font-weight: bold;}
+.mycgv_txt4_wrap h2 {display:block; padding:13px 13px 0 13px; color:#7d7d7d; font-size:13px;}
+.mycgv_txt4_wrap .txt {display:block; padding:5px 13px 0 13px; font-size: 13px; color:#7d7d7d; line-height:120%;}
+.mycgv_txt4_wrap .btn {display:block; padding:0 13px 23px 13px;}
+.mycgv_txt4_wrap .btn div {margin:0 0 0 5px;}
+.mycgv_txt4_wrap .btn div:first-child {margin:0 0 0 0;}
+
+.mycgv_map_wrap1 {display:block; overflow:hidden; height:154px; margin:11px 0 7px 0; text-align:center; border-top:1px solid #626a74; border-bottom:1px solid #626a74;}
+
+.movieViewList .addList .guide_re {margin:20px 0 10px; padding:0; border:0; background:none;}
+.movieViewList .addList .guide_re .guide_retxt {font-weight:normal;}
+.movieViewList .addList .guide_re .btn_alink {font-size:12px;}
+
+/* mycgv 예매티켓 */
+.reserv_ticket {padding:10px 11px; background:#fff;}
+.rt_hdmsg {margin-bottom:10px; text-align:center; color:#222; font-weight:bold; line-height:1.5; font-size:12px;}
+.rt_hdmsg em {font-style:normal; color:#af292e;}
+.rt_number {padding:7px 0 5px; border-top:1px solid #d3d5da; border-bottom:1px solid #d3d5da; font-size:17px; font-weight:bold; text-align:center;}
+.rt_number .def_num {color:#9197a7; letter-spacing:0;}
+.rt_number .add_num {color:#000; letter-spacing:0;}
+.rt_detail {padding:10px 0; text-align:center;}
+.rt_detail > table {max-width:320px; margin:0 auto;}
+.rt_detail > table tbody th {text-align:right; color:#9197a7;}
+.rt_detail > table tbody td {text-align:left; padding-left:10px; color:#222; font-weight:bold;}
+.rt_detail > table th, .rt_detail > table td {font-size:13px; line-height:1.8; vertical-align:top;}
+.rt_desc {text-align:center; margin-bottom:20px;}
+.rt_desc > p {padding:10px 0; background:#444; color:#fff; font-size:12px; line-height:1.5;}
+.rt_desc .btn_area {margin:20px 0 0;}
+
+
+/* 선불카드 */
+.prepaid_card_list {overflow:hidden; padding:0 10px; background-color:#212121;}
+.prepaid_card_list .owl-carousel {padding:25px 0 47px;}
+.prepaid_card_list .owl-carousel .owl-stage-outer {overflow:visible;}
+.prepaid_card_list .owl-carousel .item {width:270px;}
+.prepaid_card_list .item_box {position:relative;}
+.prepaid_card_list .item_box .fittext1 {font-size:11px;}
+.prepaid_card_list .item_box .img_look {position:relative; /* height:153px; */ height:initial;}
+
+.prepaid_card_list .item_box .img_look .expiration_date {position:absolute; left:9px; bottom:9px; font-size:11px; color:#fff; letter-spacing:0;}
+
+.prepaid_card_list .item_box .img_look > a {position:relative; display:block;}
+.prepaid_card_list .item_box .img_look > a > img{width:100%; height:100%;}
+.prepaid_card_list .item_box .img_look .barcode_view {
+	overflow:hidden;
+	position:absolute;
+	left:0; top:0; bottom:0; right:0;
+	border-radius:10px;
+	background:#fff;
+	/*
+	-webkit-transition:all .3s ease-in-out;
+	transition:all .3s ease-in-out;
+	*/
+	text-align:center;
+	opacity:0;
+}
+.prepaid_card_list .item_box .img_look.on .barcode_view {opacity:1;}
+.prepaid_card_list .barcode_view .barcode_timer {
+	display:inline-block; 
+	margin:31px 0 25px;
+	font-size:14px; font-weight:bold;
+}
+.prepaid_card_list .barcode_view .barcode_timer em {font-style:normal; color:#9d1823;}
+.prepaid_card_list .barcode_view .barcode_img {width:200px; margin:0 auto;}
+
+.prepaid_card_list .item_box .represent_mark {position:absolute; left:50%; top:-13px; margin-left:-15px;}
+.represent_mark input {width:29px; height:29px; border:0; background: url("../../images/mycgv/icon_represent_mark.png") 0 0 no-repeat; background-size:29px;}
+.represent_mark input:checked,
+.represent_mark input.checked {background-position:0 -50px;}
+
+.prepaid_card_list .item_box .img_look .btn_pay {position:absolute; right:7px; bottom:7px; cursor:pointer;}
+button.btn_pay {background:none; border:0; width:80px; height:25px;}
+button.btn_pay img {width:100%;}
+.prepaid_card_list .item_box .img_look img.btn_pay {width:80px; height:initial;}
+
+.prepaid_card_list .item_box .card_money {position:absolute; bottom:-36px; left:0; right:0; text-align:center;}
+.card_money {font-size:16px; color:#fff;}
+.card_money strong {font-size:26px; font-weight:normal;}
+.prepaid_card_list .item_box .card_number {position:absolute; bottom:-32px; left:0; right:0; text-align:center; font-size:18px; color:#fff;}
+
+/* .prepaid_card_list .owl-carousel + .prepaid_menu {margin-top:47px;} */
+.prepaid_menu > ul {margin: 0 -10px; border-top:1px solid #2c2b29;}
+.prepaid_menu > ul:after {display:block; content:''; clear:both;}
+
+.prepaid_menu > ul > li {position:relative; width:25%; float:left; text-align:center;}
+.prepaid_menu > ul > li:before {position:absolute; left:0; top:50%; margin-top:-6px; display:block; content:''; width:1px; height:12px; background:#2c2b29;}
+.prepaid_menu > ul > li:first-child:before {display:none;}
+.prepaid_menu > ul > li a {display:block; color:#9197a3; padding:14px 0 14px; font-size:13px; line-height:1.2; /* background: url("../../images/mycgv/icon_prepaid.png") 0 0 no-repeat; background-size:14px; */}
+.prepaid_menu > ul > li .m1 {background-position:0 14px;}
+.prepaid_menu > ul > li .m2 {background-position:0 -29px;}
+.prepaid_menu > ul > li .m3 {background-position:0 -73px;}
+
+.designed_sel3 {display:block; height:21px;}
+.designed_sel3 select {border:0; width:100%; height:inherit; line-height:1.2; background:url('../../images/common/bg_select_arrow4.png') no-repeat 100% 50%; background-size:10px;margin-right:22px; font-size:13px; color:#9197a3;}
+.designed_sel3 input {border:0; width:100%; height:inherit; line-height:1.2; background:url('../../images/common/bg_select_arrow4.png') no-repeat 100% 50%; background-size:10px;margin-right:22px; font-size:13px; color:#9197a3;}
+
+.pdl_sort {position:relative; padding:13px 10px; min-height:16px;}
+.pdl_sort .pdls_tit {position:absolute; left:10px; top:13px; padding-left:20px; font-size:15px; background:url('../../images/mycgv/icon_calendar.png') no-repeat 0 0; background-size:14px;}
+.pdl_sort .designed_sel3 {margin-left:85px; height:16px;}
+.pdl_sort .designed_sel3 select {display:inline-block; width:initial; padding-right:15px;}
+.prepaid_detail_list > ul {margin:0 10px; border-bottom:1px solid #f4f3ef;}
+.prepaid_detail_list > ul > li {position:relative; padding:17px 0 19px; border-top:1px solid #f4f3ef;}
+.prepaid_detail_list > ul > li .pdl_tit {
+	overflow: hidden; text-overflow: ellipsis; white-space:nowrap;
+	display:block; /* margin-right:84px; */ font-size:17px; line-height:1.2;
+}
+.prepaid_detail_list > ul > li .pdl_info {display:block; margin-top:5px; margin-right:84px; font-size:13px; color:#9197a3;}
+.prepaid_detail_list > ul > li .pdl_info .btn_cancel {padding-right:10px; border:0; font-size:inherit; background:transparent url('../../images/common/btnbg_arrow_rs.png') no-repeat 100% 50%; background-size:5px; cursor:pointer;}
+.prepaid_detail_list > ul > li .pdl_price {position:absolute; right:0; bottom:18px; font-size:14px; line-height:1.2; font-weight:bold;}
+.prepaid_detail_list > ul > li ..monthschedule_list.nodatatype {background:transparent;}
+.prepaid_detail_list > ul > li .nodata {padding-top:122px; background:url('../../images/collage/img_schedule_nodata.png') no-repeat 50% 30px; background-size:78px;}
+.prepaid_detail_list > ul > li .nodata.buy {background:url('../../images/collage/img_schedule_nodata_1.png') no-repeat 50% 30px; background-size:78px;}
+.prepaid_detail_list > ul > li .nodata .btn_roundline {margin-top:18px;}
+.prepaid_detail_list > ul > li .nodata > p  {color:inherit; font-size:inherit; margin-top:0;}
+
+/* 선불카드 레이어팝업*/
+.card_regilay .point_gd {padding-bottom:26px;}
+.card_regi_infolist {padding:32px 16px;}
+.card_regi_infolist ol > li {list-style:decimal; margin-left:20px; font-size:14px; color:#222; line-height:1.4;}
+.card_regi_infolist ol > li em {font-style:normal; color:#9d1823;}
+.card_regi_infolist ol > li .imgbox_samp {margin:10px 0 22px -11px; text-align:center;}
+.card_regi_infolist ol > li .imgbox_samp img {display:inline-block; margin:0 auto; width:270px;}
+
+.prepaid_card_detail {padding:25px 0 16px; background:#222; text-align:center;}
+.prepaid_card_detail .img_look {margin:0 auto; width:150px;}
+.prepaid_card_detail .img_look img {width:100%;}
+.prepaid_card_detail .pcd_price {display:block; margin:10px auto 0; font-size:24px; color:#fff;}
+.prepaid_card_detail .pcd_number {display:block; margin:5px auto 0; font-size:12px; color:#9197a3; letter-spacing:0;}
+
+.prepaid_card_option {}
+.prepaid_card_option .pco_tit {margin:35px 13px 10px; font-size:14px; color:#9197a3; font-weight:normal;}
+.prepaid_card_option .pco_tit:first-child {margin-top:0; padding-top:20px;}
+.prepaid_card_option .infolist_box .terms-group {border-top:1px solid #f2f2f2; border-bottom:1px solid #f2f2f2;}
+
+.sel_custopt {margin:-3px 13px; text-align:center;}
+.sel_custopt > ul {display:block;}
+.sel_custopt > ul:after {display:block; content:''; clear:both;}
+.sel_custopt > ul > li {overflow:hidden; position:relative; float:left; width:33%;}
+.sel_custopt > ul > li:nth-child(3n+2) {width:34%;}
+.sel_custopt > ul > li:nth-child(3n+1) {clear:both;}
+.sel_custopt > ul > li input[type=chekbox],
+.sel_custopt > ul > li input[type=radio] {position:absolute; left:0; top:-20px; width:0; height:0;}
+.sel_custopt > ul > li > label {display:block; padding:17px 10px; margin:3px; border:1px solid #c8cbd1; border-radius:3px; cursor:pointer;}
+.sel_custopt > ul > li.on > label {border:1px solid #af292e; color:#af292e;}
+.sel_custopt .direct_input {margin:27px -13px;text-align:left;}
+
+.prepaid_card_option .dot_list {margin:13px;}
+.prepaid_card_option .dot_list > li {margin-top:5px; font-size:12px; color:#9197a7; line-height:1.5; background:url('https://img.cgv.co.kr/WebApp/images/common/bul_circle4.png') no-repeat 0 7px; background-size:4px;}
+.prepaid_card_option .dot_list > li:first-child {margin-top:0;}
+
+.set_option .chk-onoff {position:absolute; right:20px; top:50%; margin-top:-11px;}
+.set_option .chk-onoff input {position:relative; width:17px; height:22px; background:url('../../images/mycgv/chkicon_lock.png') no-repeat 0 0; background-size:17px; border:0;}
+.set_option .chk-onoff input:checked,
+.set_option .chk-onoff input.checked {background-position:0 -50px;}
+
+.card_registered_list {}
+.card_registered_list > ul {margin-left:13px;}
+.card_registered_list > ul > li {position:relative; padding:10px 0; border-bottom:1px solid #f4f3ef; min-height:76px;}
+.card_registered_list > ul > li:after {display:block; content:''; clear:both;}
+.card_registered_list > ul > li .card_img {float:left; width:120px;}
+.card_registered_list > ul > li .card_infobox {padding:20px 0 0 140px;}
+.card_registered_list > ul > li .card_infobox .card_price {display:block; margin-bottom:8px; font-size:17px; color:#222;}
+.card_registered_list > ul > li .card_infobox .card_num {display:block; font-size:13px; color:#9197a3;}
