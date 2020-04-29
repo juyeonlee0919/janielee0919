@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>CGV 포토티켓</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <style type="text/css">
+        html, body, p {margin:0; padding:0}
+        body, td {font-size:1em; font-family:'NotoSans','맑은 고딕','malgun gothic', dotum, '돋움', Sans-Serif; font-weight:normal; color:#000}
+        h1,h2,h3,h4,h5,h6,th,td,a {font-weight:normal}
+        table {border-collapse: collapse; border-spacing:0}
+        #g_header {padding:23px 20px; height:120px; background:#fef8dc url(http://img.cgv.co.kr/R2014/images/common/bg/bg_header.gif) repeat-x 0 -30px; box-sizing:border-box}
+        #g_header h1 {max-width:1240px; margin:0 auto; font-size:1.5em; font-weight:600; line-height:1em; color:#000;background:#fef8dc;border-radius:15px}
+        #g_header h1 img {width:70px;border:1px solid #ddd;border-radius:10px;vertical-align:middle}
+        #g_body {position:relative; max-width:1240px; margin:0 auto; padding:0 20px}
+        #g_footer {padding:24px 20px; background:#f6f6f6; box-sizing:border-box}
+        #g_footer span {display:block; max-width:1240px; margin:0 auto; font-size:10px}
+        .contents h2 {margin:50px 0 5px; padding:8px 0; border-top:2px dotted #ccc; border-bottom:2px dotted #ccc; font-size:0.9em; font-weight:bold}
+        .note_box {max-width:1240px; margin:0 auto 15px; padding:15px; background:#c2f4ff; line-height:1.4em}
+        .guide_table {width:100%; margin-bottom:80px; border-bottom:2px solid #c5c5c5}
+        .guide_table thead th {text-align:left; padding:6px 2px; border-bottom:2px solid #666; border-right:1px solid #292929; border-left:1px solid #292929; background:#292929; font-weight:500; color:#fff; font-size:0.8em}
+        .guide_table tbody tr:hover {background:#efefef}
+        .guide_table tbody td {text-align:left; padding:5px 2px; font-size:.8em; border-bottom:1px solid #ccc}
+        .guide_table .no {padding-right:5px; text-align:center}
+        .count_bar {float:right; margin-top:8px; font-size:.8em; font-weight:normal; color:#666}
+        .btn_area {max-width:1240px; margin:0 auto; padding:0 0 30px; text-align:right; margin-top:-50px}
+        .btn_top {display:inline-block; box-sizing:border-box; width:40px; height:40px; line-height:40px; text-align:center; background:#292929; color:#fff; text-decoration:none; font-size:0.7em}
+        @media screen and (max-width:767px) {
+            body, td, .guide_table thead th {font-size:.9em}
+            #g_header {padding:20px 15px}
+            #g_header h1 {font-size:1.6em; line-height:1.3em}
+            #g_header {height:auto}
+            #g_body {padding:0 5px}
+            .contents {margin:0}
+            .contents h2 {font-size:1.3em; margin-top:20px; padding:4px 0; border-top:2px dotted #666; border-bottom:2px dotted #666}
+            .guide_table {margin-bottom:40px}
+            .note_box {padding:10px}
+            .btn_area {margin-top:-10px}
+            .hidden-phone {display: none !important}
+            .t_center {text-align:center !important}
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(document).ready(function() {
+            var guideTable = $(".guide_table"),
+                len = 0,
+                idx = 0;
+            guideTable.each(function(i){
+                len = $(this).find("td.no").length;
+                $(this).prev().find(".page_total").text(len);
+                $(this).find("td.no").each(function(n){
+                    $(this).text(n + 1);
+                });
+            });
+            guideTable.find("tbody tr").each(function(){
+                var idx = $(this).parents(".guide_table").find("thead th.condition").index(),
+                    $this = $(this).find("td").eq(idx),
+                    condition = $this.text();
+                switch(condition){
+                    case "작업중":
+                        $this.css("color","green");
+		                break;
+                    case "완료":
+                        // $this.css("font-weight", "bold");
+                    default:
+                        break;
+                }
+            });
+
+	        var $pageTotal =($('table.guide_table tbody tr').length)-1;
+            var $count_total =(($('table.guide_table tbody tr').find('td:eq("4")').children('a')).length)+1;
+            var $pagePercent =(($count_total/$pageTotal)*100).toFixed(2)+'%';
+        });
+        //]]>
+    </script>
+</head>
+<body>
+
+<div id="g_header">
+    <h1><img src="../images/main/@2x/ico_app.png" alt="cgv">CGV 포토티켓</h1>
+</div>
+
+<div id="g_body">
+    <div class="contents">
+   		 <h2>◈ 포토 티켓<span class="count_bar">- Total : <span class="page_total"></span> page</h2>
+        <table class="guide_table" summary="코딩가이드 상세내용" id="guide_table">
+            <colgroup>
+                <col style="width:5%">
+                <col style="width:15%">
+                <col style="width:20%">
+                <col>
+                <col style="width:15%">
+                <col style="width:25%">
+			</colgroup>
+            <thead>
+            <tr>
+                <th scope="col" class="no hidden-phone">NO</th>
+                <th scope="col">1depth</th>
+                <th scope="col">2depth</th>
+                <th scope="col" class="t_center">퍼블리싱</th>
+                <th scope="col" class="hidden-phone condition">상태</th>
+                <th scope="col" class="hidden-phone">비고</th>
+            </tr>
+            </thead>
+            <tbody>
+	             <tr>
+	                <td class="no hidden-phone"><!-- 번호 --></td>
+	                <td>포토티켓 </td>
+	                <td>포토티켓-메인(app)</td>
+	                <td class="filelink"><a href="./Phototicket_main_app.html" title="새창열림" target="_blank">./Phototicket_main_app.html</a></td>
+	                <td class="hidden-phone">완료</td>
+	                <td class="hidden-phone"></td>
+	            </tr>
+	            <tr>
+	                <td class="no hidden-phone"><!-- 번호 --></td>
+	                <td>포토티켓 </td>
+	                <td>포토티켓-메인(web)</td>
+	                <td class="filelink"><a href="./Phototicket_main_web.html" title="새창열림" target="_blank">./Phototicket_main_web.html</a></td>
+	                <td class="hidden-phone">완료</td>
+	                <td class="hidden-phone"></td>
+	            </tr>
+                <tr>
+	                <td class="no hidden-phone"><!-- 번호 --></td>
+	                <td>포토티켓 </td>
+	                <td>포토티켓-메인(데이터가 없을 경우)</td>
+	                <td class="filelink"><a href="./Phototicket_main_no.html" title="새창열림" target="_blank">./Phototicket_main_no.html</a></td>
+	                <td class="hidden-phone">완료</td>
+	                <td class="hidden-phone"></td>
+	            </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>내포토티켓_제작완료</td>
+					 <td class="filelink"><a href="./Phototicket_completed.html" title="새창열림" target="_blank">./Phototicket_completed.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>내포토티켓_출력완료</td>
+					 <td class="filelink"><a href="./Phototicket_printed.html" title="새창열림" target="_blank">./Phototicket_printed.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>포토티켓 자랑하기</td>
+					 <td class="filelink"><a href="./Phototicket_myticket_boast.html" title="새창열림" target="_blank">./Phototicket_myticket_boast.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>팝업</td>
+					 <td>조회기간 팝업</td>
+					 <td class="filelink"><a href="./Phototicket_popup_search.html" title="새창열림" target="_blank">./Phototicket_popup_search.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>팝업</td>
+					 <td>공유하기 팝업</td>
+					 <td class="filelink"><a href="./Phototicket_popup_share.html" title="새창열림" target="_blank">./Phototicket_popup_share.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>제작완료</td>
+					 <td class="filelink"><a href="Phototicket_FlipSlider.html" title="새창열림" target="_blank">./Phototicket_FlipSlider_type2.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>제작완료</td>
+					 <td class="filelink"><a href="./Phototicket_FlipSlider_web.html" title="새창열림" target="_blank">./Phototicket_FlipSlider_web.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>제작완료-CGV광주충장로</td>
+					 <td class="filelink"><a href="./Phototicket_FlipSlider_small.html" title="새창열림" target="_blank">./Phototicket_FlipSlider_small.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>제작완료_자랑취소</td>
+					 <td class="filelink"><a href="./Phototicket_boast_cancel.html" title="새창열림" target="_blank">./Phototicket_boast_cancel.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>출력완료</td>
+					 <td class="filelink"><a href="./Phototicket_printed_completed.html" title="새창열림" target="_blank">./Phototicket_printed_completed.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone"></td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>포토티켓자랑하기_상세_내포토티켓(추천전)</td>
+					 <td class="filelink"><a href="./Phototicket_after_recommend_01.html" title="새창열림" target="_blank">./Phototicket_after_recommend_01.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone">버튼 애니메이션 컨펌 대기중(2020.04.29)</td>
+				 </tr>
+				 <tr>
+					 <td class="no hidden-phone"><!-- 번호 --></td>
+					 <td>포토티켓_상세</td>
+					 <td>포토티켓자랑하기_상세(추천)</td>
+					 <td class="filelink"><a href="./Phototicket_after_recommend_02.html" title="새창열림" target="_blank">./Phototicket_after_recommend_02.html</a></td>
+					 <td class="hidden-phone">완료</td>
+					 <td class="hidden-phone">버튼 애니메이션 컨펌 대기중(2020.04.29)</td>
+				 </tr>
+            </tbody>
+        </table>
+        <div class="btn_area">
+            <a href="#top" class="btn_top" title="상단으로 이동">TOP</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
