@@ -64,10 +64,12 @@
             }
 
             $('.btn-toggle').on('click', function () {
-                $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+
                 if($(this).hasClass('active')) {
+                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
                     $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
                 } else {
+                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
                     $(this).parents('.flipper').find('.btn-toggle').addClass('active');
                 }
             });
