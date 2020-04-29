@@ -7,23 +7,22 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>CGV</title>
     <!-- [S] 운영소스 상속용 -->
-    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
-    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
-    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
+    <link rel="shortcut icon" href="../images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="../images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="../css/v5/master.css?2019072509">
     <link rel="canonical" href="http://www.cgv.co.kr/">
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
-    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="../js/appinterface.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
-    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.core.min.js"></script>
     <script type="text/javascript" src="../js/morder.appInterface.js"></script>
     <script type="text/javascript" src="../js/clipboard.min.js"></script>
     <script type="text/javascript" src="../js/date.js"></script>
@@ -80,7 +79,7 @@
                     <a class="_tab" href="javascript:void(0);">제작완료(10)</a>
                     <a class="_tab active" href="javascript:void(0);">출력완료(3)</a>
                     <!--   [S] 기간 검색    -->
-                    <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDateSel"></i>기간검색</a>
+                    <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
                     <!--   [E] 기간 검색    -->
                 </div>
             </nav>
@@ -141,9 +140,9 @@
         </div>
         <!-- S 레이어 팝업 관련  -->
         <div class="popLayer">
-            <div class="popFogBg"></div>
+            <div class="popFogBg" style="display: block; opacity: 0.5; top: 0px;"></div>
             <!--   [S] 기간검색 팝업   -->
-            <div class="popScheduleInfo" style="display: none;">
+            <div class="popScheduleInfo" style="display: block; bottom: 0px;">
                 <div class="popLayerHeader">
                     <h1>조회기간</h1>
                     <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
@@ -188,7 +187,7 @@
     -->
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src="../js/phototicket.js"></script>
+<!--    <script type="text/javascript" src="../js/phototicket.js"></script>-->
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
