@@ -1,0 +1,277 @@
+/*
+  날짜 : 2020.04.30
+  작성자 : 이주연
+  내용 : email.css 추가
+*/
+/*
+  section - email_form
+*/
+.email_form {
+  section {
+    &>.title {
+      width: 100%;
+      height: 67px;
+      padding: 0 20px;
+      margin-top: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      color: #333333;
+      p {
+        border-top: 3px solid var(--primary);
+        border-bottom: 1px solid #cccccc;
+        line-height: 67px;
+        font-size: 24px;
+        letter-spacing: -1.2px;
+      }
+    }
+    .box {
+      width: 830px;
+      min-width: 830px;
+      .area-desc {
+        position: relative;
+        height: 181px;
+        .img {
+          position: absolute;
+          width: 120px;
+          height: 120px;
+          top: 26px;
+          left: 53px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .text {
+          position: absolute;
+          left: 201px;
+          top: 32px;
+          font-size: 15px;
+          line-height: 25px;
+          span {
+            display: block;
+            letter-spacing: -.75px;
+            &.mb {
+              margin-bottom: 27px;
+            }
+          }
+        }
+      }
+      form {
+        padding: 0 50px;
+        margin-bottom: 6px;
+        .title {
+          position: relative;
+          width: 100%;
+          color: #333333;
+          padding-top: 13px;
+          padding-left: 16px;
+          font-weight: 600;
+          font-size: 14px;
+
+          i {
+            position: absolute;
+            font-size: 12px;
+            left: 0;
+            top: 15px;
+          }
+
+          .right {
+            position: absolute;
+            width: 150px;
+            right: 0;
+            text-align: right;
+          }
+
+        }
+
+        > .row {
+          height: 40px;
+          border-bottom: 1px solid #ababab;
+          border-right: 1px solid #ababab;
+          border-left: 1px solid #ababab;
+          margin: 0;
+
+          &:first-child {
+            border-right: 0;
+            border-left: 0;
+          }
+
+          .col-title {
+            position: relative;
+            width: 172px;
+            height: 38px;
+            background: #e9e9e9;
+            font-weight: 600;
+            padding-left: 18px;
+            padding-right: 24px;
+            color: #303030;
+            line-height: 38px;
+            font-size: 12px;
+            &::after {
+              position: absolute;
+              content: '';
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background: #303030;
+              left: 10px;
+              top: 17px;
+            }
+            i {
+              position: absolute;
+              top: 16px;
+              right: 10px;
+              color: $primary;
+            }
+
+            &.line-2 {
+              font-size: 14px;
+              line-height: 23px;
+            }
+          }
+
+          .col-desc {
+            width: calc(100% - 172px);
+            padding: 0 10px 0 10px;
+            height: 38px;
+
+            .btn {
+              margin-bottom: 3px;
+            }
+
+            .text {
+              line-height: 40px;
+              font-size: 12px;
+              padding-left: 10px;
+            }
+
+            input {
+              width: 100%;
+              height: 40px;
+              &:focus {
+                border-color: #666;
+                outline: 0;
+              }
+            }
+          }
+
+          &.double {
+            height: 99px;
+
+            .col-title {
+              height: 98px;
+              line-height: 98px;
+
+              i {
+                top: 40px;
+              }
+            }
+
+            .col-desc {
+              padding: 4px 10px 4px 10px;
+
+              > .row {
+                padding: 0 5px;
+                margin-bottom: 10px;
+
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+
+          &.row-3 {
+            .col-title {
+              width: 150px;
+            }
+
+            .col-desc {
+              width: calc(100% - 150px);
+            }
+          }
+        }
+      }
+      .p-table {
+        .table {
+          border-left: 0;
+          border-right: 0;
+          th {
+            height: 40px;
+            font-size: 12px;
+          }
+          td {
+            height: 40px;
+            font-size: 12px;
+          }
+        }
+      }
+      .btn-area {
+        width: 750px;
+        margin: 30px auto 0;
+        display: flex;
+        justify-content: center;
+        padding: 0 50px 29px;
+        border-bottom: 1px solid #cccccc;
+
+        .btn {
+          width: 140px;
+          font-size: 16px;
+        }
+      }
+      .desc {
+        span {
+          display: block;
+          font-size: 13px;
+          letter-spacing: -.65px;
+          padding: 11px 50px 41px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  footer {
+    .bg {
+      min-width: 830px;
+      .box {
+        .col-2 {
+          position: relative;
+          .img {
+            width: 195px;
+            position: absolute;
+            left: -3px;
+            top: 45px;
+            line-height: initial;
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .col-10 {
+          position: absolute;
+          left: 225px;
+          top: 27px;
+          .c-info {
+            padding: 0;
+            li {
+              font-size: 12px;
+              padding-bottom: 0;
+              .bar {
+                padding-right: 24px;
+                &::after {
+                  right: 10px;
+                }
+              }
+              &:last-child {
+                position: absolute;
+                left: -34px;
+                bottom: -45px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -291,13 +291,103 @@
                     <p class="text-lg">출력이 완료된 포토티켓입니다.</p>
                     <p class="text-sm">이미 출력된 카드는 재출력이 불가합니다.</p>
                     <div>
-                        <a class="md-btn md-btn-raised md-btn-ripple _onoff">자랑하기</a>
+                        <a class="button_hb off _onoff">
+                            <span class="text">자랑하기</span>
+                        </a>
+<!--                        <a class="md-btn button_hb _onoff">자랑하기</a>-->
                         <a class="btn-grey" href="javascript:void(0);">삭제하기</a>
                     </div>
                 </div>
             </div>
         </article>
     </section>
+    <style>
+        .button_hb{
+            display: inline-block;
+            margin-right: 6px;
+            cursor: pointer;
+            border-color: #448AFF;
+            color: #448AFF;
+            border: 1px solid var(--watermelon);
+            width: 135px;
+            height: 44px;
+            line-height: 44px;
+            vertical-align: middle;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 22px;
+        }
+        .button_hb:before{
+            background-color: #448AFF;
+        }
+        .button_hb{
+            border: none;
+            padding: 0;
+            background-color: transparent;
+        }
+        .button_hb{
+            text-transform: uppercase;
+            color: var(--watermelon);
+            border: 1px solid var(--watermelon);
+        }
+        .button_hb{
+            position: relative;
+            overflow: hidden;
+            /*transition: color .5s ease-out;*/
+        }
+        .button_hb:focus{
+            outline: none;
+        }
+        .button_hb.on{
+            color: #ffffff;
+            border: 0;
+        }
+        .button_hb span{
+            position: relative;
+            z-index: 22;
+            color: var(--watermelon);
+        }
+        .button_hb.on span{
+            position: relative;
+            z-index: 22;
+            color: #ffffff;
+        }
+        .button_hb.off{
+            line-height: 42px;
+        }
+        .button_hb.off span{
+            position: relative;
+            z-index: 22;
+            color: var(--watermelon);
+        }
+        .button_hb.off:before{
+            content: "";
+            background-color: var(--watermelon);
+            width: 0;
+            height: 0;
+            padding: 50%;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0) scale(0);
+            transition: transform .3s ease-out;
+        }
+        .button_hb:before{
+            content: "";
+            background-color: var(--watermelon);
+            width: 0;
+            height: 0;
+            padding: 50%;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transition-duration: .5s;
+            transform: translate3d(-50%, -50%, 0) scale(1.5);
+        }
+    </style>
     <!-- [E] Content -->
 </div>
 <!--
@@ -312,7 +402,14 @@
 <script>
 $(document).ready(function () {
     $('._onoff').on('click', function () {
-        $(this).hasClass('on') ? $(this).removeClass('on').addClass('off').text('자랑하기') : $(this).removeClass('off').addClass('on').text('자랑취소');
+        if( $(this).hasClass('on')) {
+            $(this).removeClass('on').addClass('off');
+            $(this).children().text('자랑취소')
+        }
+        else {
+            $(this).removeClass('off').addClass('on');
+            $(this).children().text('자랑하기');
+        }
     });
 })
 </script>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+@@include('../html/include/head.html')
+<body>
+<div class="wrap">
+  @@include('../html/include/header.html')
+  <section class="personal sign_in">
+    <h2 class="sr-only">회원가입</h2>
+    <div class="title">
+      <p>회원가입</p>
+    </div>
+    <div class="box">
+      <div class="content">
+        <div class="clearfix pb-3">
+          <ul class="step">
+            <li class="active">STEP 1. 약관동의</li>
+            <li class="active">STEP 2. 정보입력</li>
+            <li class="current">STEP 3. 가입완료</li>
+          </ul>
+        </div>
+        <div class="p-content">
+          <div class="p-text">
+            <p><i class="far fa-check"></i></p>
+            <div>
+              <p class="text">회원가입이 <span class="font-weight-bold">완료되었습니다.</span></p>
+              <p class="text-sm">다시 로그인해주세요!</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-content">
+          <div class="btn-area single">
+            <button class="btn btn-xl btn-primary">메인화면으로 이동</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  @@include('../html/include/footer.html')
+</div>
+</body>
+</html>

@@ -291,14 +291,119 @@
                     <p class="text-lg">출력이 완료된 포토티켓입니다.</p>
                     <p class="text-sm">이미 출력된 카드는 재출력이 불가합니다.</p>
                     <div>
-                        <a class="btn-ani button--ujarak _btnBoast">자랑하기</a>
-<!--                        <a class="btn-ripple ripple _btnBoast">자랑하기</a>-->
+                        <a class="md-btn md-btn-raised md-btn-ripple _onoff">자랑하기</a>
                         <a class="btn-grey" href="javascript:void(0);">삭제하기</a>
                     </div>
                 </div>
             </div>
         </article>
     </section>
+    <style>
+
+        /* Button style */
+        .md-btn {
+            font-size: 16px;
+            display: inline-block;
+            width: 135px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 0;
+            font-weight: 600;
+            border-radius: 22px;
+            background: var(--watermelon);
+            color: #fff;
+            outline: 0;
+        }
+        .md-btn:hover {
+            color: #ffffff;
+        }
+        /*
+         Ripple
+        */
+        .md-btn-ripple.on {
+            overflow: hidden;
+            position: relative;
+            background: #ffffff;
+            color: var(--watermelon);
+            border: 1px solid var(--watermelon);
+            transition: background .5s;
+        }
+        .md-btn-ripple.on::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 7px;
+            left: 50px;
+            border-radius: 50%;
+            background: #ffffff;
+            animation: md-btn-ripple .5s;
+            opacity: 0;
+        }
+        .md-btn-ripple.off {
+            overflow: hidden;
+            position: relative;
+            background: var(--watermelon);
+            transition: background .5s;
+            border: 1px solid var(--watermelon);
+            color: #ffffff;
+        }
+        .md-btn-ripple.off::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            top: 7px;
+            left: 50px;
+            border-radius: 50%;
+            color: #ffffff;
+            background: var(--watermelon);
+            animation: md-btn-ripple2 .5s;
+            opacity: 0;
+        }
+        @keyframes md-btn-ripple {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(2);
+            }
+            50% {
+                transform: scale(3);
+            }
+            100% {
+                transform: scale(4);
+            }
+        }
+        @keyframes md-btn-ripple2 {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            20% {
+                transform: scale(2);
+            }
+            50% {
+                transform: scale(3);
+            }
+            100% {
+                transform: scale(4);
+            }
+        }
+
+    </style>
     <!-- [E] Content -->
 </div>
 <!--
@@ -310,6 +415,13 @@
 <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="../js/swiper.min.js"></script>
 <script type="text/javascript" src="../js/phototicket.js"></script>
+<script>
+$(document).ready(function () {
+    $('._onoff').on('click', function () {
+        $(this).hasClass('on') ? $(this).removeClass('on').addClass('off').text('자랑하기') : $(this).removeClass('off').addClass('on').text('자랑취소');
+    });
+})
+</script>
 <!--  [E] 2020.04.20	-->
 </body>
 </html>

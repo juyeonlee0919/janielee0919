@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "NanumGothic.css",
+	"sources": [
+		"../../../scss/fonts/NanumGothic.scss"
+	],
+	"sourcesContent": [
+		"/*\n  날짜 : 2020.04.30\n  작성자 : 이주연\n  내용 : 폰트 경로 변경\n*/\n@font-face {\n  font-family: 'NanumGothic';\n  font-style: normal;\n  font-weight: 400;\n  src: url(../../fonts/NanumGothic/NanumGothic.eot);\n  src: local('NanumGothic'),\n  url(../../fonts/NanumGothic/NanumGothic.eot?#iefix) format('embedded-opentype'),\n  url(../../fonts/NanumGothic/NanumGothic.woff) format('woff');\n}\n\n@font-face {\n  font-family: 'NanumGothic';\n  font-style: normal;\n  font-weight: 700;\n  src: url(../../fonts/NanumGothic/NanumGothicBold.eot);\n  src: local('NanumGothic Bold');\n}\n\n@font-face {\n  font-family: 'NanumGothicLight';\n  src: url(../../fonts/NanumGothicLight.eot);\n  src: url(../../fonts/NanumGothicLight.eot?#iefix) format(embedded-opentype);\n  src: url(../../fonts/NanumGothicLight.woff) format(woff);\n  src: local(※), url(../../fonts/NanumGothicLight.woff) format(woff);\n}\n"
+	],
+	"names": [],
+	"mappings": ";AAAA;;;;EAIE;AACF,UAAU;EACR,WAAW,EAAE,aAAa;EAC1B,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,GAAG;EAChB,GAAG,EAAE,4CAA4C;EACjD,GAAG,EAAE,oBAAoB,EACzB,mDAAmD,CAAC,2BAA2B,EAC/E,6CAA6C,CAAC,cAAc;;;AAG9D,UAAU;EACR,WAAW,EAAE,aAAa;EAC1B,UAAU,EAAE,MAAM;EAClB,WAAW,EAAE,GAAG;EAChB,GAAG,EAAE,gDAAgD;EACrD,GAAG,EAAE,yBAAyB;;;AAGhC,UAAU;EACR,WAAW,EAAE,kBAAkB;EAC/B,GAAG,EAAE,qCAAqC;EAC1C,GAAG,EAAE,4CAA4C,CAAC,yBAAyB;EAC3E,GAAG,EAAE,sCAAsC,CAAC,YAAY;EACxD,GAAG,EAAE,SAAS,EAAE,sCAAsC,CAAC,YAAY"
+}

@@ -1,0 +1,43 @@
+/*
+  section - main
+*/
+.main {
+  &.admin {
+    width: 100%;
+    min-width: 1200px;
+    height: 830px;
+    background: url(../img/common/admin_bg.png) no-repeat 51% 98%;
+    .box_main {
+      .contents {
+        top: 363px;
+      }
+      .box_login {
+        top: 290px;
+      }
+    }
+  }
+}
+/*
+  날짜 : 2020.04.30
+  작성자 : 이주연
+  내용 : 1366 * 768  사이즈일 때, 스크롤 안보이게 처리
+*/
+@media all and (max-height:800px) {
+  .main {
+    &.admin {
+      width: 100%;
+      min-width: 1200px;
+      height: 490px;
+      background: url(../img/common/admin_bg.png) no-repeat 47% 68%;
+      .box_main {
+        .contents {
+          top: 210px;
+        }
+        .box_login {
+          top: 134px;
+        }
+      }
+    }
+  }
+}
+
