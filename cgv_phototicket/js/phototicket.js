@@ -155,13 +155,13 @@
 
     this._PT002 = {
         load: function () {
-            // header
-            var jbOffset = $('#headerTitle').offset();
+            // nav
+            var jbOffset = $('.nav').offset();
             $(window).scroll(function () {
                 if ($(document).scrollTop() > jbOffset.top) {
-                    $('#header_box').find('#navMain').addClass('active');
+                    $('.nav').addClass('active');
                 } else {
-                    $('#header_box').find('#navMain').removeClass('active');
+                    $('.nav').removeClass('active');
                 }
             });
         },

@@ -1,7 +1,7 @@
 ﻿@charset "UTF-8";
 
 /* S 비회원 로그인 관련 임시 업데이트 소스 : 추후 회원서비스 전체 적용시 ui.style.css 호출하게 되면 삭제 */
-@import "iCheck.css";
+/*@import "iCheck.css";*/
 
 .btn_optbox {
 	display:relative;

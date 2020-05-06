@@ -68,11 +68,10 @@
 </head>
 <body class="bg_white">
 <div class="wrap">
-    <!-- [S] Content -->
+    <!-- [S] 포토티켓 제작완료 -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
-        <!--  todo! popup 처리    -->
         <div class="pop_header">
-            <a class="btn_share" href="javascript:void(0);">
+            <a class="btn_share icon_share" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icShare"></i>
             </a>
             <!--
@@ -298,7 +297,26 @@
             </div>
         </article>
     </section>
-    <!-- [E] Content -->
+    <!-- [E] 포토티켓 제작완료 -->
+
+    <!-- [S] 2020.05.06 공유하기 팝업 추가  -->
+    <div class="popLayer">
+        <div class="popFogBg"></div>
+        <!-- [S] 공유하기 팝업 -->
+        <div class="popShare">
+            <div class="popLayerHeader">
+                <h1>공유하기</h1>
+                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
+            </div>
+            <div class="popLayerContainer">
+                <ul class="list">
+                    <li><a href="#"><i class="sprite sprite-pt sprite-kakao"></i><span class="sns">카카오톡</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- [E] 기간검색 팝업   -->
+    </div>
+    <!-- [E] 공유하기 팝업  -->
 </div>
 <!--
     [S] 2020.04.20

@@ -65,13 +65,7 @@
     <!-- [E] 운영소스 상속용 -->
 </head>
 <body class="bg_white">
-<div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
-    <!--
-      날짜 : 2020.04.24
-      작성자 : 이주연
-      내용 : nav의 유무에 따라 double 클래스 추가
-     -->
     <!--
     날짜 : 2020.04.24
     작성자 : 이주연
@@ -81,7 +75,7 @@
        - type_pt2 : 포토티켓 자랑하기
     -->
     <!-- [S] Header -->
-    <div id="header_box" class="pt_header double">
+    <div id="header_box" class="pt_header">
         <header id="headerTitle">
             <a class="title_area" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icBack"></i>
@@ -93,13 +87,6 @@
                 </a>
             </div>
         </header>
-        <nav id="navMain" class="type_pt2" style="position: static; top: initial;">
-            <div class="inner">
-                <a class="_tab active" href="javascript:void(0);" onclick="" id="">최신순</a>
-                <a class="_tab" href="javascript:void(0);" onclick="" id="">인기순</a>
-                <a class="btn-badge-red _click" href="javascript:void(0);" onclick="" id="">내가 자랑한 포토티켓</a>
-            </div>
-        </nav>
         <!-- [S] siteMap -->
         <section class="allview_wrap" id="siteMap">
             <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>
@@ -157,20 +144,27 @@
     </div>
     <!-- [E] Header -->
 
+    <!--
+     [S]
+     날짜 : 2020.05.06
+     작성자 : 이주연
+     내용 : header_box/nav 분리
+    -->
+    <div id="navMain" class="nav">
+        <nav class="type_pt2">
+            <div class="inner">
+                <a class="_tab active" href="javascript:void(0);">최신순</a>
+                <a class="_tab" href="javascript:void(0);">인기순</a>
+                <a class="btn-badge-red _click" href="javascript:void(0);">내가 자랑한 포토티켓</a>
+            </div>
+        </nav>
+    </div>
+    <!-- [E] header_box/nav 분리 -->
+
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
-
         <!--  [S] 포토티켓 자랑하기    -->
         <article class="ptboast_wrap">
-            <div class="title_wrap">
-                <div class="title">
-                    포토티켓 자랑하기<a class="badge" href="javascript:void(0);">내 포토티켓 자랑</a>
-                </div>
-                <div class="all">
-                    <a class="btn-all" href="javascript:void(0);">전체보기 <i
-                            class="sprite sprite-pt sprite-icTMore"></i></a>
-                </div>
-            </div>
             <div class="imgcard_wrap">
                 <div class="row">
                     <div class="col">

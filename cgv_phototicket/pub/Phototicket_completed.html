@@ -65,13 +65,7 @@
     <!-- [E] 운영소스 상속용 -->
 </head>
 <body class="bg_white">
-<div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
-    <!--
-      날짜 : 2020.04.24
-      작성자 : 이주연
-      내용 : nav의 유무에 따라 double 클래스 추가
-     -->
     <!--
         날짜 : 2020.04.24
         작성자 : 이주연
@@ -81,7 +75,7 @@
            - type_pt2 : 포토티켓 자랑하기
     -->
     <!-- [S] Header -->
-    <div id="header_box" class="pt_header double"> <!-- nav의 유무에 따라 double 클래스 추가 -->
+    <div id="header_box" class="pt_header">  <!-- header에 nav가 있을 경우 double 클래스 추가 -->
         <header id="headerTitle">
             <a class="title_area" href="javascript:void(0);">
                 <i class="sprite sprite-pt sprite-icBack"></i>
@@ -93,14 +87,15 @@
                 </a>
             </div>
         </header>
-        <nav id="navMain" class="type_pt" style="position: static; top: initial;">
-            <div class="inner">
-                <a class="_tab active" href="javascript:void(0);">제작완료(10)</a>
-                <a class="_tab" href="javascript:void(0);">출력완료(3)</a>
-                <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
-                <!--    기간검색 팝업 참조 (Phototicket_popup_search.html)   -->
-            </div>
-        </nav>
+        <!--
+            날짜 : 2020.04.24
+            작성자 : 이주연
+            내용 :
+               - nav의 타입은 2가지
+               - type_pt : 포토티켓 제작완료/출력완료
+               - type_pt2 : 포토티켓 자랑하기
+        -->
+
         <!-- [S] siteMap -->
         <section class="allview_wrap" id="siteMap">
             <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>
@@ -157,17 +152,29 @@
         <!-- [E] siteMap -->
     </div>
     <!-- [E] Header -->
+    <!--
+     [S]
+     날짜 : 2020.05.06
+     작성자 : 이주연
+     내용 : header_box/nav 분리
+    -->
+    <div id="navMain" class="nav">
+        <nav class="type_pt">
+            <div class="inner">
+                <a class="_tab" href="javascript:void(0);">제작완료(10)</a>
+                <a class="_tab active" href="javascript:void(0);">출력완료(3)</a>
+                <!--   [S] 기간 검색    -->
+                <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
+                <!--   [E] 기간 검색    -->
+            </div>
+        </nav>
+    </div>
+    <!-- [E] header_box/nav 분리 -->
 
-    <!-- [S] Content -->
+    <!-- [S] 제작완료 -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
 
         <article class="mypt_wrap">
-            <div class="title_wrap">
-                <div class="title">내 포토티켓</div>
-                <div class="all">
-                    <a href="javascript:void(0);">전체보기 <i class="sprite sprite-pt sprite-icTMore"></i></a>
-                </div>
-            </div>
             <div class="card_wrap">
                 <a class="card" href="javascript:void(0);">
                     <div class="img">
@@ -269,42 +276,47 @@
                 </a>
             </div>
         </article>
-        <!-- S 레이어 팝업 관련  -->
-        <div class="popLayer">
-            <div class="popFogBg"></div>
-            <!--   [S] 기간검색 팝업   -->
-            <div class="popScheduleInfo">
-                <div class="popLayerHeader">
-                    <h1>조회기간</h1>
-                    <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
-                </div>
-                <div class="popLayerContainer">
-                    <ul class="DatepickerBox clearfix row">
-                        <li class="active _click"><a href="javascript:void(0);">7일</a></li>
-                        <li class="_click"><a href="javascript:void(0);">1개월</a></li>
-                        <li class="_click"><a href="javascript:void(0);">3개월</a></li>
-                        <li class="_click"><a href="javascript:void(0);">6개월</a></li>
-                        <li class="lg _click"><a href="javascript:void(0);">직접입력</a></li>
-                    </ul>
-                    <div class="inputBox">
+    </section>
+    <!-- [E] 제작완료 -->
+
+    <!-- [S] 기간검색 팝업  -->
+    <div class="popLayer">
+        <div class="popFogBg"></div>
+        <!--  [S]
+            날짜 : 2020.05.06
+            작성자 : 이주연
+            내용 : 기간 검색 팝업 추가
+        -->
+        <div class="popScheduleInfo">
+            <div class="popLayerHeader">
+                <h1>조회기간</h1>
+                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
+            </div>
+            <div class="popLayerContainer">
+                <ul class="DatepickerBox clearfix row">
+                    <li class="active _click"><a href="javascript:void(0);">7일</a></li>
+                    <li class="_click"><a href="javascript:void(0);">1개월</a></li>
+                    <li class="_click"><a href="javascript:void(0);">3개월</a></li>
+                    <li class="_click"><a href="javascript:void(0);">6개월</a></li>
+                    <li class="lg _click"><a href="javascript:void(0);">직접입력</a></li>
+                </ul>
+                <div class="inputBox">
                         <span class="inputBoxStart">
-                            <input type="date" disabled="">
+                            <input type="date" disabled="" value="2020-01-01">
                         </span>
-                        <span class="inputBoxEnd">
-                            <input type="date">
+                    <span class="inputBoxEnd" >
+                            <input type="date" value="2020-02-01">
                         </span>
-                    </div>
-                </div>
-                <div class="popLayerFooter w50p ">
-                    <a class="stem_btn01" href="javascript:void(0);">초기화</a>
-                    <a class="stem_btn01" href="javascript:void(0);">적용</a>
                 </div>
             </div>
-            <!--   [E] 기간검색 팝업   -->
+            <div class="popLayerFooter w50p ">
+                <a class="stem_btn01" href="javascript:void(0);">초기화</a>
+                <a class="stem_btn01" href="javascript:void(0);">적용</a>
+            </div>
         </div>
-        <!-- E 레이어 팝업 관련  -->
-    </section>
-    <!-- [E] Content -->
+        <!--   [E] 기간검색 팝업   -->
+    </div>
+    <!-- [E] 기간검색 팝업  -->
 
 </div>
 <!--

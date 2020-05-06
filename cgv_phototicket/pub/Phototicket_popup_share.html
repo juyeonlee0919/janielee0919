@@ -44,7 +44,7 @@
             var strIphonenavi = "";
             if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
                 var tmp_url = location.href;
-                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
                 var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
                 location.href = tmp_url_rep;
             }
@@ -54,10 +54,12 @@
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
     <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
-    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:ios:app_store_id" content="370441190">
     <meta property="al:ios:app_name" content="CGV">
-    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
 </head>
@@ -68,19 +70,20 @@
         <!-- S 레이어 팝업 관련  -->
         <div class="popLayer">
             <div class="popFogBg" style="opacity: 0.5; top: 0; display: block;"></div>
-            <!-- S Filter 팝업 -->
+            <!-- [S] 공유하기 팝업 -->
             <div class="popShare" style="display: block; bottom: 0">
                 <div class="popLayerHeader">
                     <h1>공유하기</h1>
-                    <a href="#" class="btn_close _closePopup"><i class="sprite sprite-pt sprite-icClose"></i></a>
+                    <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
                 </div>
                 <div class="popLayerContainer">
                     <ul class="list">
-                        <li><a href="#"><i class="sprite sprite-pt sprite-kakao"></i><span class="sns">카카오톡</span></a></li>
+                        <li><a href="#"><i class="sprite sprite-pt sprite-kakao"></i><span class="sns">카카오톡</span></a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <!--   [E] 기간검색 팝업   -->
+            <!-- [E] 기간검색 팝업   -->
         </div>
         <!-- E 레이어 팝업 관련  -->
     </section>
@@ -99,7 +102,7 @@
     -->
     <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
-<!--    <script type="text/javascript" src="../js/phototicket.js"></script>-->
+    <!--    <script type="text/javascript" src="../js/phototicket.js"></script>-->
 </div>
 </body>
 </html>
