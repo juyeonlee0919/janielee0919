@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 -->
+    <link rel="shortcut icon" href="../images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="../images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="../css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+
+    <script type="text/javascript" src="../js/appinterface.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+</head>
+<body class="bg_white">
+<div class="wrap">
+    <section class="content_wrap container photo_ticket">
+        <a class="icon_share" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icShare"></i></a>
+        <!-- S 레이어 팝업 관련  -->
+        <div class="popLayer">
+            <div class="popFogBg" style="opacity: 0.5; top: 0; display: block;"></div>
+            <!-- S Filter 팝업 -->
+            <div class="popShare" style="display: block; bottom: 0">
+                <div class="popLayerHeader">
+                    <h1>공유하기</h1>
+                    <a href="#" class="btn_close _closePopup"><i class="sprite sprite-pt sprite-icClose"></i></a>
+                </div>
+                <div class="popLayerContainer">
+                    <ul class="list">
+                        <li><a href="#"><i class="sprite sprite-pt sprite-kakao"></i><span class="sns">카카오톡</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--   [E] 기간검색 팝업   -->
+        </div>
+        <!-- E 레이어 팝업 관련  -->
+    </section>
+    <!-- [E] 운영소스 상속용 -->
+    <!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+    <!--
+    날짜 : 2020.04.24
+    작성자 : 이주연
+    내용 :
+     - <script> var screenId = "PT002";</script> 추가
+     - MP002 : 내 포토티켓 페이지
+    -->
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+<!--    <script type="text/javascript" src="../js/phototicket.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <!--  [E] 포토티켓 추가	-->
+</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/* commonV4.css 재정의 --------------------------------------------------------- */
+
+/* egg-grade */
+.egg-icon {display:inline-block; margin-right:3px; width:17px; height:18px; background:url('../images/common/sprite_egg.png') no-repeat 0 0; background-size:150px; vertical-align:middle;}
+.egg-icon.good {width:13px; background-position:-22px 0;}
+
+.my_rating ul li .mv_icon .theater-sticker {width:34px; text-align:center; margin:7px auto 0;}
+.my_rating ul li .mv_icon .theater-sticker img {width:100%; margin-top:2px;}
+.my_rating ul li .mv_icon .theater-sticker img:first-child {margin-top:0;}
+.my_rating ul li .mv_info {padding:0 0 0 8px;}
+
+.my_rating ul li .mv_info h3 {padding:0;}
+.my_rating ul li .mv_info h3 > strong {font-size:14px; vertical-align:middle;}
+.my_rating ul li .mv_info .subinfo {position:absolute; bottom:16px;}
+.my_rating ul li .mv_info .vip {display:block; color:#7c0aad; font-size:12px;}
+.my_rating ul li .mv_info .vip + .prov {margin-top:4px;}
+
+.my_rating ul li .mv_info .subs,.user_rating ul li .rating_info .subs {font-size:14px; padding:8px 0 38px;}
+
+.my_rating ul li .mv_info .prov .write_like{display:inline-block; height:12px;}
+.my_rating ul li .mv_info .prov .write_like:before {display:inline-block; content:'ㆍ'; width:4px; margin-left:-2px; color:#999;}
+.my_rating ul li .mv_info .prov .write_like .number{padding-left:24px;color:#999;}
+.my_rating ul li .mv_info .prov .choice_on{position:absolute;top:0;display:inline-block;width:12px;height:12px;padding-left:7px;font-size:0;line-height:0;text-indent:-9999px;background:url(../images/movieinfo/ico_mark_like.png) no-repeat 7px 0;background-size:12px;}
+.my_rating ul li .mv_info .prov .choice_off{position:absolute;top:0;display:inline-block;width:12px;height:12px;padding-left:7px;font-size:0;line-height:0;text-indent:-9999px;background:url(../images/movieinfo/ico_mark_like.png) no-repeat 7px -15px;background-size:12px;}
+
+.my_rating ul li .btn_delete, .user_rating ul li .btn_delete{right:0;}
+
+.my_rating ul li > a.arrow {overflow:hidden; position:absolute; top:15px; right:0; width:15px; height:15px; text-indent:-9999em; background:url('../images/common/btn_arrow_accordion.png') no-repeat 0 0; background-size:15px;}
+.my_rating .pop_mark_area {display:none; position:absolute; top:6px; right:26px; background-color:#fff;}
+.my_rating .on .pop_mark_area {display:block;}
+.my_rating .pop_mark_area ul{border:solid 2px #000; border-radius:5px; -webkit-border-radius:5px; -moz-border-radius:5px; box-shadow:#a5a5a5 1px 1px 3px;}
+.my_rating .pop_mark_area li:first-child {border-top:0px;}
+.my_rating .pop_mark_area li {margin:0px; padding:0px; border:0px;}
+.my_rating .pop_mark_area li a {display:inline-block; padding:0px 0px 0px 30px; font-weight:bold;}
+.my_rating .pop_mark_area li:first-child .bg_mark span{border-top:0;}
+.my_rating .pop_mark_area .bg_mark {display:block; background: url(../images/common/bg_pop_mark.png) no-repeat; background-size:20px;}
+.my_rating .pop_mark_area .bg_mark span {display:block; padding:12px 12px 12px 2px; border-top: solid 1px #c9cacc;}
+.my_rating .pop_mark_area .bg_mark .bno {border:none !important;}
+.my_rating .pop_mark_area .bg_mark.ico_modify {background-position:6px 12px;}
+.my_rating .pop_mark_area .bg_mark.ico_delete {background-position:6px -28px;}
+.my_rating .pop_mark_area .bg_mark.ico_spoiler {background-position:6px -74px;}
+.my_rating .pop_mark_area .bg_mark.ico_vilification {background-position:6px -112px;}
+.my_rating .pop_mark_area .pop_mark_arrow{position:absolute; right:-10px; top:12px; width:12px; height:20px; background: url(../images/common/img_pop_mark.png) no-repeat 0 0; background-size:100%;}
