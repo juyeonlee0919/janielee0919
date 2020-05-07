@@ -4,6 +4,12 @@
     CGV 포토티켓
 */
 /* [S]포토티켓 공통 */
+.wrap {
+	padding-right:constant(safe-area-inset-right);
+	padding-left:constant(safe-area-inset-left);
+	padding-right:env(safe-area-inset-right);
+	padding-left:env(safe-area-inset-left);
+}
 .photo_ticket .clearfix::after { content: ''; clear: both; display: block;}
 .photo_ticket .primary { color: #ff2f35;}
 .photo_ticket.container article::before {height: 7px;}
@@ -21,9 +27,18 @@
 .photo_ticket .btn-badge-grey .dday::after {content:''; position: absolute; height: 12px; border-right: 1px solid rgb(165,165,165); top: 2px; right: 4px;}
 .content_wrap.photo_ticket .cancel_area { padding-top: 2px !important; }
 .content_wrap.photo_ticket .cancel_area .btn-cancel { display: inline-block; padding-bottom: 2px; font-size: 13px; color: rgb(118,118,118);font-weight: 500; letter-spacing: -2px; border-bottom: 1px solid rgb(202,202,202)}
+.btn-ani {width: 135px;height: 44px;line-height: 43px;display: inline-block;border: none;background: var(--watermelon);color: #ffffff;vertical-align: middle;position: relative;z-index: 1;font-size: 16px;font-weight: 600;border-radius: 22px;-webkit-backface-visibility: hidden;-moz-osx-font-smoothing: grayscale;}
+.btn-ani:hover {color:#ffffff;}
+.btn-ani:focus {outline: none;}
+.btn-ani.btn-boast {background: var(--watermelon);color: #fff;-webkit-transition: background-color 0.3s, color 0.3s;transition: background-color 0.3s, color 0.3s;}
+.btn-boast::before {content: '';position: absolute;top: 0;left: 0;width: 135px;height: 42px;line-height: 42px;border: 1px solid var(--watermelon);z-index: -1;border-radius: 22px;opacity: 0;-webkit-transform: scale3d(0.6, 0.6, 1);transform: scale3d(0.6, 0.6, 1);-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;transition: transform 0.3s, opacity 0.3s;-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);}
+.btn-boast.active {background-color: #fff;color: var(--watermelon);}
+.btn-boast.active::before {-webkit-transform: scale3d(1, 1, 1);transform: scale3d(1, 1, 1);opacity: 1;border-radius: 30px;}
+.popToast {display: none;position: fixed;left: 50%;bottom: calc(245px + constant(safe-area-inset-bottom));bottom: calc(245px + env(safe-area-inset-bottom));transform: translate(-50%, 0);z-index: 99999;}
+.popToast:before {content: attr(data-comment);display: inline-block;position: relative;left: -8%;padding: 13px 8% 14px;font-size: 14px;color: #fff;line-height: 17px;text-align: center;background: rgba(0,0,0,0.6);border-radius: 22px 22px;white-space: nowrap;}
 
 /*  [S] btn-toggle   */
-.btn-toggle {display:inline-block;position: absolute;left: -30px;top: -28px;}
+.btn-toggle {display:inline-block;position: absolute;left: -30px;top: -25px;}
 .btn-toggle .white-circle {stroke: #efefef; transform:scale(1)}
 .btn-toggle .outline {stroke: #efefef;transform:scale(1)}
 .btn-toggle .check {stroke: #c6c6c6;transform:scale(1)}
@@ -127,7 +142,7 @@
 .popCompleted {overflow: auto;}
 .popCompleted .popLayerHeader .badge {width: 219px;height: 30px;line-height: 28px;border-radius: 15px; color: #ffffff; margin: 0 auto;}
 .popCompleted .popLayerHeader > div { width: 100%;height: 47px;padding-top: 14px;}
-.popCompleted .popLayerHeader .badge.badge_blue { background: #209eff; text-align: center;}
+.popCompleted .popLayerHeader .badge.badge-blue { background: #209eff; text-align: center;}
 .popCompleted .popLayerHeader .badge.badge_red { background: var(--watermelon)}
 .popCompleted .popLayerHeader .badge .dday { position: relative; font-size: 15px; font-weight: bold; letter-spacing: -1.1px; padding-right: 17px;}
 .popCompleted .popLayerHeader .badge .dday::after { content: ''; position: absolute; height:10px; border-right: 1px solid rgba(255,255,255,.5); right: 7px;top: 4px;}
@@ -205,7 +220,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 포토티켓 메인 - app */
 
 /* [S] 포토티켓 메인 - web */
-.content_wrap.photo_ticket .slider_wrap.web .swiper-container { width: 100%; overflow: auto; padding: 0 30px; }
+.content_wrap.photo_ticket .slider_wrap.web .swiper-container { width: 100%; overflow: auto; padding: 0 30px;}
 .content_wrap.photo_ticket .slider_wrap.web .swiper-container .swiper-slide { width: 260px; margin-right: 40px;}
 /* [E] 포토티켓 메인 - web */
 
@@ -263,7 +278,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .card_wrap .movie_info .info .date {display: inline-block;}
 .photo_ticket .card_wrap .badge { position: absolute; width: 68px; height: 68px; border-radius: 50%; text-align: center; color: #ffffff; right: 9px; bottom: 26px;}
 .photo_ticket .card_wrap .badge.badge_red { background-color: #ff2f35;}
-.photo_ticket .card_wrap .badge.badge_blue{ background-color: #209eff;}
+.photo_ticket .card_wrap .badge.badge-blue{ background-color: #209eff;}
 .photo_ticket .card_wrap .badge { background-color: #ff2f35}
 .photo_ticket .card_wrap .badge .dday { font-weight: bold; font-size: 18px; padding-top: 20px; margin-bottom: 2px; letter-spacing: 1px;}
 .photo_ticket .card_wrap .badge .txt { font-size: 10px; font-weight: 300;}
@@ -292,108 +307,19 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .imgcard_wrap .card .info .count_like i { display: inline-block; margin-right: 4px;line-height: 13px;}
 
 /* [S] 2020.04.28 하트 버튼 애니메이션 추가 */
-.btn-heart {
-	bottom: -17px; right: 2px;
-	display: inline-block;
-	bottom: -9px;
-	right: 2px;
-	width: 40px;
-	position: absolute;
-	height: 40px;
-	border-radius: 12px;
-	line-height: 40px;
-	font-size: 16px;
-	background-color: var(--watermelon);
-	border: 1px solid var(--watermelon);
-	color: #ffffff;
-	letter-spacing: -.5px;
-	font-weight: 600;
-	box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);
-}
-.btn-heart i {
-	position: absolute;;
-	top: 11px;
-	right: 9px;
-}
-.btn-heart.active i {
-	animation-duration: .5s;
-	-webkit-animation-name: stroke;
-	animation-name: stroke;
-}
-.btn-heart.active::after {
-	content: '';
-	position: absolute;
-	display: inline-block;
-	width: 20px;
-	height: 17px;
-	background: url(../images/phototicket/common/ic_like_sel.png) no-repeat;
-	animation-duration: .5s;
-	-webkit-animation-name: fill;
-	animation-name: fill;
-	top: 12px;
-	left: 10px;
-}
-.btn-heart.btn-lg {
-	bottom: auto; right: auto;
-	display: inline-block;
-	width: 40px;
-	position: inherit;
-	height: 40px;
-	border-radius: 12px;
-	line-height: 40px;
-	font-size: 16px;
-	background-color: var(--watermelon);
-	border: 1px solid var(--watermelon);
-	color: #ffffff;
-	letter-spacing: -.5px;
-	font-weight: 600;
-	box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);
-}
+.btn-heart {position: absolute;display: inline-block;width: 40px;height: 40px;border-radius: 12px;line-height: 40px;font-size: 16px;background-color: var(--watermelon);border: 1px solid var(--watermelon);color: #ffffff;letter-spacing: -.5px;font-weight: 600;box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);right: 2px;bottom: -9px;}
+.btn-heart i {position: absolute;;top: 11px;right: 9px;}
+.btn-heart.active i {animation-duration: .5s;-webkit-animation-name: stroke;animation-name: stroke;}
+.btn-heart.active::after {content: '';position: absolute;display: inline-block;width: 20px;height: 17px;background: url(../images/phototicket/common/ic_like_sel.png) no-repeat;animation-duration: .5s;-webkit-animation-name: fill;animation-name: fill;top: 12px;left: 10px;}
+.btn-heart.btn-lg {bottom: auto; right: auto;display: inline-block;width: 40px;position: inherit;height: 40px;border-radius: 12px;line-height: 40px;font-size: 16px;background-color: var(--watermelon);border: 1px solid var(--watermelon);color: #ffffff;letter-spacing: -.5px;font-weight: 600;box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);}
 /* [E] 2020.04.28 하트 버튼 애니메이션 추가 */
 
 /* [S] 2020.04.28 하트 버튼 애니메이션 추가 */
-.btn-heart-lg {
-	position: relative;
-	display: inline-block;
-	width: 165px;
-	height: 50px;
-	border-radius: 25px;
-	line-height: 48px;
-	background-color: var(--watermelon);
-	border: 1px solid var(--watermelon);
-	box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);
-}
-.btn-heart-lg i {
-	position: relative;
-	display: inline-block !important;
-	vertical-align: middle;
-}
-.btn-heart-lg span {
-	display: inline-block;
-	color: #ffffff;
-	font-weight: 600;
-	letter-spacing: -.5px;
-	font-size: 18px;
-	vertical-align: middle;
-}
-.btn-heart-lg.active i::after{
-	content: '';
-	position: absolute;
-	display: inline-block;
-	width: 25px;
-	height: 25px;
-	background: url("../images/phototicket/common/ic_btn_like_nor.png") no-repeat;
-	animation-duration: .5s;
-	-webkit-animation-name: fill2;
-	animation-name: fill2;
-	left: 1px;
-	top: 2px;
-}
-.btn-heart-lg.active i {
-	animation-duration: .5s;
-	-webkit-animation-name: stroke2;
-	animation-name: stroke2;
-}
+.btn-heart-lg {position: relative;display: inline-block;width: 165px;height: 50px;border-radius: 25px;line-height: 48px;background-color: var(--watermelon);border: 1px solid var(--watermelon);box-shadow: 0 3px 8px 0 rgba(251, 67, 87, 0.5);}
+.btn-heart-lg i {position: relative;display: inline-block !important;vertical-align: middle;}
+.btn-heart-lg span {display: inline-block;color: #ffffff;font-weight: 600;letter-spacing: -.5px;font-size: 18px;vertical-align: middle;}
+.btn-heart-lg.active i::after{content: '';position: absolute;display: inline-block;width: 25px;height: 25px;background: url("../images/phototicket/common/ic_btn_like_nor.png") no-repeat;animation-duration: .5s;-webkit-animation-name: fill2;animation-name: fill2;left: 1px;top: 2px;}
+.btn-heart-lg.active i {animation-duration: .5s;-webkit-animation-name: stroke2;animation-name: stroke2;}
 /* [E] 2020.04.28 하트 버튼 애니메이션 추가 */
 
 .photo_ticket .ptboast_wrap { position: relative; }
@@ -415,7 +341,8 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .title_area .title-sm {display:block; font-size: 14px; line-height: 17px; text-align: center; color: rgb(137,137,137);}
 .myPhtoticketFlip .title_area .title.title-single {margin-bottom: 24px;margin-top: 5px;letter-spacing: -2px;}
 
-.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 21px;}
+.myPhtoticketFlip .swiper-container { position: relative; width: 260px; margin: 0 auto; height: 410px;transform: translateY(-25px); overflow: visible; padding-top: 24px;}
+.myPhtoticketFlip .swiper-container .swiper-wrapper { padding-left: constant(safe-area-inset-left); padding-left: env(safe-area-inset-left);padding-right: constant(safe-area-inset-right); padding-right: env(safe-area-inset-right); }
 .myPhtoticketFlip .swiper-container .swiper-slide {text-align:center; display:flex; align-items:center; justify-content:center; /*margin-bottom: 34px;*/}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container {width: 235px; height: 358px; border-radius: 20px;transition: 0.3s;perspective: 1000;}
 .myPhtoticketFlip .swiper-container .swiper-slide .flip-container img { width: 100%; height: 100%; }
@@ -444,11 +371,11 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .back .inner .bg_grey .text {text-align: center; color:#555555; font-size: 10px; font-weight: bold; line-height: 13px; letter-spacing: -1px;}
 .myPhtoticketFlip .back .inner .sign .lg {text-align: center; font-size: 13px; font-weight: bold; line-height: 16px; letter-spacing: -.54px;}
 .myPhtoticketFlip .back .inner .sign .sm {text-align: center; color:#898989; font-size: 10px; line-height: 11px;}
-.myPhtoticketFlip .back .inner .btn-toggle {top: -54px;left: -37px;}
+.myPhtoticketFlip .back .inner .btn-toggle {top: -52px;left: -37px;}
 .myPhtoticketFlip .flip-container.active .flipper {transform: rotateY(180deg);}
 
 /*  포토티켓 플립 슬라이더 - pagination  */
-.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets { bottom: -1px; }
+.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets { bottom: -8px; }
 .myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet { margin: 0 1.5px; }
 .myPhtoticketFlip .swiper-pagination-bullet-active { background: var(--watermelon) }
 .myPhtoticketFlip .swiper-pagination-bullet { width: 5px; height: 5px;}
@@ -467,7 +394,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .flip-container .flipper .back label{top: -53px}
 
 /* 포토티켓 플립 슬라이더 - 버튼 영역 */
-.myPhtoticketFlip .btn_area { position: relative; width: 100%; margin-top: -15px;}
+.myPhtoticketFlip .btn_area { position: relative; width: 100%; margin-top: -15px; padding: 11px 15px 0;}
 .myPhtoticketFlip .btn_area.btn_area_sm { padding-top: 14px;}
 .myPhtoticketFlip .btn_area .inner {margin-bottom: 15px;}
 .myPhtoticketFlip .btn_area .btn-red i {position: absolute;left: 56px;top: 11px;}
@@ -477,7 +404,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .myPhtoticketFlip .btn_area .inner > div a:first-child {margin-right: 2px;}
 
 /* 포토티켓 플립 슬라이더 - web */
-.myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 22px 30px 0; }
+.myPhtoticketFlip.web .swiper-container { width: 100%; overflow: auto; padding: 33px 30px 0;}
 .myPhtoticketFlip.web .swiper-container .swiper-slide { width: 260px;margin-right: 29px;}
 
 /* [S] 포토티켓만 한개만 보여질 경우  */
@@ -490,12 +417,15 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 /* [E] 포토티켓만 한개만 보여질 경우  */
 
 /* [S] CGV광주충정로 점일 경우  */
-.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 15px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {width: 246px; padding-top: 44px; height: 386px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {width: 225px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .title_area .tip { display: block; color: var(--watermelon); font-size: 12px; line-height: 15px; text-align: center; margin-bottom: 0;letter-spacing: -1.5px;}
 .myPhtoticketFlip.myPhtoticketFlip-small .title_area .title-sm {margin-bottom: 4px;}
 .myPhtoticketFlip.myPhtoticketFlip-small .front { width: 223px; height: 339px; }
 .myPhtoticketFlip.myPhtoticketFlip-small .back { width: 223px; height: 339px; padding: 24px 18px 20px 18px;}
-.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -39px;left: -36px; }
+.myPhtoticketFlip.myPhtoticketFlip-small .back .btn-toggle {top: -35px;left: -36px; }
 .myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide { margin-bottom: 15px; width: 260px; margin-right: 28px;}
+.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -11px;}
 /* [E] CGV광주충정로 점일 경우  */
 
 /* [S] 플립슬라이더 팝업 헤더 */
@@ -504,7 +434,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .photo_ticket .pop_header .btn_share {position: absolute;left: 15px;top: 9px;}
 .photo_ticket .pop_header > div {width: 100%;height: 47px;padding-top: 14px;}
 .photo_ticket .pop_header .badge {width: 219px;height: 30px;line-height: 28px;border:1px solid transparent; border-radius: 15px;color: #ffffff;margin: 0 auto;text-align: center;}
-.photo_ticket .pop_header .badge.badge_blue {background: #209eff;}
+.photo_ticket .pop_header .badge.badge-blue {background: #209eff;}
 .photo_ticket .pop_header .badge.badge-red {background: var(--watermelon);}
 .photo_ticket .pop_header .badge.badge_grey {width: 194px; background: rgb(231,231,231);color:#222222}
 .photo_ticket .pop_header .badge.badge_grey .dday {font-size: 14px;font-weight: normal}
@@ -525,7 +455,6 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .popLayerFooter{width:100%;}
  .popLayerFooter .btnPopConfirm{display:block; width:100%; height:50px; font-weight:400; font-size:16px; color:#fff; line-height:50px; text-align:center; background-color:#373e46}
  .btnPopClose{position:absolute; right:0; top:6px; display:block; width:38px; height:38px; background-position:left -22px}
-
  .com_pop_wrap{position:fixed; top:100%; right:100%; bottom:100%; left:100%; width:100%; height:100%; z-index:100}
  .com_pop_fog{position:fixed; top:150%; left:0; width:100%; height:100%; background-color:#000}
  .com_pop_header{position:relative; height:50px; padding-left:20px; line-height:50px; font-weight:400; font-size:16px; text-align:left; color:#000; vertical-align:middle; border-bottom:1px solid #d3d6db}
@@ -535,17 +464,17 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .popLayerHeader {height:55px; padding-left:18px; line-height:50px; font-weight:400; font-size:14px; text-align:left; color:#373e46; vertical-align:middle; border-bottom:1px solid #dcdee3}
  .popLayerHeader h1 {line-height: 55px; color: #030303;font-weight: bold;font-size: 17px;letter-spacing: -2px;}
  .popLayerHeader .btn_close {left: auto; right: 13px;display: inline-block;position: absolute; top: 12px;}
- .popScheduleInfo {position:fixed; left:0; bottom:-100%; width:100%; height: 216px; max-height:80vh; background-color:#fff; border-radius:16px 16px 0 0; z-index:9}
+ .popScheduleInfo {position:fixed; left:0; bottom:-100%; width:100%; height: 223px; max-height:80vh; background-color:#fff; border-radius:16px 16px 0 0; z-index:9}
  .popScheduleInfo .popLayerContainer{margin-bottom: 18px;}
  .popScheduleInfo .popLayerFooter.w50p{overflow:hidden; width:100%; padding:0 0 constant(safe-area-inset-bottom) 0; background:linear-gradient(to left, var(--dustyOrange), var(--watermelon))}
- .popScheduleInfo .popLayerFooter.w50p a {display:block; float:left; position:relative; width:50%; font-weight:600; color:#fff; line-height:50px; text-align:center;font-size: 17px; letter-spacing: -.43px; }
+ .popScheduleInfo .popLayerFooter.w50p a {display:block; float:left; position:relative; width:50%; font-weight:600; color:#fff; line-height:52px; text-align:center;font-size: 17px; letter-spacing: -.43px; }
  .popScheduleInfo .popLayerFooter.w50p a:first-child:before{content:none}
  .DatepickerBox {padding: 20px 20px 6px;}
- .DatepickerBox li {float: left;height: 36px;margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
+ .DatepickerBox li {float: left;height: 36px; margin-right: 6px;width: 123px; flex: 0 0 17%; max-width: 33.333333%;}
  .DatepickerBox li.lg {flex: 0 0 23%; margin-right: 0}
- .DatepickerBox li a {display: block; text-align: center; line-height: 36px; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
+ .DatepickerBox li a {display: block; font-size: 14px; text-align: center; line-height: 36px; color:#666666; border-radius: 8px;background: rgba(242,242,242,.8);}
  .DatepickerBox li.active a {background: var(--watermelon); color: #ffffff}
- .stem_btn01 {float: left;display: block;width: 50%;min-height: 50px;color: #fff; line-height: 50px; font-size: 17px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
+ .stem_btn01 {float: left;display: block;width: 50%;min-height: 52px;color: #fff; line-height: 52px; font-size: 17px;letter-spacing: -0.5px;text-align: center;border-right: 1px solid #e33745;border-left: 1px solid #f9847f;}
  .stem_btn01:first-child {border-left: 0 !important;}
  .row {display: flex;flex-wrap: wrap;}
  .inputBox {position: relative; padding: 0 20px; overflow: hidden}
@@ -555,7 +484,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
  .inputBox span:last-child {float: right;}
  .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px; height: 36px; border:0; color:rgb(102,102,102); border-radius: 8px;background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:focus {outline: none}
- .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:rgb(203,203,203); border-radius: 8px; background: rgba(242,242,242,.8);}
+ .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px; border:0; color:#cbcbcb; border-radius: 8px; background: rgba(242,242,242,.8);}
  .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -65px -152px; z-index: 1;}
  .inputBox span input[type='date']::after {content: '';position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -85px -152px; z-index: 0;}
 /* [E] 기간검색 팝업 */
@@ -577,7 +506,7 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 .popCompleted .popLayerHeader .btn_share { position: absolute; left: 20px; top: 9px; }
 .popCompleted .popLayerHeader .badge {width: 219px;height: 30px;line-height: 30px;border-radius: 15px; color: #ffffff; margin: 0 auto;}
 .popCompleted .popLayerHeader > div { width: 100%; height: 47px; padding-top: 14px; }
-.popCompleted .popLayerHeader .badge.badge_blue { background: #209eff}
+.popCompleted .popLayerHeader .badge.badge-blue { background: #209eff}
 .popCompleted .popLayerHeader .badge.badge_red { background: var(--watermelon)}
 .popCompleted .popLayerHeader .badge .dday { position: relative; font-size: 15px; font-weight: bold; letter-spacing: -1.1px; padding-right: 17px;}
 .popCompleted .popLayerHeader .badge .dday::after { content: ''; position: absolute; height:10px; border-right: 1px solid rgba(255,255,255,.5); right: 7px;top: 4px;}
@@ -619,11 +548,16 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	.photo_ticket .title_wrap .all .btn-all i {right: 13px;}
 }
 @media only screen and (min-height: 735px) {
-	.myPhtoticketFlip .swiper-container {height: 470px;margin-bottom: 49px !important;}
+	.myPhtoticketFlip .swiper-container {height: 470px;margin-bottom: 49px !important; padding-top: 80px;}
 	.myPhtoticketFlip .swiper-container .swiper-slide .flip-container { width: 260px;height: 405px;}
 	.myPhtoticketFlip .front {width: 262px;height: 398px;}
 	.myPhtoticketFlip .back {width: 262px;height: 398px;}
-	.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -2px;}
+	.myPhtoticketFlip .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -25px;}
+
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container {padding-top: 80px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container .swiper-slide .flip-container {height: 340px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .swiper-container-horizontal>.swiper-pagination-bullets {bottom: -35px;}
+	.myPhtoticketFlip.myPhtoticketFlip-small .btn_area {padding: 30px 15px 0;}
 }
 @media only screen and (min-width: 375px) {
 	.cgvMovieChartWrap .btnFirstMove {top: 185px;}
@@ -768,166 +702,4 @@ nav.type_pt2 .inner .btn-badge-red::after {content: none}
 	to {
 		transform: scale(1);
 	}
-}
-
-
-.btn-ani {
-	width: 135px;
-	height: 44px;
-	line-height: 43px;
-	display: inline-block;
-	border: none;
-	background: var(--watermelon);
-	color: #ffffff;
-	vertical-align: middle;
-	position: relative;
-	z-index: 1;
-	font-size: 16px;
-	font-weight: 600;
-	border-radius: 22px;
-	-webkit-backface-visibility: hidden;
-	-moz-osx-font-smoothing: grayscale;
-}
-.btn-ani:hover {
-	color:#ffffff;
-}
-.btn-ani:focus {
-	outline: none;
-}
-
-/* Wapasha */
-.btn-ani.button--wapasha {
-	background: var(--watermelon);
-	color: #fff;
-	-webkit-transition: background-color 0.3s, color 0.3s;
-	transition: background-color 0.3s, color 0.3s;
-}
-.button--wapasha::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 135px;
-	height: 42px;
-	line-height: 42px;
-	border: 1px solid var(--watermelon);
-	z-index: -1;
-	border-radius: 22px;
-	opacity: 0;
-	-webkit-transform: scale3d(0.6, 0.6, 1);
-	transform: scale3d(0.6, 0.6, 1);
-	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
-	transition: transform 0.3s, opacity 0.3s;
-	-webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-	transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-}
-.button--wapasha.active {
-	background-color: #fff;
-	color: var(--watermelon);
-}
-.button--wapasha.active::before {
-	-webkit-transform: scale3d(1, 1, 1);
-	transform: scale3d(1, 1, 1);
-	opacity: 1;
-	border-radius: 30px;
-}
-
-/* Ujarak */
-.button--ujarak {
-	color: #ffffff;
-	-webkit-transition: border-color .5s;
-	transition: border-color .5s;
-}
-.button--ujarak::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 135px;
-	height: 42px;
-	color: #ffffff;
-	line-height: 43px;
-	background: #ffffff;
-	border-radius: 22px;
-	z-index: -1;
-	opacity: 0;
-	border: 1px solid var(--watermelon);
-	box-sizing: content-box;
-	-webkit-transform: scale3d(0.7, 1, 1);
-	transform: scale3d(0.7, 1, 1);
-	-webkit-transition: -webkit-transform 10s, opacity 10s;
-	transition: transform .5s, opacity .5s;
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-}
-.button--ujarak,
-.button--ujarak::before {
-	-webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-	transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
-}
-.button--ujarak.active {
-	color: var(--watermelon);
-	border-color: var(--watermelon);
-}
-.button--ujarak.active::before {
-	opacity: 1;
-	transform: translate3d(0, 0, 0);
-}
-
-/* Sacnite */
-.button.button--sacnite {
-	width: 70px;
-	height: 70px;
-	min-width: 0;
-	padding: 0;
-	color: #fff;
-	-webkit-transition: color 0.3s;
-	transition: color 0.3s;
-}
-.button--scanite.button--round-l {
-	border-radius: 50%;
-}
-.button--sacnite.button--inverted {
-	color: #37474f;
-}
-.button--sacnite::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border-radius: inherit;
-	z-index: -1;
-	box-shadow: inset 0 0 0 35px #37474f;
-	-webkit-transform: scale3d(0.9, 0.9, 1);
-	transform: scale3d(0.9, 0.9, 1);
-	-webkit-transition: box-shadow 0.3s, -webkit-transform 0.3;
-	transition: box-shadow 0.3s, transform 0.3s;
-}
-.button--sacnite.button--inverted::before {
-	box-shadow: inset 0 0 0 35px #fff;
-}
-.button--sacnite .button__icon {
-	font-size: 22px;
-	width: 22px;
-}
-.button--sacnite > span {
-	position: absolute;
-	opacity: 0;
-	pointer-events: none;
-}
-.button--sacnite:hover {
-	color: #37474f;
-}
-.button--sacnite.button--inverted.active {
-	color: #fff;
-}
-.button--sacnite.active::before {
-	box-shadow: inset 0 0 0 2px #37474f;
-	-webkit-transform: scale3d(1, 1, 1);
-	transform: scale3d(1, 1, 1);
-}
-.button--sacnite.button--inverted.active::before {
-	box-shadow: inset 0 0 0 2px #fff;
 }

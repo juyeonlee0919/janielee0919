@@ -7,8 +7,8 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>CGV</title>
     <!-- [S] 운영소스 상속용 -->
-    <link rel="shortcut icon" href="../images/common/favicon_cgv.png">
-    <link rel="apple-touch-icon" sizes="114×114" href="../images/common/favicon_cgv.png">
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
@@ -250,7 +250,7 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge_blue">
+                    <div class="badge badge-blue">
                         <p class="dday">D-17</p>
                         <p class="txt">출력가능일</p>
                     </div>
@@ -269,7 +269,7 @@
                             <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
                         </div>
                     </div>
-                    <div class="badge badge_blue">
+                    <div class="badge badge-blue">
                         <p class="dday">D-20</p>
                         <p class="txt">출력가능일</p>
                     </div>
@@ -281,38 +281,41 @@
 
     <!-- [S] 기간검색 팝업  -->
     <div class="popLayer">
-        <div class="popFogBg"></div>
+        <div class="popFogBg" style="opacity: 0.5; top: 0; display: block;"></div>
         <!--  [S]
             날짜 : 2020.05.06
             작성자 : 이주연
             내용 : 기간 검색 팝업 추가
         -->
-        <div class="popScheduleInfo">
+        <div class="popScheduleInfo" style="bottom: 0;">
             <div class="popLayerHeader">
                 <h1>조회기간</h1>
                 <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
             </div>
             <div class="popLayerContainer">
                 <ul class="DatepickerBox clearfix row">
-                    <li class="active _click"><a href="javascript:void(0);">7일</a></li>
-                    <li class="_click"><a href="javascript:void(0);">1개월</a></li>
-                    <li class="_click"><a href="javascript:void(0);">3개월</a></li>
-                    <li class="_click"><a href="javascript:void(0);">6개월</a></li>
-                    <li class="lg _click"><a href="javascript:void(0);">직접입력</a></li>
+                    <li class="active _dayClick"><a href="javascript:void(0);">7일</a></li>
+                    <li class="_dayClick"><a href="javascript:void(0);">1개월</a></li>
+                    <li class="_dayClick"><a href="javascript:void(0);">3개월</a></li>
+                    <li class="_dayClick"><a href="javascript:void(0);">6개월</a></li>
+                    <li class="lg _dayClick _direct"><a href="javascript:void(0);">직접입력</a></li>
                 </ul>
                 <div class="inputBox">
                         <span class="inputBoxStart">
-                            <input type="date" disabled="" value="2020-01-01">
+                            <input class="_inputDate" title="date" type="date" disabled="" value="2020-01-01">
                         </span>
                     <span class="inputBoxEnd" >
-                            <input type="date" value="2020-02-01">
+                            <input class="_inputDate" title="date" type="date" disabled="" value="2020-02-01">
                         </span>
                 </div>
             </div>
-            <div class="popLayerFooter w50p ">
-                <a class="stem_btn01" href="javascript:void(0);">초기화</a>
+            <div class="popLayerFooter w50p">
+                <a class="stem_btn01 _reset" href="javascript:void(0);">초기화</a>
                 <a class="stem_btn01" href="javascript:void(0);">적용</a>
             </div>
+            <!-- [S] 토스트 팝업 추가 2020.05.07  -->
+            <div id="filterToast" class="popToast" data-comment="초기화 되었습니다."></div>
+            <!-- [E] 토스트 팝업 추가 2020.05.07  -->
         </div>
         <!--   [E] 기간검색 팝업   -->
     </div>
