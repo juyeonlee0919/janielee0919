@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>CGV</title>
+    <!-- [S] 운영소스 상속용 -->
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="../css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="../css/v5/master.css?2019072509">
+    <link rel="canonical" href="http://www.cgv.co.kr/">
+
+    <!-- [S] 2020.04.29 위치 변경 -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <!-- [E] 2020.04.29 위치 변경 -->
+
+    <script type="text/javascript" src="../js/appinterface.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="../js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
+    <script type="text/javascript" src="../js/clipboard.min.js"></script>
+    <script type="text/javascript" src="../js/date.js"></script>
+    <script type="text/javascript">
+        //Global Variable
+        var IsWebView_Master = false;
+        var IsWebViewIPhone_Master = false;
+        var IsNewVersion_Master = false;
+        var AppVersion_Master = 0;
+        var IsIphone_Master = false;
+        var IOSVersion_Master = 0;
+
+        jQuery(document).ready(function () {
+            //아이폰 예외 처리 - 아이폰 수정 후 삭제 예정
+            var strIphonenavi = "";
+            if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
+                var tmp_url = location.href;
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
+                var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
+                location.href = tmp_url_rep;
+            }
+        });
+    </script>
+    <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
+    <meta property="og:title" content="CGV 패키지">
+    <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
+    <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:app_store_id" content="370441190">
+    <meta property="al:ios:app_name" content="CGV">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:package" content="com.cgv.android.movieapp">
+    <meta property="al:android:app_name" content="CGV">
+    <!-- [E] 운영소스 상속용 -->
+</head>
+<body class="bg_white">
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+<div class="wrap">
+    <section class="content_wrap container photo_ticket">
+        <!-- [S] 내가 자랑한 포토티켓 -->
+        <div class="popMyPhototicket"  style="display: block;top: 0;">
+            <div class="popLayerHeader">
+                <h1>
+                    <a class="name" href="javascript:void(0);">내가 자랑한 포토티켓</a>
+                </h1>
+                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
+            </div>
+            <div class="popLayerContainer">
+                <div class="myPhtoticketFlip onlyPhoto myPhoto">
+                    <div class="badge-area">
+                        <p class="btn-badge-grey">
+                            <span class="dday">자랑한 날</span><span class="date">2020.03.31</span>
+                        </p>
+                    </div>
+                    <div class="front">
+                        <div class="inner">
+                            <img src="../images/phototicket/main/sample.png" alt="">
+                        </div>
+                    </div>
+                    <div class="btn_area">
+                        <div class="inner">
+                            <div>
+                                <a class="btn-heart-lg _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNorLarge"></i><span>25</span></a>
+                            </div>
+                            <div class="cancel_area">
+                                <a class="btn-cancel" href="javascript:void(0);">자랑취소하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [E] 내가 자랑한 포토티켓 -->
+    </section>
+</div>
+<!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="../js/swiper.min.js"></script>
+<script type="text/javascript" src="../js/phototicket.js"></script>
+<!--  [E] 2020.04.20	-->
+<!--  [E] 2020.04.20	-->
+</body>
+</html>
