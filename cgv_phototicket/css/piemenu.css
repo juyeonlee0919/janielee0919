@@ -1,0 +1,63 @@
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */
+/*
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display:block}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+audio:not([controls]){display:none}
+html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+a:focus{outline:thin dotted #333;outline:5px auto -webkit-focus-ring-color;outline-offset:-2px}
+a:hover,a:active{outline:0}
+sub,sup{position:relative;font-size:75%;line-height:0;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{max-width:100%;vertical-align:middle;border:0;-ms-interpolation-mode:bicubic}
+button,input,select,textarea{margin:0;font-size:100%;vertical-align:middle}
+button,input{*overflow:visible;line-height:normal}
+button::-moz-focus-inner,input::-moz-focus-inner{padding:0;border:0}
+button,input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}
+input[type="search"]{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;-webkit-appearance:textfield}
+input[type="search"]::-webkit-search-decoration,input[type="search"]::-webkit-search-cancel-button{-webkit-appearance:none}
+textarea{overflow:auto;vertical-align:top}
+.clearfix{*zoom:1}
+.clearfix:before,.clearfix:after{display:table;content:""}
+.clearfix:after{clear:both}
+.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0}
+.input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}
+*/
+
+.num_noti {display:block;overflow:hidden;border-radius:50%;height:17px;width:17px;border:1px solid #fff;box-shadow:rgba(0,0,0,.3) 0 3px 8px 0,rgba(0,0,0,.2) 0 0 0 1px;background-color:#dc291e;font-size:12px;line-height:18px;text-indent:0;text-align:center;color:#fff;}
+.menu_button{position:absolute;bottom:0;left:0;border-radius:50%;height:44px;width:44px;border:4px solid #fff;box-shadow:rgba(0,0,0,.3) 0 3px 8px 0,rgba(0,0,0,.2) 0 0 0 1px; text-indent:-99999px;background-color:#dc291e;z-index:9999;outline:0}
+.menu_button .icon_img {overflow:hidden;display:block;height:44px;width:44px; text-indent:-9999em; background:url('../images/common/icon_shortcut_menu.png') no-repeat 0 0; background-size:44px; -webkit-transition:.4s ease;-moz-transition:.4s ease;-ms-transition:.4s ease;-o-transition:.4s ease;transition:.4s ease}
+.menu_button .num_noti {position:absolute; left:28px; top:-8px;}
+.menu_option{bottom:50px;left:2px;position:absolute;}
+.menu_option li{position:absolute;display:block;top:0;left:0;-webkit-transition:.3s;-moz-transition:.3s;-ms-transition:.3s;-o-transition:.3s;transition:.3s}
+.menu_option li a{position:relative;display:block;border-radius:50%;width:41px;height:41px;border:4px solid #fff;box-shadow:rgba(0,0,0,.4) 0 0 5px 0,rgba(0,0,0,.2) 0 0 0 1px,inset rgba(0,0,0,.5) 0 0 2px 0;/* text-indent:-99999px; */background:#666 url('../images/common/icon_shortcut_menu.png') no-repeat -1px -46px; background-size:44px;}
+.menu_option li a .txt {position:absolute; left:38px; bottom:40px; padding:6px 7px; white-space:nowrap; font-size:11px;text-align:center;-webkit-transition:.4s ease;-moz-transition:.4s ease;-ms-transition:.4s ease;-o-transition:.4s ease;transition:.4s ease; border-radius:10px; background-color:rgba(23,14,11,0.8); color:#fff;}
+.menu_option li a .num_noti {position:absolute; left:26px; top:-8px;}
+.btn-rotate .icon_img {-webkit-transform:rotate(-135deg);-moz-transform:rotate(-135deg);-ms-transform:rotate(-135deg);-o-transform:rotate(-135deg);transform:rotate(-135deg);}
+
+.menu_option li:nth-child(1) a {background-position:-1px -46px; background-size:44px;}
+.menu_option li:nth-child(2) a {background-position:-1px -87px; background-size:44px;}
+.menu_option li:nth-child(3) a {background-position:-1px -134px; background-size:44px;}
+.menu_option li:nth-child(4) a {background-position:-1px -178px; background-size:44px;}
+
+.menu_option li:nth-child(1) a .txt {left:38px; bottom:40px;}
+.menu_option li:nth-child(2) a .txt {left:46px; bottom:29px;}
+.menu_option li:nth-child(3) a .txt {left:46px; bottom:29px;}
+.menu_option li:nth-child(4) a .txt {left:46px; bottom:29px;}
+
+
+/* «ÿ¡¶ .active .menu_option li a{-webkit-animation:expand .6s ease 1 backwards;-moz-animation:expand .6s ease 1 backwards;-ms-animation:expand .6s ease 1 backwards;-o-animation:expand .6s ease 1 backwards;animation:expand .6s ease 1 backwards}*/
+@-webkit-keyframes expand{0%{ top:0}
+50%{top:-10px}
+70%{top:10px}
+100%{top:0}
+}
+@-moz-keyframes expand{0%{ top:0}
+50%{top:-10px}
+70%{top:10px}
+100%{top:0}
+}
+
+.shortcut_menu {display:block; position:fixed; left:10px; bottom:10px; width:52px; height:52px; z-index:98;}
+.shortcut_menu .fogbg {display:none; position:fixed; left:0; top:0; width:100%; height:100%; background:#000; opacity:.5; filter:alpha(opacity=50);}
+.shortcut_menu.active .fogbg {display:block;}
