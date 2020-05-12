@@ -9,12 +9,12 @@
     <!-- [S] 운영소스 상속용 -->
     <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
     <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
-    <link rel="stylesheet" type="text/css" href="../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../css/header.css">
-    <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
-    <link rel="stylesheet" type="text/css" href="../css/eggupdate.css">
-    <link rel="stylesheet" type="text/css" href="../css/eggupdateV4.css">
-    <link rel="stylesheet" type="text/css" href="../css/v5/master.css?2019072509">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/common.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/header.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/piemenu.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdate.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/eggupdateV4.css">
+    <link rel="stylesheet" type="text/css" href="http://img.cgv.co.kr/WebApp/css/v5/master.css?2019072509">
     <link rel="canonical" href="http://www.cgv.co.kr/">
 
     <!-- [S] 2020.04.29 위치 변경 -->
@@ -22,13 +22,14 @@
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
     <!-- [E] 2020.04.29 위치 변경 -->
-
-    <script type="text/javascript" src="../js/appinterface.js"></script>
-    <script type="text/javascript" src="../js/Common/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/analytics.js"></script>
+    <script type="text/javascript" async="" src="http://www.google-analytics.com/plugins/ua/ec.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/appinterface.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script type="text/javascript" src="../js/Common/jquery.menu.js"></script>
-    <script type="text/javascript" src="../js/Common/jindo.mobile.min.js"></script>
-    <script type="text/javascript" src="../js/Common/jindo.mobile.core.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jquery.menu.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.min.js"></script>
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/jindo.mobile.core.min.js"></script>
     <script type="text/javascript" src="../js/morder.appInterface.js"></script>
     <script type="text/javascript" src="../js/clipboard.min.js"></script>
     <script type="text/javascript" src="../js/date.js"></script>
@@ -52,6 +53,15 @@
             }
         });
     </script>
+    <!--
+    [S] 2020.04.20
+    작성자 : 이주연
+    내용 : 포토티켓 추가
+    -->
+<!--    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>-->
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <!--  [E] 2020.04.20	-->
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
@@ -68,9 +78,9 @@
 
 </head>
 <body class="bg_white">
+<div class="header_wrap" style="display:none;" id="header_wrap"></div>
 <div class="wrap">
-
-    <!-- [S] 포토티켓 제작 완료 -->
+    <!-- [S] 포토티켓 제작 완료(WEB) -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
         <div class="pop_header">
             <a class="btn_share icon_share" href="javascript:void(0);">
@@ -82,8 +92,8 @@
              내용 :  클래스 badge-blue / badge_red 두 타입
              -->
             <div>
-                <p class="badge badge-red">
-                    <span class="dday">D-20</span><span class="text">출력가능일 4월 4일까지</span>
+                <p class="badge badge-blue">
+                    <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>
                 </p>
             </div>
             <a class="btn_close btnPopClose" href="javascript:void(0);">
@@ -91,25 +101,23 @@
             </a>
         </div>
         <!-- [S] 플립 슬라이더 -->
-        <!-- tip 클래스 유무, 분기 처리 필요 -->
+        <!-- 광주충장로점일 때, 분기 처리 필요 -->
         <!--
-          수정 날짜 :  2020.05.12
-          내용 : - back 화면 이미지 처리
-                - L:148~150 추가
-                - <div class="back">안쪽 정보(<p class="title">,<p class="title_lg">,<p class="title_sm">,<ul class="info">,<div class="bg_grey">,<div class="sign"> 삭제
-      -->
-        <article class="myPhtoticketFlip">
+         날짜 : 2020.05.11
+         추가 사항 : 데이터가 1개일 경우 single 클래스 추가(가운데 정렬)
+       -->
+        <article class="myPhtoticketFlip web single">
             <div class="title_area">
                 <span class="title">다크워터스(2D)</span>
                 <span class="title-sm">예매번호 : 001-0000-0000-002</span>
                 <!-- 광주충장로 점일 때 -->
-                <!-- <span class="tip">CGV광주충장로 점에서만 출력가능합니다.</span>-->
+<!--                <span class="tip">CGV광주충장로에서만 출력가능합니다.</span>-->
             </div>
             <div class="slider-wrap">
-                <div class="swiper-container ">
+                <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="flip-container active">
+                        <div class="flip-container">
                             <div class="flipper">
                                 <div class="front">
                                     <div class="dim"></div>
@@ -158,8 +166,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- 자랑 취소 페이지에서, pagination 제거 -->
-                <!--  <div class="swiper-pagination"></div>-->
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
             </div>
             <div class="btn_area">
@@ -174,9 +182,8 @@
                 </div>
             </div>
         </article>
-        <!-- [E] 플립 슬라이더 -->
     </section>
-    <!-- [E] 포토티켓 제작 완료 -->
+    <!-- [E] 포토티켓 제작 완료(WEB) -->
 
     <!-- [S] 2020.05.06 공유하기 팝업 추가  -->
     <div class="popLayer">
@@ -196,14 +203,5 @@
     </div>
     <!-- [E] 공유하기 팝업  -->
 </div>
-<!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/swiper.min.js"></script>
-<script type="text/javascript" src="../js/phototicket.js"></script>
-<!--  [E] 2020.04.20	-->
 </body>
 </html>

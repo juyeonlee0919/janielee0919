@@ -21,18 +21,17 @@
     <link rel="stylesheet" type="text/css" href="../css/eggupdateV4.css">
     <link rel="stylesheet" type="text/css" href="../css/v5/master.css?2019072509">
     <link rel="canonical" href="http://www.cgv.co.kr/">
-    <!--  [E] 2020.04.29	-->
+    <!--  [S] 2020.04.29 위치 변경	-->
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <!--  [E] 2020.04.29	-->
+    <!--  [E] 2020.04.20	-->
+    <script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../js/appinterface.js"></script>
-    <script type="text/javascript" src="../js/Common/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type="text/javascript" src="../js/Common/jquery.menu.js"></script>
     <script type="text/javascript" src="../js/Common/jindo.mobile.min.js"></script>
     <script type="text/javascript" src="../js/Common/jindo.mobile.core.min.js"></script>
-    <script type="text/javascript" src="../js/morder.appInterface.js"></script>
     <script type="text/javascript" src="../js/clipboard.min.js"></script>
     <script type="text/javascript" src="../js/date.js"></script>
     <script type="text/javascript">
@@ -49,22 +48,25 @@
             var strIphonenavi = "";
             if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
                 var tmp_url = location.href;
-                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
+                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
                 var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
                 location.href = tmp_url_rep;
             }
         });
     </script>
+    <!-- [S] 2020.05.11 위치 변경   -->
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script> var screenId = "PT001";</script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <!-- [E] 2020.05.11 위치 변경   -->
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
     <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
-    <meta property="al:ios:url"
-          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:ios:app_store_id" content="370441190">
     <meta property="al:ios:app_name" content="CGV">
-    <meta property="al:android:url"
-          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
@@ -310,9 +312,9 @@
 <div class="loadingIng">
     <img src="../images/common/loading.gif" alt="로딩중" class="img_loading">
 </div>
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/swiper.min.js"></script>
-<script>var screenId = "PT003";</script>
-<script type="text/javascript" src="../js/phototicket.js"></script>
+<!--<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>-->
+<!--<script type="text/javascript" src="../js/swiper.min.js"></script>-->
+<!--<script>var screenId = "PT003";</script>-->
+<!--<script type="text/javascript" src="../js/phototicket.js"></script>-->
 </body>
 </html>
