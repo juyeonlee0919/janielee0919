@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
+<!--
+  날짜 : 2020.05.08
+  작성자 : 이주연
+  내용 : 데이터가 없을 경우 페이지 추가
+-->
 <head>
     <meta charset="utf-8">
     <meta name="format-detection" content="telephone=no">
@@ -79,7 +84,7 @@
                 </div>
             </a>
             <div class="title" id="headerTitleArea">
-                <a href="javascript:void(0);">포토티켓</a>
+                <a href="javascript:void(0);">내 포토티켓 자랑하기</a>
             </div>
             <a class="btn_info" href="javascript:void(0);">
                 <i id="headerRightBtn" class="txt_rt sprite sprite-pt sprite-icInfo"></i>
@@ -141,28 +146,28 @@
         </section>
     </div>
     <!-- [E] Header -->
+
+    <!--
+    날짜 : 2020.04.24
+    작성자 : 이주연
+    내용 :
+       - nav의 타입은 2가지
+       - type_pt : 포토티켓 제작완료/출력완료
+       - type_pt2 : 포토티켓 자랑하기
+    -->
     <!-- [S] Header -->
-<!--    <div id="header_box" class="pt_header">  &lt;!&ndash; header에 nav가 있을 경우 double 클래스 추가 &ndash;&gt;-->
+<!--    <div id="header_box" class="pt_header">-->
 <!--        <header id="headerTitle">-->
 <!--            <a class="title_area" href="javascript:void(0);">-->
 <!--                <i class="sprite sprite-pt sprite-icBack"></i>-->
 <!--            </a>-->
-<!--            <div class="title" id="headerTitleArea">내 포토티켓</div>-->
+<!--            <div class="title" id="headerTitleArea">포토티켓 자랑하기</div>-->
 <!--            <div class="btn_wrap">-->
 <!--                <a class="btn_menu" href="javascript:siteMapFn();">-->
 <!--                    <i class="sprite sprite-pt sprite-icSideMenu"></i>-->
 <!--                </a>-->
 <!--            </div>-->
 <!--        </header>-->
-<!--        &lt;!&ndash;-->
-<!--            날짜 : 2020.04.24-->
-<!--            작성자 : 이주연-->
-<!--            내용 :-->
-<!--               - nav의 타입은 2가지-->
-<!--               - type_pt : 포토티켓 제작완료/출력완료-->
-<!--               - type_pt2 : 포토티켓 자랑하기-->
-<!--        &ndash;&gt;-->
-
 <!--        &lt;!&ndash; [S] siteMap &ndash;&gt;-->
 <!--        <section class="allview_wrap" id="siteMap">-->
 <!--            <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>-->
@@ -219,182 +224,40 @@
 <!--        &lt;!&ndash; [E] siteMap &ndash;&gt;-->
 <!--    </div>-->
     <!-- [E] Header -->
+
     <!--
      [S]
      날짜 : 2020.05.06
      작성자 : 이주연
      내용 : header_box/nav 분리
     -->
-    <!--
-         날짜 : 2020.05.07
-         작성자 : 이주연
-         내용 : ul,li 태그로 변경
-        -->
     <div id="navMain" class="nav">
-        <nav class="type_pt">
-            <ul class="inner">
-                <li id="madeDone"><a href="javascript:void(0);">제작완료(10)</a></li>
-                <li id="printedDone" class="active"><a  href="javascript:void(0);">출력완료(3)</a></li>
-                <!--   [S] 기간 검색    -->
-                <a class="icon_search" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icFilterDate"></i>기간검색</a>
-                <!--   [E] 기간 검색    -->
-            </ul>
+        <nav class="type_pt2">
+            <div class="inner">
+                <a class="_tab active" href="javascript:void(0);">최신순</a>
+                <a class="_tab" href="javascript:void(0);">인기순</a>
+                <a class="btn-badge-red _click" href="javascript:void(0);">내가 자랑한 포토티켓</a>
+            </div>
         </nav>
     </div>
     <!-- [E] header_box/nav 분리 -->
 
-    <!-- [S] 제작완료 -->
+    <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
-
-        <article class="mypt_wrap">
-            <div class="card_wrap single">
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie2@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">작은아씨들</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-8</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie2@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">작은아씨들</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-8</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie3@2x.png" alt="영화 이미지">
-                        <div class="badge_top">+10</div>
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">다크워터스</p>
-                        <p class="tip">광주 충장로점 출력가능</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-10</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie4@2x.png" alt="영화 이미지">
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">어바웃타임(인생영화인생영화)</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-blue">
-                        <p class="dday">D-17</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
-                <a class="card" href="javascript:void(0);">
-                    <div class="img">
-                        <img src="../images/phototicket/main/movie3@2x.png" alt="영화 이미지">
-                        <div class="badge_top">+10</div>
-                    </div>
-                    <div class="movie_info">
-                        <p class="title">다크워터스</p>
-                        <p class="tip">광주 충장로점 출력가능</p>
-                        <div class="info">
-                            <span class="title">관람일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                        <div class="info">
-                            <span class="title">제작일</span><span class="date">2020.03.29(일)</span>
-                        </div>
-                    </div>
-                    <div class="badge badge-red">
-                        <p class="dday">D-10</p>
-                        <p class="txt">출력가능일</p>
-                    </div>
-                </a>
+        <article class="mypt_wrap none">
+            <div class="card_wrap">
+                <p class="pt">내가 자랑한 포토티켓 내역이 없습니다.</p>
             </div>
         </article>
     </section>
-    <!-- [E] 제작완료 -->
-
-    <!-- [S] 기간검색 팝업  -->
-    <div class="popLayer">
-        <div class="popFogBg"></div>
-        <!--  [S]
-            날짜 : 2020.05.06
-            작성자 : 이주연
-            내용 : 기간 검색 팝업 추가
-        -->
-        <div class="popScheduleInfo">
-            <div class="popLayerHeader">
-                <h1>조회기간</h1>
-                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
-            </div>
-            <div class="popLayerContainer">
-                <ul class="DatepickerBox clearfix row">
-                    <li class="active _dayClick"><a href="javascript:void(0);">7일</a></li>
-                    <li class="_dayClick"><a href="javascript:void(0);">1개월</a></li>
-                    <li class="_dayClick"><a href="javascript:void(0);">3개월</a></li>
-                    <li class="_dayClick"><a href="javascript:void(0);">6개월</a></li>
-                    <li class="lg _dayClick _direct"><a href="javascript:void(0);">직접입력</a></li>
-                </ul>
-                <div class="inputBox">
-                        <span class="inputBoxStart">
-                            <input class="_inputDate" title="date" type="date" disabled="" value="2020-01-01">
-                        </span>
-                    <span class="inputBoxEnd" >
-                            <input class="_inputDate" title="date" type="date" disabled="" value="2020-02-01">
-                        </span>
-                </div>
-            </div>
-            <div class="popLayerFooter w50p">
-                <a class="stem_btn01 _reset" href="javascript:void(0);">초기화</a>
-                <a class="stem_btn01" href="javascript:void(0);">적용</a>
-            </div>
-            <!-- [S] 토스트 팝업 추가 2020.05.07  -->
-            <div id="filterToast" class="popToast" data-comment="초기화되었습니다."></div>
-            <!-- [E] 토스트 팝업 추가 2020.05.07  -->
-        </div>
-        <!--   [E] 기간검색 팝업   -->
-    </div>
-    <!-- [E] 기간검색 팝업  -->
+    <!-- [E] Content -->
 
 </div>
 <!--
     [S] 2020.04.20
     작성자 : 이주연
     내용 : 포토티켓 추가
-    -->
+-->
 <!--
     [S] 2020.04.27
     작성자 : 이주연

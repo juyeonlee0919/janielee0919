@@ -1,52 +1,169 @@
 // 포토티켓
 // 작성일 : 2020.04.20
 // 작성자 : 이주연
+var front = {
+    event : {},
+    slider : {},
+    page : {},
+    fn : {},
+};
 
-(function ($) {
-    var win = this;
+(function (jQuery) {
+    // console.log(jQuery)
 
-    this._commonHandlers = {
+    front.event._commonHandlers = {
         load: function () {
-            $('.btnTop').on({
+            /**
+             * 날짜 : 2020.05.11
+             * 내용 : ajax 호출 다음 함수 실행
+             * - 이슈 : 기존 함수 실행 후, ajax 호출이 되어 슬라이더 실행이 안됨
+             * - 사용 방법 : ajax 호출 후, 함수 실행
+             */
+            front.slider.eventSlider();
+
+            /**
+             * 날짜 : 2020.05.12
+             * 수정 사항 : ajax 호출 다음 함수 실행해야함
+             * heart 클릭 이벤트 함수 추가
+             */
+            front.event.btnHeartClick();
+
+            jQuery('.btnTop').on({
                 click: function (e) {
                     e.preventDefault();
-                    $('html').stop().animate({scrollTop: '0'});
+                    jQuery('html').stop().animate({scrollTop: '0'});
                 }
             });
 
             // header 클릭 이벤트
-            $('#navMain ._tab').on('click', function () {
-                $('._tab').removeClass('active');
-                $(this).addClass('active');
+            jQuery('#navMain ._tab').on('click', function () {
+                jQuery('._tab').removeClass('active');
+                jQuery(this).addClass('active');
+                return false;
+            });
+
+            // 제작완료 tab ---- 2020.05.07 추가
+            jQuery('#madeDone').on('click', function () {
+                jQuery('#printedDone').removeClass('active');
+                jQuery(this).addClass('active');
+                return false;
+            });
+
+            // 제작완료 tab ---- 2020.05.07 추가
+            jQuery('#printedDone').on('click', function () {
+                jQuery('#madeDone').removeClass('active');
+                jQuery(this).addClass('active');
                 return false;
             });
 
             // click 이벤트
-            $('._click').on('click', function () {
-                $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+            jQuery('._click').on('click', function () {
+                jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
             });
 
-            // 자랑하기 버튼
-            $('._btnBoast').on('click', function () {
-                $(this).hasClass('active') ? $(this).removeClass('active').text('자랑하기') : $(this).text('자랑취소').addClass('active');
+            // 자랑하기 버튼 --- 2020.05.07 수정
+            jQuery('._btnBoast').on('click', function () {
+                if(jQuery(this).hasClass('active')) {
+                    jQuery(this).removeClass('active').text('자랑하기');
+                }
+                else {
+                    jQuery(this).text('자랑취소').addClass('active');
+                    // jQuery('#pop_alert').addClass('active');
+                }
+            });
+            // 체크 박스 버튼 클릭 이벤트 --- 수정 2020.05.11
+            jQuery('.myPhtoticketFlip .front .btn-toggle').first().addClass('active');
+            jQuery('.myPhtoticketFlip .back .btn-toggle').first().addClass('active');
+
+            jQuery('.btn-toggle').on('click', function () {
+                if(jQuery(this).hasClass('active')) {
+                    jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                    jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                    // jQuery('.btn-boast').addClass('disabled');
+
+                } else {
+                    jQuery(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
+                    jQuery(this).parents('.flipper').find('.btn-toggle').addClass('active');
+                    // jQuery('.btn-boast').removeClass('disabled');
+                }
             });
 
-            // 이벤트 슬라이더 - 메인 공통
-            var photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
-                speed: 400,
-                autoPlay: true,
-                direction: 'horizontal',
-                loop: $(".alert_wrap .swiper-slide").length > 1,
-                spaceBetween: 40,
-                slidesPerView: 1,
-                centeredSlides: true,
+            // 자랑하기 버튼 클릭시 alert 팝업
+            jQuery('._alertBoast').on('click',function () {
+                jQuery('#pop_alert').addClass('active');
+            })
+
+
+            // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            jQuery('._confirmBtn').on('click',function () {
+                jQuery('#pop_alert').removeClass('active');
+                jQuery('#pop_alert2').addClass('active');
             });
+
+            // 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            jQuery('._cancelBtn').on('click',function () {
+                jQuery('#pop_alert').removeClass('active');
+                jQuery('#pop_alert2').removeClass('active');
+                jQuery('#pop_alert3').removeClass('active');
+                jQuery('#pop_alert4').removeClass('active');
+            });
+
+            // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            jQuery('._cancelPay').on('click',function () {
+                jQuery('#pop_alert3').addClass('active');
+            });
+
+            // 결제 취소 버튼 클릭 이벤트 --- 2020.05.08 추가
+            jQuery('._confirmPay').on('click',function () {
+                jQuery('#pop_alert4').addClass('active');
+                jQuery('#pop_alert3').removeClass('active');
+            });
+
+            // 삭제하기 버튼 클릭 이벤트 --- 2020.05.08 추가
+            jQuery('._deleteBtn').on('click',function () {
+                jQuery('#pop_alert3').addClass('active');
+            });
+
+            // 조회기간 클릭 이벤트 다중처리 X
+            jQuery('._dayClick').on('click', function () {
+                if(jQuery(this).hasClass('active')){
+                    jQuery(this).siblings().removeClass('active');
+                    jQuery('._inputDate').attr( 'disabled', true );
+                }
+                else {
+                    jQuery(this).addClass('active').siblings().removeClass('active');
+                    jQuery('._inputDate').attr( 'disabled', true );
+                }
+            });
+
+            // 조회기간 활성화/비활성화
+            jQuery('._direct').on('click', function () {
+                if(jQuery(this).hasClass('active')){
+                    jQuery(this).siblings().removeClass('active');
+                    jQuery('._inputDate').attr( 'disabled', false );
+                }
+                else {
+                    jQuery(this).addClass('active').siblings().removeClass('active');
+                    jQuery('._inputDate').attr( 'disabled', false );
+                }
+            });
+
+            // 초기화 토스트 팝업 --- 2020.05.07
+            jQuery('._reset').on('click',function () {
+                jQuery('#filterToast').show().fadeOut(1500);
+            })
+
+            // 초기화 토스트 팝업 --- 2020.05.07
+            jQuery('._cancelPop').on('click',function () {
+                jQuery('#cancelToast').show().fadeOut(1500);
+            })
 
             // 플립 슬라이더 팝업
             // 버튼 클릭시 플립
-            $('._flip').on('click', function () {
-                $(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
+            jQuery('._flip').on('click', function () {
+                jQuery(this).parentsUntil('.swiper-slide').eq(3).toggleClass('active')
             });
+
 
             //사이트맵
             window.siteMapFn = siteMapFn;
@@ -63,29 +180,18 @@
                 dimed();
             }
 
-            $('.btn-toggle').on('click', function () {
-
-                if($(this).hasClass('active')) {
-                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                    $(this).parents('.flipper').find('.btn-toggle').removeClass('active');
-                } else {
-                    $(this).parents('.slider-wrap').find('.btn-toggle').removeClass('active');
-                    $(this).parents('.flipper').find('.btn-toggle').addClass('active');
-                }
-            });
-
             // 공유하기 팝업
             popLayerShowHide("icon_share", "popShare", "popFogBg");
 
             // 기간검색 팝업
             popLayerShowHide("icon_search", "popScheduleInfo", "popFogBg");
-            $('.popFogBg').on({
+            jQuery('.popFogBg').on({
                 click: function (e) {
-                    var $fogBg = $(e.target);
-                    var $popLayer;
-                    $fogBg.css({'display': 'none'});
-                    popLayerBgShowHide($('popFogBg'), $popLayer, true);
-                    $('body').off('scroll touchmove mousewheel');
+                    var jQueryfogBg = jQuery(e.target);
+                    var jQuerypopLayer;
+                    jQueryfogBg.css({'display': 'none'});
+                    popLayerBgShowHide(jQuery('popFogBg'), jQuerypopLayer, true);
+                    jQuery('body').off('scroll touchmove mousewheel');
                 }
             });
 
@@ -94,16 +200,19 @@
 
             function alertMessage() {
                 jQuery('#pop_alert').show();
+                jQuery('#pop_alert2').show();
+                jQuery('#pop_alert3').show();
+                jQuery('#pop_alert4').show();
                 dimed();
             }
 
             // pop_alert, 헤더 z-index 조정
-            $('#pop_alert').hasClass('active') ? $('#header_box').css('z-index', '0') : ''
+            jQuery('#pop_alert').hasClass('active') ? jQuery('#header_box').css('z-index', '0') : ''
 
             // 사이트맵 위치 조정
-            if ($('#header_box').hasClass('double')) {
-                $('.allview_wrap .allview_box_wrap').css('top', '-44px');
-                $('.photo_ticket .ptboast_wrap').css('padding-top', '56px');
+            if (jQuery('#header_box').hasClass('double')) {
+                jQuery('.allview_wrap .allview_box_wrap').css('top', '-44px');
+                jQuery('.photo_ticket .ptboast_wrap').css('padding-top', '56px');
             }
 
             //팝업 dim
@@ -119,162 +228,131 @@
         }
     }
 
-
-    this._PT001 = {
+    front.page._PT001 = {
         load: function () {
-            var photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
-                speed: 400,
-                width : '260',
-                autoPlay: true,
-                autoHeight: false,
-                direction: 'horizontal',
-                loop: false,
-                slidesPerView: 1,
-                centeredSlides: true,
-                breakpointsInverse: false,
-                roundLengths: false,
-                breakpoints: {
-                    320: {
-                        spaceBetween: 20,
-                    },
-                    360: {
-                        spaceBetween: 40
-                    }
-                },
-                on: {
-                    init: function () {
-                    },
-                }
-            });
-            photoTicketSlider.translateTo(0, 1, true);
-            // $(window).resize(function () {
-            //     location.reload();
-            // });
+            front.slider.photoSlider();
         },
     }
 
-    this._PT002 = {
+    // 상세 페이지 (내 포토티켓) - 헤더에 nav가 있는 경우
+    front.page._PT002 = {
         load: function () {
-            // header
-            var jbOffset = $('#headerTitle').offset();
-            $(window).scroll(function () {
-                if ($(document).scrollTop() > jbOffset.top) {
-                    $('#header_box').find('#navMain').addClass('active');
+            // nav
+            var jbOffset = jQuery('.nav').offset();
+            jQuery(window).scroll(function () {
+                if (jQuery(document).scrollTop() > jbOffset.top) {
+                    jQuery('.nav').addClass('active');
                 } else {
-                    $('#header_box').find('#navMain').removeClass('active');
+                    jQuery('.nav').removeClass('active');
                 }
             });
         },
     }
 
-    this._PT003 = {
-        load: function () {
-            // 플립 슬라이더
-            // console.log('플립 슬라이더');
-            var flipPhotoTicketSlider = new Swiper('.swiper-container', {
-                speed: 400,
-                autoHeight: false,
-                direction: 'horizontal',
-                loop: false,
-                spaceBetween: 28,
-                slidesPerView: 1,
-                centeredSlides: true,
-                breakpointsInverse: false,
-                roundLengths: false,
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                on: {
-                    init: function () {
-                        // console.log('동작');
-                        // var nWindowWidth = $(window).width();
-                        // var nPadding = (nWindowWidth - 282) / 2
-                        // setTimeout(function () {
-                        //     $('.myPhtoticketFlip .swiper-container')
-                        //         .css({
-                        //             'width': '100%',
-                        //             'margin': '0 auto',
-                        //             'padding-left': nPadding
-                        //         })
-                        // }, 100)
-                    },
-                }
-            });
-            flipPhotoTicketSlider.translateTo(0, 500, true, true);
-            // $(window).resize(function () {
-            //     location.reload();
-            // });
-        },
-    }
+    // 2020.05.11 플립슬라이더 swipe 기능 제거
+    // front.page._PT003 = {
+    //     load: function () {
+    //         front.slider.flipSlider();
+    //     },
+    // }
 
-    this._PT004 = {
-        load: function () {
-            var flipPhotoTicketSlider = new Swiper('.swiper-container', {
-                speed: 400,
-                autoHeight: false,
-                direction: 'horizontal',
-                loop: false,
-                spaceBetween: 5,
-                slidesPerView: 1,
-                centeredSlides: true,
-                breakpointsInverse: false,
-                roundLengths: false,
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-                on: {
-                    init: function () {
-                        // var nWindowWidth = $(window).width();
-                        // var nPadding = (nWindowWidth - 290) / 2
-                        // setTimeout(function () {
-                        //     $('.myPhtoticketFlip .swiper-container')
-                        //         .css({
-                        //             'width': '100%',
-                        //             'margin': '0 auto',
-                        //             'padding-left': nPadding
-                        //         })
-                        // }, 100)
-                    },
-                }
-            });
-            flipPhotoTicketSlider.translateTo(0, 500, true, true);
-            // $(window).resize(function () {
-            //     location.reload();
-            // });
-            // console.log('4번')
-            // popLayerShowHide('icon_popup_my','popMyPhototicket','popFogBg');
-            // popLayerShowHide('icon_popup_other','popOtherPhototicket','popFogBg');
-            // $('.popFogBg').on({
-            //     click:function(e){
-            //         var $fogBg = $(e.target);
-            //         var $popLayer;
-            //         $fogBg.css({'display':'none'});
-            //         popLayerBgShowHide($('popFogBg'), $popLayer, true);
-            //         $('body').off('scroll touchmove mousewheel');
-            //     }
-            // });
-        },
-    }
+    jQuery(this).on(front.event._commonHandlers);
 
-    $(this).on(this._commonHandlers);
-
-    switch (win.screenId) {
+    switch (this.screenId) {
         case 'PT001':
-            $(this).on(this._PT001);
+            jQuery(this).on(front.page._PT001);
             break; // 메인 - 플립 슬라이더
         case 'PT002':
-            $(this).on(this['_' + win.screenId]);
+            jQuery(this).on(front.page._PT002);
             break; // 상세 페이지 (내 포토티켓) - 헤더에 nav가 있는 경우
-        case 'PT003':
-            $(this).on(this._PT003);
-            break; // 플립 슬라이더(normal)
-        // case 'PT004':
-        //     $(this).on(this._PT004);
-        //     break; // 플립 슬라이더(small)
+        // case 'PT003':
+        //     jQuery(this).on(front.page._PT003);
+        //     break; // 플립 슬라이더(normal)
         default:
             break;
     }
 
+    /**
+     * SLIDER
+     */
+
+    // 메인 슬라이더 - 메인 공통
+    front.slider.photoSlider = function () {
+        front.slider.photoTicketSlider = new Swiper('.slider_wrap .swiper-container', {
+            speed: 400,
+            width : '260',
+            autoPlay: true,
+            autoHeight: false,
+            direction: 'horizontal',
+            loop: false,
+            slidesPerView: 1,
+            centeredSlides: true,
+            breakpointsInverse: false,
+            roundLengths: false,
+            breakpoints: {
+                320: {
+                    spaceBetween: 20,
+                },
+                360: {
+                    spaceBetween: 40
+                }
+            },
+            on: {
+                init: function () {
+                },
+            }
+        });
+        front.slider.photoTicketSlider.translateTo(0, 1, true);
+    }
+
+    // 이벤트 슬라이더 - 메인 공통
+    front.slider.eventSlider = function () {
+        front.slider.photoTicketEventSlider = new Swiper('.alert_wrap .swiper-container', {
+            speed: 400,
+            autoPlay: true,
+            direction: 'horizontal',
+            loop: jQuery(".alert_wrap .swiper-slide").length > 1,
+            spaceBetween: 40,
+            slidesPerView: 1,
+            centeredSlides: true,
+        });
+    }
+
+    // 플립 슬라이더
+    front.slider.flipSlider = function () {
+        front.slider.flipPhotoTicketSlider = new Swiper('.swiper-container', {
+            speed: 400,
+            autoHeight: false,
+            direction: 'horizontal',
+            loop: false,
+            spaceBetween: 28,
+            slidesPerView: 1,
+            centeredSlides: true,
+            breakpointsInverse: false,
+            roundLengths: false,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+            on: {
+                init: function () {
+                },
+            }
+        });
+        front.slider.flipPhotoTicketSlider.translateTo(0, 500, true, true);
+    }
+
+    // console.log(this);
+
+    // 좋아요 버튼 클릭 이벤트--- 2020.05.12 추가
+    front.event.btnHeartClick = function () {
+        jQuery('._btnHeart').on('click', function () {
+            jQuery(this).hasClass('active') ? jQuery(this).removeClass('active') : jQuery(this).addClass('active');
+        });
+    }
+
+    /**
+     * m.cgv 가져온 함수
+     */
     this.setScrollWidth = function (_target, _btnL) {
         try {
             var _width = 0;
@@ -283,7 +361,7 @@
             var _targetParentPR = Number(_target.css('padding-right').replace('px', ''));
 
             _target.find('> li').each(function () {
-                _width = $(this).outerWidth(true) + _width;
+                _width = jQuery(this).outerWidth(true) + _width;
             });
 
             if (_target.width() < _width) {
@@ -308,45 +386,45 @@
     };
 
     function popLayerHasTopShowHide(_btn, _popLayer, _fogBg, _screenId) {
-        var $btn = $('.' + _btn);
-        var $popLayer = $('.' + _popLayer);
-        var $fogBg = $('.' + _fogBg);
-        var _isFogBg = $fogBg.is(':visible');
+        var jQuerybtn = jQuery('.' + _btn);
+        var jQuerypopLayer = jQuery('.' + _popLayer);
+        var jQueryfogBg = jQuery('.' + _fogBg);
+        var _isFogBg = jQueryfogBg.is(':visible');
 
-        //$btn.off('click');
-        $btn.on({
+        //jQuerybtn.off('click');
+        jQuerybtn.on({
             click: function () {
-                $fogBg.css({'opacity': '.8', 'top': '0'});
-                $popLayer.find('input[type="password"]').focus();
+                jQueryfogBg.css({'opacity': '.8', 'top': '0'});
+                jQuerypopLayer.find('input[type="password"]').focus();
                 if (_btn == 'btnComCGVReg') {
-                    $popLayer.off('click');
-                    $popLayer.on({
+                    jQuerypopLayer.off('click');
+                    jQuerypopLayer.on({
                         click: function (e) {
-                            if ($(e.target).hasClass(_popLayer) || $(e.target).hasClass('popComCGVRegTxtWrap')) {
-                                $('.btnPopClose').trigger('click');
+                            if (jQuery(e.target).hasClass(_popLayer) || jQuery(e.target).hasClass('popComCGVRegTxtWrap')) {
+                                jQuery('.btnPopClose').trigger('click');
                             }
                         }
                     });
                 }
                 //기프트콘
                 if (cgv.common.StandardInfo.IsWebView && typeof _screenId !== "undefined" && _screenId === "MY012") {
-                    CGVHAAppInterface.SetNavigationBar('CGV 기프트콘(영화관람권) 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|$(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
+                    CGVHAAppInterface.SetNavigationBar('CGV 기프트콘(영화관람권) 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|jQuery(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
                 } else if (cgv.common.StandardInfo.IsWebView && typeof _screenId !== "undefined" && _screenId === "MY007") {
-                    CGVHAAppInterface.SetNavigationBar('CGV 할인쿠폰 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|$(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
+                    CGVHAAppInterface.SetNavigationBar('CGV 할인쿠폰 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|jQuery(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
                 } else if (cgv.common.StandardInfo.IsWebView && typeof _screenId !== "undefined" && _screenId === "MY010") {
-                    CGVHAAppInterface.SetNavigationBar('CGV 영화관람권 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|$(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
+                    CGVHAAppInterface.SetNavigationBar('CGV 영화관람권 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|jQuery(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
                 } else if (cgv.common.StandardInfo.IsWebView && typeof _screenId !== "undefined" && _screenId === "MY016") {
-                    CGVHAAppInterface.SetNavigationBar('CGV 무비패스카드 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|$(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
+                    CGVHAAppInterface.SetNavigationBar('CGV 무비패스카드 등록', '|' + encodeURIComponent(getNavigationIconUrl('icon_close')) + '||12|jQuery(\'.' + _popLayer + '\').trigger(\'click\');|', '|||||', '|||||', '|||||');
                 }
 
-                popLayerHasTopBgShowHide($fogBg, $popLayer, _isFogBg, _screenId);
+                popLayerHasTopBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg, _screenId);
             }
         });
     }
 
     function popLayerHasTopBgShowHide(_target, _contentTarget, _is, _screenId) {    // pop dim
         if (!_is) {
-            $('html, body').css({'overflow': 'hidden', 'position': 'relative', 'width': '100%', 'height': '100%'});
+            jQuery('html, body').css({'overflow': 'hidden', 'position': 'relative', 'width': '100%', 'height': '100%'});
             _contentTarget.show().stop().animate({'top': '0'}, 200, function () {
                 _contentTarget.siblings("div:not('.popFogBg')").hide()
                 _contentTarget.find('input[type=text]').focus();
@@ -355,7 +433,7 @@
             _target.show().on({
                 click: function () {
                     _contentTarget.show().stop().animate({'top': '150%'}, 200, function () {
-                        $('html, body').css({
+                        jQuery('html, body').css({
                             'overflow': 'visible',
                             'position': 'static',
                             'width': 'auto',
@@ -379,7 +457,7 @@
                 _target.off('click');
             });
 
-            $('.btnPopClose').on({
+            jQuery('.btnPopClose').on({
                 click: function () {
                     _target.trigger('click');
                 }
@@ -389,34 +467,34 @@
                 fnFixedScroll(false);
                 _target.hide();
             });
-            $('.btnPopClose').off('click');
+            jQuery('.btnPopClose').off('click');
         }
     }
 
-    win.fnPopLayerShowHide = function (_btn, _popLayer, _fogBg, _isInit) {
-        var $popLayer = $('.' + _popLayer);
-        var $fogBg = $('.' + _fogBg);
-        var _isFogBg = $fogBg.is(':visible');
+    this.fnPopLayerShowHide = function (_btn, _popLayer, _fogBg, _isInit) {
+        var jQuerypopLayer = jQuery('.' + _popLayer);
+        var jQueryfogBg = jQuery('.' + _fogBg);
+        var _isFogBg = jQueryfogBg.is(':visible');
 
         if (_btn == "") {
             if (_isInit) {
-                $fogBg.css({'opacity': '.5', 'top': '0'});
-                popLayerBgShowHide($fogBg, $popLayer, _isFogBg);
+                jQueryfogBg.css({'opacity': '.5', 'top': '0'});
+                popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
             }
 
         } else {
-            var $btn = $('.' + _btn);
+            var jQuerybtn = jQuery('.' + _btn);
 
             if (_isInit) {
-                $fogBg.css({'opacity': '.5', 'top': '0'});
-                popLayerBgShowHide($fogBg, $popLayer, _isFogBg);
+                jQueryfogBg.css({'opacity': '.5', 'top': '0'});
+                popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
             } else {
-                $popLayer.siblings("div:not('.popFogBg')").hide();
-                $btn.off('click');
-                $btn.on({
+                jQuerypopLayer.siblings("div:not('.popFogBg')").hide();
+                jQuerybtn.off('click');
+                jQuerybtn.on({
                     click: function () {
-                        $fogBg.css({'opacity': '.5', 'top': '0'});
-                        popLayerBgShowHide($fogBg, $popLayer, _isFogBg);
+                        jQueryfogBg.css({'opacity': '.5', 'top': '0'});
+                        popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
                     }
                 });
             }
@@ -424,47 +502,46 @@
     }
 
     function popLayerShowHide(_btn, _popLayer, _fogBg) {
-        var $btn = $('.' + _btn);
-        var $popLayer = $('.' + _popLayer);
-        var $fogBg = $('.' + _fogBg);
-        var _isFogBg = $fogBg.is(':visible');
-        $popLayer.siblings("div:not('.popFogBg')").hide();
-        $btn.off('click');
-        $btn.on({
+        var jQuerybtn = jQuery('.' + _btn);
+        var jQuerypopLayer = jQuery('.' + _popLayer);
+        var jQueryfogBg = jQuery('.' + _fogBg);
+        var _isFogBg = jQueryfogBg.is(':visible');
+        jQuerypopLayer.siblings("div:not('.popFogBg')").hide();
+        jQuerybtn.off('click');
+        jQuerybtn.on({
             click: function () {
-                $fogBg.css({'opacity': '.5', 'top': '0'});
-                popLayerBgShowHide($fogBg, $popLayer, _isFogBg);
+                jQueryfogBg.css({'opacity': '.5', 'top': '0'});
+                popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
 
 //                if(_popLayer == 'popMiniMap'){  // 미니맵일 경우 예외처리
-//                    var winWidth = $(window).outerWidth();
-//                    var activeItemLeft = $('.popMiniMap_Schedule_list li.active').offset().left;
-//                    var scrollLeft = $('.popMiniMap_Schedule_list').scrollLeft();
-//                    var itemWidth = $('.popMiniMap_Schedule_list li.active').outerWidth();
+//                    var winWidth = jQuery(window).outerWidth();
+//                    var activeItemLeft = jQuery('.popMiniMap_Schedule_list li.active').offset().left;
+//                    var scrollLeft = jQuery('.popMiniMap_Schedule_list').scrollLeft();
+//                    var itemWidth = jQuery('.popMiniMap_Schedule_list li.active').outerWidth();
 //
 //                    var centerScroll = scrollLeft + activeItemLeft - (winWidth - itemWidth) / 2;
 //
-//                    $('.popMiniMap_Schedule_list').scrollLeft(centerScroll)
+//                    jQuery('.popMiniMap_Schedule_list').scrollLeft(centerScroll)
 //                }
             }
         });
     }
 
     function popLayerSeatShowHide(_btn, _popLayer, _fogBg) {
-        var $btn = $('.' + _btn);
-        var $popLayer = $('.' + _popLayer);
-        var $fogBg = $('.' + _fogBg);
-        var _isFogBg = $fogBg.is(':visible');
+        var jQuerybtn = jQuery('.' + _btn);
+        var jQuerypopLayer = jQuery('.' + _popLayer);
+        var jQueryfogBg = jQuery('.' + _fogBg);
+        var _isFogBg = jQueryfogBg.is(':visible');
 
-
-        $btn.off('click');
-        $btn.on({
+        jQuerybtn.off('click');
+        jQuerybtn.on({
             click: function () {
-                console.log($btn.attr('data-is-event') == 'true')
-                if ($btn.attr('data-is-event') == 'true') {
+                console.log(jQuerybtn.attr('data-is-event') == 'true')
+                if (jQuerybtn.attr('data-is-event') == 'true') {
 
-                    $popLayer.siblings("div:not('.popFogBg')").hide();
-                    $fogBg.css({'opacity': '.5', 'top': '0'});
-                    popLayerBgShowHide($fogBg, $popLayer, _isFogBg);
+                    jQuerypopLayer.siblings("div:not('.popFogBg')").hide();
+                    jQueryfogBg.css({'opacity': '.5', 'top': '0'});
+                    popLayerBgShowHide(jQueryfogBg, jQuerypopLayer, _isFogBg);
                 }
             }
         });
@@ -475,7 +552,7 @@
             fnFixedScroll(true);
             _contentTarget.show().stop().animate({'bottom': '0'}, 200);
             setTimeout(function () {
-                $('.popLayerHeader').find('a:first').focus();
+                jQuery('.popLayerHeader').find('a:first').focus();
             }, 0);
             _target.show().on({
                 click: function () {
@@ -489,19 +566,19 @@
                 _target.off('click');
             });
 
-            $('.btnPopClose').on({
+            jQuery('.btnPopClose').on({
                 click: function () {
                     _contentTarget.find('.popLayerFooter').off('focusout');
-                    $('.btnPopClose').off('focusout');
+                    jQuery('.btnPopClose').off('focusout');
                     _target.trigger('click');
                     setTimeout(function () {
-                        $('.btnLayerPop').focus();
+                        jQuery('.btnLayerPop').focus();
                     }, 0);
                 },
                 focusout: function () {
                     setTimeout(function () {
-                        if (!($(':focus').parents().hasClass('popLayer'))) {
-                            $('.btnPopConfirm').focus();
+                        if (!(jQuery(':focus').parents().hasClass('popLayer'))) {
+                            jQuery('.btnPopConfirm').focus();
                         }
                     }, 0);
                 }
@@ -510,8 +587,8 @@
             _contentTarget.find('.popLayerFooter').on({
                 focusout: function () {
                     setTimeout(function () {
-                        if (!($(':focus').parents().hasClass('popLayer'))) {
-                            $('.btnPopClose').focus();
+                        if (!(jQuery(':focus').parents().hasClass('popLayer'))) {
+                            jQuery('.btnPopClose').focus();
                         }
                     }, 0);
                 }
@@ -525,89 +602,89 @@
                 });
             } catch {
             }
-            $('.btnPopClose').off('click');
+            jQuery('.btnPopClose').off('click');
         }
     }
 
     function popLayerFadeShowHide(_btn, _popLayer, _fogBg) {
-        var $btn = $('.' + _btn);
-        var $popLayer = $('.' + _popLayer);
-        var $fogBg = $('.' + _fogBg);
-        var _isFogBg = $fogBg.is(':visible');
+        var jQuerybtn = jQuery('.' + _btn);
+        var jQuerypopLayer = jQuery('.' + _popLayer);
+        var jQueryfogBg = jQuery('.' + _fogBg);
+        var _isFogBg = jQueryfogBg.is(':visible');
 
         if (!_isFogBg) {
             fnFixedScroll(true);
-            $popLayer.show();
-            $fogBg.show().on({
+            jQuerypopLayer.show();
+            jQueryfogBg.show().on({
                 click: function () {
                     fnFixedScroll(false);
-                    $fogBg.hide();
-                    $popLayer.hide();
-                    $popLayer.parent().css({'top': '100%', 'background-color': '#000'});
+                    jQueryfogBg.hide();
+                    jQuerypopLayer.hide();
+                    jQuerypopLayer.parent().css({'top': '100%', 'background-color': '#000'});
                 }
             });
-            $popLayer.parent().css({'top': '0', 'background-color': 'transparent'});
+            jQuerypopLayer.parent().css({'top': '0', 'background-color': 'transparent'});
 
-            $('.btnPopClose').on({
+            jQuery('.btnPopClose').on({
                 click: function () {
-                    $btn.trigger('click');
+                    jQuerybtn.trigger('click');
                 }
             });
 
         } else {
             fnFixedScroll(false);
-            $fogBg.hide();
-            $popLayer.hide();
-            $popLayer.parent().css({'top': '100%', 'background-color': '#000'});
-            $('.btnPopClose').off('click');
+            jQueryfogBg.hide();
+            jQuerypopLayer.hide();
+            jQuerypopLayer.parent().css({'top': '100%', 'background-color': '#000'});
+            jQuery('.btnPopClose').off('click');
         }
     }
 
     function fnFixedScroll(_is) {
         if (_is) {
-            //currentScroll = $(this).scrollTop();
-            $('body').addClass('scrlOff');
-            //            $(window).bind('scroll').scroll(function(e){$(this).scrollTop(top).scrollLeft(left);e.preventDefault();e.stopPropagation();});
+            //currentScroll = jQuery(this).scrollTop();
+            jQuery('body').addClass('scrlOff');
+            //            jQuery(window).bind('scroll').scroll(function(e){jQuery(this).scrollTop(top).scrollLeft(left);e.preventDefault();e.stopPropagation();});
         } else {
-            $('body').removeClass('scrlOff');
-            //$('body').css({'top':'auto'});
-            //            $(window).unbind('scroll');
+            jQuery('body').removeClass('scrlOff');
+            //jQuery('body').css({'top':'auto'});
+            //            jQuery(window).unbind('scroll');
         }
-        //$('body').css({'top':(-1 * currentScroll) + 'px'});
+        //jQuery('body').css({'top':(-1 * currentScroll) + 'px'});
     }
 
     function fnScrollFixed(_is) {
         if (_is) {
-            currentScroll = $(this).scrollTop();
-            $('body').addClass('scrlOff');
-            $('body').css({'top': (-1 * currentScroll) + 'px'});
-            $(win).bind('scroll').scroll(function (e) {
-                $(this).scrollTop(0).scrollLeft(0);
+            currentScroll = jQuery(this).scrollTop();
+            jQuery('body').addClass('scrlOff');
+            jQuery('body').css({'top': (-1 * currentScroll) + 'px'});
+            jQuery(win).bind('scroll').scroll(function (e) {
+                jQuery(this).scrollTop(0).scrollLeft(0);
                 e.preventDefault();
                 e.stopPropagation();
             });
         } else {
-            $('body').removeClass('scrlOff');
-            $(win).unbind('scroll');
-            $(this).scrollTop(currentScroll);
-            $('body').css({'top': 'auto'});
+            jQuery('body').removeClass('scrlOff');
+            jQuery(win).unbind('scroll');
+            jQuery(this).scrollTop(currentScroll);
+            jQuery('body').css({'top': 'auto'});
 
-            $(this).on({
+            jQuery(this).on({
                 scroll: function () {
-                    var _scrollTop = $(this).scrollTop();
-                    (_scrollTop > 0) ? $('.btnTop').show() : $('.btnTop').hide();
+                    var _scrollTop = jQuery(this).scrollTop();
+                    (_scrollTop > 0) ? jQuery('.btnTop').show() : jQuery('.btnTop').hide();
                 }
             });
         }
     }
 
     /* [S] 공통 팝업 닫음 */
-    $.fn.closePopupLayer = function () {
-        $('.btnPopClose').trigger('click');
+    jQuery.fn.closePopupLayer = function () {
+        jQuery('.btnPopClose').trigger('click');
     }
     /* [E] 공통 팝업 닫음  */
 
-    $.fn.comPopupLayer = function (_state, _targetClassName, _bgOpacity) {
+    jQuery.fn.comPopupLayer = function (_state, _targetClassName, _bgOpacity) {
         /* 인자값 정의 :
             _state  :
                 - true : open
@@ -618,144 +695,144 @@
 
         if (_state) {
             fnScrollFixed(true);
-            $('.com_pop_fog').css({'opacity': _bgOpacity, 'top': '0', 'display': 'block'});
+            jQuery('.com_pop_fog').css({'opacity': _bgOpacity, 'top': '0', 'display': 'block'});
 
-            //$('.com_pop_fog').css({'opacity':_bgOpacity, 'top':'0'});
-            $('.btnTop').hide();
+            //jQuery('.com_pop_fog').css({'opacity':_bgOpacity, 'top':'0'});
+            jQuery('.btnTop').hide();
 
-            $('.com_pop_btn_close').on({
+            jQuery('.com_pop_btn_close').on({
                 click: function (e) {
-                    $('.com_pop_fog').trigger('click');
+                    jQuery('.com_pop_fog').trigger('click');
                 }
             });
 
-            $('.com_pop_fog').on({
+            jQuery('.com_pop_fog').on({
                 click: function (e) {
-                    $('.com_pop_btn_close, .com_pop_fog').off('click');
-                    $('.btnTop').show();
-                    $('.com_pop_fog').css({'display': 'none'});
-                    //$(e.target).css({'top':'150%'});
+                    jQuery('.com_pop_btn_close, .com_pop_fog').off('click');
+                    jQuery('.btnTop').show();
+                    jQuery('.com_pop_fog').css({'display': 'none'});
+                    //jQuery(e.target).css({'top':'150%'});
                     fnScrollFixed(false);
-                    $('.' + _targetClassName).show().stop().animate({'bottom': '0'}, 200, function () {
-                        $('.' + _targetClassName).hide();
+                    jQuery('.' + _targetClassName).show().stop().animate({'bottom': '0'}, 200, function () {
+                        jQuery('.' + _targetClassName).hide();
                     });
                 }
             });
             setTimeout(function () {
-                $('.com_pop_header').find('a:first').focus();
+                jQuery('.com_pop_header').find('a:first').focus();
             }, 0);
-            $('.' + _targetClassName).show().stop().animate({'bottom': '100%'}, 200, function () {
+            jQuery('.' + _targetClassName).show().stop().animate({'bottom': '100%'}, 200, function () {
             });
         } else {
-            $('.com_pop_fog').trigger('click');
+            jQuery('.com_pop_fog').trigger('click');
         }
         return this;
     }
 
-    $.fn.comCheckboxChecker = function (_checkboxWrap, _checkboxType) {
-        var $checkboxWrap = $('.' + _checkboxWrap)
-        $('input[type="checkbox"]').on({
+    jQuery.fn.comCheckboxChecker = function (_checkboxWrap, _checkboxType) {
+        var jQuerycheckboxWrap = jQuery('.' + _checkboxWrap)
+        jQuery('input[type="checkbox"]').on({
             change: function (e) {
-                if ($(e.target).hasClass(_checkboxType)) {
-                    if ($(e.target).is(':checked')) {
-                        $checkboxWrap.find('dd').children('input[type="checkbox"]').prop('checked', true);
+                if (jQuery(e.target).hasClass(_checkboxType)) {
+                    if (jQuery(e.target).is(':checked')) {
+                        jQuerycheckboxWrap.find('dd').children('input[type="checkbox"]').prop('checked', true);
                     } else {
-                        $checkboxWrap.find('dd').children('input[type="checkbox"]').prop('checked', false);
+                        jQuerycheckboxWrap.find('dd').children('input[type="checkbox"]').prop('checked', false);
                     }
                 } else {
                     var _isAllCheck = true;
 
-                    ($(e.target).is(':checked')) ? $(e.target).prop('checked', true) : $(e.target).prop('checked', false)
+                    (jQuery(e.target).is(':checked')) ? jQuery(e.target).prop('checked', true) : jQuery(e.target).prop('checked', false)
 
 
-                    $checkboxWrap.find('dd').each(function () {
-                        if ($(this).children('input[type="checkbox"]').data('required')) {
-                            _isAllCheck *= $(this).children('input[type="checkbox"]').is(':checked');
+                    jQuerycheckboxWrap.find('dd').each(function () {
+                        if (jQuery(this).children('input[type="checkbox"]').data('required')) {
+                            _isAllCheck *= jQuery(this).children('input[type="checkbox"]').is(':checked');
                         }
                     });
 
 
-                    $checkboxWrap.find('dt').children('input[type="checkbox"]').prop('checked', _isAllCheck);
+                    jQuerycheckboxWrap.find('dt').children('input[type="checkbox"]').prop('checked', _isAllCheck);
 
                 }
             }
         });
     }
 
-    $.fn.comMultiCheckboxChecker = function () {
+    jQuery.fn.comMultiCheckboxChecker = function () {
         if (arguments.length > 0) {
-            var $targetWrap = $('.' + arguments[0]);
+            var jQuerytargetWrap = jQuery('.' + arguments[0]);
             var aryClassName = [];
             for (var i = 0; i < arguments.length; i++) {
                 aryClassName[i] = arguments[i];
             }
 
-            $('input[type="checkbox"]').on({
+            jQuery('input[type="checkbox"]').on({
                 change: function (e) {
-                    if ($(e.target).hasClass(aryClassName[1])) {
-                        if ($(e.target).is(':checked')) {
-                            $targetWrap.find('input[type="checkbox"]').prop('checked', true);
+                    if (jQuery(e.target).hasClass(aryClassName[1])) {
+                        if (jQuery(e.target).is(':checked')) {
+                            jQuerytargetWrap.find('input[type="checkbox"]').prop('checked', true);
                         } else {
-                            $targetWrap.find('input[type="checkbox"]').prop('checked', false);
+                            jQuerytargetWrap.find('input[type="checkbox"]').prop('checked', false);
                         }
-                    } else if ($(e.target).hasClass(aryClassName[2])) {
+                    } else if (jQuery(e.target).hasClass(aryClassName[2])) {
                         var _isAllCheck = true;
 
-                        if ($(e.target).is(':checked')) {
-                            $(e.target).parent().nextUntil('dt').children('input[type="checkbox"]').prop('checked', true);
+                        if (jQuery(e.target).is(':checked')) {
+                            jQuery(e.target).parent().nextUntil('dt').children('input[type="checkbox"]').prop('checked', true);
                         } else {
-                            $(e.target).parent().nextUntil('dt').children('input[type="checkbox"]').prop('checked', false);
+                            jQuery(e.target).parent().nextUntil('dt').children('input[type="checkbox"]').prop('checked', false);
                         }
 
-                        $targetWrap.find('.' + aryClassName[2]).each(function (idx) {
-                            if ($(this).data('required')) {
-                                _isAllCheck *= $(this).is(':checked');
+                        jQuerytargetWrap.find('.' + aryClassName[2]).each(function (idx) {
+                            if (jQuery(this).data('required')) {
+                                _isAllCheck *= jQuery(this).is(':checked');
                             }
                         });
 
-                        $('.' + aryClassName[1]).prop('checked', _isAllCheck);
+                        jQuery('.' + aryClassName[1]).prop('checked', _isAllCheck);
                     } else {
                         var _isAllParticleCheck = true;
 
-                        var gName = ($(e.target).data('group'));
+                        var gName = (jQuery(e.target).data('group'));
 
-                        $targetWrap.find('dd input[data-group="' + gName + '"]').each(function (idx) {
-                            if ($(this).data('required')) {
-                                _isAllParticleCheck *= $(this).is(':checked');
+                        jQuerytargetWrap.find('dd input[data-group="' + gName + '"]').each(function (idx) {
+                            if (jQuery(this).data('required')) {
+                                _isAllParticleCheck *= jQuery(this).is(':checked');
                             }
                         });
 
-                        $targetWrap.find('dt input[data-group="' + gName + '"]').prop('checked', _isAllParticleCheck);
+                        jQuerytargetWrap.find('dt input[data-group="' + gName + '"]').prop('checked', _isAllParticleCheck);
 
                         var _isAllCheck = true;
 
-                        $targetWrap.find('.' + aryClassName[2]).each(function (idx) {
-                            if ($(this).data('required')) {
-                                _isAllCheck *= $(this).is(':checked');
+                        jQuerytargetWrap.find('.' + aryClassName[2]).each(function (idx) {
+                            if (jQuery(this).data('required')) {
+                                _isAllCheck *= jQuery(this).is(':checked');
                             }
                         });
 
-                        $('.' + aryClassName[1]).prop('checked', _isAllCheck);
+                        jQuery('.' + aryClassName[1]).prop('checked', _isAllCheck);
                     }
                 }
             });
         }
     }
 
-    $.fn.setSelectboxValue = function (_obj) {
-        var currentTargetVal = $('.' + _obj.target).text();
+    jQuery.fn.setSelectboxValue = function (_obj) {
+        var currentTargetVal = jQuery('.' + _obj.target).text();
         var len = _obj.valueTargets.length;
 
         for (var i = 0; i < len; i++) {
-            $('.' + _obj.valueTargets[i]).text(currentTargetVal);
+            jQuery('.' + _obj.valueTargets[i]).text(currentTargetVal);
         }
 
-        $('.' + _obj.valueTargets[0]).trigger('click');
+        jQuery('.' + _obj.valueTargets[0]).trigger('click');
     }
 
-    $.fn.comFormNumberCnt = function (_cntTargetClassName, _totalPlaceTargetClassName, _increase, _minCnt, _maxCnt) {
-        var _firstCnt = Number($("." + _cntTargetClassName).text());
-        var _currentPrice = $("." + _totalPlaceTargetClassName).text().replace(/[^\d]+/g, '');
+    jQuery.fn.comFormNumberCnt = function (_cntTargetClassName, _totalPlaceTargetClassName, _increase, _minCnt, _maxCnt) {
+        var _firstCnt = Number(jQuery("." + _cntTargetClassName).text());
+        var _currentPrice = jQuery("." + _totalPlaceTargetClassName).text().replace(/[^\d]+/g, '');
         var _onePrice = Number(_currentPrice / _firstCnt);
 
         var _currentCnt = _firstCnt + _increase;
@@ -773,37 +850,37 @@
         } else {
             _currentCnt = _firstCnt + _increase;
         }
-        var _totalPrice = $.fn.addComma(_onePrice * _currentCnt);
+        var _totalPrice = jQuery.fn.addComma(_onePrice * _currentCnt);
 
-        $("." + _cntTargetClassName).text(_currentCnt);
-        $("." + _totalPlaceTargetClassName).text(_totalPrice);
+        jQuery("." + _cntTargetClassName).text(_currentCnt);
+        jQuery("." + _totalPlaceTargetClassName).text(_totalPrice);
 
         return this;
     }
 
-    $.fn.comAccrodionMenu = function (_target) {
-        var $target = $('.' + _target);
-        var _isState = $target.hasClass('active');
+    jQuery.fn.comAccrodionMenu = function (_target) {
+        var jQuerytarget = jQuery('.' + _target);
+        var _isState = jQuerytarget.hasClass('active');
 
         if (_isState) {   // 닫기
-            $target.children('ul, dl').slideUp('fast', function () {
-                $target.removeClass('active');
+            jQuerytarget.children('ul, dl').slideUp('fast', function () {
+                jQuerytarget.removeClass('active');
             });
 
         } else {  // 열기
-            $target.children('ul, dl').slideDown('fast', function () {
-                $target.addClass('active');
+            jQuerytarget.children('ul, dl').slideDown('fast', function () {
+                jQuerytarget.addClass('active');
             });
-            //$target.addClass('active');
+            //jQuerytarget.addClass('active');
         }
     }
 
-    $.fn.addComma = function (num) { // 콤마 찍기
+    jQuery.fn.addComma = function (num) { // 콤마 찍기
         var regexp = /\B(?=(\d{3})+(?!\d))/g;
         return num.toString().replace(regexp, ',');
     }
 
-    $.dDaySetTime = function (_num) {
+    jQuery.dDaySetTime = function (_num) {
         var currentTime = _num;
         var prevTime = (currentTime != 0) ? (currentTime - 1) : 0;
 
@@ -849,7 +926,7 @@
     }
     var interval;
 
-    $.dDaySet = function () {
+    jQuery.dDaySet = function () {
         cntObj = arguments;
 
         var cntObjLen = cntObj.length;
@@ -863,40 +940,40 @@
 
         function timeout() {
             var cntLen = cntObj.length;
-            var $target;
+            var jQuerytarget;
 
             for (var i = 0; i < cntLen; i++) {
-                $target = $("#" + cntObj[i].target);
+                jQuerytarget = jQuery("#" + cntObj[i].target);
 
-                if ($.dDaySetTime(cntObj[i].time).hour00 != $.dDaySetTime(cntObj[i].time).prevHour00) {
-                    $("#" + cntObj[i].target).find('.hour00').addClass('ani');
-                    $.fn.animationEnd(cntObj[i], 'hour00', i);
+                if (jQuery.dDaySetTime(cntObj[i].time).hour00 != jQuery.dDaySetTime(cntObj[i].time).prevHour00) {
+                    jQuery("#" + cntObj[i].target).find('.hour00').addClass('ani');
+                    jQuery.fn.animationEnd(cntObj[i], 'hour00', i);
                 }
 
-                if ($.dDaySetTime(cntObj[i].time).hour0 != $.dDaySetTime(cntObj[i].time).prevHour0) {
-                    $("#" + cntObj[i].target).find('.hour0').addClass('ani');
-                    $.fn.animationEnd(cntObj[i], 'hour0', i);
+                if (jQuery.dDaySetTime(cntObj[i].time).hour0 != jQuery.dDaySetTime(cntObj[i].time).prevHour0) {
+                    jQuery("#" + cntObj[i].target).find('.hour0').addClass('ani');
+                    jQuery.fn.animationEnd(cntObj[i], 'hour0', i);
                 }
 
-                if ($.dDaySetTime(cntObj[i].time).min00 != $.dDaySetTime(cntObj[i].time).prevMin00) {
-                    $("#" + cntObj[i].target).find('.min00').addClass('ani');
-                    $.fn.animationEnd(cntObj[i], 'min00', i);
+                if (jQuery.dDaySetTime(cntObj[i].time).min00 != jQuery.dDaySetTime(cntObj[i].time).prevMin00) {
+                    jQuery("#" + cntObj[i].target).find('.min00').addClass('ani');
+                    jQuery.fn.animationEnd(cntObj[i], 'min00', i);
                 }
 
-                if ($.dDaySetTime(cntObj[i].time).min0 != $.dDaySetTime(cntObj[i].time).prevMin0) {
-                    $("#" + cntObj[i].target).find('.min0').addClass('ani');
-                    $.fn.animationEnd(cntObj[i], 'min0', i);
+                if (jQuery.dDaySetTime(cntObj[i].time).min0 != jQuery.dDaySetTime(cntObj[i].time).prevMin0) {
+                    jQuery("#" + cntObj[i].target).find('.min0').addClass('ani');
+                    jQuery.fn.animationEnd(cntObj[i], 'min0', i);
                 }
 
-                if ($.dDaySetTime(cntObj[i].time).sec00 != $.dDaySetTime(cntObj[i].time).prevSec00) {
-                    $("#" + cntObj[i].target).find('.sec00').addClass('ani');
-                    $.fn.animationEnd(cntObj[i], 'sec00', i);
+                if (jQuery.dDaySetTime(cntObj[i].time).sec00 != jQuery.dDaySetTime(cntObj[i].time).prevSec00) {
+                    jQuery("#" + cntObj[i].target).find('.sec00').addClass('ani');
+                    jQuery.fn.animationEnd(cntObj[i], 'sec00', i);
                 }
 
 
-                if ($.dDaySetTime(cntObj[i].time).sec0 != $.dDaySetTime(cntObj[i].time).prevSec0) {
-                    $("#" + cntObj[i].target).find('.sec0').addClass('ani');
-                    $.fn.animationEnd(cntObj[i], 'sec0', i);
+                if (jQuery.dDaySetTime(cntObj[i].time).sec0 != jQuery.dDaySetTime(cntObj[i].time).prevSec0) {
+                    jQuery("#" + cntObj[i].target).find('.sec0').addClass('ani');
+                    jQuery.fn.animationEnd(cntObj[i], 'sec0', i);
                 }
                 cntObj[i].time -= 1;
                 if (cntObj[i].time < 0) {
@@ -911,25 +988,20 @@
 
         function initSetDisplayCnt(_target) {
 
-            var $target;
+            var jQuerytarget;
             var cntLen = _target.length;
 
             for (var i = 0; i < cntLen; i++) {
-                $target = $("#" + cntObj[i].target);
+                jQuerytarget = jQuery("#" + cntObj[i].target);
 
                 /* S 남은 수량 */
-                var $hotdealRestItems = $target.parent().parent().find('.hotdeal_rest_items');
-                $hotdealRestItems.text(cntObj[i].restItems);    /* E 남은 수량 */
+                var jQueryhotdealRestItems = jQuerytarget.parent().parent().find('.hotdeal_rest_items');
+                jQueryhotdealRestItems.text(cntObj[i].restItems);    /* E 남은 수량 */
 
-                $.fn.setDisplayCnt($target, cntObj[i].time);
+                jQuery.fn.setDisplayCnt(jQuerytarget, cntObj[i].time);
             }
         }
 
     };
 
 })(jQuery);
-
-
-
-
-

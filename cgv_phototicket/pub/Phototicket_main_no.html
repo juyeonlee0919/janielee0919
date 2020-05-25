@@ -7,8 +7,8 @@
           content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>CGV</title>
     <!-- [S] 운영소스 상속용 -->
-    <link rel="shortcut icon" href="../images/common/favicon_cgv.png">
-    <link rel="apple-touch-icon" sizes="114×114" href="../images/common/favicon_cgv.png">
+    <link rel="shortcut icon" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
+    <link rel="apple-touch-icon" sizes="114×114" href="http://img.cgv.co.kr/WebApp/images/common/favicon_cgv.png">
     <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/header.css">
     <link rel="stylesheet" type="text/css" href="../css/piemenu.css">
@@ -50,6 +50,10 @@
             }
         });
     </script>
+    <!--  [S] 2020.05.11 위치 변경	-->
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <!--  [E] 2020.05.11 위치 변경	-->
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
@@ -67,76 +71,152 @@
 <div class="wrap">
 
     <!-- [S] Header -->
-    <div id="header_box" class="pt_header">
-        <header id="headerTitle">
-            <a class="title_area" href="javascript:void(0);">
-                <i class="sprite sprite-pt sprite-icBack"></i>
+    <!--
+     수정 날짜 : 2020.05.12
+     내용 : header 기존 web 형식으로 수정
+    -->
+    <div id="header_box">
+        <header id="headerTitle" class="cls_headertitle_box">
+            <a href="javascript:siteMapFn();">
+                <div class="ico_lt">
+                    <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴">
+                </div>
             </a>
-            <div class="title" id="headerTitleArea">포토티켓</div>
-            <div class="btn_wrap">
-                <a class="btn_info" href="javascript:void(0);">
-                    <i class="sprite sprite-pt sprite-icInfo"></i>
-                </a>
-                <a class="btn_menu" href="javascript:siteMapFn();">
-                    <i class="sprite sprite-pt sprite-icSideMenu"></i>
-                </a>
+            <div class="title" id="headerTitleArea">
+                <a href="javascript:void(0);">포토티켓</a>
             </div>
+            <a class="btn_info" href="javascript:void(0);">
+                <i id="headerRightBtn" class="txt_rt sprite sprite-pt sprite-icInfo"></i>
+            </a>
+            <!--            <a href="javascript:fnMoveMyList();">-->
+            <!--                <div class="txt_rt" id="headerRightBtn">내 카드</div>-->
+            <!--            </a>-->
         </header>
-        <!-- [S] siteMap -->
         <section class="allview_wrap" id="siteMap">
-            <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>
+            <div id="fogbg" onclick="javascript:close_sitemapFn();"></div>
             <article class="allview_box_wrap">
                 <div class="allview_box_in">
                     <h2 class="hidden">전체메뉴</h2>
-
                     <div class="allview_header">
                         <a href="/" class="cgv_logo">CGV 홈</a>
                     </div>
                     <div class="area">
                         <ul class="group_wrap">
-                            <li><a href="#" title="My CGV"><b>My CGV</b></a><span class="countnum">1</span></li>
-                            <li><a href="#"><b>빠른예매</b></a></li>
-                            <li><a href="#"><b>상영시간표</b></a></li>
+                            <li><a href="#" title="My CGV" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'My CGV', 'http://m.cgv.co.kr/WebApp/MyCgvV4/Default.aspx'); return false;"><b>My CGV</b></a><span class="countnum">0</span></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '빠른예매', 'http://m.cgv.co.kr/quickReservation/'); return false;"><b>빠른예매</b></a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '상영시간표', 'http://m.cgv.co.kr/Schedule/'); return false;"><b>상영시간표</b></a></li>
                         </ul>
                         <ul class="group_wrap">
-                            <li><a href="#" title="CGV안내">CGV안내</a></li>
-                            <li><a href="#" title="바로오더">바로오더</a></li>
-                            <li><a href="#" title="아트하우스">아트하우스</a></li>
-                            <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>
-                            <li><a href="#" title="이벤트">이벤트</a></li>
-                            <li><a href="#" title="스토어">스토어</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV안내', 'http://m.cgv.co.kr/WebApp/TheaterV4/'); return false;" title="CGV안내">CGV안내</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '패스트오더', 'http://m.cgv.co.kr/WebApp/MobileOrder/Gateway.aspx?cType=normal&amp;gwType=M&amp;mOrderReturnUrl=%2Fmordermain'); return false;" title="패스트오더">패스트오더</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스토어', 'http://m.cgv.co.kr/WebApp/GiftV5/storeMain.aspx'); return false;" title="기프트샵">기프트샵</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '아트하우스', 'http://m.cgv.co.kr/WebApp/Collage/'); return false;" title="아트하우스">아트하우스</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'CGV할인정보', 'http://m.cgv.co.kr/WebApp/SaleCardV4/'); return false;" title="CGV할인정보">CGV할인정보</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '이벤트', 'http://m.cgv.co.kr/WebApp/EventNotiV4/EventList.aspx'); return false;" title="이벤트">이벤트</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '매거진', 'http://m.cgv.co.kr/WebApp/MagazineV4/'); return false;" title="매거진">매거진</a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'IMAX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=1'); return false;" title="IMAX">IMAX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=2'); return false;" title="4DX">4DX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네드쉐프', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=4'); return false;" title="Cine de CHEF">CINE de CHEF</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '골드클래스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=9'); return false;" title="GOLD CLASS">GOLD CLASS</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스타리움', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=6'); return false;" title="STARIUM">STARIUM</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '더프라이빗씨네마', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=12'); return false;" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '스윗박스', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=7'); return false;" title="SWEETBOX">SWEETBOX</a></li>
 
-                        </ul>
-                        <ul class="group_wrap">
-                            <li><a href="#" title="IMAX">IMAX</a></li>
-                            <li><a href="#" title="4DX">4DX</a></li>
-                            <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>
-                            <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>
-                            <li><a href="#" title="STARIUM">STARIUM</a></li>
-                            <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
-                            <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'ScreenX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=18'); return false;" title="Screen X">Screen X</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SoundX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=19'); return false;" title="Sound X">Sound X</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤포레', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=25'); return false;" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네키즈', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=21'); return false;" title="CINE KIDS">CINE KIDS</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SphereX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=23'); return false;" title="SphereX">Sphere X</a></li>
 
-                            <li><a href="#" title="Screen X">Screen X</a></li>
-                            <li><a href="#" title="Sound X">Sound X</a></li>
-                            <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>
-                            <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>
-                            <li><a href="#" title="SphereX">Sphere X</a></li>
-                            <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>
-                            <li><a href="#" title="SKYBOX">SKYBOX</a></li>
-                            <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'SKYBOX', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=26'); return false;" title="SKYBOX">SKYBOX</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '씨네앤리빙룸', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=27'); return false;" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '4DXSCREEN', 'http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=28'); return false;" title="4DXSCREEN">4DXSCREEN</a></li>
                         </ul>
                         <ul class="group_wrap">
-                            <li><a href="#" title="고객센터">고객센터</a></li>
-                            <li><a href="#" title="Club서비스">Club서비스</a></li>
-                            <li><a href="#" title="매거진">매거진</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', '고객센터', 'http://m.cgv.co.kr/WebApp/Support/faq.aspx'); return false;" title="고객센터">고객센터</a></li>
+                            <li><a href="#" onclick="fnSendGALogCallbackPageMove('1', '', '목록', 'Click', 'Club서비스', 'http://m.cgv.co.kr/WebApp/SpecialV4/ClubTown_List.aspx'); return false;" title="Club서비스">Club서비스</a></li>
                         </ul>
                     </div>
                     <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>
                 </div>
             </article>
         </section>
-        <!-- [E] siteMap -->
     </div>
+    <!-- [E] Header -->
+
+    <!-- [S] Header -->
+<!--    <div id="header_box" class="pt_header">-->
+<!--        <header id="headerTitle">-->
+<!--            <a class="title_area" href="javascript:void(0);">-->
+<!--                <i class="sprite sprite-pt sprite-icBack"></i>-->
+<!--            </a>-->
+<!--            <div class="title" id="headerTitleArea">포토티켓</div>-->
+<!--            <div class="btn_wrap">-->
+<!--                <a class="btn_info" href="javascript:void(0);">-->
+<!--                    <i class="sprite sprite-pt sprite-icInfo"></i>-->
+<!--                </a>-->
+<!--                <a class="btn_menu" href="javascript:siteMapFn();">-->
+<!--                    <i class="sprite sprite-pt sprite-icSideMenu"></i>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </header>-->
+<!--        &lt;!&ndash; [S] siteMap &ndash;&gt;-->
+<!--        <section class="allview_wrap" id="siteMap">-->
+<!--            <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>-->
+<!--            <article class="allview_box_wrap">-->
+<!--                <div class="allview_box_in">-->
+<!--                    <h2 class="hidden">전체메뉴</h2>-->
+
+<!--                    <div class="allview_header">-->
+<!--                        <a href="/" class="cgv_logo">CGV 홈</a>-->
+<!--                    </div>-->
+<!--                    <div class="area">-->
+<!--                        <ul class="group_wrap">-->
+<!--                            <li><a href="#" title="My CGV"><b>My CGV</b></a><span class="countnum">1</span></li>-->
+<!--                            <li><a href="#"><b>빠른예매</b></a></li>-->
+<!--                            <li><a href="#"><b>상영시간표</b></a></li>-->
+<!--                        </ul>-->
+<!--                        <ul class="group_wrap">-->
+<!--                            <li><a href="#" title="CGV안내">CGV안내</a></li>-->
+<!--                            <li><a href="#" title="바로오더">바로오더</a></li>-->
+<!--                            <li><a href="#" title="아트하우스">아트하우스</a></li>-->
+<!--                            <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>-->
+<!--                            <li><a href="#" title="이벤트">이벤트</a></li>-->
+<!--                            <li><a href="#" title="스토어">스토어</a></li>-->
+
+<!--                        </ul>-->
+<!--                        <ul class="group_wrap">-->
+<!--                            <li><a href="#" title="IMAX">IMAX</a></li>-->
+<!--                            <li><a href="#" title="4DX">4DX</a></li>-->
+<!--                            <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>-->
+<!--                            <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>-->
+<!--                            <li><a href="#" title="STARIUM">STARIUM</a></li>-->
+<!--                            <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>-->
+<!--                            <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>-->
+
+<!--                            <li><a href="#" title="Screen X">Screen X</a></li>-->
+<!--                            <li><a href="#" title="Sound X">Sound X</a></li>-->
+<!--                            <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>-->
+<!--                            <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>-->
+<!--                            <li><a href="#" title="SphereX">Sphere X</a></li>-->
+<!--                            <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>-->
+<!--                            <li><a href="#" title="SKYBOX">SKYBOX</a></li>-->
+<!--                            <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>-->
+<!--                        </ul>-->
+<!--                        <ul class="group_wrap">-->
+<!--                            <li><a href="#" title="고객센터">고객센터</a></li>-->
+<!--                            <li><a href="#" title="Club서비스">Club서비스</a></li>-->
+<!--                            <li><a href="#" title="매거진">매거진</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>-->
+<!--                </div>-->
+<!--            </article>-->
+<!--        </section>-->
+<!--        &lt;!&ndash; [E] siteMap &ndash;&gt;-->
+<!--    </div>-->
     <!-- [E] Header -->
 
     <!-- [S] Content -->
@@ -317,7 +397,5 @@
    작성자 : 이주연
    내용 : 포토티켓 추가
    -->
-<script type="text/javascript" src="../js/swiper.min.js"></script>
-<script type="text/javascript" src="../js/phototicket.js"></script>
 </body>
 </html>
