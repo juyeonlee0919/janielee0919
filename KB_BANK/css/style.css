@@ -1,0 +1,151 @@
+@charset "UTF-8";
+@font-face {
+    font-family: '맑은 고딕';
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonts/MalgunGothic/MalgunGothic.ttf);
+}
+body {
+    font-family: '맑은 고딕';
+    font-style: normal;
+    font-weight: normal;
+    color: #000000;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    min-width: 720px;
+    min-height: 720px;
+    max-width: 1280px;
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+}
+.wrap .link {
+    position: absolute;
+    display: block;
+    width: 1280px;
+    height: 720px;
+    min-width: 720px;
+    left: 0;
+    top: 0;
+    color: #000;
+}
+.bg {
+    width: 550px;
+    height: 720px;
+    background: url(../images/image_right.png) no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.link .title {
+    position: absolute;
+    display: block;
+    font-family: '맑은 고딕';
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: -2.5px;
+    left: 200px;
+    top: 282px;
+    margin: 0;
+    z-index: 1;
+}
+.link .title::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    border-bottom: 1px solid #666666;
+    left: 4px;
+    top: 62px;
+    z-index: 1;
+}
+.link .title-sm {
+    position: absolute;
+    display: block;
+    font-family: '맑은 고딕';
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -.9px;
+    margin: 0;
+    left: 205px;
+    top: 345px;
+    z-index: 1;
+}
+
+.header {
+    width: 100%;
+    height: 50px;
+    background: #2DC7E3;
+}
+
+.header .img {
+    position: absolute;
+    background: url('../images/header.png') no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 245px;
+    height: 50px;
+    z-index: 1;
+}
+
+.header .title {
+    position: relative;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: -.9px;
+    line-height: 50px;
+    color: #ffffff;
+    padding-left: 30px;
+    z-index: 2;
+}
+
+.container {
+    width: 1080px;
+    margin: 0 auto;
+    padding-top: 126px;
+}
+
+.row {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+.col {
+    float: left;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    text-decoration: none;
+}
+
+.col:last-child {
+    margin-right: 0;
+}
+
+.col .img {
+    display: block;
+    width: 236px;
+    height: 133px;
+    border: 2px solid #ddd;
+}
+
+.col .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.col .title {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: -.72px;
+    color: #333;
+}
