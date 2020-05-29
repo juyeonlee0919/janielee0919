@@ -1,0 +1,2042 @@
+@charset "UTF-8";
+/** 기존 레이아웃 변경 */
+.smt-tabs .tab-menu > li.on, .tab-menu > li.focus {
+    background: #fff;
+}
+
+.tab-menu.li-block > li.focus {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tab-menu.li-block > li:last-child {
+    margin-bottom: 0;
+}
+
+.smt-tabs .tab-menu > li {
+    padding: 0;
+}
+
+.smt-tabs .tab-menu > li > a {
+    padding: 0 12px;
+}
+
+.smt-tabs .area_box {
+    padding: 0 12px;
+    border-left: 0;
+    border-right: 0;
+}
+
+.smt-tabs .area_box.no-padding {
+    padding: 0;
+}
+
+.sprite.flot-right {
+    display: inline-block;
+    float: right;
+    height: 50px;
+    line-height: 56px;
+    padding-right: 8px;
+    padding-top: 25px;
+    /* ADD 2018.12.01.SAT. WONSUK.SHIN. */
+}
+
+.sprite.flot-right img {
+    transform: rotate(0);
+    vertical-align: middle;
+}
+
+.focus .sprite.flot-right img {
+    transform: rotate(180deg);
+    vertical-align: middle;
+}
+
+.smt-submenu-btn {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border: 0;
+    padding: 0 15px;
+    font-size: 1.4em;
+    color: #222;
+    text-align: left;
+    background: transparent;
+    outline: none;
+}
+
+.smt-submenu-btn:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-submenu-btn:hover {
+    /*color: #fb4357;*/
+}
+
+.smt-submenu-btn .smt-name {
+    display: inline-block;
+    float: left;
+    vertical-align: middle;
+}
+
+.smt-submenu-btn .smt-cost {
+    display: inline-block;
+    float: right;
+    color: #9197a3;
+    vertical-align: middle;
+}
+
+/** smt-heder */
+.smt-header {
+    position: relative;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 44px;
+    background: #fff;
+    box-shadow: 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 4;
+}
+
+.smt-header .smt-contents {
+    box-sizing: border-box;
+    width: 100%;
+    height: 44px;
+    padding: 4px 14px;
+    margin: 0 auto;
+}
+
+.smt-header .smt-contents button {
+    border: 0;
+    background: transparent;
+}
+
+.smt-header .smt-contents .js-back {
+    float: left;
+    margin-top: 2px;
+    font-size: 26px;
+}
+
+.smt-header .smt-contents .js-menu {
+    float: right;
+    margin-top: 6px;
+    font-size: 20px;
+}
+
+.smt-header .smt-contents img {
+    vertical-align: middle;
+}
+
+.tab-menu > li > a .smt-right-txt {
+    position: absolute;
+    right: 46px;
+    top: 21px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    color: #9197a3;
+}
+
+/** intro */
+.smt-full-image {
+    width: 100%;
+}
+
+/** 날짜선택 */
+.smt-cal {
+    width: 100%;
+    padding: 24px 14px;
+    font-size: 14px;
+}
+
+/** 시간선택 */
+.smt-tabs .area_box.smt-time {
+    padding: 0;
+}
+
+.smt-time .cell {
+    text-align: left;
+    font-size: 0;
+    padding: 6px 7px;
+}
+
+.smt-time .smt-time-btn {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 45px;
+    margin: 3px;
+    border: solid 1px #bfbfbf;
+    color: #000;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: all .3s ease;
+    outline: none;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 480px) {
+    .smt-time .smt-time-btn {
+        width: calc(25% - 6px);
+    }
+}
+
+.smt-time .smt-time-btn:hover,
+.smt-time .smt-time-btn:active,
+.smt-time .smt-time-btn.on {
+    color: #fff;
+    background-color: #fb4357;
+}
+
+.smt-time .smt-time-btn:disabled {
+    color: #6e6d6e;
+    background-color: rgba(155, 155, 155, 0.7);
+}
+
+.smt-time .smt-time-btn:disabled .disbled {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 45px;
+    color: #fff;
+}
+
+/** 수량 선택 */
+.smt-options .cell {
+    padding: 18px 18px;
+    font-size: 1.5em;
+}
+
+.smt-options .name,
+.smt-options .cost {
+    display: inline-block;
+    float: left;
+    line-height: 1.2;
+    font-size: 14px;
+    vertical-align: middle;
+    color: #4a4a4a;
+}
+
+.smt-options .cost {
+    padding-left: 10px;
+    color: #9197a3;
+}
+
+.smt-options .smt-options__control {
+    display: inline-block;
+    padding-right: 8px;
+    float: right;
+}
+
+.smt-options .smt-options__number {
+    display: inline-block;
+    padding: 0 10px;
+    vertical-align: middle;
+}
+
+.smt-options .smt-options__control .smt-options-btn {
+    border: 0;
+    /*color: #FA4357;*/
+    background: transparent;
+    vertical-align: middle;
+}
+
+/** 도움말 */
+.smt-support {
+    padding: 28px 16px 74px;
+}
+
+.smt-support-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d8d8d8;
+    color: #9197a3;
+}
+
+.smt-support-header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.smt-support-header button {
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.smt-support-header .smt-support-header__title {
+    display: inline-block;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #373e46;
+    vertical-align: middle;
+}
+
+.smt-support-header .js-updown {
+    position: relative;
+    float: right;
+    padding-top: 4px;
+}
+
+.smt-support-header__checkbox {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: url(http://img.cgv.co.kr/WebApp/images/payment/checkbox.png) no-repeat left top;
+    background-size: auto 18px;
+    background-position: 0 top;
+    vertical-align: middle;
+}
+
+.js-checked.on .smt-support-header__checkbox {
+    background-position: -24px 0;
+}
+
+.smt-support-header .js-updown img {
+    position: relative;
+    transform: rotate(0deg);
+    transition: transform .3s ease;
+}
+
+.smt-support-header .js-updown.on img {
+    position: relative;
+    transform: rotate(-180deg);
+}
+
+.smt-support .smt-support-body {
+    padding: 17px 0;
+    font-size: 1.2em;
+    text-align: left;
+    color: #9197a3;
+}
+
+.smt-support .smt-support-body li {
+    line-height: 1;
+}
+
+.iB {
+    display: inline-block;
+    padding-top: 4px;
+    vertical-align: top;
+}
+
+/** 달력 **/
+.smt-cal {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.smt-cal__control {
+    display: block;
+    width: 250px;
+    padding: 10px 0 28px;
+    margin: 0 auto;
+    font-size: 18px;
+    color: #000000;
+    text-align: center;
+}
+
+.smt-cal__control:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-cal__control .prev {
+    float: left;
+    border: 0;
+    outline: none;
+}
+
+.smt-cal__control .next {
+    float: right;
+    border: 0;
+    outline: none;
+}
+
+table.smt-cal__list {
+    width: 98vw;
+    margin: 0 auto;
+}
+
+.smt-cal__list th,
+.smt-cal__list td {
+    width: 14vw;
+    text-align: center;
+}
+
+.smt-cal__list .sun {
+    color: #fb4357;
+}
+
+.smt-cal__list .sat {
+    color: #4a90e2;
+}
+
+.smt-cal__list thead th {
+    padding-bottom: 10px;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.smt-cal__list td a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    text-align: center;
+    color: #000000;
+}
+
+.smt-cal__list td a .today {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0px;
+    text-align: center;
+    font-size: 10px;
+    color: #fb4357;
+}
+
+.smt-cal__list td a.select .today {
+    top: -4px;
+}
+
+.smt-cal__list td a .date {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.smt-cal__list td a.select .date {
+    color: #fff;
+    background: #fb4357;
+}
+
+.smt-cal__list td a.disbled {
+    color: #d8d8d8;
+    cursor: default;
+}
+
+.row:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+/** 결제하기 */
+.payment_main button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    outline: none;
+}
+
+.payment_main .smt_title {
+    display: block;
+    position: relative;
+    height: 59px;
+    line-height: 59px;
+    font-size: 1.6em;
+    color: #222;
+}
+
+.payment_info {
+    margin-bottom: 10px;
+}
+
+.payment_info .smt-wait-box {
+    padding-top: 10px;
+    text-align: center;
+}
+
+.payment_info .smt-wait-box .smt-cord-number {
+    padding-bottom: 20px;
+    font-size: 13px;
+}
+
+.payment_info .smt-wait-box .smt-wait-img {
+    padding-bottom: 22px;
+    border-bottom: 1px solid #ddd;
+}
+
+.payment_info .smt-wait-box .smt-wait-img img {
+    width: 100px;
+}
+
+.payment_info .smt-wait-box .send-info {
+    padding-top: 22px;
+}
+
+.payment_info .smt-wait-box .send-info p {
+    padding-bottom: 10px;
+    color: #999;
+    font-size: 13px;
+}
+
+.payment_info .smt-wait-box .send-info .btn img {
+    width: 30px;
+    margin-right: 8px;
+}
+
+.payment_main .area_box,
+.payment_main .smt_area_box {
+    border: 0;
+    padding-bottom: 22px;
+}
+
+.payment_main .user-form {
+    padding-bottom: 22px;
+}
+
+.payment_main .user-form input {
+    height: 38px;
+    height: 38px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.payment_main .user-form .user-form-name {
+    float: left;
+    width: calc(40% - 10px);
+}
+
+.payment_main .user-form .user-form-tel {
+    float: right;
+    width: 60%;
+    background: url(../images/ico-tel.svg) no-repeat 97% center;
+}
+
+.payment_main .user-form .user-form-email {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.payment_main .smt-form .user-info {
+    position: relative;
+}
+
+.payment_main .smt-form .user-info-placeholder {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: 14px;
+    line-height: 1.29;
+    color: #9197a3;
+}
+
+.payment_main .smt-form .textarea {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 1.29;
+    border: 1px solid #ddd;
+    background: transparent;
+}
+
+.payment_main .smt-form .user-photos__btn {
+    position: relative;
+}
+
+.payment_main .smt-form .user-photos__btn .js-photo {
+    width: 100%;
+    height: 38px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    text-align: left;
+    color: #9197a3;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+.payment_main .smt-form .user-photos__btn .js-photo span {
+    display: inline-block;
+    padding-top: 3px;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .user-photos__btn .js-photo img {
+    height: 18px;
+    float: right;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .user-photos__btn input[type="file"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background: #fff;
+}
+
+.payment_main .smt-form .user-photos__btn h4 {
+    padding: 10px 0 5px;
+    font-size: 13px;
+    color: #999;
+}
+
+.payment_main .smt-form .user-photos__list li {
+    display: block;
+    padding: 10px 10px 8px;
+    font-size: 12px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.payment_main .smt-form .user-photos__list li a {
+    color: #4e88cf;
+}
+
+.payment_main .smt-form .user-photos__list li .js-close {
+    float: right;
+}
+
+.payment_main .smt-form .user-photos__list li:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.payment_main .smt-form .smt-length {
+    display: inline-block;
+    padding-left: 5px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #576aa5;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__add {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__add span {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    color: #9197a3;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__add .js-coupon {
+    float: right;
+    width: 84px;
+    height: 28px;
+    margin-top: -4px;
+    border: 1px solid #d8d8d8;
+    border-radius: 24px;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__options li {
+    display: block;
+    padding: 15px 0;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__options .smt-coupon__option-name {
+    display: inline-block;
+    padding-left: 11px;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__options .smt-coupon__option-name h4 {
+    padding-bottom: 4px;
+    font-size: 14px;
+    color: #222222;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__options .smt-coupon__option-name p {
+    font-size: 12px;
+    color: #9197a3;
+}
+
+.payment_main .smt-form .smt-coupon .smt-coupon__options .smt-coupon__option-cost {
+    display: inline-block;
+    float: right;
+    padding-top: 10px;
+    font-size: 14px;
+    color: #9197a3;
+}
+
+.payment_main .smt-form .smt-point .smt-point__use {
+    border-bottom: 1px solid #000;
+}
+
+.payment_main .smt-form .smt-point .smt-point__use .point {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #000;
+    border-radius: 50%;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .smt-point .smt-point__input {
+    width: calc(100% - 30px);
+    height: 40px;
+    border: 0;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .smt-point .btns {
+    padding: 26px 0 16px;
+}
+
+.payment_main .smt-form .smt-point .btn {
+    width: 56px;
+    height: 22px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 11px;
+    background-color: #bdc1c8;
+}
+
+.payment_main .smt-form .smt-point .smt-point__help {
+    font-size: 12px;
+    color: #9197a3;
+}
+
+.payment_main .smt-form .smt-pay-box {
+    padding: 14px 18px;
+    border: 1px solid #e3e3e3;
+    font-size: 14px;
+}
+
+.payment_main .smt-form .smt-pay-box__result li {
+    display: block;
+    padding: 6px 0;
+}
+
+.payment_main .smt-form .smt-pay-box li:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.payment_main .smt-form .smt-pay-box .line {
+    border-top: 1px solid #9197a3;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.payment_main .smt-form .smt-pay-box li h4,
+.payment_main .smt-form .smt-pay-box li span {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: #9197a3;
+}
+
+.payment_main .smt-form .smt-pay-box ul {
+    font-size: 14px;
+}
+
+.payment_main .smt-form .smt-pay-box li span {
+    float: right;
+}
+
+.payment_main .smt-form .smt-pay-box__result .total h4,
+.payment_main .smt-form .smt-pay-box__result .total span {
+    color: #373e46;
+}
+
+.payment_main .smt-form .smt-pay-box .list_dot li {
+    font-size: 12px;
+}
+
+.payment_main .smt-form .select-box {
+    position: relative;
+    padding: 30px 0 10px;
+    border-bottom: 1px solid #000;
+}
+
+.payment_main .smt-form .select-box select {
+    position: relative;
+    width: 100%;
+    border: 0;
+    font-size: 18px;
+    line-height: 2.11;
+    color: #000000;
+    background: transparent;
+}
+
+.payment_main .smt-form .arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #000;
+}
+
+/** 카드 선택 */
+.payment_main .smt-form .card-select__checked {
+    position: relative;
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #000;
+}
+
+.payment_main .smt-form .card-select__checked .icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .card-select__checked .icon img {
+    width: 20px;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .card-select__checked .title {
+    display: inline-block;
+    padding-left: 8px;
+    font-size: 18px;
+    line-height: 2.11;
+    color: #000000;
+    vertical-align: middle;
+}
+
+.payment_main .smt-form .card-select-box .js-arrow {
+    position: absolute;
+    top: 30px;
+    right: 5px;
+}
+
+.card-select-box .js-arrow .arrow {
+    position: relative;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #000;
+    transform: rotate(0);
+    transition: transform .2s ease;
+}
+
+.card-select-box.on .js-arrow .arrow {
+    transform: rotate(180deg);
+}
+
+.card-select-box .card-select__list {
+    padding: 0 0 0 5px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .2s ease-out;
+}
+
+.card-select-box.on .card-select__list {
+    padding: 10px 0;
+    max-height: 2000px;
+    font-size: 0;
+}
+
+.card-select-box .card-select__list li {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: -1px;
+    border: 1px solid #e9e9e9;
+}
+
+.card-select-box .card-select__list .js-card {
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+.card-select-box .card-select__list .js-card:active {
+    background: #e9e9e9;
+}
+
+.card-select-box .card-select__list .js-card .icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.card-select-box .card-select__list .js-card img {
+    width: 20px;
+}
+
+.card-select-box .card-select__list .js-card .title {
+    display: inline-block;
+    width: calc(100% - 20px);
+    vertical-align: middle;
+    padding-left: 6px;
+    font-size: 13px;
+}
+
+/** 약관 동의 */
+.payment_main .smt-form .smt-check-list {
+    font-size: 12px;
+    color: #373e46;
+}
+
+.payment_main .smt-form .smt-check-list li {
+    padding: 8px 0;
+}
+
+.payment_main .smt-form .smt-check-list label {
+    padding-left: 13px;
+}
+
+.payment_main .smt-form .smt-check-list a {
+    float: right;
+}
+
+/** 결제완료 */
+.wrap.smt-result.floating_on {
+    padding-bottom: 40px;
+}
+
+.smt-result .area_box {
+    border: 0;
+    padding-bottom: 22px;
+}
+
+.section_contents.smt-full {
+    padding: 0 0 12px;
+}
+
+.smt-result .smt-bacord-box {
+    position: relative;
+    top: 21px;
+    padding: 16px 0 34px;
+    background: url("../images/barcord-box-bottom.png") repeat-x center bottom;
+    background-size: 10px;
+}
+
+.smt-result .smt-bacord-box .smt-cord-number {
+    padding-bottom: 22px;
+    font-size: 13px;
+    color: #000000;
+}
+
+.smt-result .smt-bacord-box .smt-period {
+    padding-bottom: 10px;
+    font-size: 13px;
+    color: #4a90e2;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__img-box {
+    position: relative;
+    width: 74.65%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__img {
+    display: inline-block;
+    width: 100%;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__img img {
+    width: 100%;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__result {
+    display: none;
+    position: absolute;
+    width: 60px;
+    top: -15px;
+    right: -15px;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__end-day {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    right: 0;
+    font-size: 13px;
+    line-height: 1.08;
+    text-align: center;
+    color: #af292e;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__result span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__result span.on {
+    display: block;
+}
+
+.smt-result .smt-bacord-box .smt-barcord__result img {
+    width: 100%;
+}
+
+/** 종결된 바코드시  */
+.smt-result .smt-bacord-box.use .smt-barcord__img img {
+    opacity: .1;
+}
+
+.smt-result .smt-bacord-box.use .smt-barcord__end-day {
+    display: block;
+}
+
+.smt-result .smt-bacord-box.use .smt-barcord__result {
+    display: block;
+}
+
+/** 정보 **/
+.smt-accordion {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 26px;
+    background: #fff;
+}
+
+.smt-float-right {
+    float: right;
+}
+
+.smt-accordion .smt-view__title {
+    padding: 13px 0;
+    border-bottom: 1px solid #d8d8d8;
+    font-size: 13px;
+    font-weight: 600;
+    color: #373e46;
+}
+
+.smt-accordion .smt-view__title .smt-view__title-info {
+    display: inline-block;
+    padding-left: 12px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #4b4f56;
+}
+
+.smt-accordion .smt-view__title:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-accordion .smt-view__title .js-toggle {
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.smt-accordion > li .area_box {
+    padding: 12px 0 20px;
+    max-height: 1000px;
+    overflow: hidden;
+}
+
+.smt-view__title > li.off .smt-view__title {
+    margin-bottom: 0;
+}
+
+.smt-accordion > li.off .area_box {
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+}
+
+.smt-result .smt-result-list {
+    display: block;
+    width: 100%;
+}
+
+.smt-result .smt-result-list li {
+    display: block;
+    width: 100%;
+    padding: 5px 0;
+}
+
+.smt-result .smt-result-list li:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-result .smt-result-list .smt-result-list__title {
+    display: inline-block;
+    float: left;
+    line-height: 1.3;
+    font-size: 13px;
+    color: #9197a3;
+    vertical-align: top;
+}
+
+.smt-result .smt-result-list .smt-result-list__cost {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    font-size: 13px;
+    color: #373e46;
+    vertical-align: top;
+}
+
+.smt-result .smt-result-list .smt-result__total {
+    padding: 18px 0 16px;
+    margin: 16px 0 12px;
+    border-top: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.smt-result .smt-result-list .smt-result__total .smt-result-list__title {
+    vertical-align: middle;
+}
+
+.smt-result .smt-result-list .smt-result__total .smt-result-list__cost {
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.floating_payment.smt_payment {
+    height: 50px;
+}
+
+.floating_payment.smt_payment .btn {
+    width: 100%;
+    height: 50px;
+    line-height: 1;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    text-align: center;
+    color: #fff;
+    background: #373e46;
+}
+
+/** 예약 목록 */
+.smt-reservation {
+    padding: 0px 0 22px;
+}
+
+.smt-reservation .smt-reservation__prices {
+    padding: 10px 22px;
+    background: #fff;
+}
+
+.smt-reservation .smt-reservation__prices .js-price {
+    box-sizing: border-box;
+    width: auto;
+    min-width: 150px;
+    height: 26px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 36px;
+    border: 1px solid #000;
+    font-size: 13px;
+    background: #fff;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.smt-reservation .smt-reservation-list {
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.smt-reservation .smt-reservation-list__header {
+    padding: 16px 12px;
+    font-size: 13px;
+}
+
+.smt-reservation .smt-reservation-list__header:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-reservation .smt-reservation-list__header .smt-reservation-list__header-total {
+    float: left;
+    color: #6a6f77;
+}
+
+.smt-reservation .smt-reservation-list__header .smt-reservation-list__header-sort {
+    float: right;
+}
+
+.smt-reservation .smt-reservation-list__header .smt-reservation-list__header-sort .btn {
+    font-size: 13px;
+    color: #6a6f77;
+    background: transparent;
+}
+
+.smt-reservation .smt-reservation-list__header .smt-reservation-list__header-sort .btn img {
+    width: 10px;
+}
+
+.smt-reservation .smt-reservation-list ul {
+    display: block;
+    width: 100%;
+    background: #fff;
+}
+
+.smt-reservation .smt-reservation-list li {
+    display: block;
+    box-sizing: border-box;
+    width: 100vw;
+    padding: 22px 0;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 0;
+}
+
+.smt-reservation .smt-reservation-list li:last-child {
+    border-bottom: 0;
+}
+
+.smt-reservation .smt-reservation-list li span {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+
+.smt-reservation .smt-reservation-list li span.smt-day {
+    width: 20vw;
+    padding-top: 2px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.smt-reservation .smt-reservation-list li span.smt-option {
+    width: 54vw;
+    text-align: left;
+}
+
+.smt-reservation .smt-reservation-list li span.smt-option small {
+    display: block;
+    padding-top: 6px;
+    font-size: 11px;
+}
+
+.smt-reservation .smt-reservation-list li span.smt-price {
+    width: 26vw;
+    padding-top: 2px;
+    padding-right: 4vw;
+    text-align: right;
+    font-size: 15px;
+}
+
+/* == 예약완료 ==*/
+.smt-reservation .smt-reservation-list li.state__end small,
+.smt-reservation .smt-reservation-list li.state__end .smt-price {
+    color: #4b4f56;
+}
+
+/* == 예약반려 ==*/
+.smt-reservation .smt-reservation-list li.state__cancel small,
+.smt-reservation .smt-reservation-list li.state__cancel .smt-price {
+    color: #b0292f;
+}
+
+/* == 예약대기 ==*/
+.smt-reservation .smt-reservation-list li.state__wait small,
+.smt-reservation .smt-reservation-list li.state__wait .smt-price {
+    color: #1caf5e;
+}
+
+/* == 내역없음 ==*/
+.smt-reservation .smt-reservation-list li.state__zero {
+    padding: 30px 10px;
+    font-size: 13px;
+    text-align: center;
+    color: #999;
+}
+
+.smt-reservation-caution {
+    padding: 2px 10px;
+}
+
+/** 2018.01.06 update **/
+.btn {
+    outline: none;
+}
+
+/*** 임직원 할인 잔여한도 조회 **/
+.check-limit__open {
+    padding: 14px;
+    text-align: center;
+}
+
+.check-limit {
+    color: #000;
+    text-decoration: underline !important;
+}
+
+.smt-limit-modal {
+    display: none;
+    z-index: 8001;
+}
+
+.smt-limit-modal.on {
+    display: block;
+}
+
+.smt-limit-modal .mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 8001;
+}
+
+.smt-limit-modal .smt-limit-modal-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    background: #f2f2f2;
+    z-index: 8002;
+}
+
+.smt-limit-modal .smt-limit-modal-box-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 8002;
+}
+
+.smt-limit-modal .smt-limit-modal__head {
+    padding: 22px 18px 14px;
+    border-bottom: 1px solid #e1e1e1;
+    text-align: center;
+    background: #fff;
+}
+
+.smt-limit-modal .smt-limit-modal__head input[type="number"] {
+    width: 20%;
+    height: 34px;
+    margin-bottom: 13px;
+    border: 0;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.smt-limit-modal .smt-limit-modal__head input[type="password"] {
+    width: 20%;
+    height: 34px;
+    margin-bottom: 13px;
+    border: 0;
+    border-bottom: 1px solid #dddfe2;
+}
+
+.smt-limit-modal .smt-limit-modal__head .js-submit {
+    width: 100px;
+    height: 28px;
+    border-radius: 24px;
+    border: 1px solid #c5c5c5;
+    font-size: 12px;
+    color: #373e46;
+    cursor: pointer;
+}
+
+.smt-limit-modal .smt-limit-modal__body {
+    padding: 18px 6px;
+}
+
+.smt-limit-modal .smt-limit-won {
+    display: block;
+    margin: 0 auto;
+    font-size: 0;
+}
+
+.smt-limit-modal .smt-limit-won li {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    vertical-align: top;
+}
+
+.smt-limit-modal .smt-limit-won li:last-child {
+    border-left: 1px solid #bdc1c8;
+}
+
+.smt-limit-modal .smt-limit-won h5 {
+    font-size: 12px;
+    color: #222;
+}
+
+.smt-limit-modal .smt-limit-won p {
+    padding: 4px 0;
+}
+
+.smt-limit-modal .smt-limit-won .number {
+    font-size: 20px;
+    color: #000;
+}
+
+.smt-limit-modal .smt-limit-won .unit {
+    font-size: 12px;
+    color: #000;
+}
+
+.smt-limit-modal .js-limit-check {
+    width: 250px;
+    height: 46px;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    color: #fff;
+    border-radius: 0;
+    cursor: pointer;
+    background-color: #373e46;
+}
+
+.smt-limit-modal .smt-limit-alert {
+    padding: 10px 10px 0;
+}
+
+.smt-limit-modal .smt-limit-modal__head input[type="number"]::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgba(145, 151, 163, 0.6);
+    font-size: 19px;
+}
+
+.smt-limit-modal .smt-limit-modal__head input[type="number"]::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(145, 151, 163, 0.6);
+    font-size: 19px;
+}
+
+.smt-limit-modal .smt-limit-modal__head input[type="number"]:-ms-input-placeholder {
+    /* IE 10+ */
+    color: rgba(145, 151, 163, 0.6);
+    font-size: 19px;
+}
+
+.smt-limit-modal .smt-limit-modal__head input[type="number"]:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(145, 151, 163, 0.6);
+    font-size: 19px;
+}
+
+/*** 티켓팝콘스토어 상세검색  **/
+.smt-reservation__search.on .mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.smt-reservation__search .smt-search-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: -400px;
+    background: #fff;
+    transition: bottom .4s ease;
+}
+
+.smt-reservation__search.on .smt-search-box {
+    bottom: 0;
+}
+
+.smt-reservation__search .smt-search__header {
+    height: 50px;
+    padding-left: 26px;
+    padding-right: 6px;
+    line-height: 50px;
+    text-align: left;
+    color: #373e46;
+    vertical-align: middle;
+    border-bottom: 1px solid #dcdee3;
+}
+
+.smt-reservation__search .smt-search__header:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-reservation__search .smt-search__header h4 {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.smt-reservation__search .smt-search__header .js-close {
+    display: inline-block;
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    background: transparent;
+}
+
+.smt-reservation__search .smt-search__header .js-close img {
+    width: 15px;
+}
+
+.smt-reservation__search .smt-search__body {
+    padding: 0 26px 26px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.smt-reservation__search .smt-search__body dl {
+    padding-top: 10px;
+    font-size: 0;
+}
+
+.smt-reservation__search .smt-search__body dt {
+    display: block;
+    padding: 10px 0px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #9197a3;
+}
+
+.smt-reservation__search .smt-search__body dd {
+    position: relative;
+    margin-left: -1px;
+    display: inline-block;
+    width: calc(50%);
+    font-size: 12px;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__state dd {
+    width: calc(33.3333% + 1px);
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range dd {
+    width: calc(25% + 1px);
+}
+
+.smt-reservation__search .smt-search__body dd a {
+    display: block;
+    font-weight: 400;
+    font-size: 12px;
+    color: #373e46;
+    line-height: 30px;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #bdc1c8;
+}
+
+.smt-reservation__search .smt-search__body dd.active {
+    z-index: 1;
+}
+
+.smt-reservation__search .smt-search__body dd.active a {
+    color: #fb4357;
+    border-color: #fb4357;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input {
+    padding-top: 10px;
+    font-size: 0;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input .smt-range-start,
+.smt-reservation__search .smt-search__body .smt-search__range-input .smt-range-end {
+    display: inline-block;
+    width: calc(50% - 15px);
+    margin-left: -1px;
+    border: 1px solid #bdc1c8;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input .smt-range-gap {
+    display: inline-block;
+    width: 32px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input input[type="date"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000;
+    line-height: 26px;
+    text-indent: 10px;
+    vertical-align: middle;
+    border: medium none transparent;
+    background: transparent;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input input[type="date"]:before {
+    content: " ";
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    display: inline-block;
+    width: 13px;
+    height: 28px;
+    color: #000;
+    background: url(../../images/my/ico-cal.png) no-repeat;
+    background-size: 26px;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input input[type="date"]:disabled {
+    width: 100%;
+    height: 100%;
+    color: #999;
+    background-color: #ebebe4;
+}
+
+.smt-reservation__search .smt-search__body .smt-search__range-input input[type="date"]:disabled:before {
+    background-position: left -13px top;
+}
+
+.smt-reservation__search .smt-search__footer a {
+    display: block;
+    height: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #373e46;
+}
+
+/** 2018.01.07 update **/
+/** 경고창 alert **/
+.smt-alert-modal {
+    display: none;
+}
+
+.smt-alert-modal.on {
+    display: block;
+}
+
+.smt-alert-modal.on .mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 8003;
+}
+
+.smt-alert-modal .ssmt-alert-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    border-radius: 20px;
+    border: 1px solid #bdc1c8;
+    overflow: hidden;
+    background: #fff;
+    z-index: 8004;
+}
+
+.smt-alert-modal .smt-alert__body {
+    padding: 16px;
+    font-size: 14px;
+    color: #000;
+    text-align: left;
+}
+
+.smt-alert-modal .smt-alert__body p {
+    white-space: pre-line;
+    line-height: 1.8em;
+}
+
+.smt-alert-modal .smt-alert__footer {
+    font-size: 0;
+}
+
+.smt-alert-modal .smt-alert__footer .btn {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 16px;
+    border-top: 1px solid #bdc1c8;
+    border-radius: 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+.smt-alert-modal .smt-alert__footer.smt-confirm .btn {
+    width: 50%;
+}
+
+.smt-alert-modal .smt-alert__footer.smt-confirm .js-alert-cancel {
+    border-right: 1px solid #bdc1c8;
+}
+
+/** 2018.01.12 re update **/
+/** 결제 버튼  비활성화 **/
+.floating_payment .btn.btn-red.disbled {
+    color: #aca9a9;
+    background: #4b4f56;
+}
+
+/** 카드선택 모달 **/
+.card-select-box .card-select__list {
+    padding: 0;
+    transition: none;
+}
+
+.card-select-box .card-select__list ul {
+    display: block;
+    width: 100%;
+}
+
+.smt-card-modal.on .mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 8003;
+}
+
+.smt-card-modal .card-select__list {
+    position: fixed;
+    bottom: calc(-70vh - 50px);
+    left: 0;
+    right: 0;
+    max-height: calc(70vh  + 50px);
+    border-radius: 0;
+    border: 1px solid #bdc1c8;
+    overflow: hidden;
+    background: #fff;
+    z-index: 8004;
+    transition: bottom .3s ease;
+}
+
+.smt-card-modal .card-select__list .card-select__header {
+    height: 50px;
+    padding-left: 26px;
+    padding-right: 6px;
+    line-height: 50px;
+    text-align: left;
+    color: #373e46;
+    vertical-align: middle;
+    border-bottom: 1px solid #dcdee3;
+}
+
+.smt-card-modal .card-select__list .card-select__header:after {
+    content: ' ';
+    display: block;
+    clear: both;
+}
+
+.smt-card-modal .card-select__list .card-select__header h4 {
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.smt-card-modal .card-select__list .card-select__header .js-close {
+    display: inline-block;
+    float: right;
+    width: 15px;
+    height: 15px;
+    margin-top: 15px;
+    background: transparent;
+}
+
+.smt-card-modal .card-select__list ul {
+    position: relative;
+    display: block;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.smt-card-modal.on .card-select__list {
+    bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+    .smt-card-modal .card-select__list::-webkit-scrollbar {
+        width: 4px;
+        background-color: #F5F5F5;
+    }
+    .smt-card-modal .card-select__list::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+    .smt-card-modal .card-select__list::-webkit-scrollbar-thumb {
+        background-color: #999;
+    }
+}
+
+/** 2018.01.12 update **/
+/** playzone **/
+.smt-playzone-intro .smt-full-image {
+    width: 100%;
+}
+
+.smt-playzone-intro__shop {
+    margin: 10px 0;
+    padding: 6px 8px;
+    background: #fff;
+}
+
+.smt-playzone-intro__shop ul {
+    display: block;
+    text-align: center;
+}
+
+.smt-playzone-intro__shop li {
+    display: inline-block;
+    padding: 4px 2px;
+}
+
+.smt-playzone-intro__shop li a {
+    display: inline-block;
+    padding: 6px 12px;
+    border: 1px solid #000;
+    border-radius: 15px;
+    font-size: 12px;
+    color: #000;
+    background: #fff;
+    box-shadow: inset 0 0 1px #000;
+}
+
+.smt-playzone-intro__shop li:nth-child(1n) a {
+    color: #5884cc;
+    border-color: #5884cc;
+    box-shadow: inset 0 0 1px #5884cc;
+}
+
+.smt-playzone-intro__shop li:nth-child(2n) a {
+    color: #c58282;
+    border-color: #c58282;
+    box-shadow: inset 0 0 1px #c58282;
+}
+
+.smt-playzone-intro__shop li:nth-child(3n) a {
+    color: #997bb2;
+    border-color: #997bb2;
+    box-shadow: inset 0 0 1px #997bb2;
+}
+
+.smt-playzone-intro__shop li:nth-child(4n) a {
+    color: #6d7e9d;
+    border-color: #6d7e9d;
+    box-shadow: inset 0 0 1px #6d7e9d;
+}
+
+.smt-playzone-intro__shop li:nth-child(5n) a {
+    color: #d788d9;
+    border-color: #d788d9;
+    box-shadow: inset 0 0 1px #d788d9;
+}
+
+.smt-playzone-intro__shop li:nth-child(6n) a {
+    color: #dca35c;
+    border-color: #dca35c;
+    box-shadow: inset 0 0 1px #dca35c;
+}
+
+.smt-playzone-intro__shop li:nth-child(7n) a {
+    color: #bcab29;
+    border-color: #bcab29;
+    box-shadow: inset 0 0 1px #bcab29;
+}
+
+.smt-playzone-intro__shop li:nth-child(8n) a {
+    color: #9c775f;
+    border-color: #9c775f;
+    box-shadow: inset 0 0 1px #9c775f;
+}
+
+.smt-playzone-intro__shop li:nth-child(9n) a {
+    color: #73afa8;
+    border-color: #73afa8;
+    box-shadow: inset 0 0 1px #73afa8;
+}
+
+.smt-playzone .smt-playzone-areas {
+    padding-bottom: 50px;
+}
+
+.smt-playzone .smt-area {
+    background: #fff;
+    margin-bottom: 10px;
+    box-shadow: 0 0.5px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.smt-playzone .smt-area__intro {
+    position: relative;
+    overflow: hidden;
+}
+
+.smt-playzone .smt-area__intro .smt-photo img {
+    width: 100%;
+    max-height: 50vw;
+}
+
+.smt-playzone .smt-area__intro .smt-info {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 14px;
+    text-align: left;
+}
+
+.smt-playzone .smt-area__intro .smt-info h3 {
+    padding-bottom: 4px;
+    color: #fff;
+    font-size: 7.8vw;
+}
+
+.smt-playzone .smt-area__intro .smt-info p {
+    white-space: pre-line;
+    line-height: normal;
+    padding-bottom: 10px;
+    font-size: 4.3vw;
+    color: #bdc1c8;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: .2px;
+    background: #6782ae;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-room {
+    background-color: #c58282;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-ori {
+    background-color: #6d7e9d;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-bowl {
+    background-color: #c57dc7;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-suyu {
+    background-color: #dca35c;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-young {
+    background-color: #bcab29;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-cartoon {
+    background-color: #9c775f;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-vr {
+    background-color: #997bb2;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-song {
+    background-color: #73afa8;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-daej {
+    background-color: #dc815c;
+}
+
+.smt-playzone .smt-area__intro .smt-info .smt-list span.icon-daeg {
+    background-color: #757fdb;
+}
+
+.smt-playzone .smt-area__goods ul {
+    display: block;
+    padding: 10px 0 20px 20px;
+}
+
+.smt-playzone .smt-area__goods li {
+    display: block;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 10px;
+    padding-left: 0;
+    font-size: 0;
+}
+
+.smt-playzone .smt-area__goods li:last-child {
+    border-bottom-width: 0;
+}
+
+.smt-playzone .smt-area__goods li .smt-icon {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 54px;
+    overflow: hidden;
+    background: #333d3e;
+    vertical-align: middle;
+}
+
+.smt-playzone .smt-area__goods li .smt-icon img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.smt-playzone .smt-area__goods li .smt-info {
+    box-sizing: border-box;
+    display: inline-block;
+    width: calc(100% - 54px);
+    padding-left: 14px;
+    color: #000;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.smt-playzone .smt-area__goods li .smt-info p {
+    line-height: 140%;
+}
+
+.smt-playzone .smt-area__goods li .smt-info p.price {
+    line-height: 100%;
+    padding-top: 7px;
+}
+
+.smt-playzone .smt-area__goods li .smt-info p.price .discount {
+    color: #dc291e;
+}
+
+.smt-playzone .smt-area__goods li .smt-info p.price .prime {
+    padding-left: 6px;
+    color: #9197a3;
+    font-size: 10px;
+    text-decoration: line-through;
+}
+
+.smt-playzone .smt-area__goods li .smt-info span {
+    display: inline-block;
+}
