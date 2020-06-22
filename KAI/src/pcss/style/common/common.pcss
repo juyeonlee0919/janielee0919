@@ -1,0 +1,159 @@
+
+/**
+common
+ */
+.visually_hidden {
+	overflow:  hidden;
+	position: absolute;
+	left: -999999px;
+	clip: rect(0, 0, 0, 0); /*ie6,7*/
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	font-size: 0;
+	line-height: 0;
+	border: 0;
+	padding: 0;
+}
+
+.text_ellipsis {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.line_ellipsis_2 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	line-height: 22px;
+	max-height: 44px;
+}
+
+.line_ellipsis_3 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	line-height: 22px;
+	max-height: 66px;
+}
+
+.clearfix::after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.vertical_middle::after {
+	content: '';
+	display: inline-block;
+	width: 1px;
+	height: 100%;
+	vertical-align: middle;
+}
+.vertical_middle {
+	text-align: center;
+}
+.vertical_middle > div {
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 7px);
+	padding-left: 7px;
+}
+
+.f-point {
+	color: var(--color-point);
+}
+
+.f-sz-md {
+  font-size: 16px !important;
+}
+
+.f-sz-sm {
+  font-size: 14px !important;
+}
+
+.f-default {
+	font-family: var(--font1) !important;
+}
+
+.f-black {
+  color: var(--color-text-black) !important;
+}
+
+.f-light-gray {
+	color: var(--color-text-light) !important;
+}
+
+.f-default-gray {
+	color: var(--color-text-default) !important;
+}
+
+.f-hidden {
+	color: transparent !important;
+	font-size: 0 !important;
+}
+
+.f-link {
+	text-decoration: underline;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+caption.visually_hidden {
+	position: static;
+}
+
+.blind {
+	font-size: 0;
+	color: transparent;
+}
+
+.no_padding {
+	padding: 0 !important;
+}
+.no_margin {
+	margin: 0 !important;
+}
+.no_border {
+	border: none !important;
+}
+.ta_right {
+	text-align: right !important;
+}
+.ta_left {
+	text-align: left !important;
+}
+.prefix-dot::before{
+	content: '';
+	display: inline-block;
+	vertical-align: middle;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background: #333333;
+	margin-right: 5px;
+
+}
+
+.term_box{
+	padding: 100px;
+	height: 880px;
+	& div{
+		border-top: 1px solid #b1b1b1;
+		border-bottom: 1px solid #b1b1b1;
+		height: 100%;
+		background: #ffffff;
+	}
+}

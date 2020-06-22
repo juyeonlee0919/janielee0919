@@ -1,0 +1,334 @@
+.chart {
+    & .sort {
+        position: relative;
+        font-size: 11px;
+        font-family: var(--font2);
+
+        & .item {
+            line-height: 20px;
+            letter-spacing: -0.55px;
+            margin-bottom: 4px;
+        }
+
+        & .value {
+            position: absolute;
+            letter-spacing: -0.28px;
+            padding-right: 3px;
+            padding-top: 2px;
+            right: -3px;
+            top: 1px;
+
+            & span {
+                &:first-child {
+                    font-family: var(--font4);
+
+                    &::after {
+                        content: '만원';
+                        font-family: var(--font1);
+                        font-size: 11px;
+                        line-height: 17px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    font-family: var(--font4);
+
+                    &:after {
+                        content: '만원';
+                        font-family: var(--font1);
+                        font-size: 11px;
+                        line-height: 17px;
+                    }
+                }
+            }
+
+            & .primary {
+                font-family: var(--font1);
+                color: var(--color-point);
+            }
+        }
+
+        & .bar {
+            position: relative;
+            margin-bottom: 18px;
+
+            & .bg {
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background: #f8f5ff;
+            }
+
+            & .amount {
+                position: absolute;
+                height: 3px;
+                border-radius: 66px;
+                background: var(--color-point);
+            }
+        }
+    }
+
+    &.chart_graph {
+        margin-bottom: 83px !important;
+        position: relative;
+
+        & .sort {
+            & .item {
+                font-size: 13px;
+                font-family: var(--font2);
+                letter-spacing: -0.35px;
+                line-height: 18px;
+            }
+
+            & .value {
+                position: absolute;
+                font-size: 15px;
+                font-family: var(--font5);
+                line-height: 20px;
+                padding-top: 0;
+                letter-spacing: -.15px;
+                right: 0;
+                top: -28px;
+
+                &::after {
+                    content: '원';
+                    font-size: 12px;
+                    line-height: 20px;
+                    font-family: var(--font2);
+                    letter-spacing: -0.3px;
+                }
+            }
+
+            & .bar {
+                bottom: -5px;
+                margin-bottom: 16px;
+
+                &.over {
+                    & .amount {
+                        background: var(--color-error);
+                    }
+                }
+
+                & .bg {
+                    position: absolute;
+                    width: 100%;
+                    height: 3px;
+                    background: #f8f5ff;
+                }
+
+                & .amount {
+                    position: relative;
+                    height: 3px;
+                    background: var(--color-point);
+
+                    & .tooltip_box {
+                        position: absolute;
+                        top: 18px;
+                        right: 0;
+                        transform: translateX(50%);
+
+                        & .tooltip_text {
+                            color: var(--color-point);
+                            font-family: var(--font1);
+                            font-size: 12px;
+                            line-height: 26px;
+                            padding: 0 12px;
+                            border-radius: 14px;
+                            border: 1px solid #e0d3ff;
+                            white-space: nowrap;
+                            position: relative;
+                            letter-spacing: -.3px;
+
+                            & .value {
+                                position: unset !important;
+                                font-family: var(--font4) !important;
+                                font-size: 13px !important;
+                                font-weight: normal !important;
+                                color: var(--color-point) !important;
+                                line-height: 26px !important;
+                                float: unset !important;
+                                padding-right: 0 !important;
+                            }
+
+                            & .current {
+                                font-family: var(--font2) !important;
+                                font-size: 12px !important;
+                                color: var(--color-point) !important;
+                                line-height: 26px !important;
+                                text-align: unset !important;
+                            }
+
+                            &::after {
+                                content: " ";
+                                position: absolute;
+                                bottom: 100%;
+                                left: 50%;
+                                margin-left: -5px;
+                                width: 7px;
+                                height: 5px;
+                                background: url("../../img/common/tooltip_shot.png");
+                            }
+                        }
+
+                        &.left {
+                            right: 0;
+                            transform: translateX(calc(100% - 16px));
+
+                            & .tooltip_text {
+                                &::after {
+                                    left: 16px;
+                                }
+                            }
+                        }
+
+                        &.right {
+                            right: 0;
+                            transform: translateX(calc(0% + 16px));
+
+                            & .tooltip_text {
+                                &::after {
+                                    left: auto;
+                                    right: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chartWrapper {
+    position: relative;
+    border-bottom: 10px solid #f5f6f8;
+    padding-bottom: 12px;
+}
+
+.chartArea > canvas {
+    position: relative;
+    top: 6px;
+    left: 0;
+}
+
+.chartArea {
+    width: 1400px;
+    height: 230px;
+}
+.chartScroll {
+    overflow-x: auto;
+}
+
+.yaxis-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    & ul {
+        width: 53px;
+        height: auto;
+        background-color: #fff;
+        & li {
+            margin-bottom: 49px;
+            padding-right: 7px;
+            text-align: right;
+            height: 15px;
+            line-height: 15px;
+            color: var(--text-03);
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &.bar {
+        & ul {
+            & li {
+                margin-bottom: 33px;
+            }
+        }
+        & .unit {
+            bottom: -21px;
+        }
+    }
+}
+
+.unit {
+    position: absolute;
+    bottom: -51px;
+    left: 0;
+    font-size: 11px;
+    display: block;
+    line-height: 17px;
+    letter-spacing: -0.28px;
+    color: var(--text-03);
+    background-color: #ffffff;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    padding-right: 7px;
+}
+
+.xaxis-day-label {
+    position: relative;
+    bottom: 22px;
+    left: -6px;
+    z-index: 1;
+
+    & ul {
+        width: 1430px;
+        padding-left: 65px;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        & li {
+            float: left;
+            width: 23px;
+            height: 23px;
+            margin-right: 22px;
+            font-family: var(--font4);
+            font-size: 11px;
+            line-height: 23px;
+            letter-spacing: -.11px;
+            text-align: center;
+            color: var(--text-03);
+            &:last-child {
+                margin-right: 0;
+            }
+            &.active {
+                font-family: var(--font5);
+                border-radius: 50%;
+                color: var(--text-point-color);
+                background-color: rgba(104, 57, 211,.06);
+            }
+        }
+    }
+}
+
+.xaxis-month-label {
+    position: relative;
+    bottom: 22px;
+    left: 1px;
+    z-index: 1;
+
+    & ul {
+        width: 1430px;
+        padding-left: 58px;
+        overflow-x: auto;
+        white-space: nowrap;
+
+        & li {
+            float: left;
+            width: 23px;
+            height: 23px;
+            margin-right: 22px;
+            font-family: var(--font4);
+            font-size: 11px;
+            line-height: 23px;
+            text-align: center;
+            color: var(--text-02);
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

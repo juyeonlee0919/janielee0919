@@ -1,0 +1,489 @@
+.sprite {
+    background-repeat: no-repeat;
+    display: inline-block;
+    text-indent: -9999px;
+    font-size: 0;
+    overflow: hidden;
+}
+
+/**
+common
+ */
+
+.sprite.icon-rejected {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px -63px;
+    background-size: 156px 137px;
+    width: 26px;
+    height: 26px;
+}
+
+.sprite.icon-info {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -98px -42px;
+    background-size: 156px 137px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite.icon-link {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -26px;
+    background-size: 156px 137px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite.icon-eye-on {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px 0px;
+    background-size: 156px 137px;
+    width: 35px;
+    height: 35px;
+}
+
+.sprite.icon-eye-off {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -35px 0px;
+    background-size: 156px 137px;
+    width: 35px;
+    height: 35px;
+}
+
+.sprite.icon-card {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -98px -62px;
+    background-size: 156px 137px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite.icon-house {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px -89px;
+    background-size: 156px 137px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite.icon-save {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -20px -89px;
+    background-size: 156px 137px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite.icon-insurance {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -40px -89px;
+    background-size: 156px 137px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite.icon-medical {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -48px -63px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite.icon-caution {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -38px;
+    background-size: 156px 137px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite.icon-more {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -50px;
+    background-size: 156px 137px;
+    width: 10px;
+    height: 14px;
+}
+
+.sprite.icon-arrow {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -56px -35px;
+    background-size: 156px 137px;
+    width: 10px;
+    height: 14px;
+}
+
+.sprite.icon-open {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px -127px;
+    background-size: 156px 137px;
+    width: 14px;
+    height: 10px;
+}
+
+.sprite.icon-close {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -14px -127px;
+    background-size: 156px 137px;
+    width: 14px;
+    height: 10px;
+}
+
+.sprite.icon-info-purple {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -60px -89px;
+    background-size: 156px 137px;
+    width: 20px;
+    height: 20px;
+}
+
+.sprite.icon-plus {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -122px -109px;
+    background-size: 156px 137px;
+    width: 15px;
+    height: 15px;
+}
+
+.sprite.icon-list-credit {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -69px -63px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite.icon-list-bill {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -98px 0px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite.icon-btn-plus {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -75px;
+    background-size: 156px 137px;
+    width: 10px;
+    height: 10px;
+}
+
+.sprite.icon-customer {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -98px -21px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite.icon-notice {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -80px -89px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite.icon-event {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -98px -89px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+.sprite.icon-accredit {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px 0px;
+    background-size: 156px 137px;
+    width: 21px;
+    height: 21px;
+}
+
+/*
+    날짜 : 2020.06.01
+    작성자 : 이주연
+    내용 : sprite 이미지 추가
+*/
+
+.sprite.ico_mycard_arrow {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -64px;
+    background-size: 156px 137px;
+    width: 11px;
+    height: 11px;
+}
+
+.sprite.ico_card_plus {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px 0px;
+    background-size: 156px 137px;
+    width: 13px;
+    height: 13px;
+}
+
+.sprite.arrow_list_add {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -105px;
+    background-size: 156px 137px;
+    width: 6px;
+    height: 16px;
+}
+
+.sprite.ico_btn_card_edit {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -28px -127px;
+    background-size: 156px 137px;
+    width: 9px;
+    height: 9px;
+}
+
+.sprite.ico_refresh {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px -35px;
+    background-size: 156px 137px;
+    width: 28px;
+    height: 28px;
+}
+
+.sprite.btn_popup_close {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -26px -63px;
+    background-size: 156px 137px;
+    width: 22px;
+    height: 22px;
+}
+
+.sprite.ico_caution {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -38px;
+    background-size: 156px 137px;
+    width: 12px;
+    height: 12px;
+}
+
+.sprite.ico_arrow_btn {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -150px -16px;
+    background-size: 156px 137px;
+    width: 6px;
+    height: 10px;
+}
+
+.sprite.ico_list_arrow_small {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -143px -105px;
+    background-size: 156px 137px;
+    width: 6px;
+    height: 16px;
+}
+
+.sprite.ico_cal {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -56px -49px;
+    background-size: 156px 137px;
+    width: 14px;
+    height: 14px;
+}
+
+.sprite.icon_btn_edit {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -85px;
+    background-size: 156px 137px;
+    width: 10px;
+    height: 10px;
+}
+
+.sprite.ico_card_edit {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -90px -109px;
+    background-size: 156px 137px;
+    width: 16px;
+    height: 16px;
+}
+
+.sprite.ico_list_notice {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -80px -89px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_event {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -98px -89px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_faq {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px -18px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_inquire {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px -36px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_accredit {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px 0px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_lock {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px -54px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_alarm {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px -72px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_arrow_small {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -143px -105px;
+    background-size: 156px 137px;
+    width: 6px;
+    height: 16px;
+}
+
+.sprite.ico_list_card {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -119px -90px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_arrow_small_nor {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -90px -63px;
+    background-size: 156px 137px;
+    width: 6px;
+    height: 16px;
+}
+
+.sprite.ico_list_house {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px -109px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_house {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: 0px -109px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_money_bag {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -18px -109px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_deduct {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -36px -109px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_insurance {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -54px -109px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_list_medical {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -72px -109px;
+    background-size: 156px 137px;
+    width: 18px;
+    height: 18px;
+}
+
+.sprite.ico_btn_edit_nor {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -95px;
+    background-size: 156px 137px;
+    width: 10px;
+    height: 10px;
+}
+
+.sprite.arrow_tax_main {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -150px 0px;
+    background-size: 156px 137px;
+    width: 6px;
+    height: 16px;
+}
+
+.sprite.ico_tooltip {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -106px -109px;
+    background-size: 156px 137px;
+    width: 16px;
+    height: 16px;
+}
+
+.sprite.ico_minus_nor {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -28px -35px;
+    background-size: 156px 137px;
+    width: 28px;
+    height: 28px;
+}
+
+.sprite.ico_minus_dim {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -70px 0px;
+    background-size: 156px 137px;
+    width: 28px;
+    height: 28px;
+}
+
+.sprite.ico_plus_nor {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -70px -28px;
+    background-size: 156px 137px;
+    width: 28px;
+    height: 28px;
+}
+
+.sprite.ico_btn_top {
+    background-image: url(../../img/sprite/sprite.png);
+    background-position: -137px -13px;
+    background-size: 156px 137px;
+    width: 13px;
+    height: 13px;
+}
