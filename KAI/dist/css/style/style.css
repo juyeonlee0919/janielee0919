@@ -17405,7 +17405,8 @@ a.text-dark:hover, a.text-dark:focus {
     width: 100%;
     height: 80px;
     background-color: #ffffff;
-    z-index: 100 !important
+    z-index: 100 !important;
+    border-bottom: 1px solid #E5E5E5
 }
 
 .header .inner {
@@ -17571,19 +17572,19 @@ a:hover, a:focus {
 .sec-main {
     width: 100%;
     margin: 0 auto 81px;
-    height: 780px;
+    height: 700px;
     background-color: #000008
 }
 
 .sec-main .inner {
-        position: relative
+        position: relative;
+        width: 1200px;
+        height: 100%;
+        margin: 0 auto
     }
 
 .sec-main .inner .img {
-            display: block;
-            width: 1200px;
-            height: 100%;
-            margin: 0 auto
+            display: block
         }
 
 .sec-main .inner .img img {
@@ -17598,9 +17599,9 @@ a:hover, a:focus {
             font-size: 36px;
             color: #ffffff;
             top: 50%;
-            left: 50%;
-            -webkit-transform: translate(-100%, -50%);
-                    transform: translate(-100%, -50%);
+            left: 90px;
+            -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
         }
 
 .sec-intro {
@@ -17903,13 +17904,13 @@ a:hover, a:focus {
                 width: 380px;
                 height: 100%;
                 text-align: center;
-                border-right: 2px solid transparent;
-                border-left: 2px solid transparent;
-                border-top: 2px solid transparent;
+                border-right: 0;
+                border-left: 0;
+                border-top: 0;
                 border-bottom: 2px solid #303030;
                 border-bottom: 2px solid var(--color-text-default);
                 background-color: #ffffff;
-                padding-top: 1px
+                padding-top: 2px
             }
 
 .tab-menu .content-02 .tab-btn .tab-item > a {
@@ -17926,7 +17927,7 @@ a:hover, a:focus {
                     border-left: 2px solid var(--color-text-default);
                     border-top: 2px solid #303030;
                     border-top: 2px solid var(--color-text-default);
-                    border-bottom: 1px solid #F2F2F2
+                    border-bottom: 0
                 }
 
 .tab-menu .content-02 .tab-btn .tab-item.active > a {
