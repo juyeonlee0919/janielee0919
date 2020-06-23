@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/* S Variables */
+:root{
+    --tomato:#f24c42;
+    --warmGrey:#999;
+    --warmPink:#f1318a;
+    --watermelon:#fb4357;
+    --dustyOrange:#ef642f;
+    --coolGrey:#9197a3;
+    --brownishGrey:#666666;
+    --colorBalck222222:#222222;
+}
+/* E Variables */
+
+/* S image */
+.sprite.sprite-icClose {display: block; width: 30px; height: 30px;}
+.inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
+.sprite.sprite-icInfo02 {display: inline-block; width: 16px; height: 16px;}
+.sprite.sprite-icClose02 {display: inline-block; width: 11px; height: 11px;}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1){
+    .sprite.sprite-icClose{ background-image:url('../images/my/icClose.png'); background-size:30px 30px}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal.png);background-repeat: no-repeat;background-size: 56px 30px;}
+    .sprite.sprite-icInfo02{ background-image:url('../images/my/icInfo02.png');width: 16px; height: 16px;background-size: cover;}
+    .sprite.sprite-icClose02{ background-image:url('../images/my/icClose02.png');width: 11px; height: 11px;background-size: cover; }
+}
+@media only screen and (-webkit-min-device-pixel-ratio:2){
+    .sprite.sprite-icClose{ background-image:url('../images/my/icClose@2x.png');}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal@2x.png);background-repeat: no-repeat;background-size: 56px 30px;}
+    .sprite.sprite-icInfo02{ background-image:url('../images/my/icInfo02@2x.png');}
+    /*.sprite.sprite-icClose02{ background-image:url('../images/my/icClose@2x.png');}*/
+}
+@media only screen and (-webkit-min-device-pixel-ratio:3){
+    .sprite.sprite-icClose{ background-image:url('../images/my/icClose@3x.png');}
+    .inputBox span input[type='date']:after, .inputBox span input[type='date']:disabled::after {content: '';background-image: url(../images/my/ico-cal@3x.png);background-repeat: no-repeat;background-size: 56px 30px;}
+    .sprite.sprite-icInfo02{ background-image:url('../images/my/icInfo02@3x.png');}
+    /*.sprite.sprite-icClose02{ background-image:url('../images/my/icClose@3x.png');}*/
+}
+/* E image */
+
+/* S popup */
+.popup {position: fixed;left: 0;bottom: 0;width: 100%;margin-top: 100px;}
+.popup_header {position: relative;height: 44px;line-height: 44px;background: #fff;}
+.popup_container {position: relative;height: 100%;line-height: 44px;background: #fff; border-radius: 0 0 4px 4px;}
+.popup_dim.active {display: block;opacity: 1 !important;overflow: auto;top: 0 !important;left: 0;}
+.popup_dim{display:none; overflow:hidden; position:fixed; left:0; top:-100%; width:100%; height:100%; z-index:9; background-color:rgba(0, 0, 0, 0.6); opacity:0}
+.popup_dim .popup{top:-100vh; left:-100vw; right:-100vw; bottom:-100vh; padding-right:constant(safe-area-inset-right); padding-right:env(safe-area-inset-right); padding-left:constant(safe-area-inset-left); padding-left:env(safe-area-inset-left)}
+.popup_dim .popup .popup_container .container_footer {width: 100%;padding-top: 20px;}
+.popup_dim .popup .popup_container .container_footer .btnPopConfirm {display: block;width: 100%;height: 50px;font-weight: 400;font-size: 16px;color: #fff;line-height: 50px;text-align: center; background: linear-gradient(to left, var(--dustyOrange), var(--watermelon));}
+
+    /* S 포토티켓 패스카드 상세화면 팝업 */
+    .popup_dim.popPassCardDetail.active .popup {top: 50%;left: 50%;width: 250px;height: auto;bottom: auto;margin: 0;padding: 0;transform: translate(-50% , -50%);}
+    .popPassCardDetail .popup {width:230px !important; border-radius: 4px;}
+    .popPassCardDetail .popup_header {border-radius: 4px 4px 0 0; background: #f2f5f9;}
+    .popPassCardDetail .popup_header p  {text-align: center; font-size: 14px; line-height: 45px; color: var(--colorBalck222222); letter-spacing: -.5px;}
+    .popPassCardDetail .popup_header .btn_close { position: absolute; width: 11px;height: 11px; left: auto; right: 13px;top: 16px;}
+    .popPassCardDetail .popup_header .btn_close i {width: 11px;height: 11px;}
+    .popPassCardDetail .popup_container {position: relative; padding: 20px 17px;}
+    .popPassCardDetail .popup_container .movie_info {position: relative; margin-bottom: 20px}
+    .popPassCardDetail .popup_container .movie_info::after {content: ''; position: absolute; width: 100%; height: 1px; border-bottom: 1px solid #dcdee3;left: 0;bottom: -10px;}
+    .popPassCardDetail .popup_container .movie_info li {text-align: center;}
+    .popPassCardDetail .popup_container .movie_info .title {font-size: 16px; color: var(--colorBalck222222); line-height: 19px; font-weight: 500;padding: 0 22px;margin-bottom: 14px;}
+    .popPassCardDetail .popup_container .movie_info .code {font-size: 13px; letter-spacing: -.46px; color: var(--colorBalck222222); font-weight: 600}
+    .popPassCardDetail .popup_container .theater_info .date {font-size: 12px; line-height: 15px; margin-bottom: 4px; color: var(--coolGrey); letter-spacing: -.5px;}
+    .popPassCardDetail .popup_container .theater_info .theater {font-size: 12px; line-height: 15px; color: var(--coolGrey); letter-spacing: -.5px;}
+    /* E 포토티켓 패스카드 상세화면 팝업 */
+
+    /* S 포토티켓 패스카드 등록 안내 팝업  */
+    .popup_dim.popPassCard.active .popup {top: 50%;left: 50%;width: 250px;height: auto;bottom: auto;margin: 0;padding: 0;transform: translate(-50% , -50%);}
+    .popPassCard .popup {width:291px !important; border-radius: 4px;}
+    .popPassCard .popup_header {border-radius: 4px 4px 0 0}
+    .popPassCard .popup_header .btn_close {left: auto; right: 13px;}
+    .popPassCard .popup_container {height:461px; overflow: hidden;padding-bottom: 45px;}
+    .popPassCard .popup_container .title {text-align:center; font-size: 17px; line-height: 24px; letter-spacing: -.61px; color: var(--colorBalck222222)}
+    .popPassCard .popup_container .img {margin: 0 auto; width: 220px; height: 150px; background: pink}
+    .popPassCard .popup_container .img img {width: 100%; height: 100%;}
+    .popPassCard .popup_container .contents {padding: 15px 22px 0;}
+    .popPassCard .popup_container .contents p {position: relative; font-size: 14px; line-height: 17px; letter-spacing: -1.2px; font-weight: 500;}
+    .popPassCard .popup_container .contents p span {color: #4e88cf}
+    .popPassCard .popup_container .contents p::after {content: ''; position: absolute; width: 100%; height: 1px; border-bottom: 1px solid #dcdee3;left: 0;bottom: -10px;}
+    .popPassCard .popup_container .contents ul {padding-top: 20px;}
+    .popPassCard .popup_container .contents ul li {position: relative; font-size: 13px; color: var(--coolGrey); line-height: 18px; padding-left: 9px;}
+    .popPassCard .popup_container .contents ul li::before {content: ''; position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--coolGrey); left: 0; top: 5px;}
+    /* E 포토티켓 패스카드 등록 안내 팝업 */
+
+    /* S 조건 검색 레이어 팝업 */
+    .popup_my_select { position: fixed; left: 0; bottom: -100%; width: 100%; background-color: #fff;z-index: 9; border-radius: 16px 16px 0 0;}
+    .popup_my_select .popup_container {background: #ffffff; border-radius: 16px 16px 0 0;}
+    .popup_my_select .container_header {height: 55px;padding-left: 18px;line-height: 55px;font-weight: 600;font-size: 17px;text-align: left;color: #373e46;vertical-align: middle;border-bottom: 1px solid #dcdee3;}
+    .popup_my_select .container_header .btn_close { left: auto;right: 13px;display: inline-block;position: absolute;top: 12px;}
+    .popup_my_select .container_content { padding: 0 20px; }
+    .popup_my_select .container_content .state { overflow: hidden;padding-top: 10px; }
+    .popup_my_select .container_content .state dt { float: left;width: 100%; padding: 8px 0;font-weight: normal;font-size: 17px;line-height: 20px;color: var(--colorBalck222222);}
+    .popup_my_select .container_content .state dd { width: 47.2%; height: 36px;}
+    .popup_my_select .container_content .state dd.left { float: left;}
+    .popup_my_select .container_content .state dd.right { float: right;}
+    .popup_my_select .container_content .state dd a {display: inline-block; width: 100%;height: 100%;line-height: 36px;border: 0;font-size: 14px; color: var(--brownishGrey);border-radius: 8px;background: rgba(242,242,242,.8);text-align: center}
+    .popup_my_select .container_content .state dd.active a { background: var(--watermelon);color: #ffffff; }
+    .popup_my_select .container_content .search { overflow: hidden;padding-top: 30px; }
+    .popup_my_select .container_content .search dt { float: left;width: 100%;padding: 8px 0;font-weight: 400;font-size: 17px;line-height: 15px;color: var(--colorBalck222222);}
+    .popup_my_select .container_content .search .DatepickerBox {display: flex;flex-wrap: wrap; padding: 8px 1px 0;margin-bottom: 6px;}
+    .popup_my_select .container_content .search .DatepickerBox span {float: left;height: 36px;margin-right: 6px;width: 123px;flex: 0 0 17%;max-width: 33.333333%;}
+    .popup_my_select .container_content .search .DatepickerBox span a {display: block;font-size: 14px;text-align: center;line-height: 36px;color: #666666;border-radius: 8px;background: rgba(242,242,242,.8);}
+    .popup_my_select .container_content .search .DatepickerBox span.active a {background: var(--watermelon);color: #ffffff;}
+    .popup_my_select .container_content .search .DatepickerBox span.lg {flex: 0 0 23%;margin-right: 0;}
+    .popup_my_select .container_content .search .inputBox {position: relative;overflow: hidden;}
+    .popup_my_select .container_content .search .inputBox:before {content: '~';position: absolute;left: 50%;top: 12px;display: block;margin-left: -3px;}
+    .popup_my_select .container_content .search .inputBox span {width: 46%;display: block;height: 36px;line-height: 36px;}
+    .popup_my_select .container_content .search .inputBox span:first-child {float: left;}
+    .popup_my_select .container_content .search .inputBox span:last-child {float: right;}
+    .popup_my_select .container_content .search .inputBox span input[type='date']:disabled {width: 100%;height: 100%;line-height: 36px;border: 0;color: #b3b3b3;border-radius: 8px;background: rgba(242,242,242,.8);}
+    .popup_my_select .container_content .search .inputBox span input[type='date'] {position: relative;display: block;width: 100%;font-size: 14px;text-indent: 10px;line-height: 36px;height: 36px;border: 0;color: rgb(102,102,102);border-radius: 8px;background: rgba(242,242,242,.8);}
+    .popup_my_select .container_content .search .inputBox span input[type='date']::after {content: '';display: block;position: absolute;right: 10px;top: 10px;width: 15px;height: 16px;background-position: -33px -6px;z-index: 1;}
+    .popup_my_select .container_content .search .inputBox span input[type='date']:disabled::after {width: 15px;height: 16px;background-position: -10px -6px;z-index: 1;}
+    /* E 조건 검색 레이어 팝업 */
+/* E popup */
+
+/* S ul_menu */
+.cPHistoryTitle.type4.renewal-menu.v2 {overflow: auto; padding: 0 18px; font-size: 0; text-align: center; white-space: nowrap;}
+.cPHistoryTitle.type4.renewal-menu.v2 > li { height: 43px; table-layout: auto; display: inline-block; width: auto; float: none; padding: 0 26px 0 0;}
+.cPHistoryTitle.type4.renewal-menu.v2 > li:last-child {padding: 0;}
+.cPHistoryTitle.type4.renewal-menu > li > a { line-height: 43px; font-weight: normal; font-size: 15px !important; letter-spacing: -.63px !important;}
+.cPHistoryTitle.type4.renewal-menu > li.active > a {font-weight: 600;}
+/* E ul_menu */
+
+/*.comCGVWrap1 h1 {padding: 16px 25px 16px 25px;}*/
+.cPHistory + .comCGVWrap1{position:relative; margin-bottom: 0;}
+.cPHistory + .comCGVWrap1:before {content: none;}
+.cPHistory + .comCGVWrap1:after{content: none;}
+
+
+
+/* S 온라인 예약/결제내역 */
+.cPHistoryList li a .movieBookingDetailPeriod {width: 15%;}
+.cPHistoryList li a .photoTicketValue {position: relative;float: left;max-width: 80%;padding-top: 7px;font-size: 12px;padding-right: 8px; color: var(--coolGrey);}
+.cPHistoryList li a .photoTicketValue::after {content: ''; position: absolute; width: 1px;height: 11px;right: 3px;top: 7px;border-right: 1px solid var(--coolGrey);}
+.cPHistoryList li a .movieBookingDetail .movieBookingDetailValue {font-weight: bold;}
+.cPHistoryList li a .movieBookingDetail {width: 85%;}
+/* E 온라인 예약/결제내역 */
+
+/* S 결제내역 상세화면  */
+.payment-history article + article { margin-top: 7px;}
+.my_productCode_wrap {position: relative; background: #ffffff; height: 60px; line-height: 60px; }
+.my_productCode_wrap .info {float: left; display: inline-block; line-height: 60px; padding-left: 20px;}
+.my_productCode_wrap .info span { font-size: 14px; color: #6a707a; }
+.my_productCode_wrap .info .date {display: inline-block; line-height: 17px;}
+.my_productCode_wrap .info .code {position: relative; display: inline-block; line-height: 17px; padding-left: 14px;}
+.my_productCode_wrap .info .code::before {content: ''; position: absolute; width: 1px; height: 12px;border-left: 1px solid #6a707a;left: 5px;top: 2px;}
+.my_productCode_wrap .btn_wrap {position: absolute;right:19px; top: 17px;}
+.my_productCode_wrap .btn_wrap a {display: inline-block; width: 90px; height: 27px; border-radius: 0; border: 1px solid rgba(145,151,163,.4);text-align: center; font-size: 13px; color: #4b4f56; line-height: 26px;}
+.my_productCode_wrap .btn_wrap a.cancel {color: #4e88cf; width: 61px; font-size: 14px; border: 0; cursor: default;font-weight: 600;}
+
+.my_productInfo_wrap {overflow: hidden;padding: 15px 20px 15px;border-bottom: 1px solid #ddd; background: #ffffff;}
+.my_productInfo_wrap h2 { margin-bottom: 12px;padding-top: 7px;}
+.my_productInfo_wrap .img_wrap {float: left; overflow: hidden; width: 80px;height: 123px;border-radius: 5px;border: 1px solid rgba(153,153,153,.1);}
+.my_productInfo_wrap .img_wrap img {width: 100%;height: 100%;}
+.my_productInfo_wrap .productInfo {float: left;width: calc(100% - 80px);padding: 14px 0 0 13px;}
+.my_productInfo_wrap .productInfo strong {display: block;overflow: hidden;font-weight: 600;font-size: 18px;color: var(--colorBalck222222);line-height: 21px;text-overflow: ellipsis;white-space: nowrap;}
+.my_productInfo_wrap .productInfo .date {display: block;overflow: hidden;margin-top: 9px;font-size: 14px;color: #6a6f77;line-height: 17px;text-overflow: ellipsis;white-space: nowrap;}
+.my_productInfo_wrap .productInfo .place {display: block;overflow: hidden;margin-top: 2px;font-size: 14px;color: #6a6f77;line-height: 17px;text-overflow: ellipsis;white-space: nowrap;}
+.my_productInfo_wrap .productInfo p {overflow: hidden;padding-top: 18px;}
+.my_productInfo_wrap .productInfo p .total {float: left;font-size: 15px;color: #222;line-height: 19px;}
+.my_productInfo_wrap .productInfo p .price {float: right;margin-top: 2px;font-weight: 700;font-size: 16px;color: var(--colorBalck222222);line-height: 19px;}
+/* E 결제내역 상세화면  */
+
+/* S 결제정보 */
+.payment-history .payment-detail-wrap {padding: 20px 20px 17px;}
+.payment-history .payment-detail-wrap h2 > span {font-size: 14px; font-weight: 500 }
+.payment-history .payment-detail-wrap .payment-summary .sum-tit { line-height: 17px;}
+.payment-history .payment-detail-wrap .payment-summary .sum-price {line-height: 19px;}
+.payment-history .payment-detail-wrap .payment-detail {margin-bottom: 3px;}
+.payment-history .payment-detail-wrap .payment-detail > dt {line-height: 17px;}
+.payment-history .payment-detail-wrap .payment-detail + .total-price-wrap {margin-top: 9px;padding-top: 17px;}
+/* E 결제정보 */
+
+/* S 포토티켓 패스카드 */
+.passCardList li {overflow: hidden;padding: 26px 30px 25px 11px;}
+.passCardList li .passCardDetail {float: left;width: calc(100% - 51px);}
+.passCardList li .passCardLink {display: block;position: absolute;top: 0;right: 0;width: 100%;height: 100%;}
+.passCardList li .passCardValue {position: absolute;top: 36px;right: 13px;}
+.passCardDetailTitle {display: block;font-weight: 400;font-size: 16px;color: #000;line-height: 20px;}
+.passCardPeriod {display: block;margin-top: 6px;font-weight: 400;font-size: 12px;color: var(--coolGrey);line-height: 14px;}
+.cPHistory {position: relative; width: 100%;height: 70px;padding: 5px 17px 0 19px;font-size: 13px;color: #6a6f77;line-height: 20px;text-align: left;word-wrap: break-word;word-break: keep-all;box-sizing: border-box;background-color: #f2f2f2;}
+.cPHistory::after {content: ''; position: absolute; width: 4px; height: 4px; border-radius: 50%; background: var(--coolGrey); left: 10px;top: 11px;}
+/* E 포토티켓 패스카드 */
+
+/* S 포토티켓 패스카드 등록 */
+.wrap_cgv_ticket .area_info {margin-top: 10px;}
+.wrap_cgv_ticket .area_info a {display: block;}
+.wrap_cgv_ticket .area_info i {vertical-align: sub}
+.wrap_cgv_ticket .area_info span {display: inline-block;line-height: 20px;font-size: 13px;color: #6a707a;}
+/* E 포토티켓 패스카드 등록 */
+
+@media only screen and (max-width: 350px){
+    .my_productCode_wrap .info span { font-size: 12px; letter-spacing: -.5px; }
+}

@@ -18,7 +18,6 @@
     <link rel="canonical" href="http://www.cgv.co.kr/">
 
     <!-- [S] 2020.04.29 위치 변경 -->
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
     <!-- [E] 2020.04.29 위치 변경 -->
@@ -52,6 +51,12 @@
             }
         });
     </script>
+
+    <!-- [S] 2020.04.29 위치 변경 -->
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/swiper.min.js "></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <!-- [E] 2020.04.29 위치 변경 -->
+
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
@@ -67,37 +72,148 @@
     <!-- [E] 운영소스 상속용 -->
 </head>
 <body class="bg_white">
-<div class="header_wrap" style="display:none;" id="header_wrap"></div>
+<!--
+    수정 날짜 : 2020.05.18
+    수정 내용 : 클래스명 변경
+-->
 <div class="wrap">
+
+    <!-- [S] Header 추가 - 2020.05.27 -->
+    <div id="header_box">
+        <header id="headerTitle" class="cls_headertitle_box">
+            <a href="javascript:siteMapFn();">
+                <div class="ico_lt">
+                    <img id="siteMapBtn" src="http://img.cgv.co.kr/WebApp/images/common/btn_gnbV4.png" alt="전체메뉴">
+                </div>
+            </a>
+            <div class="title" id="headerTitleArea">
+                <a href="javascript:void(0);" id="headerText">포토티켓 자랑하기</a>
+            </div>
+            <!-- S
+                날짜 : 2020.05.27
+                작성자 : 이주연
+                내용 : badge 영역 제거
+            -->
+            <!--            <div>-->
+            <!--                <p class="badge badge-blue">-->
+            <!--                    <span class="dday">D-20</span><span class="text">출력가능일 4월 14일까지</span>-->
+            <!--                </p>-->
+            <!--            </div>-->
+            <!-- E -->
+            <!--            <a class=" btn_info icon_share" href="javascript:void(0);">-->
+            <!--                <i class="txt_rt sprite sprite-pt sprite-icShare"></i>-->
+            <!--            </a>-->
+        </header>
+
+        <section class="allview_wrap" id="siteMap">
+            <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>
+            <article class="allview_box_wrap">
+                <div class="allview_box_in">
+                    <h2 class="hidden">전체메뉴</h2>
+                    <div class="allview_header">
+                        <a href="http://m.cgv.co.kr" class="cgv_logo">CGV 홈</a>
+                    </div>
+                    <div class="area">
+                        <ul class="group_wrap">
+                            <li><a href="http://m.cgv.co.kr/WebApp/MyCgvV4/Default.aspx"><b>My CGV</b></a></li>
+                            <li><a href="http://m.cgv.co.kr/quickReservation/"><b>빠른예매</b></a></li>
+                            <li><a href="http://m.cgv.co.kr/Schedule/"><b>상영시간표</b></a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="http://m.cgv.co.kr/WebApp/TheaterV4/" title="CGV안내">CGV안내</a></li>
+                            <li>
+                                <a href="http://m.cgv.co.kr/WebApp/MobileOrder/Gateway.aspx?cType=normal&amp;gwType=M&amp;mOrderReturnUrl=%2Fmordermain/"
+                                   title="패스트오더">패스트오더</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/GiftV5/storeMain.aspx" title="기프트샵">기프트샵</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/Collage/" title="아트하우스">아트하우스</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SaleCardV4/" title="CGV할인정보">CGV할인정보</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/EventNotiV4/EventList.aspx" title="이벤트">이벤트</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/MagazineV4/" title="매거진">매거진</a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=1" title="IMAX">IMAX</a>
+                            </li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=2" title="4DX">4DX</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=4" title="Cine de CHEF">CINE
+                                de CHEF</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=9" title="GOLD CLASS">GOLD
+                                CLASS</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=6"
+                                   title="STARIUM">STARIUM</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=12"
+                                   title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=7" title="SWEETBOX">SWEETBOX</a>
+                            </li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=18" title="Screen X">Screen
+                                X</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=19" title="Sound X">Sound
+                                X</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=25"
+                                   title="CINE &amp; FORET">CINE &amp; FORET</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=21" title="CINE KIDS">CINE
+                                KIDS</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=23" title="SphereX">Sphere
+                                X</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=24" title="TEMPUR CINEMA">TEMPUR
+                                CINEMA</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=26"
+                                   title="SKYBOX">SKYBOX</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/Detail.aspx?seq=27"
+                                   title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>
+                        </ul>
+                        <ul class="group_wrap">
+                            <li><a href="http://m.cgv.co.kr/WebApp/Support/faq.aspx" title="고객센터">고객센터</a></li>
+                            <li><a href="http://m.cgv.co.kr/WebApp/SpecialV4/ClubTown_List.aspx"
+                                   title="Club서비스">Club서비스</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>
+                </div>
+            </article>
+        </section>
+
+    </div>
+    <!-- [E] Header -->
+
     <section class="content_wrap container photo_ticket">
         <!-- [S] 내가 자랑한 포토티켓 -->
-        <div class="popMyPhototicket"  style="display: block;top: 0;">
-            <div class="popLayerHeader">
-                <h1>
-                    <a class="name" href="javascript:void(0);">내가 자랑한 포토티켓</a>
-                </h1>
-                <a href="#none" class="btn_close btnPopClose"><i class="sprite sprite-pt sprite-icClose"></i></a>
+        <div class="pop_phototicket">
+            <!-- [S]
+                날짜 : 2020.05.27
+                내용 : <div class="pop_header"> 수정
+             -->
+            <div class="pop_header">
+                <h1><span>내가 </span>자랑한날 </h1>
+                <p class="date">2020.03.31</p>
             </div>
-            <div class="popLayerContainer">
-                <div class="myPhtoticketFlip onlyPhoto myPhoto">
-                    <div class="badge-area">
-                        <p class="btn-badge-grey">
-                            <span class="dday">자랑한 날</span><span class="date">2020.03.31</span>
-                        </p>
+            <!-- [E]
+               날짜 : 2020.05.27
+               내용 : <div class="pop_header"> 수정
+            -->
+            <!--
+             날짜 : 2020.05.18
+             내용 : 다른 사람의 포토티켓일 경우 other 클래스 추가
+            -->
+            <div class="myPhtoticketFlip web single">
+                <!--     badge 영역 제거 --- 2020.05.27    -->
+                <!--                    <div class="badge-area">-->
+                <!--                        <p class="btn-badge-grey">-->
+                <!--                            <span class="dday">자랑한 날</span><span class="date">2020.03.31</span>-->
+                <!--                        </p>-->
+                <!--                    </div>-->
+                <div class="front">
+                    <div class="inner">
+                        <img src="../images/phototicket/main/movie5@2x.png" alt="">
                     </div>
-                    <div class="front">
-                        <div class="inner">
-                            <img src="../images/phototicket/main/sample.png" alt="">
+                </div>
+                <div class="btn_area">
+                    <div class="inner">
+                        <div>
+                            <a class="btn-heart-lg _click" href="javascript:void(0);"><i
+                                    class="sprite sprite-pt sprite-icBtnLikeNorLarge"></i><span>125</span></a>
                         </div>
-                    </div>
-                    <div class="btn_area">
-                        <div class="inner">
-                            <div>
-                                <a class="btn-heart-lg _click" href="javascript:void(0);"><i class="sprite sprite-pt sprite-icBtnLikeNorLarge"></i><span>25</span></a>
-                            </div>
-                            <div class="cancel_area">
-                                <a class="btn-cancel" href="javascript:void(0);">자랑취소하기</a>
-                            </div>
+                        <div class="cancel_area">
+                            <a class="btn-cancel" href="javascript:void(0);">자랑취소하기</a>
                         </div>
                     </div>
                 </div>
@@ -106,15 +222,6 @@
         <!-- [E] 내가 자랑한 포토티켓 -->
     </section>
 </div>
-<!--
-    [S] 2020.04.20
-    작성자 : 이주연
-    내용 : 포토티켓 추가
-    -->
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/swiper.min.js"></script>
-<script type="text/javascript" src="../js/phototicket.js"></script>
-<!--  [E] 2020.04.20	-->
 <!--  [E] 2020.04.20	-->
 </body>
 </html>

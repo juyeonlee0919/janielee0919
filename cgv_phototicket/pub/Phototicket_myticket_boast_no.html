@@ -23,7 +23,6 @@
     <link rel="canonical" href="http://www.cgv.co.kr/">
 
     <!-- [S] 2020.04.29 위치 변경 -->
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/phototicket.css">
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
     <!-- [E] 2020.04.29 위치 변경 -->
@@ -51,20 +50,32 @@
             var strIphonenavi = "";
             if (IsWebViewIPhone_Master && strIphonenavi == "Y") {
                 var tmp_url = location.href;
-                history.pushState({ iphonenavi: "Y" }, "iphoneNaviExHandle", tmp_url);
+                history.pushState({iphonenavi: "Y"}, "iphoneNaviExHandle", tmp_url);
                 var tmp_url_rep = tmp_url.replace(/iphonenavi=Y/i, "");
                 location.href = tmp_url_rep;
             }
         });
     </script>
+    <!--
+       2020.05.18
+       작성자 : 이주연
+       내용 : screenId 추가  <script> var screenId = "PT002";</script> 제거
+    -->
+    <!-- [S] 2020.04.29 위치 변경 -->
+    <script type="text/javascript" src="http://img.cgv.co.kr/WebApp/js/Common/swiper.min.js "></script>
+    <script type="text/javascript" src="../js/phototicket.js"></script>
+    <!-- [E] 2020.04.29 위치 변경 -->
+
     <meta property="og:url" content="http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057">
     <meta property="og:title" content="CGV 패키지">
     <meta property="og:image" content="http://img.cgv.co.kr/GiftStore/Product/Mobile/List/15463255661470.jpg">
     <meta property="og:description" content="데이트 고민은 그만, CGV패키지가 정답">
-    <meta property="al:ios:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:ios:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:ios:app_store_id" content="370441190">
     <meta property="al:ios:app_name" content="CGV">
-    <meta property="al:android:url" content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
+    <meta property="al:android:url"
+          content="cjcgv://deeplink?menuId=COCL01&amp;menuUrl=http://m.cgv.co.kr/WebApp/GiftV5/productDetail.aspx?GG_NO=100057&amp;external_type=KAKAO&amp;ga_campaign_type=SHARE">
     <meta property="al:android:package" content="com.cgv.android.movieapp">
     <meta property="al:android:app_name" content="CGV">
     <!-- [E] 운영소스 상속용 -->
@@ -84,7 +95,7 @@
                 </div>
             </a>
             <div class="title" id="headerTitleArea">
-                <a href="javascript:void(0);">내 포토티켓 자랑하기</a>
+                <a href="javascript:void(0);">포토티켓 자랑하기</a>
             </div>
             <a class="btn_info" href="javascript:void(0);">
                 <i id="headerRightBtn" class="txt_rt sprite sprite-pt sprite-icInfo"></i>
@@ -148,102 +159,37 @@
     <!-- [E] Header -->
 
     <!--
-    날짜 : 2020.04.24
-    작성자 : 이주연
-    내용 :
-       - nav의 타입은 2가지
-       - type_pt : 포토티켓 제작완료/출력완료
-       - type_pt2 : 포토티켓 자랑하기
+        날짜 : 2020.05.21
+        작성자 : 이주연
+        내용 : 모바일일 경우, verAPP 클래스 추가
+              ex) <section class="content_wrap container photo_ticket verAPP" id="ContainerView">
     -->
-    <!-- [S] Header -->
-<!--    <div id="header_box" class="pt_header">-->
-<!--        <header id="headerTitle">-->
-<!--            <a class="title_area" href="javascript:void(0);">-->
-<!--                <i class="sprite sprite-pt sprite-icBack"></i>-->
-<!--            </a>-->
-<!--            <div class="title" id="headerTitleArea">포토티켓 자랑하기</div>-->
-<!--            <div class="btn_wrap">-->
-<!--                <a class="btn_menu" href="javascript:siteMapFn();">-->
-<!--                    <i class="sprite sprite-pt sprite-icSideMenu"></i>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </header>-->
-<!--        &lt;!&ndash; [S] siteMap &ndash;&gt;-->
-<!--        <section class="allview_wrap" id="siteMap">-->
-<!--            <div id="fogbg" onclick="javascript:close_sitemapFn()"></div>-->
-<!--            <article class="allview_box_wrap">-->
-<!--                <div class="allview_box_in">-->
-<!--                    <h2 class="hidden">전체메뉴</h2>-->
-
-<!--                    <div class="allview_header">-->
-<!--                        <a href="/" class="cgv_logo">CGV 홈</a>-->
-<!--                    </div>-->
-<!--                    <div class="area">-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="My CGV"><b>My CGV</b></a><span class="countnum">1</span></li>-->
-<!--                            <li><a href="#"><b>빠른예매</b></a></li>-->
-<!--                            <li><a href="#"><b>상영시간표</b></a></li>-->
-<!--                        </ul>-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="CGV안내">CGV안내</a></li>-->
-<!--                            <li><a href="#" title="바로오더">바로오더</a></li>-->
-<!--                            <li><a href="#" title="아트하우스">아트하우스</a></li>-->
-<!--                            <li><a href="#" title="CGV할인정보">CGV할인정보</a></li>-->
-<!--                            <li><a href="#" title="이벤트">이벤트</a></li>-->
-<!--                            <li><a href="#" title="스토어">스토어</a></li>-->
-
-<!--                        </ul>-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="IMAX">IMAX</a></li>-->
-<!--                            <li><a href="#" title="4DX">4DX</a></li>-->
-<!--                            <li><a href="#" title="Cine de CHEF">CINE de CHEF</a></li>-->
-<!--                            <li><a href="#" title="GOLD CLASS">GOLD CLASS</a></li>-->
-<!--                            <li><a href="#" title="STARIUM">STARIUM</a></li>-->
-<!--                            <li><a href="#" title="THE PRIVATE CINEMA">THE PRIVATE CINEMA</a></li>-->
-<!--                            <li><a href="#" title="SWEETBOX">SWEETBOX</a></li>-->
-
-<!--                            <li><a href="#" title="Screen X">Screen X</a></li>-->
-<!--                            <li><a href="#" title="Sound X">Sound X</a></li>-->
-<!--                            <li><a href="#" title="CINE &amp; FORET">CINE &amp; FORET</a></li>-->
-<!--                            <li><a href="#" title="CINE KIDS">CINE KIDS</a></li>-->
-<!--                            <li><a href="#" title="SphereX">Sphere X</a></li>-->
-<!--                            <li><a href="#" title="TEMPUR CINEMA">TEMPUR CINEMA</a></li>-->
-<!--                            <li><a href="#" title="SKYBOX">SKYBOX</a></li>-->
-<!--                            <li><a href="#" title="CINE &amp; LIVING ROOM">CINE &amp; LIVING ROOM</a></li>-->
-<!--                        </ul>-->
-<!--                        <ul class="group_wrap">-->
-<!--                            <li><a href="#" title="고객센터">고객센터</a></li>-->
-<!--                            <li><a href="#" title="Club서비스">Club서비스</a></li>-->
-<!--                            <li><a href="#" title="매거진">매거진</a></li>-->
-<!--                        </ul>-->
-<!--                    </div>-->
-<!--                    <button type="button" class="btn_close" onclick="javascript:close_sitemapFn();">창 닫기</button>-->
-<!--                </div>-->
-<!--            </article>-->
-<!--        </section>-->
-<!--        &lt;!&ndash; [E] siteMap &ndash;&gt;-->
-<!--    </div>-->
-    <!-- [E] Header -->
-
-    <!--
-     [S]
-     날짜 : 2020.05.06
-     작성자 : 이주연
-     내용 : header_box/nav 분리
-    -->
-    <div id="navMain" class="nav">
-        <nav class="type_pt2">
-            <div class="inner">
-                <a class="_tab active" href="javascript:void(0);">최신순</a>
-                <a class="_tab" href="javascript:void(0);">인기순</a>
-                <a class="btn-badge-red _click" href="javascript:void(0);">내가 자랑한 포토티켓</a>
-            </div>
-        </nav>
-    </div>
-    <!-- [E] header_box/nav 분리 -->
-
     <!-- [S] Content -->
     <section class="content_wrap container photo_ticket" id="ContainerView">
+        <!--
+        날짜 : 2020.04.24
+        작성자 : 이주연
+        내용 :
+           - nav의 타입은 2가지
+           - type_pt : 포토티켓 제작완료/출력완료
+           - type_pt2 : 포토티켓 자랑하기
+        -->
+        <!--
+         [S]
+         날짜 : 2020.05.06
+         작성자 : 이주연
+         내용 : header_box/nav 분리
+        -->
+        <div id="navMain" class="nav">
+            <nav class="type_pt2">
+                <div class="inner">
+                    <a class="_tab active" href="javascript:void(0);">최신순</a>
+                    <a class="_tab" href="javascript:void(0);">인기순</a>
+                    <a class="btn-badge-red _click" href="javascript:void(0);">내가 자랑한 포토티켓</a>
+                </div>
+            </nav>
+        </div>
+        <!-- [E] header_box/nav 분리 -->
         <article class="mypt_wrap none">
             <div class="card_wrap">
                 <p class="pt">내가 자랑한 포토티켓 내역이 없습니다.</p>
@@ -258,15 +204,6 @@
     작성자 : 이주연
     내용 : 포토티켓 추가
 -->
-<!--
-    [S] 2020.04.27
-    작성자 : 이주연
-    내용 : screenId 추가  <script> var screenId = "PT002";</script>
--->
-<script> var screenId = "PT002";</script>
-<script type="text/javascript" src="../js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="../js/swiper.min.js"></script>
-<script type="text/javascript" src="../js/phototicket.js"></script>
 <!--  [E] 2020.04.20	-->
 </body>
 </html>
