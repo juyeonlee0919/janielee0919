@@ -21,7 +21,7 @@
     "pretty-dropdowns": "^4.13.0",
     "select2": "^4.0.6-rc.1",
     "stickyjs": "^1.0.1",
-    "swiper": "^4.5.0",
+    "swiper": "^6.5.1",
     "url": "^0.11.0"
   },
   "devDependencies": {
